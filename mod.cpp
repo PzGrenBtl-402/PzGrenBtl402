@@ -1,0 +1,11 @@
+name = "PzGrenBtl 402";
+description = "PzGrenBtl 402 Mods";
+author = "PzGrenBtl402_Mishkar, PzGrenBtl402_Martin";
+actionName = "Webseite";
+action = "https://pzgrenbtl402.de/";
+logo = "PzGrenBtl402_Logo.paa";
+logoOver = "PzGrenBtl402_Logo.paa";
+hideName = 0;
+hidePicture = 0;
+tooltipOwned = "PzGrenBtl 402";
+overview = "Panzergrenadierbataillon 402";
