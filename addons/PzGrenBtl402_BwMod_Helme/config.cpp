@@ -2,11 +2,8 @@ class CfgPatches
 {
 	class BwMod_402_Helme
 	{
-		units[] = {
-};
-
+		units[] = {};
 		weapons[] = {};
-
 		requiredVersion = 0.1;
 		requiredAddons[] = {"bwa3_headgear"};
 	};
