@@ -1,4 +1,3 @@
-#include "BIS_AddonInfo.hpp"
 class CfgPatches
 {
 	class rnt_sppz_2a2_luchs_402

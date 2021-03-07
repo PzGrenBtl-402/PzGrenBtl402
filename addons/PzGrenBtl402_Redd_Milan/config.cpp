@@ -1,4 +1,3 @@
-#include "BIS_AddonInfo.hpp"
 class CfgPatches {
 	class Redd_Milan_Static_402 {
 		units[] = {};

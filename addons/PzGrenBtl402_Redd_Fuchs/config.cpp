@@ -1,4 +1,3 @@
-#include "BIS_AddonInfo.hpp"
 class CfgPatches
 {
 	class Redd_Tank_Fuchs_1A4_402

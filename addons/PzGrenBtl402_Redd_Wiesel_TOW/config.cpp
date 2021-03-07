@@ -1,4 +1,3 @@
-#include "BIS_AddonInfo.hpp"
 class CfgPatches
 {
 	class Redd_Tank_Wiesel_1A2_TOW_402

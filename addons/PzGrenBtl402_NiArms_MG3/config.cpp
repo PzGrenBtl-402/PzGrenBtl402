@@ -1,4 +1,3 @@
-#include "BIS_AddonInfo.hpp"
 class CfgPatches {
   class hlcweapons_MG3s_402 {
     units[] = {};

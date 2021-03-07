@@ -1,4 +1,3 @@
-#include "BIS_AddonInfo.hpp"
 class CfgPatches {
 	class Redd_Main_402 {
 		units[] = {};
