@@ -1,3 +1,40 @@
+<#
+.SYNOPSIS
+    Packs the addons in the addons directory into a complete Arma 3 mod.
+.DESCRIPTION
+    Builds the addons in the addons directory to Arma 3 pbo files and signes them. Those files are packed into a complete mod and zip archive.
+.EXAMPLE
+    PS C:\> .\build.ps1
+    Builds all addons into non-binarized pbos and packs them into a complete mod.
+.EXAMPLE
+    PS C:\> .\build.ps1 -Binaraize -Clear -Modules PzGrenBtl402_BwMod_Dingo,PzGrenBtl402_BwMod_Eagle
+    Builds only the addons PzGrenBtl402_BwMod_Dingo and PzGrenBtl402_BwMod_Eagle into binarized pbos. The release directory is cleared before packing it to a complete mod.
+.NOTES
+    This build script searches for addons only in the addons directoy.
+#>
+[CmdletBinding()]
+param (
+    [Parameter(HelpMessage="Binarizes all addons during build.")]
+    [Switch]
+    $Binaraize = $false,
+
+    [Parameter(HelpMessage="Clears the release directory from previous builds.")]
+    [Switch]
+    $Clear = $false,
+
+    [Parameter(HelpMessage="A list of the directory names in addons which should be build. If not specifed all addons will be built.")]
+    [String[]]
+    $Modules,
+
+    [Parameter(HelpMessage="Files to include into the finished mod root directory.")]
+    [String[]]
+    $Include = @("mod.cpp", "PzGrenBtl402_Logo.paa", "README.md"),
+
+    [Parameter(HelpMessage="The name of the mod directory.")]
+    [String]
+    $ModName = "PzGrenBtl402"
+)
+
 function Write-Host-And-File {
     param (
         [Parameter(Mandatory)]
@@ -11,9 +48,8 @@ function Write-Host-And-File {
     Add-Content -Path $Path -Encoding utf8 -Value $Value
 }
 
-
-$includeFiles = @("mod.cpp", "PzGrenBtl402_Logo.paa", "README.md")
-
+$tools = $PSScriptRoot
+Set-Location $tools
 $root = Resolve-Path ..\.
 
 Write-Host "Creating release directory..."
@@ -22,17 +58,17 @@ Write-Host "Creating release directory..."
 $release = New-Item -ItemType Directory -Path (Join-Path $root "release") -Force
 
 # Create @PzGrenBtl402 Mod directory
-$modDir = New-Item -ItemType Directory -Path (Join-Path $release "@PzGrenBtl402") -Force
+$modDir = New-Item -ItemType Directory -Path (Join-Path $release "@$ModName") -Force
+
+if ($Clear) {
+    Remove-Item $modDir -Recurse -Force -ErrorAction Ignore
+}
 
 # Create @PzGrenBtl402/addons directory
 $destAddonsDir = New-Item -ItemType Directory -Path (Join-Path $modDir "addons") -Force
 
-# Copy BI keys to @PzGrenBtl402/keys
-Remove-Item -Path (Join-Path $modDir "keys") -Recurse -ErrorAction Ignore
-Copy-Item -Path (Join-Path $root "keys") -Destination (Join-Path $modDir "keys") -Recurse -Force
-
 # Copy all files defined in includeFiles to mod directory
-foreach ($file in $includeFiles) {
+foreach ($file in $Include) {
     Copy-Item -Path (Join-Path $root $file) -Destination $modDir -Force
 }
 
@@ -49,13 +85,36 @@ if (!$arma3ToolsPath) {
 $addonBuilder = Join-Path (Join-Path $arma3ToolsPath "AddonBuilder") "AddonBuilder.exe"
 Write-Host "Found AddonBuilder at $addonBuilder"
 
-$logs = New-Item -ItemType Directory -Path (Join-Path $root "logs") -Force
-$logFile = Join-Path $logs "build.log"
+$privateKeys = New-Item -ItemType Directory -Path (Join-Path $tools "private_keys") -Force
+$dsCreateKey = Join-Path (Join-Path $arma3ToolsPath "DSSignFile") "DSCreateKey.exe"
+
+$keyName = "$($ModName)_$(Get-Date -Format "yyyy-MM-dd")"
+
+# Create private key in private_keys directory
+$cwd = Get-Location
+Set-Location $privateKeys
+& $dsCreateKey $keyName
+Set-Location $cwd
+
+$publicKey = Join-Path $privateKeys "$keyName.bikey"
+$privateKey = Join-Path $privateKeys "$keyName.biprivatekey"
+
+# Create keys directory in mod directory
+$keys = Join-Path $modDir "keys"
+Remove-Item $keys -Recurse -Force -ErrorAction Ignore
+$keys = New-Item -ItemType Directory -Path $keys -Force
+Copy-Item -Path $publicKey -Destination $keys
+
+# Create build log
+$logs = New-Item -ItemType Directory -Path (Join-Path $tools "logs") -Force
+$logFile = New-Item -ItemType File -Path (Join-Path $logs "build.log") -Force
 Clear-Content -Path $logFile
 
 $numberOfErrors = 0
 $dirsProcessed = 0
-$dirsToBuild = Get-ChildItem (Join-Path $root "addons") -Directory
+
+# Get all dirs or only dirs which were specificed in the modules arg
+$dirsToBuild = Get-ChildItem (Join-Path $root "addons") -Directory | Where-Object {(!$Modules) -or ($Modules -contains $_.Name)}
 
 foreach ($dir in $dirsToBuild) {
     $percentage = $dirsProcessed / $dirsToBuild.Length * 100
@@ -78,14 +137,19 @@ foreach ($dir in $dirsToBuild) {
     Write-Host-And-File -Path $logFile -Value "`nBuilding $dir with prefix $pboPrefix..."
 
     # Build pbo
-    & $addonBuilder "$absDir" "$destAddonsDir" -clear -packonly -prefix="$pboPrefix" | Out-File -FilePath $logFile -Append -Encoding utf8
+    if ($Binaraize) {
+        & $addonBuilder "$absDir" "$destAddonsDir" -clear -prefix="$pboPrefix" -sign="$privateKey" | Out-File -FilePath $logFile -Append -Encoding utf8
+    } else {
+        & $addonBuilder "$absDir" "$destAddonsDir" -clear -packonly -prefix="$pboPrefix" -sign="$privateKey" | Out-File -FilePath $logFile -Append -Encoding utf8
+    }
 
-    if ($LASTEXITCODE -ne 0) {
+    if (($LASTEXITCODE -ne 0) -or !(Test-Path (Join-Path $destAddonsDir $dir".pbo"))) {
         Write-Host "Build failed. Could not pack $dir to pbo." -ForegroundColor Red
         $numberOfErrors++
-    } else {
-        Write-Host "$dir successfully build." -ForegroundColor Green
+        continue
     }
+
+    Write-Host "$dir successfully build." -ForegroundColor Green
 }
 
 # Zip mod directory

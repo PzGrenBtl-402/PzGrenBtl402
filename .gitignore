@@ -1,5 +1,6 @@
 release/*
 logs
+private_keys
 *.cache
 *.pbo
 texHeaders.bin
