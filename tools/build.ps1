@@ -18,9 +18,9 @@ param (
     [Switch]
     $Binaraize = $false,
 
-    [Parameter(HelpMessage="Clears the release directory from previous builds.")]
+    [Parameter(HelpMessage="Does not clear the release directory from previous builds.")]
     [Switch]
-    $Clear = $false,
+    $Keep = $false,
 
     [Parameter(HelpMessage="A list of the directory names in addons which should be build. If not specifed all addons will be built.")]
     [String[]]
@@ -52,28 +52,6 @@ $tools = $PSScriptRoot
 Set-Location $tools
 $root = Resolve-Path ..\.
 
-Write-Host "Creating release directory..."
-
-# Create release directory
-$release = New-Item -ItemType Directory -Path (Join-Path $root "release") -Force
-
-# Create @PzGrenBtl402 Mod directory
-$modDir = New-Item -ItemType Directory -Path (Join-Path $release "@$ModName") -Force
-
-if ($Clear) {
-    Remove-Item $modDir -Recurse -Force -ErrorAction Ignore
-}
-
-# Create @PzGrenBtl402/addons directory
-$destAddonsDir = New-Item -ItemType Directory -Path (Join-Path $modDir "addons") -Force
-
-# Copy all files defined in includeFiles to mod directory
-foreach ($file in $Include) {
-    Copy-Item -Path (Join-Path $root $file) -Destination $modDir -Force
-}
-
-Write-Host "Copied included files and keys to release directory."
-
 # Get Arma 3 Tools path from the registry
 $arma3ToolsPath = (Get-ItemProperty -Path "Registry::HKEY_CURRENT_USER\SOFTWARE\Bohemia Interactive\arma 3 tools" -Name path).Path
 if (!$arma3ToolsPath) {
@@ -83,11 +61,44 @@ if (!$arma3ToolsPath) {
 
 # Build Addon Builder path
 $addonBuilder = Join-Path (Join-Path $arma3ToolsPath "AddonBuilder") "AddonBuilder.exe"
+if (!(Test-Path $addonBuilder)) {
+    Write-Host "Addon Builder does not exit at $addonBuilder" -ForegroundColor Red
+    exit 2
+}
 Write-Host "Found AddonBuilder at $addonBuilder"
 
-$privateKeys = New-Item -ItemType Directory -Path (Join-Path $tools "private_keys") -Force
 $dsCreateKey = Join-Path (Join-Path $arma3ToolsPath "DSSignFile") "DSCreateKey.exe"
+if (!(Test-Path $dsCreateKey)) {
+    Write-Host "DS Create Key does not exit at $dsCreateKey" -ForegroundColor Red
+    exit 3
+}
+Write-Host "Found DS Create Key at $dsCreateKey"
 
+# Create release directory
+Write-Host "Creating release directory if necessary..."
+$release = New-Item -ItemType Directory -Path (Join-Path $root "release") -Force
+
+# Clear release directory if not otherwise specified
+if (!$Keep) {
+    Remove-Item $release -Recurse -Force -ErrorAction Ignore
+    Write-Host "Cleared release directory $release."
+}
+
+# Create @PzGrenBtl402 Mod directory
+$modDir = New-Item -ItemType Directory -Path (Join-Path $release "@$ModName") -Force
+
+# Create @PzGrenBtl402/addons directory
+$destAddonsDir = New-Item -ItemType Directory -Path (Join-Path $modDir "addons") -Force
+
+# Copy all files defined in includeFiles to mod directory
+foreach ($file in $Include) {
+    Copy-Item -Path (Join-Path $root $file) -Destination $modDir -Force
+}
+Write-Host "Copied included files to mod directory."
+
+
+Write-Host "Creating signing key..."
+$privateKeys = New-Item -ItemType Directory -Path (Join-Path $tools "private_keys") -Force
 $keyName = "$($ModName)_$(Get-Date -Format "yyyy-MM-dd")"
 
 # Create private key in private_keys directory
