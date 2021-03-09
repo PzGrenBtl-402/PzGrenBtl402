@@ -22,6 +22,10 @@ param (
     [Switch]
     $Keep = $false,
 
+    [Parameter(HelpMessage="Exludes all addons having GM in its name.")]
+    [Switch]
+    $ExcludeGM = $false,
+
     [Parameter(HelpMessage="A list of the directory names in addons which should be build. If not specifed all addons will be built.")]
     [String[]]
     $Modules,
@@ -125,7 +129,9 @@ $numberOfErrors = 0
 $dirsProcessed = 0
 
 # Get all dirs or only dirs which were specificed in the modules arg
-$dirsToBuild = Get-ChildItem (Join-Path $root "addons") -Directory | Where-Object {(!$Modules) -or ($Modules -contains $_.Name)}
+$dirsToBuild = Get-ChildItem (Join-Path $root "addons") -Directory |
+    Where-Object {(!$Modules) -or ($Modules -contains $_.Name)} |
+    Where-Object {(!$ExcludeGM) -or !($_.Name -like "*GM*")}
 
 foreach ($dir in $dirsToBuild) {
     $percentage = $dirsProcessed / $dirsToBuild.Length * 100
