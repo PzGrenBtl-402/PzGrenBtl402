@@ -1,18 +1,18 @@
 class CfgPatches
 {
-	class PzGrenBtl402_GM_Leopard
+	class PzGrenBtl402_GM_M113
 	{
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"gm_vehicles_land_tracked_leopard1"};
+		requiredAddons[] = {"gm_vehicles_land_tracked_m113"};
 	};
 };
 
 class CfgVehicles
 {
-	class gm_tracked_Tank_base;
-	class gm_Leopard1_base: gm_tracked_Tank_base
+	class gm_tracked_APC_base;
+	class gm_m113_base: gm_tracked_APC_base
 	{
 		maximumLoad = 10000;
 
@@ -22,8 +22,8 @@ class CfgVehicles
 				shortName = "BV";
 				allowedPositions[] = {"crew"};
 				disabledPositions[] = {};
-				limitedPositions[] = {};
-				numLimitedPositions = 0;
+				limitedPositions[] = {{"cargo", "all"}, {"ffv", "all"}};
+				numLimitedPositions = 2;
 				masterPositions[] = {};
 				connectedByDefault = 1;
 			};

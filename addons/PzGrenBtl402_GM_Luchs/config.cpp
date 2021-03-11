@@ -5,7 +5,7 @@ class CfgPatches
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"gm_vehicles_land_wheeled_luchs_ge_army_luchs"};
+		requiredAddons[] = {"gm_vehicles_land_wheeled_luchs"};
 	};
 };
 
