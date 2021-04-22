@@ -16,8 +16,10 @@ class CfgVehicles
 	{
 		maximumLoad = 10000;
 
-		class AcreIntercoms {
-			class Intercom_1 {
+		class AcreIntercoms
+		{
+			class Intercom_1
+			{
 				displayName = "Bordverstaendigung";
 				shortName = "BV";
 				allowedPositions[] = {"crew"};
@@ -37,8 +39,10 @@ class CfgVehicles
 		acre_eventInfantryPhone = QFUNC(noApiFunction);
 		acre_infantryPhonePosition[] = {};
 
-		class AcreRacks {
-			class Rack_1 {
+		class AcreRacks
+		{
+			class Rack_1
+			{
 				displayName = "Funkkreis A";
 				shortName = "Krs A";
 				componentName = "ACRE_SEM90";
@@ -50,9 +54,23 @@ class CfgVehicles
 				intercom[] = {"all"};
 			};
 
-			class Rack_2 {
+			class Rack_2
+			{
 				displayName = "Funkkreis B";
 				shortName = "Krs B";
+				componentName = "ACRE_SEM90";
+				allowedPositions[] = {"crew"};
+				disabledPositions[] = {};
+				defaultComponents[] = {};
+				mountedRadio = "ACRE_SEM70";
+				isRadioRemovable = 0;
+				intercom[] = {"all"};
+			};
+
+			class Rack_3
+			{
+				displayName = "Funkkreis C";
+				shortName = "Krs C";
 				componentName = "ACRE_SEM90";
 				allowedPositions[] = {"crew"};
 				disabledPositions[] = {};

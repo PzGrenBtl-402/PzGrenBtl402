@@ -18,8 +18,10 @@ class CfgVehicles
 	{
 		maximumLoad = 10000;
 
-		class AcreIntercoms {
-			class Intercom_1 {
+		class AcreIntercoms
+		{
+			class Intercom_1
+			{
 				displayName = "Bordverstaendigung";
 				shortName = "BV";
 				allowedPositions[] = {"driver", "gunner", "commander", {"turret", {0,1}}};
@@ -39,8 +41,10 @@ class CfgVehicles
 		acre_eventInfantryPhone = QFUNC(noApiFunction);
 		acre_infantryPhonePosition[] = {-1.175, -3.45, -1.1};
 
-		class AcreRacks {
-			class Rack_1 {
+		class AcreRacks
+		{
+			class Rack_1
+			{
 				displayName = "Funkkreis A";
 				shortName = "Krs A";
 				componentName = "ACRE_SEM90";
@@ -52,7 +56,8 @@ class CfgVehicles
 				intercom[] = {"all"};
 			};
 
-			class Rack_2 {
+			class Rack_2
+			{
 				displayName = "Funkkreis B";
 				shortName = "Krs B";
 				componentName = "ACRE_SEM90";
@@ -65,8 +70,10 @@ class CfgVehicles
 			};
 		};
 
-		class UserActions {
-			class heckklappe_auf {
+		class UserActions
+		{
+			class heckklappe_auf
+			{
 				displayName = "Heckklappe öffnen";
 				position = "actionPoint";
 				radius = 10;
@@ -75,7 +82,9 @@ class CfgVehicles
 				condition = "(player in [driver this, gunner this, this turretUnit [1]]) && (this doorPhase 'hatch_1_1_source' == 0) && (alive this)";
 				statement = "this call PzGrenBtl402_fnc_marderGMOpenRamp";
 			};
-			class heckklappe_zu {
+
+			class heckklappe_zu
+			{
 				displayName = "Heckklappe schließen";
 				position = "actionPoint";
 				radius = 10;
