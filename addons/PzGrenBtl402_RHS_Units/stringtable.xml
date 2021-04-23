@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl">
+	<Package name="main">
+		<Key ID="STR_PzGrenBtl_Infantry_2000">
+			<English>Infantry (2000)</English>
+			<German>Infanterie (2000)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_94">
+			<English>Infantry (1994)</English>
+			<German>Infanterie (1994)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_86">
+			<English>Infantry (1986)</English>
+			<German>Infanterie (1986)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_83">
+			<English>Infantry (1983)</English>
+			<German>Infanterie (1983)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_81">
+			<English>Infantry (1981)</English>
+			<German>Infanterie (1981)</German>
+		</Key>
+
+		<Key ID="STR_PzGrenBtl_Infantry_2000_Squad_BMP">
+			<English>Mot. rifle squad (BMP-2/BMP-3/BTR-80)</English>
+			<German>Mot. Schützentrupp (BMP-2/BMP-3/BTR-80)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_2000_Squad_BTR">
+			<English>Mot. rifle squad (BTR-70/BMP-1)</English>
+			<German>Mot. Schützentrupp (BTR-70/BMP-1)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_2000_PltHQ_BMP">
+			<English>Mot. rifle platoon HQ (BMP-2/BMP-3/BTR-80)</English>
+			<German>Mot. Schützenzugtrupp (BMP-2/BMP-3/BTR-80)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_2000_PltHQ_BTR">
+			<English>Mot. rifle platoon HQ (BTR-70/BMP-1)</English>
+			<German>Mot. Schützenzugtrupp (BTR-70/BMP-1)</German>
+		</Key>
+
+		<Key ID="STR_PzGrenBtl_Infantry_94_Squad_BMP">
+			<English>Mot. rifle squad (BMP-2/BMP-3/BTR-80)</English>
+			<German>Mot. Schützentrupp (BMP-2/BMP-3/BTR-80)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_94_Squad_BTR">
+			<English>Mot. rifle squad (BTR-60/BTR-70/BMP-1)</English>
+			<German>Mot. Schützentrupp (BTR-60/BTR-70/BMP-1)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_94_PltHQ_BMP">
+			<English>Mot. rifle platoon HQ (BMP-2/BMP-3/BTR-80)</English>
+			<German>Mot. Schützenzugtrupp (BMP-2/BMP-3/BTR-80)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_94_PltHQ_BTR">
+			<English>Mot. rifle platoon HQ (BTR-60/BTR-70/BMP-1)</English>
+			<German>Mot. Schützenzugtrupp (BTR-60/BTR-70/BMP-1)</German>
+		</Key>
+
+		<Key ID="STR_PzGrenBtl_Infantry_86_Squad_BMP">
+			<English>Mot. rifle squad (BMP-2/BMP-3/BTR-80)</English>
+			<German>Mot. Schützentrupp (BMP-2/BMP-3/BTR-80)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_86_Squad_BTR">
+			<English>Mot. rifle squad (BTR-60/BTR-70/BMP-1)</English>
+			<German>Mot. Schützentrupp (BTR-60/BTR-70/BMP-1)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_86_PltHQ_BMP">
+			<English>Mot. rifle platoon HQ (BMP-2/BMP-3/BTR-80)</English>
+			<German>Mot. Schützenzugtrupp (BMP-2/BMP-3/BTR-80)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_86_PltHQ_BTR">
+			<English>Mot. rifle platoon HQ (BTR-60/BTR-70/BMP-1)</English>
+			<German>Mot. Schützenzugtrupp (BTR-60/BTR-70/BMP-1)</German>
+		</Key>
+
+		<Key ID="STR_PzGrenBtl_Infantry_83_Squad_BMP">
+			<English>Mot. rifle squad (BMP-2)</English>
+			<German>Mot. Schützentrupp (BMP-2)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_83_Squad_BTR">
+			<English>Mot. rifle squad (BTR-60/BTR-70/BMP-1)</English>
+			<German>Mot. Schützentrupp (BTR-60/BTR-70/BMP-1)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_83_PltHQ_BMP">
+			<English>Mot. rifle platoon HQ (BMP-2)</English>
+			<German>Mot. Schützenzugtrupp (BMP-2)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_83_PltHQ_BTR">
+			<English>Mot. rifle platoon HQ (BTR-60/BTR-70/BMP-1)</English>
+			<German>Mot. Schützenzugtrupp (BTR-60/BTR-70/BMP-1)</German>
+		</Key>
+
+		<Key ID="STR_PzGrenBtl_Infantry_81_Squad_BMP">
+			<English>Mot. rifle squad (BMP-2)</English>
+			<German>Mot. Schützentrupp (BMP-2)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_81_Squad_BTR">
+			<English>Mot. rifle squad (BTR-60/BTR-70/BMP-1)</English>
+			<German>Mot. Schützentrupp (BTR-60/BTR-70/BMP-1)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_81_PltHQ_BMP">
+			<English>Mot. rifle platoon HQ (BMP-2)</English>
+			<German>Mot. Schützenzugtrupp (BMP-2)</German>
+		</Key>
+		<Key ID="STR_PzGrenBtl_Infantry_81_PltHQ_BTR">
+			<English>Mot. rifle platoon HQ (BTR-60/BTR-70/BMP-1)</English>
+			<German>Mot. Schützenzugtrupp (BTR-60/BTR-70/BMP-1)</German>
+		</Key>
+	</Package>
+</Project>
