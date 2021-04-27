@@ -4,8 +4,11 @@ class CfgVehicles
 
 	class StaticWeapon: LandVehicle
 	{
-		class Turrets;
-		class MainTurret;
+		class Turrets
+        {
+		    class MainTurret;
+        };
+        
 		class EventHandlers;
 		class ACE_Actions
 		{
