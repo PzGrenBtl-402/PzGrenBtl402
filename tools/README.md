@@ -18,7 +18,7 @@ PS C:\PzGrenBtl402\tools> Get-Help .\build.ps1 -Full
 
 ## Advance usage
 
-To exclude all addons containing `GM` in its name, use the `-ExcludeGM` parameter:
+To exclude all addons containing `_GM_` in its name, use the `-ExcludeGM` parameter:
 ```
 PS C:\PzGrenBtl402\tools> .\build.ps1 -ExcludeGM
 ```

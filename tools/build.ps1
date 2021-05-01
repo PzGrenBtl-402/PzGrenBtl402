@@ -94,6 +94,11 @@ $modDir = New-Item -ItemType Directory -Path (Join-Path $release "@$ModName") -F
 # Create @PzGrenBtl402/addons directory
 $destAddonsDir = New-Item -ItemType Directory -Path (Join-Path $modDir "addons") -Force
 
+if (!$ExcludeGM) {
+    # Create @PzGrenBtl402/optionals directory
+    $optionalAddonsDir = New-Item -ItemType Directory -Path (Join-Path $modDir "optionals") -Force
+}
+
 # Copy all files defined in includeFiles to mod directory
 foreach ($file in $Include) {
     Copy-Item -Path (Join-Path $root $file) -Destination $modDir -Force
@@ -103,7 +108,8 @@ Write-Host "Copied included files to mod directory."
 
 Write-Host "Creating signing key..."
 $privateKeys = New-Item -ItemType Directory -Path (Join-Path $tools "private_keys") -Force
-$keyName = "$($ModName)_$(Get-Date -Format "yyyy-MM-dd")"
+$today = "$(Get-Date -Format "yyyy-MM-dd")"
+$keyName = "$($ModName)_$($today)"
 
 # Create private key in private_keys directory
 $cwd = Get-Location
@@ -130,14 +136,21 @@ $dirsProcessed = 0
 
 # Get all dirs or only dirs which were specificed in the modules arg
 $dirsToBuild = Get-ChildItem (Join-Path $root "addons") -Directory |
-    Where-Object {(!$Modules) -or ($Modules -contains $_.Name)} |
-    Where-Object {(!$ExcludeGM) -or !($_.Name -like "*GM*")}
+    Where-Object {(!$Modules) -or ($Modules -contains $_.Name)}
 
 foreach ($dir in $dirsToBuild) {
     $percentage = $dirsProcessed / $dirsToBuild.Length * 100
-    $complete = $percentage.ToString("#.#")
-    Write-Progress -Activity "Building $dir..." -Status "$complete% Complete:" -PercentComplete $percentage
     $dirsProcessed++
+    $complete = $percentage.ToString("#.#")
+
+    $isGMDir = $dir.Name -like "*_GM_*"
+
+    if ($ExcludeGM -and $isGMDir) {
+        Write-Progress -Activity "Ignoring $dir..." -Status "$complete% Complete:" -PercentComplete $percentage
+        continue
+    }
+
+    Write-Progress -Activity "Building $dir..." -Status "$complete% Complete:" -PercentComplete $percentage
 
     $absDir = $dir.FullName
 
@@ -151,16 +164,18 @@ foreach ($dir in $dirsToBuild) {
 
     $pboPrefix = Get-Content -Path $pboPrefixFile.FullName
 
-    Write-Host-And-File -Path $logFile -Value "`nBuilding $dir with prefix $pboPrefix..."
+    Write-Host-And-File -Path $logFile -Value "`nBuilding $dir with prefix `"$pboPrefix`"..."
+
+    $destDir = If ($isGMDir) {$optionalAddonsDir} else {$destAddonsDir}
 
     # Build pbo
     if ($Binaraize) {
-        & $addonBuilder "$absDir" "$destAddonsDir" -clear -prefix="$pboPrefix" -sign="$privateKey" | Out-File -FilePath $logFile -Append -Encoding utf8
+        & $addonBuilder "$absDir" "$destDir" -clear -prefix="$pboPrefix" -sign="$privateKey" | Out-File -FilePath $logFile -Append -Encoding utf8
     } else {
-        & $addonBuilder "$absDir" "$destAddonsDir" -clear -packonly -prefix="$pboPrefix" -sign="$privateKey" | Out-File -FilePath $logFile -Append -Encoding utf8
+        & $addonBuilder "$absDir" "$destDir" -clear -packonly -prefix="$pboPrefix" -sign="$privateKey" | Out-File -FilePath $logFile -Append -Encoding utf8
     }
 
-    if (($LASTEXITCODE -ne 0) -or !(Test-Path (Join-Path $destAddonsDir $dir".pbo"))) {
+    if (($LASTEXITCODE -ne 0) -or !(Test-Path (Join-Path $destDir $dir".pbo"))) {
         Write-Host "Build failed. Could not pack $dir to pbo." -ForegroundColor Red
         $numberOfErrors++
         continue
@@ -171,7 +186,7 @@ foreach ($dir in $dirsToBuild) {
 
 # Zip mod directory
 Write-Host "`nZipping mod directory..."
-Compress-Archive -Path $modDir -DestinationPath (Join-Path $release $modDir.Name) -Force
+Compress-Archive -Path $modDir -DestinationPath (Join-Path $release "$($modDir.Name)_$($today)") -Force
 
 if ($numberOfErrors -eq 0) {
     Write-Host "Finished building mod with 0 errors." -ForegroundColor Green
