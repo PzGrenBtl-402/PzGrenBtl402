@@ -11,13 +11,13 @@
  *      Nothing.
  *
  *  Example:
- *      _this call PzGrenBtl402_fnc_marderInitActions
+ *      _this call PzGrenBtl402_fnc_gmMarderInitActions
  *
  */
 
 params ["_veh"];
 
-if (hasInterface) then { 
+if (hasInterface) then {
     private _vehName = getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName");
 
     {
@@ -27,7 +27,7 @@ if (hasInterface) then {
         _veh setUserActionText [_actionID, _text, "", _picture];
     } forEach [
         PzGrenBtl402_getInCommanderParams,
-        PzGrenBtl402_getInDriverParams, 
+        PzGrenBtl402_getInDriverParams,
         PzGrenBtl402_getOutParams
     ];
 };

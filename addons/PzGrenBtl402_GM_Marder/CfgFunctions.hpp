@@ -3,14 +3,21 @@ class CfgFunctions {
         class PzGrenBtl402_Functions_Marder_GM {
             file = "PzGrenBtl402_GM_Marder\functions"
 
-            class marderGMPreInit {
+            class gmMarderPreInit {
                 preInit = 1;
             };
 
-            class marderGMInitActions;
+            class gmMarderInitActions;
+            class gmMarderHoldAction;
 
-            class marderGMOpenRamp;
-            class marderGMCloseRamp;
+            class gmMarderOpenRamp;
+            class gmMarderCloseRamp;
+
+            class gmMarderCanLoadMILAN;
+            class gmMarderCanUnloadMILAN;
+
+            class gmMarderLoadMILAN;
+            class gmMarderUnloadMILAN;
         };
     };
 };

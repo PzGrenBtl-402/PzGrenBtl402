@@ -69,4 +69,4 @@ if (hasInterface) then {
     ];
 };
 
-["gm_marder1_base", "InitPost", {_this call PzGrenBtl402_fnc_marderGMInitActions;}, nil, nil, true] call CBA_fnc_addClassEventHandler;
+["gm_marder1_base", "InitPost", {_this call PzGrenBtl402_fnc_gmMarderInitActions; _this call PzGrenBtl402_fnc_gmMarderHoldAction}, nil, nil, true] call CBA_fnc_addClassEventHandler;
