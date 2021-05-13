@@ -4,8 +4,10 @@ class CfgVehicles
 
 	class gm_staticWeapon_base: StaticWeapon
 	{
-		class Turrets;
-		class MainTurret;
+		class Turrets
+		{
+			class MainTurret;
+		};
 	};
 
 	class gm_staticATGM_base: gm_staticWeapon_base {};

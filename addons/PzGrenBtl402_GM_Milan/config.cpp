@@ -3,7 +3,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"cba_main", "gm_weapons_launchers_milan", "Redd_Main_402", "Redd_Bags"};
+		requiredAddons[] = {"cba_main", "gm_weapons_launchers_milan", "Redd_Bags"};
 	};
 };
 
