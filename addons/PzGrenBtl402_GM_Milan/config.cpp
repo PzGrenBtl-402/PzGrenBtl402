@@ -1,10 +1,10 @@
 class CfgPatches {
-	class PzGrenBtl402_GM_Milan {
-		units[] = {};
-		weapons[] = {};
-		requiredVersion = 0.1;
-		requiredAddons[] = {"cba_main", "gm_weapons_launchers_milan", "Redd_Bags"};
-	};
+    class PzGrenBtl402_GM_Milan {
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = 0.1;
+        requiredAddons[] = {"cba_main", "gm_weapons_launchers_milan", "Redd_Bags"};
+    };
 };
 
 #include "CfgFunctions.hpp"

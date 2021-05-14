@@ -7,7 +7,7 @@ class CfgVehicles {
     class StaticMGWeapon: StaticWeapon {};
     class HMG_01_base_F: StaticMGWeapon {};
     class HMG_01_high_base_F: HMG_01_base_F {};
-    
+
     class rnt_mg3_static: HMG_01_high_base_F {
         class Turrets: Turrets {
             class MainTurret: MainTurret {

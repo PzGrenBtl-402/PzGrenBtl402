@@ -3,7 +3,7 @@
 class RscControlsGroup;
 
 class RscInGameUI {
-    
+
     class RscUnitInfo;
     class Redd_RCS_Turret: RscUnitInfo {
         class CA_IGUI_elements_group: RscControlsGroup {
@@ -33,7 +33,7 @@ class RscInGameUI {
             };
         };
     };
-    
+
     class Redd_RSC_Milan: RscUnitInfo {
         class CA_IGUI_elements_group: RscControlsGroup {
             class controls {
@@ -55,7 +55,7 @@ class RscInGameUI {
             };
         };
     };
-    
+
     class Redd_RCS_Driver: RscUnitInfo {
         class CA_IGUI_elements_group: RscControlsGroup {
             class controls {
@@ -76,7 +76,7 @@ class RscInGameUI {
             };
         };
     };
-    
+
     class Redd_RSC_MG3: RscUnitInfo {
         class CA_IGUI_elements_group: RscControlsGroup {
             class controls {
