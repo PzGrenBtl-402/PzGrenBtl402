@@ -11,7 +11,33 @@
     Builds only the addons PzGrenBtl402_BwMod_Dingo and PzGrenBtl402_BwMod_Eagle into binarized pbos. The release directory is cleared before packing it to a complete mod.
 .NOTES
     This build script searches for addons only in the addons directoy.
+    Version: 1.0
+    Author: Timi007
+    License: MIT
 #>
+
+# MIT License
+
+# Copyright (c) 2021 Timi007
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 [CmdletBinding()]
 param (
     [Parameter(HelpMessage="Binarizes all addons during build.")]
@@ -32,7 +58,7 @@ param (
 
     [Parameter(HelpMessage="Files to include into the finished mod root directory.")]
     [String[]]
-    $Include = @("mod.cpp", "PzGrenBtl402_Logo.paa", "README.md"),
+    $Include = @("mod.cpp", "PzGrenBtl402_Logo.paa", "README.md", "LICENSE"),
 
     [Parameter(HelpMessage="The name of the mod directory.")]
     [String]
