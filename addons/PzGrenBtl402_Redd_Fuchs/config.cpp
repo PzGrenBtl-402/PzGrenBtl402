@@ -44,7 +44,7 @@ class CfgVehicles
                 displayName = "Funkkreis A";
                 shortName = "Krs A";
                 componentName = "ACRE_SEM90";
-                allowedPositions[] = {{"ffv", {0,2}};
+                allowedPositions[] = {{"ffv", {0,2}}};
                 disabledPositions[] = {};
                 defaultComponents[] = {};
                 mountedRadio = "ACRE_SEM70";
@@ -55,7 +55,7 @@ class CfgVehicles
                 displayName = "Funkkreis B";
                 shortName = "Krs B";
                 componentName = "ACRE_SEM90";
-                allowedPositions[] = {{"ffv", {0,2}};
+                allowedPositions[] = {{"ffv", {0,2}}};
                 disabledPositions[] = {};
                 defaultComponents[] = {};
                 mountedRadio = "ACRE_SEM70";
