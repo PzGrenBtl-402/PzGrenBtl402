@@ -30,5 +30,3 @@ class CfgMods {
 
 #include "cfgSettings.hpp"
 #include "cfgEventHandlers.hpp"
-#include "cfgWeapons.hpp"
-#include "cfgVehicles.hpp"
