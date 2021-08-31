@@ -3,7 +3,7 @@
 
 if (hasInterface) then {
 
-
+	// Registriere einen Zeus-Request von Admins
 	["Zeus", {
 	    [QGVAR(zeus), player] call CBA_fnc_serverEvent;
 	}, "adminLogged"] call CBA_fnc_registerChatCommand;
@@ -13,6 +13,7 @@ if (hasInterface) then {
 
 if (isServer) then {
 
+	// Weise Zeus zu auf Nachfrage
   [QGVAR(zeus), {
 	    params ["_unit"];
 	    private _curator = createGroup sideLogic createUnit ["ModuleCurator_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
