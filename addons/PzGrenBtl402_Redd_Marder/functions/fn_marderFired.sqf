@@ -14,7 +14,7 @@
  *      Nothing.
  *
  *  Example:
- *      this call PzGrenBtl402_fnc_marderFired
+ *      [vehicle player, "Redd_MILAN"] call PzGrenBtl402_fnc_marderFired
  *
  */
 
@@ -23,7 +23,7 @@ params ["_veh", "_weapon"];
 _weapon = toLower _weapon;
 if (_weapon isEqualTo "redd_milan") then {
     _veh animateSource ["ReloadMagazine", 1, true];
-    [_veh, ['Redd_Milan_Mag', [1]]] remoteExec ["removeMagazinesTurret"];
+    [_veh, ['Redd_Milan_Mag', [1]]] remoteExecCall ["removeMagazinesTurret", _veh];
 };
 
 if (_weapon isEqualTo "pzgrenbtl402_smokelauncher") then {
