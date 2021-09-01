@@ -2,6 +2,8 @@
 
 if (isServer) then {
 
+
+	if !(["inidbi2"] call ace_common_fnc_isModLoaded) exitWith {};
 	// Erstelle Database
 	datenbank = ["new", format ["database_%1", WorldName]] call OO_INIDBI;
 
@@ -69,7 +71,6 @@ if (hasInterface) then {
 		  {([player] call CBA_fnc_isAlive)},
 		  {
 		    params ["_player","_clientOwner","_playerUID","_name"];
-		    "ladebildschirm" cutText ["Persistenz lädt", "BLACK FADED", 0, true, false];
 		    check_in_db = [_player, _clientOwner, _playerUID, _name];
 		    publicVariableServer "check_in_db";
 		  },

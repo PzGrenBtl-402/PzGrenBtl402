@@ -19,8 +19,6 @@
 
  params [["_spielerinfo", []]];
 
- "ladebildschirm" cutFadeOut 2;
-
  _spielerinfo params ["_loadout","_medical","_pos","_dir", "_name", ["_insignia", ""]];
  _medical params [
    "_isDeadPlayer",
