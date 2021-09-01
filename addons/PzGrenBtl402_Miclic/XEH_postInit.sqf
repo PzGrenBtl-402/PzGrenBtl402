@@ -41,7 +41,7 @@ if (hasInterface) then {
 			  true,
 				true
 			] call CBA_fnc_progressBar;
-	}, {!(_target getVariable ["miclic_gezuendet", false])}, {}, [], [0,0,0], 2] call EFUNC(interaktionen,interaction_create);
+	}, {!(_target getVariable ["miclic_gezuendet", false])}, {}, [], [0,0,0], 2] call ace_interact_menu_fnc_createAction;
 
 	[QGVAR(sprengschlauch), 0, ["ACE_MainActions"], _MICLIC, true] call ace_interact_menu_fnc_addActionToClass;
 

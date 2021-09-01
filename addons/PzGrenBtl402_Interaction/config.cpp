@@ -4,12 +4,10 @@
 class CfgPatches {
   class ADDON {
     name = COMPONENT_NAME;
-    units[] = {
-      QGVAR(sprengschlauch)
-    };
+    units[] = {};
     weapons[] = {};
     requiredVersion = REQUIRED_VERSION;
-    requiredAddons[] = {"cba_main","PzGrenBtl402_Main","ace_interact_menu"};
+    requiredAddons[] = {"cba_main","PzGrenBtl402_Main","acre_main","ace_interact_menu","gm_core"};
     author = "Zumi";
     url = "";
     VERSION_CONFIG;
@@ -18,4 +16,3 @@ class CfgPatches {
 
 
 #include "cfgEventHandlers.hpp"
-#include "cfgVehicles.hpp"
