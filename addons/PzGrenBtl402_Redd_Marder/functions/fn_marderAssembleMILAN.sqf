@@ -15,7 +15,7 @@
  *
  */
 
- params ["_veh"];
+params ["_veh"];
 
 _veh animateSource ['Hide_Milan_Source', 0];
 [_veh, "Redd_Milan_Static_Tripod"] call CBA_fnc_removeBackpackCargo;

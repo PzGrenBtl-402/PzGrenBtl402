@@ -156,23 +156,43 @@ class CfgVehicles
             class MainTurret: MainTurret
             {
                 discreteDistanceInitIndex = 6; // Set initial gun zeoring to 800 m
-                lockWhenDriverOut = 0;
+                lockWhenDriverOut = 0; // Don't lock turret when driver is turned out
                 turretInfoType = "PzGrenBtl402_RSC_Turret";
                 soundAttenuationTurret = "TankAttenuation_402_Marder";
                 gunnerCompartments= "Compartment2";
 
+                weapons[] = {
+                    "Redd_Gesichert",
+                    "Redd_MK20",
+                    "Redd_MG3",
+                    "PzGrenBtl402_SmokeLauncher" // Add SmokeLauncher to gunner
+                };
+                magazines[] = {
+                    "Redd_MK20_HE_Mag",
+                    "Redd_MK20_AP_Mag",
+                    "Redd_Mg3_Mag",
+                    "Redd_Mg3_Mag",
+                    "Redd_Mg3_Mag",
+                    "Redd_Mg3_Mag",
+                    "Redd_Mg3_Mag",
+                    "Redd_Mg3_Mag",
+                    "Redd_Mg3_Mag",
+                    "Redd_SmokeLauncherMag" // PzGrenBtl402_SmokeLauncher still uses Redds Mags
+                };
+
+                // Remove NVG
                 class ViewOptics: ViewOptics
                 {
                     visionMode[] = {"Normal", "TI"};
                 };
 
+                // Remove NVG
                 class OpticsIn
                 {
                     class Day1
                     {
                         visionMode[] = {"Normal"};
                     };
-
                     class Day2
                     {
                         visionMode[] = {"Normal"};
@@ -235,18 +255,22 @@ class CfgVehicles
                         soundAttenuationTurret = "TankAttenuation_402_Marder";
                         gunnerCompartments= "Compartment3";
 
+                        weapons[] = {}; // Move SmokeLauncher to gunner
+                        magazines[] = {};
+
+                        // Remove NVG
                         class ViewOptics: ViewOptics
                         {
                             visionMode[] = {"Normal", "TI"};
                         };
 
+                        // Remove NVG
                         class OpticsIn
                         {
                             class Day1
                             {
                                 visionMode[] = {"Normal"};
                             };
-
                             class Day2
                             {
                                 visionMode[] = {"Normal"};
@@ -459,7 +483,7 @@ class CfgVehicles
         };
 
         class AnimationSources
-    {
+        {
             class heck_luke_rotation
             {
                 source = "user";
@@ -514,7 +538,7 @@ class CfgVehicles
                 radius = 25;
                 onlyforplayer = 1;
                 showWindow = 0;
-                shortcut="turnOut";
+                shortcut = "turnOut";
                 condition = "(this turretUnit [0,0] == player) and (this animationSourcePhase 'hatchCommander' > 0) and (alive this)";
                 statement = "(missionNamespace getVariable ['bis_fnc_moduleRemoteControl_unit', player]) action ['moveToTurret', this, [2]];[this,[[0,0],true]] remoteExecCall ['lockTurret'];this setVariable ['Redd_Marder_Bino_In', true, true];";
             };
@@ -526,7 +550,7 @@ class CfgVehicles
                 radius = 25;
                 onlyforplayer = 1;
                 showWindow = 0;
-                shortcut="turnIn";
+                shortcut = "turnIn";
                 condition = "(this turretUnit [2] == player) and (alive this)";
                 statement = "(missionNamespace getVariable ['bis_fnc_moduleRemoteControl_unit', player]) action ['moveToTurret', this, [0,0]];[this,[[0,0],false]] remoteExecCall ['lockTurret'];this setVariable ['Redd_Marder_Bino_In', false, true];";
             };

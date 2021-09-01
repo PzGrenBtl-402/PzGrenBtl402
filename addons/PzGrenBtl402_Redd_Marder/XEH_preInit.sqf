@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 
 if (hasInterface) then {
     private _getInCommanderAction = configFile >> "CfgActions" >> "GetInCommander";
@@ -69,4 +70,7 @@ if (hasInterface) then {
     ];
 };
 
-["Redd_Marder_1A5_base", "InitPost", {_this call PzGrenBtl402_fnc_marderInitActions; _this call PzGrenBtl402_fnc_marderHoldAction}, nil, nil, true] call CBA_fnc_addClassEventHandler;
+["Redd_Marder_1A5_base", "InitPost", {
+    _this call PzGrenBtl402_fnc_marderInitActions;
+    _this call PzGrenBtl402_fnc_marderInitMILANActions;
+}, nil, nil, true] call CBA_fnc_addClassEventHandler;
