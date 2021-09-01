@@ -7,7 +7,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = REQUIRED_VERSION;
-    requiredAddons[] = {"cba_main","PzGrenBtl402_Main","inidbi2"};
+    requiredAddons[] = {"cba_main","PzGrenBtl402_Main"};
     author = "Zumi";
     url = "";
     VERSION_CONFIG;
