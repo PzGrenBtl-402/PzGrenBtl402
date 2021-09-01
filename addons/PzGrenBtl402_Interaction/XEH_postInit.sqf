@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if (hasInterface) then {
+if (hasInterface && (["gm_core"] call ace_common_fnc_isModLoaded)) then {
 
 	  // Lochkoppel
 	  // SEM attachen
