@@ -20,7 +20,7 @@ if (isServer) then {
 	addMissionEventHandler ["HandleDisconnect", {
 		params ["_unit", "_id", "_uid", "_name"];
 		//Exkludiere die HLCs
-	  if (_unit in EGVAR(acex,headless,headlessClients)) exitWith {};
+	  if (_unit in acex_headless_headlessClients) exitWith {};
 	  ["write", ["Spielerliste",
 	    //Speichere per GUID
 	    _uid,
