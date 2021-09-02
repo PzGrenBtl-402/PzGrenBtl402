@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /**
  *  Author: Lemonberries
  *
@@ -26,6 +27,6 @@ if (_weapon isEqualTo "redd_milan") then {
     [_veh, ['Redd_Milan_Mag', [1]]] remoteExecCall ["removeMagazinesTurret", _veh];
 };
 
-if (_weapon isEqualTo "pzgrenbtl402_smokelauncher") then {
+if (_weapon isEqualTo (toLower QGVAR(SmokeLauncher))) then {
     [_veh] call Redd_fnc_SmokeLauncher;
 };

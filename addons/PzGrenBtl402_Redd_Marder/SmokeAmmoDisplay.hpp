@@ -22,9 +22,9 @@ class RscTitles {
                         idc = IDC_AMMO;
                         colorText[] = {1, 1, 1, 1};
                         colorBackground[] = {0, 0, 0, 0};
-                        x = "(2) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+                        x = "5 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
                         y = "0";
-                        w = "(4) * (((safezoneW / safezoneH) min 1.2) / 40)";
+                        w = "4 * (((safezoneW / safezoneH) min 1.2) / 40)";
                         h = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
                         sizeEx = "0.8 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
                     };

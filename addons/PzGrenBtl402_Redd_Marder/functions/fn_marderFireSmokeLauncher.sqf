@@ -3,10 +3,10 @@
  *  Author: Timi007
  *
  *  Description:
- *      Fires the smoke launcher of a vehicle.
+ *      Fires the smoke launcher of the marder.
  *
  *  Parameter(s):
- *      0: OBJECT - Vehicle which should fire the smoke launcher.
+ *      0: OBJECT - Marder which should fire the smoke launcher.
  *
  *  Returns:
  *      Nothing.
@@ -20,6 +20,7 @@
 
 params ["_veh"];
 
+if !(_veh isKindOf "Redd_Marder_1A5_base") exitWith {};
 if (_veh ammo QGVAR(SmokeLauncher) <= 0) exitWith {};
 
 _veh setVariable [QGVAR(smokeLauncherReloading), true, true];
