@@ -21,12 +21,11 @@
 
 params ["_veh", "_weapon"];
 
-_weapon = toLower _weapon;
-if (_weapon isEqualTo "redd_milan") then {
+if (_weapon == "Redd_Milan") then {
     _veh animateSource ["ReloadMagazine", 1, true];
-    [_veh, ['Redd_Milan_Mag', [1]]] remoteExecCall ["removeMagazinesTurret", _veh];
+    [_veh, ['Redd_Milan_Mag', [1]]] remoteExecCall ["removeMagazinesTurret"];
 };
 
-if (_weapon isEqualTo (toLower QGVAR(SmokeLauncher))) then {
+if (_weapon == QGVAR(SmokeLauncher)) then {
     [_veh] call Redd_fnc_SmokeLauncher;
 };

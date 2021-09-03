@@ -17,6 +17,6 @@
 
 params ["_veh"];
 
-[_veh, ["Redd_Milan_Mag", [1]]] remoteExecCall ["addMagazineTurret", _veh];
+[_veh, ["Redd_Milan_Mag", [1]]] remoteExecCall ["addMagazineTurret"];
 [_veh, "Redd_Milan_Static_Barrel"] call CBA_fnc_removeBackpackCargo;
 _veh animateSource ["ReloadMagazine", 0];
