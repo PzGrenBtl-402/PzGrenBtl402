@@ -61,7 +61,7 @@ GVAR(smokeAmmoPFH) = [{
     };
 
     private _gunner = _veh turretUnit GUNNER_TURRET;
-    private _canLaunchSmoke = !isNull _gunner && {alive _gunner} && !{_gunner getVariable ["ace_isunconscious", false]};
+    private _canLaunchSmoke = !isNull _gunner && {alive _gunner} && {!(_gunner getVariable ["ace_isunconscious", false])};
 
     // Launch SmokeLauncher if shortcut is pressed
     if (_canLaunchSmoke && inputAction "launchCM" > 0 && !(_veh getVariable [QGVAR(smokeLauncherReloading), false])) then {
