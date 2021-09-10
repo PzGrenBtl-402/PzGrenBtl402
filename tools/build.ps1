@@ -5,9 +5,9 @@
     Builds the addons in the addons directory to Arma 3 pbo files and signes them. Those files are packed into a complete mod and zip archive.
 .EXAMPLE
     PS C:\> .\build.ps1
-    Builds all addons into non-binarized pbos and packs them into a complete mod.
+    Builds all addons into non-binarized pbos and packs them into a complete mod. The release directory is cleared before packing it to a complete mod.
 .EXAMPLE
-    PS C:\> .\build.ps1 -Binaraize -Clear -Modules PzGrenBtl402_BwMod_Dingo,PzGrenBtl402_BwMod_Eagle
+    PS C:\> .\build.ps1 -Binaraize -Modules PzGrenBtl402_BwMod_Dingo,PzGrenBtl402_BwMod_Eagle
     Builds only the addons PzGrenBtl402_BwMod_Dingo and PzGrenBtl402_BwMod_Eagle into binarized pbos. The release directory is cleared before packing it to a complete mod.
 .NOTES
     This build script searches for addons only in the addons directoy.
@@ -96,6 +96,15 @@ if (!(Test-Path $addonBuilder)) {
     exit 2
 }
 Write-Host "Found AddonBuilder at $addonBuilder"
+
+if ($Binaraize) {
+    $includeFile = Join-Path $tools "build_include.txt"
+    if (!(Test-Path $includeFile)) {
+        Write-Host "File with file types to include during binaraization (build_include.txt) not found." -ForegroundColor Red
+        exit 4
+    }
+    Write-Host "Found Binaraization Include File at $includeFile"
+}
 
 $dsCreateKey = Join-Path (Join-Path $arma3ToolsPath "DSSignFile") "DSCreateKey.exe"
 if (!(Test-Path $dsCreateKey)) {
@@ -196,7 +205,7 @@ foreach ($dir in $dirsToBuild) {
 
     # Build pbo
     if ($Binaraize) {
-        & $addonBuilder "$absDir" "$destDir" -clear -prefix="$pboPrefix" -sign="$privateKey" | Out-File -FilePath $logFile -Append -Encoding utf8
+        & $addonBuilder "$absDir" "$destDir" -clear -prefix="$pboPrefix" -sign="$privateKey" -include="$includeFile" | Out-File -FilePath $logFile -Append -Encoding utf8
     } else {
         & $addonBuilder "$absDir" "$destDir" -clear -packonly -prefix="$pboPrefix" -sign="$privateKey" | Out-File -FilePath $logFile -Append -Encoding utf8
     }
@@ -220,4 +229,3 @@ if ($numberOfErrors -eq 0) {
     Write-Host "Finished building mod with $numberOfErrors errors." -ForegroundColor Red
     Write-Host "See `"$logfile`" for more information."
 }
-

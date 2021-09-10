@@ -11,12 +11,16 @@ class CfgPatches
 
 class CfgVehicles
 {
-    class gm_fuchs_base;
+    class gm_wheeled_APC_base;
+    class gm_fuchs_base: gm_wheeled_APC_base
+    {
+        class UserActions;
+    };
     class gm_fuchsa0_base: gm_fuchs_base
     {
         maximumLoad = 10000;
 
-        class UserActions
+        class UserActions: UserActions
         {
             class hecktueren_auf
             {
