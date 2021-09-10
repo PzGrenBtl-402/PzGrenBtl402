@@ -1,21 +1,6 @@
-class CfgPatches
-{
-    class BwMod_402_Eagle
-    {
-        units[] = {};
-        weapons[] = {};
-        requiredVersion = 0.1;
-        requiredAddons[] = {"bwa3_eagle"};
-    };
-};
-
-class CfgVehicles
-{
-    class LandVehicle;
-    class Car: LandVehicle {};
-    class Car_F: Car {};
-    class BWA3_Eagle_base: Car_F
-    {
+class CfgVehicles {
+    class Car_F;
+    class BWA3_Eagle_base: Car_F {
         maximumLoad = 10000;
 
         /*
@@ -38,13 +23,13 @@ class CfgVehicles
         acre_infantryPhoneCustomRinging[] = {};
         acre_infantryPhoneIntercom[] = {};
         acre_infantryPhoneControlActions[] = {};
-        acre_eventInfantryPhone = "QFUNC(noApiFunction)";
+        acre_eventInfantryPhone = QEFUNC(ACRE, noApiFunction);
         acre_infantryPhonePosition[] = {};
 
         class AcreRacks {
             class Rack_1 {
-                displayName = "Funkkreis A";
-                shortName = "Krs A";
+                displayName = ECSTRING(ACRE, RadioNetworkA);
+                shortName = ECSTRING(ACRE, RadioNetworkAShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"inside"};
                 disabledPositions[] = {};
@@ -54,8 +39,8 @@ class CfgVehicles
                 intercom[] = {"none"};
             };
             class Rack_2 {
-                displayName = "Funkkreis B";
-                shortName = "Krs B";
+                displayName = ECSTRING(ACRE, RadioNetworkB);
+                shortName = ECSTRING(ACRE, RadioNetworkBShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"inside"};
                 disabledPositions[] = {};

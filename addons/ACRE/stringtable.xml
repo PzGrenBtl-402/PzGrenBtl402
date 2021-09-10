@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="Main">
+        <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkA">
+            <English>Funkkreis A</English>
+            <German>Funkkreis A</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkAShort">
+            <English>Krs A</English>
+            <German>Krs A</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkB">
+            <English>Funkkreis B</English>
+            <German>Funkkreis B</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkBShort">
+            <English>Krs B</English>
+            <German>Krs B</German>
+        </Key>
+    </Package>
+</Project>
