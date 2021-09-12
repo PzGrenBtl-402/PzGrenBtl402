@@ -2,20 +2,28 @@
 <Project name="PzGrenBtl402">
     <Package name="Main">
         <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkA">
-            <English>Funkkreis A</English>
+            <Original>Funkkreis A</Original>
             <German>Funkkreis A</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkAShort">
-            <English>Krs A</English>
+            <Original>Krs A</Original>
             <German>Krs A</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkB">
-            <English>Funkkreis B</English>
+            <Original>Funkkreis B</Original>
             <German>Funkkreis B</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkBShort">
-            <English>Krs B</English>
+            <Original>Krs B</Original>
             <German>Krs B</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_ACRE_BV">
+            <Original>Bordverständigung</Original>
+            <German>Bordverständigung</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_ACRE_BVShort">
+            <Original>BV</Original>
+            <German>BV</German>
         </Key>
     </Package>
 </Project>
