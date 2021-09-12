@@ -11,7 +11,7 @@ class CfgVehicles {
     class rnt_gmw_static: GMG_01_base_F {
         class Turrets: Turrets {
             class MainTurret: MainTurret {
-                turretInfoType = "PzGrenBtl402_RSC_MG3";
+                turretInfoType = QEGVAR(Redd_Main, RSC_MG3);
             };
         };
     };

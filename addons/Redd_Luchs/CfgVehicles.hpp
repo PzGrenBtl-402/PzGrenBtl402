@@ -1,27 +1,12 @@
-class CfgPatches
-{
-    class Redd_Tank_Gepard_1A2_402
-    {
-        units[] = {};
-        weapons[] = {};
-        requiredVersion = 0.1;
-        requiredAddons[] = {"Redd_Tank_Gepard_1A2"};
-    };
-};
-
-class CfgVehicles
-{
-    class LandVehicle;
-    class Tank: LandVehicle {};
-    class Tank_F: Tank {};
-    class Redd_Tank_Gepard_1A2_base: Tank_F
-    {
+class CfgVehicles {
+    class Wheeled_APC_F;
+    class rnt_sppz_2a2_luchs_Base: Wheeled_APC_F {
         maximumLoad = 10000;
 
         class AcreIntercoms {
             class Intercom_1 {
-                displayName = "Bordverstaendigung";
-                shortName = "BV";
+                displayName = ECSTRING(ACRE, BV);
+                shortName = ECSTRING(ACRE, BVShort);
                 allowedPositions[] = {"crew"};
                 disabledPositions[] = {};
                 limitedPositions[] = {};
@@ -36,15 +21,15 @@ class CfgVehicles
         acre_infantryPhoneCustomRinging[] = {};
         acre_infantryPhoneIntercom[] = {"all"};
         acre_infantryPhoneControlActions[] = {"all"};
-        acre_eventInfantryPhone = QFUNC(noApiFunction);
+        acre_eventInfantryPhone = QEFUNC(ACRE, noApiFunction);
         acre_infantryPhonePosition[] = {};
 
         class AcreRacks {
             class Rack_1 {
-                displayName = "Funkkreis A";
-                shortName = "Krs A";
+                displayName = ECSTRING(ACRE, RadioNetworkA);
+                shortName = ECSTRING(ACRE, RadioNetworkAShort);
                 componentName = "ACRE_SEM90";
-                allowedPositions[] = {"crew"};
+                allowedPositions[] = {{"turret", [1]}};
                 disabledPositions[] = {};
                 defaultComponents[] = {};
                 mountedRadio = "ACRE_SEM70";
@@ -52,10 +37,10 @@ class CfgVehicles
                 intercom[] = {"all"};
             };
             class Rack_2 {
-                displayName = "Funkkreis B";
-                shortName = "Krs B";
+                displayName = ECSTRING(ACRE, RadioNetworkB);
+                shortName = ECSTRING(ACRE, RadioNetworkBShort);
                 componentName = "ACRE_SEM90";
-                allowedPositions[] = {"crew"};
+                allowedPositions[] = {{"turret", [1]}};
                 disabledPositions[] = {};
                 defaultComponents[] = {};
                 mountedRadio = "ACRE_SEM70";
@@ -63,7 +48,5 @@ class CfgVehicles
                 intercom[] = {"all"};
             };
         };
-
     };
-
 };
