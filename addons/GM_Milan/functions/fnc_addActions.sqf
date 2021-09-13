@@ -12,12 +12,11 @@
  *      Nothing.
  *
  *  Example:
- *      [this] call PzGrenBtl402_Redd_Milan_fnc_addActions
+ *      [this] call PzGrenBtl402_GM_Milan_fnc_addActions
  *
  */
 
 params ["_milan"];
-
 
 private _loadIcon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa";
 // Milan laden

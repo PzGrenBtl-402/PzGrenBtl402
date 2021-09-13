@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="PzGrenBtl402">
-    <Package name="Main">
+    <Package name="Redd_Wiesel">
         <Key ID="STR_PzGrenBtl402_Redd_Wiesel_TOW_loadTOW">
             <Original>Load TOW</Original>
             <German>TOW laden</German>
