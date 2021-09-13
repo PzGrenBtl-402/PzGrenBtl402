@@ -517,7 +517,7 @@ class CfgVehicles
                 onlyforplayer = 1;
                 showWindow = 0;
                 condition = "(player in [driver this, gunner this, this turretUnit [0,3]]) && (this animationSourcePhase 'heck_luke_rotation' == 0) && (alive this)";
-                statement = "this call PzGrenBtl402_fnc_marderOpenRamp";
+                statement = QUOTE(this call FUNC(openRamp));
             };
 
             class heckluke_zu
@@ -528,7 +528,7 @@ class CfgVehicles
                 onlyforplayer = 1;
                 showWindow = 0;
                 condition = "(player in [driver this, gunner this, this turretUnit [0,3]]) && (this animationSourcePhase 'heck_luke_rotation' > 0) && (alive this)";
-                statement = "this call PzGrenBtl402_fnc_marderCloseRamp";
+                statement = QUOTE(this call FUNC(closeRamp));
             };
 
             class Bino_in
