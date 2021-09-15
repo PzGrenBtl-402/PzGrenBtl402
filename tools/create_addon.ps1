@@ -57,3 +57,6 @@ catch {
 }
 
 Write-Output "=> Successfully created $addonName!"
+
+Write-Host "Press any key to continue ..."
+[void][System.Console]::ReadKey($true)

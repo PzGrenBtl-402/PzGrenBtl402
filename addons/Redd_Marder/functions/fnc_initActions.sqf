@@ -30,6 +30,6 @@ if (hasInterface) then {
     } forEach GVAR(getInOutParams);
 };
 
-if (isServer && locked _veh != 2) then {
+if (isServer && locked _veh isNotEqualTo 2) then {
     [_veh, 2] remoteExecCall ["lock", _veh];
 };

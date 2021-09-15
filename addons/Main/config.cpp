@@ -25,3 +25,15 @@ class CfgMods {
         description = "Issue Tracker: https://github.com/PzGrenBtl-402/PzGrenBtl402/issues";
     };
 };
+
+class CfgSettings {
+    class CBA {
+        class Versioning {
+            class PREFIX {
+                class dependencies {
+                    CBA[] = {"cba_main", REQUIRED_CBA_VERSION, "(true)"};
+                };
+            };
+        };
+    };
+};

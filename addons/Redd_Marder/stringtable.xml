@@ -17,5 +17,9 @@
             <Original>Unload Milan</Original>
             <German>Milan entladen</German>
         </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_smokeLauncherAmmoCount">
+            <Original>NbMWAnl: %1</Original>
+            <German>NbMWAnl: %1</German>
+        </Key>
     </Package>
 </Project>

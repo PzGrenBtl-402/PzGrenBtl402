@@ -16,14 +16,12 @@
  *
  */
 
-#define GUNNER_TURRET [0]
-
 params [["_veh", objNull, [objNull]]];
 
 if (isNull _veh || !(_veh isKindOf "Redd_Marder_1A5_base")) exitWith {};
 if (_veh ammo QGVAR(SmokeLauncher) <= 0) exitWith {};
 
-private _gunner = _veh turretUnit GUNNER_TURRET;
+private _gunner = gunner _veh;
 if (isNull _gunner || !alive _gunner || _gunner getVariable ["ace_isunconscious", false]) exitWith {};
 
 _veh setVariable [QGVAR(smokeLauncherReloading), true, true];

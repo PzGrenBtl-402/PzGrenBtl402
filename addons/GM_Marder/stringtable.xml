@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="PzGrenBtl402">
-    <Package name="Redd_Marder">
-        <Key ID="STR_PzGrenBtl402_Redd_Marder_assembleMilan">
-            <Original>Assemble Milan</Original>
-            <German>Milan aufbauen</German>
-        </Key>
-        <Key ID="STR_PzGrenBtl402_Redd_Marder_disassembleMilan">
-            <Original>Disassemble Milan</Original>
-            <German>Milan abbauen</German>
-        </Key>
-        <Key ID="STR_PzGrenBtl402_Redd_Marder_loadMilan">
+    <Package name="GM_Marder">
+        <Key ID="STR_PzGrenBtl402_GM_Marder_loadMilan">
             <Original>Load Milan</Original>
             <German>Milan laden</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_Redd_Marder_unloadMilan">
+        <Key ID="STR_PzGrenBtl402_GM_Marder_unloadMilan">
             <Original>Unload Milan</Original>
             <German>Milan entladen</German>
         </Key>
 
-        <Key ID="STR_PzGrenBtl402_Redd_Marder_openRamp">
+        <Key ID="STR_PzGrenBtl402_GM_Marder_openRamp">
             <Original>Open Rear Ramp</Original>
             <German>Heckklappe öffnen</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_Redd_Marder_closeRamp">
+        <Key ID="STR_PzGrenBtl402_GM_Marder_closeRamp">
             <Original>Close Rear Ramp</Original>
             <German>Heckklappe schließen</German>
         </Key>

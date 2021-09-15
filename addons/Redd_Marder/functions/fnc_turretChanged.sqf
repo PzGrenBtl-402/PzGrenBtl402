@@ -19,8 +19,6 @@
  *
  */
 
-#define GUNNER_TURRET [0]
-
 params ["_player", "_turret"];
 
 private _veh = vehicle _player;
@@ -60,17 +58,18 @@ GVAR(smokeAmmoPFH) = [{
         _display setVariable [QGVAR(textColor), ctrlTextColor (_display displayCtrl IDC_AMMO)]; // save original text color
     };
 
-    private _gunner = _veh turretUnit GUNNER_TURRET;
-    private _canLaunchSmoke = !isNull _gunner && {alive _gunner} && {!(_gunner getVariable ["ace_isunconscious", false])};
+    private _gunner = gunner _veh;
+    private _gunnerCanSmoke = !isNull _gunner && {alive _gunner} && {!(_gunner getVariable ["ace_isunconscious", false])};
+    private _smokeReloading = _veh getVariable [QGVAR(smokeLauncherReloading), false];
 
     // Launch SmokeLauncher if shortcut is pressed
-    if (_canLaunchSmoke && inputAction "launchCM" > 0 && !(_veh getVariable [QGVAR(smokeLauncherReloading), false])) then {
-        [_veh] call PzGrenBtl402_fnc_marderFireSmokeLauncher;
+    if (_gunnerCanSmoke && inputAction "launchCM" > 0 && !_smokeReloading) then {
+        [_veh] call FUNC(fireSmokeLauncher);
     };
 
     private _ctrlAmmo = _display displayCtrl IDC_AMMO;
     // Set text color
-    if (!_canLaunchSmoke || _veh getVariable [QGVAR(smokeLauncherReloading), false]) then {
+    if (!_gunnerCanSmoke || _smokeReloading) then {
         private _ctrlAmmoRedTextColor = [0.9, 0, 0, 1];
         if ((ctrlTextColor _ctrlAmmo) isNotEqualTo _ctrlAmmoRedTextColor) then {
             _ctrlAmmo ctrlSetTextColor _ctrlAmmoRedTextColor;
@@ -85,7 +84,7 @@ GVAR(smokeAmmoPFH) = [{
     // Update ammo count
     private _ammo = _veh ammo QGVAR(SmokeLauncher);
     if (_ammo isNotEqualTo GVAR(lastSmokeAmmoCount)) then {
-        _ctrlAmmo ctrlSetText format ["NbMWAnl: %1", _ammo];
+        _ctrlAmmo ctrlSetText format [LLSTRING(smokeLauncherAmmoCount), _ammo];
     };
     GVAR(lastSmokeAmmoCount) = _ammo;
 }, 0, [_player, _veh]] call CBA_fnc_addPerFrameHandler;
