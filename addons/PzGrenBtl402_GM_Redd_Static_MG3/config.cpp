@@ -1,11 +1,11 @@
 class CfgPatches {
-    class Redd_MG3_Static_402 {
+    class GM_Redd_MG3_Static_402 {
         units[] = {
           "PzGrenBtl402_Feldlafette"
         };
         weapons[] = {};
         requiredVersion = 0.1;
-        requiredAddons[] = {"rnt_mg3_static", "Redd_Main_402", "cba_main","ace_main", "ace_csw"};
+        requiredAddons[] = {"rnt_mg3_static", "Redd_Main_402", "cba_main","ace_main", "ace_csw", "gm_weapons_machineguns_mg3"};
     };
 };
 
@@ -25,6 +25,9 @@ class Extended_Init_EventHandlers {
 class CfgMagazineWells {
   	class mg3_762x51	{
     		MG_Magazines[] = {
+      			"gm_120Rnd_762x51mm_B_T_DM21_mg3_grn",
+            "gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn",
+            "gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn",
             "BWA3_120Rnd_762x51_soft",
             "BWA3_120Rnd_762x51_Tracer_soft",
             "BWA3_120Rnd_762x51",
