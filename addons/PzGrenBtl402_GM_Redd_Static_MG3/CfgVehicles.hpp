@@ -113,7 +113,7 @@ class CfgVehicles {
                   condition = "alive _target";
                   class mountWeapon {
                       displayName = "MG3 lafettieren";
-                      condition = "(primaryWeapon _player IN ['BWA3_MG3','BWA3_MG3_bipod','BWA3_MG3_MicroT2_pointer_bipod','hlc_lmg_MG3','hlc_lmg_MG3_optic','hlc_lmg_MG3KWS_b','hlc_lmg_MG3KWS_g','hlc_lmg_MG3KWS']) && ((currentWeapon _player) == (primaryWeapon _player))";
+                      condition = "(primaryWeapon _player IN ['gm_mg3_blk','BWA3_MG3','BWA3_MG3_bipod','BWA3_MG3_MicroT2_pointer_bipod','gm_mg3_des','hlc_lmg_MG3','hlc_lmg_MG3_optic','hlc_lmg_MG3KWS_b','hlc_lmg_MG3KWS_g','hlc_lmg_MG3KWS']) && ((currentWeapon _player) == (primaryWeapon _player))";
                       icon = "\Redd_Backpacks\pictures\rnt_mg3_static_barell_ui_pre_ca.paa";
                       statement = "[_player, _target] call PzGrenBtl402_fnc_reddStaticMG3_lafettieren;";
                   };
