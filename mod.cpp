@@ -1,6 +1,6 @@
 name = "PzGrenBtl 402";
-description = "PzGrenBtl 402 Mods";
-author = "PzGrenBtl402_Mishkar, PzGrenBtl402_Lemonberries, PzGrenBtl402_Martin";
+description = "Redd'n'Tanks, BwMod, GM modification improving ACRE Radio Racks and adding further functionality.";
+author = "PzGrenBtl 402";
 actionName = "Webseite";
 action = "https://pzgrenbtl402.de/";
 logo = "PzGrenBtl402_Logo.paa";
