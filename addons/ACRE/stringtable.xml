@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="PzGrenBtl402">
     <Package name="ACRE">
-        <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkA">
+        <Key ID="STR_PzGrenBtl402_ACRE_RackA">
             <Original>Funkkreis A</Original>
             <German>Funkkreis A</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkAShort">
+        <Key ID="STR_PzGrenBtl402_ACRE_RackAShort">
             <Original>Krs A</Original>
             <German>Krs A</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkB">
+        <Key ID="STR_PzGrenBtl402_ACRE_RackB">
             <Original>Funkkreis B</Original>
             <German>Funkkreis B</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkBShort">
+        <Key ID="STR_PzGrenBtl402_ACRE_RackBShort">
             <Original>Krs B</Original>
             <German>Krs B</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkC">
+        <Key ID="STR_PzGrenBtl402_ACRE_RackC">
             <Original>Funkkreis C</Original>
             <German>Funkkreis C</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_ACRE_RadioNetworkCShort">
+        <Key ID="STR_PzGrenBtl402_ACRE_RackCShort">
             <Original>Krs C</Original>
             <German>Krs C</German>
         </Key>

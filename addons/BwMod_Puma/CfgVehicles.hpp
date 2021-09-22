@@ -26,8 +26,8 @@ class CfgVehicles {
 
         class AcreRacks {
             class Rack_1 {
-                displayName = ECSTRING(ACRE, RadioNetworkA);
-                shortName = ECSTRING(ACRE, RadioNetworkAShort);
+                displayName = ECSTRING(ACRE, RackA);
+                shortName = ECSTRING(ACRE, RackAShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"crew"};
                 disabledPositions[] = {};
@@ -37,8 +37,8 @@ class CfgVehicles {
                 intercom[] = {"all"};
             };
             class Rack_2 {
-                displayName = ECSTRING(ACRE, RadioNetworkB);
-                shortName = ECSTRING(ACRE, RadioNetworkBShort);
+                displayName = ECSTRING(ACRE, RackB);
+                shortName = ECSTRING(ACRE, RackBShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"crew"};
                 disabledPositions[] = {};

@@ -3,21 +3,6 @@ class CfgVehicles {
     class BWA3_Dingo2_base: Car_F {
         maximumLoad = 10000;
 
-        /*
-        class AcreIntercoms {
-            class Intercom_1 {
-                displayName = "Bordverstaendigung";
-                shortName = "BV";
-                allowedPositions[] = {"commander"};
-                disabledPositions[] = {};
-                limitedPositions[] = {};
-                numLimitedPositions = 0;
-                masterPositions[] = {};
-                connectedByDefault = 0;
-            };
-        };
-        */
-
         acre_hasInfantryPhone = 0;
         acre_infantryPhoneDisableRinging = 1;
         acre_infantryPhoneCustomRinging[] = {};
@@ -28,8 +13,8 @@ class CfgVehicles {
 
         class AcreRacks {
             class Rack_1 {
-                displayName = ECSTRING(ACRE, RadioNetworkA);
-                shortName = ECSTRING(ACRE, RadioNetworkAShort);
+                displayName = ECSTRING(ACRE, RackA);
+                shortName = ECSTRING(ACRE, RackAShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"inside"};
                 disabledPositions[] = {};
@@ -39,8 +24,8 @@ class CfgVehicles {
                 intercom[] = {"none"};
             };
             class Rack_2 {
-                displayName = ECSTRING(ACRE, RadioNetworkB);
-                shortName = ECSTRING(ACRE, RadioNetworkBShort);
+                displayName = ECSTRING(ACRE, RackB);
+                shortName = ECSTRING(ACRE, RackBShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"inside"};
                 disabledPositions[] = {};
