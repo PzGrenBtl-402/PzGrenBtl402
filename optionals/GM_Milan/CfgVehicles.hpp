@@ -27,13 +27,13 @@ class CfgVehicles
             class Disassemble
             {
                 displayName = CSTRING(disassembleAction);
-                priority = 3;
+                priority = 5;
                 position = "actionPoint";
                 radius = 5;
                 onlyforplayer = 1;
                 showWindow = 0;
                 condition = "alive this && count magazines this isEqualTo 0 && count crew this isEqualTo 0";
-                statement = "deleteVehicle this; player addBackpackGlobal 'gm_milan_launcher_weaponBag';";
+                statement = QUOTE(this call FUNC(disassemble));
             };
         };
     };
