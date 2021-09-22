@@ -19,8 +19,10 @@
 
 params ["_veh", "_player"];
 
+private _backbacks = backpackCargo _veh;
+
 (_player isEqualTo (commander _veh)) &&
 {(_veh animationSourcePhase "hatchCommander") isEqualTo 1} &&
 {(_veh animationSourcePhase "Hide_Milan_Source") > 0} &&
-{"Redd_Milan_Static_Tripod" in (backpackCargo _veh)} &&
+{"Redd_Milan_Static_Tripod" in _backbacks || "gm_milan_launcher_weaponBag" in _backbacks} &&
 {alive _veh}
