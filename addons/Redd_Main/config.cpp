@@ -17,3 +17,4 @@ class CfgPatches {
 #include "CfgAmmo.hpp"
 #include "CfgRscInGameUI.hpp"
 #include "CfgWeapons.hpp"
+#include "CfgAnimationSourceSounds.hpp"
