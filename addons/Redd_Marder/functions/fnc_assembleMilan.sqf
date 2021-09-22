@@ -19,4 +19,13 @@
 params ["_veh"];
 
 _veh animateSource ["Hide_Milan_Source", 0];
-[_veh, "Redd_Milan_Static_Tripod"] call CBA_fnc_removeBackpackCargo;
+
+// Use GM tripod if available
+private _milanClass = if ("gm_milan_launcher_weaponBag" in backpackCargo _veh) then {
+    "gm_milan_launcher_weaponBag"
+} else {
+    "Redd_Milan_Static_Tripod"
+};
+
+_veh setVariable [QGVAR(milanTripod), _milanClass, true];
+[_veh, _milanClass] call CBA_fnc_removeBackpackCargo;
