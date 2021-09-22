@@ -1,0 +1,26 @@
+name = "PzGrenBtl 402"
+prefix = "PzGrenBtl402"
+author = "PzGrenBtl 402"
+template = "cba"
+mainprefix = "z"
+files = [
+    "*.dll",
+    "*.so",
+    "mod.cpp",
+    "README.md",
+    "LICENSE",
+    "PzGrenBtl402_Logo.paa",
+    "meta.cpp"
+]
+folder_optionals = false
+
+modname = "PzGrenBtl402"
+key_name = "PzGrenBtl402_{{version}}"
+authority = "PzGrenBtl402_{{version}}-{{git \"id 8\"}}"
+
+releasebuild = [
+    "@zip PzGrenBtl402_{{semver.major}}.{{semver.minor}}.{{semver.patch}}"
+]
+
+[header_exts]
+version = "{{git \"id 8\"}}"

@@ -1,0 +1,15 @@
+PREP(assembleMilan);
+PREP(canAssembleMilan);
+PREP(canDisassembleMilan);
+PREP(canLoadMilan);
+PREP(canUnloadMilan);
+PREP(closeRamp);
+PREP(disassembleMilan);
+PREP(fireSmokeLauncher);
+PREP(handleFired);
+PREP(initActions);
+PREP(initMilanActions);
+PREP(loadMilan);
+PREP(openRamp);
+PREP(turretChanged);
+PREP(unloadMilan);
