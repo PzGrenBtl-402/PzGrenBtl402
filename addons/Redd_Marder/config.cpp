@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_Redd_Main", "PzGrenBtl402_ACRE", "redd_marder_1a5", "Redd_Bags"};
+        requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_Redd_Main", "PzGrenBtl402_ACRE", "PzGrenBtl402_SmokeLauncher", "redd_marder_1a5", "Redd_Bags"};
         author = ECSTRING(Main, authors);
         authors[] = {""};
         url = ECSTRING(Main, URL);
@@ -17,4 +17,3 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgVehicles.hpp"
-#include "SmokeAmmoDisplay.hpp"

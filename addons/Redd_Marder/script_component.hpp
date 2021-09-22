@@ -15,7 +15,3 @@
 #endif
 
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"
-
-
-#define IDC_MODECONTROLGROUP 1000
-#define IDC_AMMO 1001

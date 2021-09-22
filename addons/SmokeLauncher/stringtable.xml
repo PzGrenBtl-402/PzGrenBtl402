@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="SmokeLauncher">
+        <Key ID="STR_PzGrenBtl402_SmokeLauncher_ammoCount">
+            <Original>NbMWAnl: %1</Original>
+            <German>NbMWAnl: %1</German>
+        </Key>
+    </Package>
+</Project>
