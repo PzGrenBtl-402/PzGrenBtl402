@@ -15,7 +15,7 @@
  *      Nothing.
  *
  *  Example:
- *      [player, [0]] call PzGrenBtl402_Redd_Marder_fnc_turretChanged
+ *      [player, [0]] call PzGrenBtl402_SmokeLauncher_fnc_turretChanged
  *
  */
 
@@ -23,36 +23,40 @@ params ["_player", "_turret"];
 
 private _veh = vehicle _player;
 
-if (GVAR(smokeAmmoPFH) >= 0) then {
-    [GVAR(smokeAmmoPFH)] call CBA_fnc_removePerFrameHandler;
-    GVAR(smokeAmmoPFH) = -1;
-    GVAR(lastSmokeAmmoCount) = -1;
+if (GVAR(PFH) >= 0) then {
+    [GVAR(PFH)] call CBA_fnc_removePerFrameHandler;
+    GVAR(PFH) = -1;
+    GVAR(lastAmmoCount) = -1;
 
-    private _display = uiNamespace getVariable [QGVAR(marderAmmoDisplay), displayNull];
+    private _display = uiNamespace getVariable [QGVAR(display), displayNull];
     if (!isNull _display) then {
-        ([QGVAR(SmokeAmmoRscDisplay)] call BIS_fnc_rscLayer) cutText ["", "PLAIN"];
+        ([QGVAR(RscDisplay)] call BIS_fnc_rscLayer) cutText ["", "PLAIN"];
     };
 };
 
-if !(_veh isKindOf "Redd_Marder_1A5_base") exitWith {};
+private _vehCfg = configFile >> "CfgVehicles" >> typeOf _veh;
+private _gunnerAndCommanderCanSmoke = [_vehCfg >> "PzGrenBtl402_gunnerAndCommanderCanSmoke"] call BIS_fnc_getCfgDataBool;
+if (!_gunnerAndCommanderCanSmoke) exitWith {};
+
+private _smokeLauncher = getText (_vehCfg >> "PzGrenBtl402_smokeLauncherMuzzle");
 
 private _isGunnerOrCommander = _player isEqualTo (gunner _veh) || _player isEqualTo (commander _veh) || _turret isEqualTo [2]; // Commander in highest seat
 if (!_isGunnerOrCommander || !alive _player) exitWith {};
 
-GVAR(smokeAmmoPFH) = [{
+GVAR(PFH) = [{
     params ["_args", "_handle"];
-    _args params ["_player", "_veh"];
+    _args params ["_player", "_veh", "_smokeLauncher"];
 
     // Restart display if null (not just at start, this will happen periodicly)
-    private _display = uiNamespace getVariable [QGVAR(marderAmmoDisplay), displayNull];
+    private _display = uiNamespace getVariable [QGVAR(display), displayNull];
     if (isNull _display) then {
-        ([QGVAR(SmokeAmmoRscDisplay)] call BIS_fnc_rscLayer) cutRsc [QGVAR(SmokeAmmoRscDisplay), "PLAIN", 1, false];
-        GVAR(lastSmokeAmmoCount) = -1;
+        ([QGVAR(RscDisplay)] call BIS_fnc_rscLayer) cutRsc [QGVAR(RscDisplay), "PLAIN", 1, false];
+        GVAR(lastAmmoCount) = -1;
 
-        _display = uiNamespace getVariable [QGVAR(marderAmmoDisplay), displayNull]; // Get newly created display
+        _display = uiNamespace getVariable [QGVAR(display), displayNull]; // Get newly created display
         if (isNull _display) exitWith { // If display is still not initialized, exit PFH
             [_handle] call CBA_fnc_removePerFrameHandler;
-            GVAR(smokeAmmoPFH) = -1;
+            GVAR(PFH) = -1;
         };
 
         _display setVariable [QGVAR(textColor), ctrlTextColor (_display displayCtrl IDC_AMMO)]; // save original text color
@@ -60,11 +64,11 @@ GVAR(smokeAmmoPFH) = [{
 
     private _gunner = gunner _veh;
     private _gunnerCanSmoke = !isNull _gunner && {alive _gunner} && {!(_gunner getVariable ["ace_isunconscious", false])};
-    private _smokeReloading = _veh getVariable [QGVAR(smokeLauncherReloading), false];
+    private _smokeReloading = _veh getVariable [QGVAR(reloading), false];
 
     // Launch SmokeLauncher if shortcut is pressed
     if (_gunnerCanSmoke && inputAction "launchCM" > 0 && !_smokeReloading) then {
-        [_veh] call FUNC(fireSmokeLauncher);
+        [_veh, _smokeLauncher] call FUNC(fireSmoke);
     };
 
     private _ctrlAmmo = _display displayCtrl IDC_AMMO;
@@ -82,9 +86,9 @@ GVAR(smokeAmmoPFH) = [{
     };
 
     // Update ammo count
-    private _ammo = _veh ammo QGVAR(SmokeLauncher);
-    if (_ammo isNotEqualTo GVAR(lastSmokeAmmoCount)) then {
-        _ctrlAmmo ctrlSetText format [LLSTRING(smokeLauncherAmmoCount), _ammo];
+    private _ammo = _veh ammo _smokeLauncher;
+    if (_ammo isNotEqualTo GVAR(lastAmmoCount)) then {
+        _ctrlAmmo ctrlSetText format [LLSTRING(ammoCount), _ammo];
     };
-    GVAR(lastSmokeAmmoCount) = _ammo;
-}, 0, [_player, _veh]] call CBA_fnc_addPerFrameHandler;
+    GVAR(lastAmmoCount) = _ammo;
+}, 0, [_player, _veh, _smokeLauncher]] call CBA_fnc_addPerFrameHandler;

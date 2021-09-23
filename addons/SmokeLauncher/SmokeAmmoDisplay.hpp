@@ -2,9 +2,9 @@ class RscText;
 class RscControlsGroupNoScrollbars;
 
 class RscTitles {
-    class GVAR(SmokeAmmoRscDisplay) {
+    class GVAR(RscDisplay) {
         idd = -1;
-        onLoad = QUOTE(with uiNamespace do { GVAR(marderAmmoDisplay) = _this select 0 };);
+        onLoad = QUOTE(with uiNamespace do { GVAR(display) = _this select 0 };);
         movingEnable = 0;
         duration = 60;
         fadeIn = "false";
