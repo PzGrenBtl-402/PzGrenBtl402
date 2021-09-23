@@ -10,26 +10,29 @@
  *      1: STRING - Smoke launcher muzzle.
  *
  *  Returns:
- *      Nothing.
+ *      BOOLEAN - Success.
  *
  *  Example:
- *      [vehicle player, "Redd_SmokeLauncher"] call PzGrenBtl402_SmokeLauncher_fnc_fireLauncher;
+ *      [vehicle player, "Redd_SmokeLauncher"] call PzGrenBtl402_SmokeLauncher_fnc_fireSmoke;
  *
  */
 
 params [["_veh", objNull, [objNull]], ["_smokeLauncher", "", [""]]];
 
-if (_veh ammo _smokeLauncher <= 0) exitWith {};
+if (_veh ammo _smokeLauncher <= 0) exitWith {false};
 
 private _gunner = gunner _veh;
-if (isNull _gunner || !alive _gunner || _gunner getVariable ["ace_isunconscious", false]) exitWith {};
+if (isNull _gunner || !alive _gunner || _gunner getVariable ["ace_isunconscious", false]) exitWith {false};
 
 _veh setVariable [QGVAR(reloading), true, true];
 
-[_veh, _smokeLauncher] call BIS_fnc_fire;
+private _success = [_veh, _smokeLauncher] call BIS_fnc_fire;
+if (!_success) exitWith {false};
 
 private _reloadTime = getNumber (configFile >> "CfgWeapons" >> _smokeLauncher >> "reloadTime");
 [{
     params ["_veh"];
     _veh setVariable [QGVAR(reloading), false, true];
 }, [_veh], _reloadTime] call CBA_fnc_waitAndExecute;
+
+true

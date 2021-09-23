@@ -68,7 +68,7 @@ GVAR(PFH) = [{
 
     // Launch SmokeLauncher if shortcut is pressed
     if (_gunnerCanSmoke && inputAction "launchCM" > 0 && !_smokeReloading) then {
-        [_veh, _smokeLauncher] call FUNC(fireLauncher);
+        [_veh, _smokeLauncher] call FUNC(fireSmoke);
     };
 
     private _ctrlAmmo = _display displayCtrl IDC_AMMO;
