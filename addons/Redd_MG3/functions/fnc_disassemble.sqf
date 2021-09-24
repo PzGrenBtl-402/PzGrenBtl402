@@ -1,18 +1,19 @@
 #include "script_component.hpp"
 /**
- *  Author: Zumi
+ *  Author: Zumi, Timi007
  *
  *  Description:
- *      [Description]
+ *      Disassembles the static MG3 and returned the MG3 to the player.
  *
  *  Parameter(s):
- *      0: [TYPE] - [argument name]
+ *      0: OBJECT - Static MG3.
+ *      1: OBJECT - Player.
  *
  *  Returns:
- *      [TYPE] - [return name]
+ *      Nothing.
  *
  *  Example:
- *      [[arguments]] call [function name]
+ *      [this, player] call PzGrenBtl402_Redd_MG3_fnc_disassemble
  *
  */
 

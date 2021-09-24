@@ -1,18 +1,19 @@
 #include "script_component.hpp"
 /**
- *  Author: Zumi
+ *  Author: Zumi, Timi007
  *
  *  Description:
- *      [Description]
+ *      Mounts the current MG3 of the player to the tripod creating a static MG3.
  *
  *  Parameter(s):
- *      0: [TYPE] - [argument name]
+ *      0: OBJECT - Tripod.
+ *      1: OBJECT - Player.
  *
  *  Returns:
- *      [TYPE] - [return name]
+ *      Nothing.
  *
  *  Example:
- *      [[arguments]] call [function name]
+ *      [this, player] call PzGrenBtl402_Redd_MG3_fnc_mountMG
  *
  */
 

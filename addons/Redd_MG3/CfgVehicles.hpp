@@ -55,7 +55,6 @@ class CfgVehicles {
                 displayName = CSTRING(lafette_displayname);
                 condition = "alive _target";
                 position = "";
-                // selection = "fuss_vorne_up_axis";
 
                 class GVAR(disassemble) {
                     displayName = CSTRING(disassemble);

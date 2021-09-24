@@ -1,18 +1,19 @@
 #include "script_component.hpp"
 /**
- *  Author: Zumi
+ *  Author: Zumi, Timi007
  *
  *  Description:
- *      [Description]
+ *      Checks if current weapon of the player can be used to assemble the static MG.
  *
  *  Parameter(s):
- *      0: [TYPE] - [argument name]
+ *      0: OBJECT - Tripod.
+ *      1: OBJECT - Player.
  *
  *  Returns:
- *      [TYPE] - [return name]
+ *      BOOLEAN - Can assemble static MG.
  *
  *  Example:
- *      [[arguments]] call [function name]
+ *      [this, player] call PzGrenBtl402_Redd_MG3_fnc_canMountMG3
  *
  */
 
