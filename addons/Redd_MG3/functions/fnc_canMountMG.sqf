@@ -28,7 +28,10 @@ private _supportedMgs = [
     "hlc_lmg_MG3_optic",
     "hlc_lmg_MG3KWS_b",
     "hlc_lmg_MG3KWS_g",
-    "hlc_lmg_MG3KWS"
+    "hlc_lmg_MG3KWS",
+
+    "gm_mg3_blk",
+    "gm_mg3_des"
 ];
 
 (_primary in _supportedMgs) &&
