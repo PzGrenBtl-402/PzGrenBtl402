@@ -19,6 +19,7 @@
 params ["_veh"];
 
 private _icon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa";
+
 // Milan laden
 [
     _veh,
