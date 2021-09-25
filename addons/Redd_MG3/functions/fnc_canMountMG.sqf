@@ -24,6 +24,7 @@ private _supportedMgs = [
     "BWA3_MG3",
     "BWA3_MG3_bipod",
     "BWA3_MG3_MicroT2_pointer_bipod",
+
     "hlc_lmg_MG3",
     "hlc_lmg_MG3_100rnd",
     "hlc_lmg_MG3_optic",
