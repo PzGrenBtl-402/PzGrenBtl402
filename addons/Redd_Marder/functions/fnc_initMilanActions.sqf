@@ -21,13 +21,13 @@ params ["_veh"];
 
 if (!hasInterface) exitWith {};
 
-private _icon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa";
+private _assembleIcon = "\a3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_loadVehicle_ca.paa";
 // Milan aufbauen
 [
     _veh,
-    LLSTRING(assembleMilan),
-    _icon,
-    _icon,
+    LELSTRING(Milan,assemble),
+    _assembleIcon,
+    _assembleIcon,
     QUOTE([ARR_2(_target, _this)] call FUNC(canAssembleMilan)),
     QUOTE([ARR_2(_target, _caller)] call FUNC(canAssembleMilan)),
     {},
@@ -42,12 +42,13 @@ private _icon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa";
     false
 ] call BIS_fnc_holdActionAdd;
 
+private _disassembleIcon = "\a3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_unloadVehicle_ca.paa";
 // Milan abbauen
 [
     _veh,
-    LLSTRING(disassembleMilan),
-    _icon,
-    _icon,
+    LELSTRING(Milan,disassemble),
+    _disassembleIcon,
+    _disassembleIcon,
     QUOTE([ARR_2(_target, _this)] call FUNC(canDisassembleMilan)),
     QUOTE([ARR_2(_target, _caller)] call FUNC(canDisassembleMilan)),
     {},
@@ -63,11 +64,12 @@ private _icon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa";
 ] call BIS_fnc_holdActionAdd;
 
 // Milan laden
+private _loadIcon = QPATHTOEF(Milan,data\ui\holdaction_load_milan);
 [
     _veh,
-    LLSTRING(loadMilan),
-    _icon,
-    _icon,
+    LELSTRING(Milan,load),
+    _loadIcon,
+    _loadIcon,
     QUOTE([ARR_2(_target, _this)] call FUNC(canLoadMilan)),
     QUOTE([ARR_2(_target, _caller)] call FUNC(canLoadMilan)),
     {},
@@ -83,11 +85,12 @@ private _icon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa";
 ] call BIS_fnc_holdActionAdd;
 
 // Milan entladen
+private _unloadIcon = QPATHTOEF(Milan,data\ui\holdaction_unload_milan);
 [
     _veh,
-    LLSTRING(unloadMilan),
-    _icon,
-    _icon,
+    LELSTRING(Milan,unload),
+    _unloadIcon,
+    _unloadIcon,
     QUOTE([ARR_2(_target, _this)] call FUNC(canUnloadMilan)),
     QUOTE([ARR_2(_target, _caller)] call FUNC(canUnloadMilan)),
     {},

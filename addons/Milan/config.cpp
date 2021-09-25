@@ -6,14 +6,10 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_Milan", "gm_weapons_launchers_milan", "Redd_Bags"};
+        requiredAddons[] = {"PzGrenBtl402_Main"};
         author = ECSTRING(Main, authors);
-        authors[] = {""};
+        authors[] = {"Timi007"};
         url = ECSTRING(Main, URL);
         VERSION_CONFIG;
     };
 };
-
-#include "CfgEventHandlers.hpp"
-#include "CfgVehicles.hpp"
-#include "CfgWeapons.hpp"

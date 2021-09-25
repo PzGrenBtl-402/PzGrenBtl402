@@ -18,19 +18,18 @@
 
 params ["_milan"];
 
-
-private _loadIcon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa";
+private _loadIcon = QPATHTOEF(Milan,data\ui\holdaction_load_milan);
 // Milan laden
 [
     _milan,
-    LLSTRING(load),
+    LELSTRING(Milan,load),
     _loadIcon,
     _loadIcon,
     QUOTE([ARR_2(_target, _this)] call FUNC(canLoad)),
     QUOTE([ARR_2(_target, _caller)] call FUNC(canLoad)),
     {},
     {},
-    {_this call FUNC(load)},
+    LINKFUNC(load),
     {},
     [],
     10,
@@ -40,18 +39,18 @@ private _loadIcon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.pa
     false
 ] call BIS_fnc_holdActionAdd;
 
-private _unloadIcon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa";
+private _unloadIcon = QPATHTOEF(Milan,data\ui\holdaction_unload_milan);
 // Milan entladen
 [
     _milan,
-    LLSTRING(unload),
+    LELSTRING(Milan,unload),
     _unloadIcon,
     _unloadIcon,
     QUOTE([ARR_2(_target, _this)] call FUNC(canUnload)),
     QUOTE([ARR_2(_target, _caller)] call FUNC(canUnload)),
     {},
     {},
-    {_this call FUNC(unload)},
+    LINKFUNC(unload),
     {},
     [],
     10,
