@@ -18,13 +18,15 @@
 
 params ["_veh"];
 
-private _icon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa";
+if (!hasInterface) exitWith {};
+
+private _loadIcon = QPATHTOEF(Milan,data\ui\holdaction_load_milan);
 // Milan laden
 [
     _veh,
-    LLSTRING(loadMilan),
-    _icon,
-    _icon,
+    LELSTRING(Milan,load),
+    _loadIcon,
+    _loadIcon,
     QUOTE([ARR_2(_target, _this)] call FUNC(canLoadMilan)),
     QUOTE([ARR_2(_target, _caller)] call FUNC(canLoadMilan)),
     {},
@@ -39,12 +41,13 @@ private _icon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa";
     false
 ] call BIS_fnc_holdActionAdd;
 
+private _unloadIcon = QPATHTOEF(Milan,data\ui\holdaction_unload_milan);
 // Milan entladen
 [
     _veh,
-    LLSTRING(unloadMilan),
-    _icon,
-    _icon,
+    LELSTRING(Milan,unload),
+    _unloadIcon,
+    _unloadIcon,
     QUOTE([ARR_2(_target, _this)] call FUNC(canUnloadMilan)),
     QUOTE([ARR_2(_target, _caller)] call FUNC(canUnloadMilan)),
     {},
