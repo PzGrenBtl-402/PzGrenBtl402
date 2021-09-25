@@ -32,7 +32,7 @@ class CfgVehicles {
 
                 class HitPoints {
                     class HitGun {
-                        armor = 100;
+                        armor = 500000; // Make invincible
                     };
                 };
             };

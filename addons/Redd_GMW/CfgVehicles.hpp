@@ -12,6 +12,12 @@ class CfgVehicles {
         class Turrets: Turrets {
             class MainTurret: MainTurret {
                 turretInfoType = QEGVAR(Redd_Main, RSC_MG3);
+
+                class HitPoints {
+					class HitGun {
+						armor = 500000; // Make invincible
+					};
+				};
             };
         };
     };
