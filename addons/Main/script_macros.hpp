@@ -24,4 +24,6 @@
 #define CHECK(CONDITION) if (CONDITION) exitWith {}
 #define CHECKRET(CONDITION,RETURN) if (CONDITION) exitWith {RETURN;}
 
+#define CREATE_MAGAZINE_GROUP(ammo) class ammo { ammo = 1; }
+
 #include "script_debug.hpp"

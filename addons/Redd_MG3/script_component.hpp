@@ -15,3 +15,6 @@
 #endif
 
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"
+
+#define MG_MOUNT_TIME 5 // Secondss
+#define DISASSEMBLE_TIME 10 // Seconds

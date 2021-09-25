@@ -3,12 +3,10 @@
 class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
-        units[] = {
-            QGVAR(Lafette)
-        };
+        units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_Redd_Main", "rnt_mg3_static", "Redd_Bags", "ace_csw"};
+        requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_Redd_MG3", "ace_csw", "gm_weapons_machineguns_mg3"};
         author = ECSTRING(Main, authors);
         authors[] = {"Zumi", "Timi007"};
         url = ECSTRING(Main, URL);
@@ -16,8 +14,6 @@ class CfgPatches {
     };
 };
 
-#include "CfgEventHandlers.hpp"
-#include "CfgVehicles.hpp"
 #include "CfgMagazineWells.hpp"
 #include "CfgMagazineGroups.hpp"
 #include "CfgWeapons.hpp"
