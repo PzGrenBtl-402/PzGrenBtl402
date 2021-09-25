@@ -9,15 +9,11 @@ class CfgVehicles {
     class GMG_01_base_F: GMG_TriPod {};
 
     class rnt_gmw_static: GMG_01_base_F {
+        armor = 500000; // Make invincible
+
         class Turrets: Turrets {
             class MainTurret: MainTurret {
                 turretInfoType = QEGVAR(Redd_Main, RSC_MG3);
-
-                class HitPoints {
-					class HitGun {
-						armor = 500000; // Make invincible
-					};
-				};
             };
         };
     };

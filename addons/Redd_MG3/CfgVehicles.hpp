@@ -26,15 +26,11 @@ class CfgVehicles {
     class HMG_01_high_base_F: HMG_01_base_F {};
 
     class rnt_mg3_static: HMG_01_high_base_F {
+        armor = 500000; // Make invincible
+
         class Turrets: Turrets {
             class MainTurret: MainTurret {
                 turretInfoType = QEGVAR(Redd_Main, RSC_MG3);
-
-                class HitPoints {
-                    class HitGun {
-                        armor = 500000; // Make invincible
-                    };
-                };
             };
         };
 
@@ -47,8 +43,8 @@ class CfgVehicles {
             disassembleWeapon = "";
             disassembleTurret = QGVAR(Tripod);
             desiredAmmo = 250;
-            ammoLoadTime = 7;
-            ammoUnloadTime = 5;
+            ammoLoadTime = 5;
+            ammoUnloadTime = 4;
         };
         class ACE_Actions: ACE_Actions {
             class ACE_MainActions: ACE_MainActions {
