@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="Menu_Spotlight">
+        <Key ID="STR_PzGrenBtl402_Menu_Spotlight_title">
+            <Original>PzGrenBtl 402 Server</Original>
+            <German>PzGrenBtl 402 Server</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Menu_Spotlight_joinServer">
+            <Original>Join PzGrenBtl 402 Server</Original>
+            <German>PzGrenBtl 402 Server beitreten</German>
+        </Key>
+    </Package>
+</Project>
