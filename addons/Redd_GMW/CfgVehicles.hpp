@@ -14,6 +14,9 @@ class CfgVehicles {
         class Turrets: Turrets {
             class MainTurret: MainTurret {
                 turretInfoType = QEGVAR(Redd_Main, RSC_MG3);
+
+                gunnerGetInAction = "PlayerCrouch";
+                gunnerGetOutAction = "PlayerCrouch";
             };
         };
     };
