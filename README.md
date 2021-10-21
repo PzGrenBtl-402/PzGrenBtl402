@@ -24,7 +24,6 @@ This mod contains changes to Redd'n'Tanks, BwMod, NiArms, RHS and GM improving A
 ### GM
 
 - Add Fuchs door actions
-- ACE Compat for MG3
 - More ammo for the Marder
 
 ### RHS
