@@ -34,18 +34,18 @@ if (GVAR(PFH) >= 0) then {
     };
 };
 
-private _vehCfg = configFile >> "CfgVehicles" >> typeOf _veh;
+private _vehCfg = configOf _veh;
 private _gunnerAndCommanderCanSmoke = [_vehCfg >> "PzGrenBtl402_gunnerAndCommanderCanSmoke"] call BIS_fnc_getCfgDataBool;
 if (!_gunnerAndCommanderCanSmoke) exitWith {};
-
-private _smokeLauncher = getText (_vehCfg >> "PzGrenBtl402_smokeLauncherMuzzle");
 
 private _isGunnerOrCommander = _player isEqualTo (gunner _veh) || _player isEqualTo (commander _veh) || _turret isEqualTo [2]; // Commander in highest seat
 if (!_isGunnerOrCommander || !alive _player) exitWith {};
 
+private _smokeLauncher = getText (_vehCfg >> "PzGrenBtl402_smokeLauncherMuzzle");
+
 GVAR(PFH) = [{
     params ["_args", "_handle"];
-    _args params ["_player", "_veh", "_smokeLauncher"];
+    _args params ["_player", "_turret", "_veh", "_smokeLauncher"];
 
     // Restart display if null (not just at start, this will happen periodicly)
     private _display = uiNamespace getVariable [QGVAR(display), displayNull];
@@ -71,7 +71,15 @@ GVAR(PFH) = [{
         [_veh, _smokeLauncher] call FUNC(fireSmoke);
     };
 
+    private _isTurnedOut = isTurnedOut _player || _turret isEqualTo [2];
     private _ctrlAmmo = _display displayCtrl IDC_AMMO;
+
+    // Hide Ammo count when turned out
+    if (_isTurnedOut) exitWith {
+        _ctrlAmmo ctrlShow false;
+    };
+    _ctrlAmmo ctrlShow true;
+
     // Set text color
     if (!_gunnerCanSmoke || _smokeReloading) then {
         private _ctrlAmmoRedTextColor = [0.9, 0, 0, 1];
@@ -91,4 +99,4 @@ GVAR(PFH) = [{
         _ctrlAmmo ctrlSetText format [LLSTRING(ammoCount), _ammo];
     };
     GVAR(lastAmmoCount) = _ammo;
-}, 0, [_player, _veh, _smokeLauncher]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_player, _turret, _veh, _smokeLauncher]] call CBA_fnc_addPerFrameHandler;
