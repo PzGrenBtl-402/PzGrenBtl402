@@ -19,7 +19,7 @@
 params ["_veh"];
 
 if (hasInterface) then {
-    private _vehName = getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName");
+    private _vehName = getText (configOf _veh >> "displayName");
 
     {
         _x params ["_params", "_str", "_picture"];
