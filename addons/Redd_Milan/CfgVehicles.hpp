@@ -61,21 +61,20 @@ class CfgVehicles {
     };
 
     class Bag_Base;
-    class Weapon_Bag_Base: Bag_Base {
-        class assembleInfo {};
-    };
+    class Weapon_Bag_Base: Bag_Base {};
 
     class Redd_Milan_Static_Barrel: Weapon_Bag_Base {
         mass = 265; //Realistisches Gewicht Patrone
         delete assembleInfo;
     };
 
-    class Redd_Milan_Static_Tripod: Weapon_Bag_Base {
+    class Redd_Milan_Static_Tripod: Bag_Base {
         mass = 671; //Realistisches Gewicht Waffe mit MIRA WBG
 
-        class assembleInfo: assembleInfo {
+        class assembleInfo {
             displayName = "$STR_Redd_Milan";
             assembleTo = "Redd_Milan_Static";
+            dissasembleTo[] = {};
             base = "";
             primary = 1;
         };

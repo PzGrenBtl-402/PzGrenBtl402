@@ -1,6 +1,7 @@
 #define DISABLE_FEATURE h = 0; w = 0
 
 class RscControlsGroup;
+class RscControlsGroupNoScrollbars: RscControlsGroup {};
 
 class RscInGameUI {
     class RscUnitInfo;
@@ -86,7 +87,7 @@ class RscInGameUI {
 
 
     class Redd_RSC_MG3: RscUnitInfo {
-        class CA_IGUI_elements_group: RscControlsGroup {
+        class CA_IGUI_elements_group: RscControlsGroupNoScrollbars {
             class controls {
                 class CA_Heading;
             };
