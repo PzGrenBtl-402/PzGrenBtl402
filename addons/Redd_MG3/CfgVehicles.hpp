@@ -1,3 +1,5 @@
+class XEH_CLASS_BASE;
+
 class CfgVehicles {
     class Bag_Base;
     class rnt_mg3_static_tripod: Bag_Base {
@@ -61,6 +63,11 @@ class CfgVehicles {
                     statement = QUOTE(call FUNC(disassemble));
                 };
             };
+        };
+
+        class EventHandlers {
+            // Readd CBA XEH EventHandlers. (Redd didn't inherit from base eventhandles overwriting all eventhandles including XEH)
+            class XEH_CLASS: XEH_CLASS_BASE {};
         };
     };
 
