@@ -1,3 +1,5 @@
+class XEH_CLASS_BASE;
+
 class CfgVehicles {
     class LandVehicle;
     class StaticWeapon: LandVehicle {
@@ -18,6 +20,11 @@ class CfgVehicles {
                 gunnerGetInAction = "PlayerCrouch";
                 gunnerGetOutAction = "PlayerCrouch";
             };
+        };
+
+        class EventHandlers {
+            // Readd CBA XEH EventHandlers. (Redd didn't inherit from base eventhandles overwriting all eventhandles including XEH)
+            class XEH_CLASS: XEH_CLASS_BASE {};
         };
     };
 };
