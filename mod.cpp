@@ -1,5 +1,6 @@
 name = "PzGrenBtl 402";
-description = "Redd'n'Tanks, BwMod, GM modification improving ACRE Radio Racks and adding further functionality.";
+description = "Bugtracker: https://github.com/PzGrenBtl-402/PzGrenBtl402/issues";
+overview = "Redd'n'Tanks, BwMod, GM modification improving ACRE Radio Racks and adding further functionality.";
 author = "PzGrenBtl 402";
 actionName = "Webseite";
 action = "https://pzgrenbtl402.de/";
@@ -8,4 +9,3 @@ logoOver = "PzGrenBtl402_Logo.paa";
 hideName = 0;
 hidePicture = 0;
 tooltipOwned = "PzGrenBtl 402";
-overview = "Panzergrenadierbataillon 402";
