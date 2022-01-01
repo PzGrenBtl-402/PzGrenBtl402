@@ -4,6 +4,7 @@ class CfgVehicles
     class gm_tracked_APC_base: gm_tracked_base
     {
         class Turrets;
+        class UserActions;
     };
 
     class gm_marder1_base: gm_tracked_APC_base
@@ -73,7 +74,7 @@ class CfgVehicles
             };
         };
 
-        class UserActions
+        class UserActions: UserActions
         {
             class heckklappe_auf
             {
