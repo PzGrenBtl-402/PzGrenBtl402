@@ -4,6 +4,5 @@ class CfgVehicles {
         maximumLoad = 10000;
 
         delete AcreRacks;
-        };
     };
 };
