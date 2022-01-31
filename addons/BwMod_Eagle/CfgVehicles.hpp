@@ -3,14 +3,6 @@ class CfgVehicles {
     class BWA3_Eagle_base: Car_F {
         maximumLoad = 10000;
 
-        acre_hasInfantryPhone = 0;
-        acre_infantryPhoneDisableRinging = 1;
-        acre_infantryPhoneCustomRinging[] = {};
-        acre_infantryPhoneIntercom[] = {};
-        acre_infantryPhoneControlActions[] = {};
-        acre_eventInfantryPhone = QEFUNC(ACRE, noApiFunction);
-        acre_infantryPhonePosition[] = {};
-
         class AcreRacks {
             class Rack_1 {
                 displayName = ECSTRING(ACRE, RackA);
