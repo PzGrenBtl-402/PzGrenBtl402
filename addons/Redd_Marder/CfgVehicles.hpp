@@ -1,17 +1,5 @@
 class CBA_Extended_EventHandlers_base;
 
-class CfgSoundEffects
-{
-    class AttenuationsEffects
-    {
-        class TankAttenuation;
-        class GVAR(TankAttenuation): TankAttenuation
-        {
-            acreAttenuation = 1;
-        };
-    };
-};
-
 class CfgVehicles
 {
     class LandVehicle;
@@ -44,9 +32,10 @@ class CfgVehicles
         maximumLoad = 10000;
         lockWhenDriverOut = 0;
         driverWeaponsInfoType = QEGVAR(Redd_Main, RSC_Driver);
-        attenuationEffectType = QGVAR(TankAttenuation);
+        attenuationEffectType = "TankAttenuation";
         driverCompartments = "Compartment1";
         cargoCompartments[] = {"Compartment2"};
+        enableGPS = 0;
 
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
         PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
@@ -151,7 +140,6 @@ class CfgVehicles
         };
 
         class TransportBackpacks {delete _xx_B_AssaultPack_rgr;};
-        //delete _xx_milan_Bag; delete _xx_milan_tripod;
         class TransportItems {delete _xx_Toolkit;};
 
         class Turrets: Turrets
@@ -161,8 +149,8 @@ class CfgVehicles
                 discreteDistanceInitIndex = 6; // Set initial gun zeoring to 800 m
                 lockWhenDriverOut = 0; // Don't lock turret when driver is turned out
                 turretInfoType = QEGVAR(Redd_Main, RSC_Turret);
-                soundAttenuationTurret = QGVAR(TankAttenuation);
-                gunnerCompartments= "Compartment2";
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments= "Compartment3";
 
                 weapons[] = {
                     "Redd_Gesichert",
@@ -255,7 +243,7 @@ class CfgVehicles
                     {
                         stabilizedInAxes = 0;
                         turretInfoType = QEGVAR(Redd_Main, RSC_Turret);
-                        soundAttenuationTurret = QGVAR(TankAttenuation);
+                        soundAttenuationTurret = "TankAttenuation";
                         gunnerCompartments= "Compartment3";
 
                         weapons[] = {}; // Move SmokeLauncher to gunner
@@ -331,7 +319,7 @@ class CfgVehicles
                     class CargoTurret_Links: NewTurret
                     {
                         gunnerCompartments= "Compartment2";
-                        soundAttenuationTurret = QGVAR(TankAttenuation);
+                        soundAttenuationTurret = "TankAttenuation";
 
                         class Components
                         {
@@ -388,7 +376,7 @@ class CfgVehicles
                 magazines[] = {}; //Waffe ist direkt nach dem Aufbau leer, Patrone muss manuell geladen werden
                 stabilizedInAxes = 0;
                 turretInfoType = QEGVAR(Redd_Main, RSC_Milan);
-                gunnerCompartments= "Compartment3";
+                gunnerCompartments= "Compartment4";
 
                 class OpticsIn
                 {
@@ -444,7 +432,7 @@ class CfgVehicles
             class Luchs_Bino_Turret_Com: NewTurret
             {
                 stabilizedInAxes = 0;
-                gunnerCompartments= "Compartment3";
+                gunnerCompartments= "Compartment4";
 
                 class Components
                 {

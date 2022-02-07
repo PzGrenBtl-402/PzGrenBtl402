@@ -1,37 +1,38 @@
-class CfgSoundEffects {
-    class AttenuationsEffects {
-        class TankAttenuation;
-        class GVAR(TankAttenuation): TankAttenuation {
-            acreAttenuation = 1;
-        };
-    };
-};
-
-class CfgVehicles {
+class CfgVehicles
+{
     class LandVehicle;
-    class Tank: LandVehicle {
+    class Tank: LandVehicle
+    {
         class NewTurret;
     };
-    class Tank_F: Tank {
+    class Tank_F: Tank
+    {
         class Components;
         class EventHandlers;
-        class Turrets {
-            class MainTurret: NewTurret {
+        class Turrets
+        {
+            class MainTurret: NewTurret
+            {
                 class ViewOptics;
-                class Turrets {
+                class Turrets
+                {
                     class CommanderOptics;
                 };
             };
         };
     };
 
-    class Redd_Tank_Wiesel_1A2_TOW_base: Tank_F {
+    class Redd_Tank_Wiesel_1A2_TOW_base: Tank_F
+    {
         maximumLoad = 10000;
         driverWeaponsInfoType = QEGVAR(Redd_Main, RSC_Driver);
-        attenuationEffectType = QGVAR(TankAttenuation);
+        attenuationEffectType = "TankAttenuation";
+        enableGPS = 0;
 
-        class AcreIntercoms {
-            class Intercom_1 {
+        class AcreIntercoms
+        {
+            class Intercom_1
+            {
                 displayName = ECSTRING(ACRE, BV);
                 shortName = ECSTRING(ACRE, BVShort);
                 allowedPositions[] = {"crew"};
@@ -51,8 +52,10 @@ class CfgVehicles {
         acre_eventInfantryPhone = QEFUNC(ACRE, noApiFunction);
         acre_infantryPhonePosition[] = {};
 
-        class AcreRacks {
-            class Rack_1 {
+        class AcreRacks
+        {
+            class Rack_1
+            {
                 displayName = ECSTRING(ACRE, RackA);
                 shortName = ECSTRING(ACRE, RackAShort);
                 componentName = "ACRE_SEM90";
@@ -64,7 +67,8 @@ class CfgVehicles {
                 intercom[] = {"all"};
             };
 
-            class Rack_2 {
+            class Rack_2
+            {
                 displayName = ECSTRING(ACRE, RackB);
                 shortName = ECSTRING(ACRE, RackBShort);
                 componentName = "ACRE_SEM90";
@@ -203,8 +207,6 @@ class CfgVehicles {
                 {
                     class CommanderOptic: CommanderOptics
                     {
-                        soundAttenuationTurret = QGVAR(TankAttenuation);
-
                         class Components
                         {
                             class VehicleSystemsDisplayManagerComponentLeft
@@ -250,10 +252,6 @@ class CfgVehicles {
                                 };
                             };
                         };
-                    };
-                    class LoaderOptic: CommanderOptic
-                    {
-                        soundAttenuationTurret = "TankAttenuation_402_Wiesel_TOW";
                     };
                 };
             };
