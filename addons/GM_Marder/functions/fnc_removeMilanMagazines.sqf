@@ -12,7 +12,7 @@
  *      Nothing.
  *
  *  Example:
- *      [cursorObject] call PzGrenBtl402_GM_Marder1A2_fnc_removeMilanMagazines
+ *      [cursorObject] call PzGrenBtl402_GM_Marder_fnc_removeMilanMagazines
  *
  */
 

@@ -15,3 +15,11 @@ class Extended_PostInit_EventHandlers {
         init = QUOTE(call COMPILE_FILE(XEH_postInit));
     };
 };
+
+class Extended_InitPost_EventHandlers {
+    class gm_marder1a2_base {
+        class GVAR(removeMilanMagazines) {
+            init = QUOTE(call FUNC(removeMilanMagazines));
+        };
+    };
+};

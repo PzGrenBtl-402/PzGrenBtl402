@@ -5,4 +5,5 @@ PREP(initActions);
 PREP(initMilanActions);
 PREP(loadMilan);
 PREP(openRamp);
+PREP(removeMilanMagazines);
 PREP(unloadMilan);
