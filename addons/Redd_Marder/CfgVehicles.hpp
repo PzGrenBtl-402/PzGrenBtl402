@@ -377,6 +377,8 @@ class CfgVehicles
                 stabilizedInAxes = 0;
                 turretInfoType = QEGVAR(Redd_Main, RSC_Milan);
                 gunnerCompartments= "Compartment4";
+                soundAttenuationTurret = "TankAttenuation";
+                delete disableSoundAttenuation;
 
                 class OpticsIn
                 {
@@ -433,6 +435,8 @@ class CfgVehicles
             {
                 stabilizedInAxes = 0;
                 gunnerCompartments= "Compartment4";
+                soundAttenuationTurret = "TankAttenuation";
+                delete disableSoundAttenuation;
 
                 class Components
                 {
