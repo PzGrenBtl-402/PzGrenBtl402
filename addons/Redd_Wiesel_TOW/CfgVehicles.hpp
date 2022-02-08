@@ -26,7 +26,9 @@ class CfgVehicles
     {
         maximumLoad = 10000;
         driverWeaponsInfoType = QEGVAR(Redd_Main, RSC_Driver);
+        disableSoundAttenuation = 0;
         attenuationEffectType = "TankAttenuation";
+        driverCompartments = "Compartment1";
         enableGPS = 0;
 
         class AcreIntercoms
@@ -102,11 +104,6 @@ class CfgVehicles
                     {
                         componentType = "EmptyDisplayComponent";
                     };
-
-                    class MinimapDisplay
-                    {
-                        componentType = "MinimapDisplayComponent";
-                    };
                 };
             };
 
@@ -123,11 +120,6 @@ class CfgVehicles
                     class EmptyDisplay
                     {
                         componentType = "EmptyDisplayComponent";
-                    };
-
-                    class MinimapDisplay
-                    {
-                        componentType = "MinimapDisplayComponent";
                     };
                 };
             };
@@ -149,9 +141,12 @@ class CfgVehicles
         {
             class MainTurret: MainTurret
             {
+                lockWhenDriverOut = 0;
                 stabilizedInAxes = 0;
                 turretInfoType = QEGVAR(Redd_Main, RSC_Milan);
-                lockWhenDriverOut = 0;
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments= "Compartment3";
                 magazines[] = {"Redd_TOW_Mag"};
 
                 class Components
@@ -207,6 +202,10 @@ class CfgVehicles
                 {
                     class CommanderOptic: CommanderOptics
                     {
+                        disableSoundAttenuation = 0;
+                        soundAttenuationTurret = "TankAttenuation";
+                        gunnerCompartments= "Compartment2";
+
                         class Components
                         {
                             class VehicleSystemsDisplayManagerComponentLeft
@@ -259,10 +258,12 @@ class CfgVehicles
 
         class Loader_MG3: NewTurret
         {
+            lockWhenDriverOut = 0;
             stabilizedInAxes = 0;
             turretInfoType = QEGVAR(Redd_Main, RSC_MG3);
+            disableSoundAttenuation = 0;
+            soundAttenuationTurret = "TankAttenuation";
             gunnerCompartments = "Compartment3";
-            lockWhenDriverOut = 0;
 
             class Components
             {
@@ -304,6 +305,8 @@ class CfgVehicles
 
         class Bino_Turret_Com: NewTurret
         {
+            disableSoundAttenuation = 0;
+            soundAttenuationTurret = "TankAttenuation";
             gunnerCompartments = "Compartment3";
             stabilizedInAxes = 0;
 
@@ -347,6 +350,8 @@ class CfgVehicles
 
         class Bino_Turret_Loader: NewTurret
         {
+            disableSoundAttenuation = 0;
+            soundAttenuationTurret = "TankAttenuation";
             gunnerCompartments = "Compartment3";
             stabilizedInAxes = 0;
 

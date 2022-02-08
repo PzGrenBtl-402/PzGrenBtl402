@@ -1,10 +1,17 @@
-class CfgVehicles {
+class CfgVehicles
+{
     class Wheeled_APC_F;
-    class rnt_sppz_2a2_luchs_Base: Wheeled_APC_F {
+    class rnt_sppz_2a2_luchs_Base: Wheeled_APC_F
+    {
         maximumLoad = 10000;
+        attenuationEffectType = "TankAttenuation";
+        driverCompartments = "Compartment1";
+        enableGPS = 0;
 
-        class AcreIntercoms {
-            class Intercom_1 {
+        class AcreIntercoms
+        {
+            class Intercom_1
+            {
                 displayName = ECSTRING(ACRE, BV);
                 shortName = ECSTRING(ACRE, BVShort);
                 allowedPositions[] = {"crew"};
@@ -24,8 +31,10 @@ class CfgVehicles {
         acre_eventInfantryPhone = QEFUNC(ACRE, noApiFunction);
         acre_infantryPhonePosition[] = {};
 
-        class AcreRacks {
-            class Rack_1 {
+        class AcreRacks
+        {
+            class Rack_1
+            {
                 displayName = ECSTRING(ACRE, RackA);
                 shortName = ECSTRING(ACRE, RackAShort);
                 componentName = "ACRE_SEM90";
@@ -36,7 +45,8 @@ class CfgVehicles {
                 isRadioRemovable = 0;
                 intercom[] = {"all"};
             };
-            class Rack_2 {
+            class Rack_2
+            {
                 displayName = ECSTRING(ACRE, RackB);
                 shortName = ECSTRING(ACRE, RackBShort);
                 componentName = "ACRE_SEM90";

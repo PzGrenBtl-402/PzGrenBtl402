@@ -1,11 +1,13 @@
 class CfgVehicles
 {
     class LandVehicle;
+
     class Tank: LandVehicle
     {
         class NewTurret;
         class CommanderOptics;
     };
+
     class Tank_F: Tank
     {
         class Components;
@@ -27,7 +29,9 @@ class CfgVehicles
     {
         maximumLoad = 10000;
         driverWeaponsInfoType = QEGVAR(Redd_Main, RSC_Driver);
+        disableSoundAttenuation = 0;
         attenuationEffectType = "TankAttenuation";
+        driverCompartments = "Compartment1";
         enableGPS = 0;
 
         class AcreIntercoms
@@ -128,6 +132,10 @@ class CfgVehicles
             {
                 discreteDistanceInitIndex = 6;
                 lockWhenDriverOut = 0;
+                stabilizedInAxes = 0;
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments= "Compartment1";
 
                 class Components
                 {
@@ -188,6 +196,9 @@ class CfgVehicles
             class wieselMk20_Bino_Turret_Com: NewTurret
             {
                 stabilizedInAxes = 0;
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments= "Compartment3";
 
                 class Components
                 {

@@ -108,11 +108,6 @@ class CfgVehicles
                     {
                         componentType = "EmptyDisplayComponent";
                     };
-
-                    class MinimapDisplay
-                    {
-                        componentType = "MinimapDisplayComponent";
-                    };
                 };
             };
 
@@ -130,11 +125,6 @@ class CfgVehicles
                     {
                         componentType = "EmptyDisplayComponent";
                     };
-
-                    class MinimapDisplay
-                    {
-                        componentType = "MinimapDisplayComponent";
-                    };
                 };
             };
         };
@@ -149,6 +139,7 @@ class CfgVehicles
                 discreteDistanceInitIndex = 6; // Set initial gun zeoring to 800 m
                 lockWhenDriverOut = 0; // Don't lock turret when driver is turned out
                 turretInfoType = QEGVAR(Redd_Main, RSC_Turret);
+                disableSoundAttenuation = 0;
                 soundAttenuationTurret = "TankAttenuation";
                 gunnerCompartments= "Compartment3";
 
@@ -243,6 +234,7 @@ class CfgVehicles
                     {
                         stabilizedInAxes = 0;
                         turretInfoType = QEGVAR(Redd_Main, RSC_Turret);
+                        disableSoundAttenuation = 0;
                         soundAttenuationTurret = "TankAttenuation";
                         gunnerCompartments= "Compartment3";
 
@@ -284,11 +276,6 @@ class CfgVehicles
                                     {
                                         componentType = "EmptyDisplayComponent";
                                     };
-
-                                    class MinimapDisplay
-                                    {
-                                        componentType = "MinimapDisplayComponent";
-                                    };
                                 };
                             };
 
@@ -306,11 +293,6 @@ class CfgVehicles
                                     {
                                         componentType = "EmptyDisplayComponent";
                                     };
-
-                                    class MinimapDisplay
-                                    {
-                                        componentType = "MinimapDisplayComponent";
-                                    };
                                 };
                             };
                         };
@@ -318,8 +300,9 @@ class CfgVehicles
 
                     class CargoTurret_Links: NewTurret
                     {
-                        gunnerCompartments= "Compartment2";
+                        disableSoundAttenuation = 0;
                         soundAttenuationTurret = "TankAttenuation";
+                        gunnerCompartments= "Compartment2";
 
                         class Components
                         {
@@ -337,11 +320,6 @@ class CfgVehicles
                                     {
                                         componentType = "EmptyDisplayComponent";
                                     };
-
-                                    class MinimapDisplay
-                                    {
-                                        componentType = "MinimapDisplayComponent";
-                                    };
                                 };
                             };
 
@@ -359,11 +337,6 @@ class CfgVehicles
                                     {
                                         componentType = "EmptyDisplayComponent";
                                     };
-
-                                    class MinimapDisplay
-                                    {
-                                        componentType = "MinimapDisplayComponent";
-                                    };
                                 };
                             };
                         };
@@ -376,9 +349,9 @@ class CfgVehicles
                 magazines[] = {}; //Waffe ist direkt nach dem Aufbau leer, Patrone muss manuell geladen werden
                 stabilizedInAxes = 0;
                 turretInfoType = QEGVAR(Redd_Main, RSC_Milan);
-                gunnerCompartments= "Compartment4";
+                disableSoundAttenuation = 0;
                 soundAttenuationTurret = "TankAttenuation";
-                delete disableSoundAttenuation;
+                gunnerCompartments= "Compartment4";
 
                 class OpticsIn
                 {
@@ -434,9 +407,9 @@ class CfgVehicles
             class Luchs_Bino_Turret_Com: NewTurret
             {
                 stabilizedInAxes = 0;
-                gunnerCompartments= "Compartment4";
+                disableSoundAttenuation = 0;
                 soundAttenuationTurret = "TankAttenuation";
-                delete disableSoundAttenuation;
+                gunnerCompartments= "Compartment4";
 
                 class Components
                 {
