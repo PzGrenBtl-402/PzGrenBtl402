@@ -4,6 +4,7 @@ class CfgVehicles
     class rnt_sppz_2a2_luchs_Base: Wheeled_APC_F
     {
         maximumLoad = 10000;
+        disableSoundAttenuation = 0;
         attenuationEffectType = "TankAttenuation";
         driverCompartments = "Compartment1";
         enableGPS = 0;
@@ -45,6 +46,7 @@ class CfgVehicles
                 isRadioRemovable = 0;
                 intercom[] = {"all"};
             };
+
             class Rack_2
             {
                 displayName = ECSTRING(ACRE, RackB);

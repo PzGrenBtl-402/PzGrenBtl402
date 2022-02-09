@@ -4,6 +4,7 @@ class CfgVehicles
     class Redd_Tank_Gepard_1A2_base: Tank_F
     {
         maximumLoad = 10000;
+        disableSoundAttenuation = 0;
         attenuationEffectType = "TankAttenuation";
         driverCompartments = "Compartment1";
         enableGPS = 0;
@@ -45,6 +46,7 @@ class CfgVehicles
                 isRadioRemovable = 0;
                 intercom[] = {"all"};
             };
+            
             class Rack_2
             {
                 displayName = ECSTRING(ACRE, RackB);

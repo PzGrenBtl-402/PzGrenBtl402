@@ -30,12 +30,15 @@ class CfgVehicles
     class Redd_Marder_1A5_base: Tank_F
     {
         maximumLoad = 10000;
-        lockWhenDriverOut = 0;
         driverWeaponsInfoType = QEGVAR(Redd_Main, RSC_Driver);
+        disableSoundAttenuation = 0;
         attenuationEffectType = "TankAttenuation";
         driverCompartments = "Compartment1";
         cargoCompartments[] = {"Compartment2"};
         enableGPS = 0;
+
+        class TransportBackpacks {delete _xx_B_AssaultPack_rgr;};
+        class TransportItems {delete _xx_Toolkit;};
 
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
         PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
@@ -129,15 +132,13 @@ class CfgVehicles
             };
         };
 
-        class TransportBackpacks {delete _xx_B_AssaultPack_rgr;};
-        class TransportItems {delete _xx_Toolkit;};
-
         class Turrets: Turrets
         {
             class MainTurret: MainTurret
             {
                 discreteDistanceInitIndex = 6; // Set initial gun zeoring to 800 m
                 lockWhenDriverOut = 0; // Don't lock turret when driver is turned out
+                stabilizedInAxes = 0;
                 turretInfoType = QEGVAR(Redd_Main, RSC_Turret);
                 disableSoundAttenuation = 0;
                 soundAttenuationTurret = "TankAttenuation";
@@ -197,11 +198,6 @@ class CfgVehicles
                             {
                                 componentType = "EmptyDisplayComponent";
                             };
-
-                            class MinimapDisplay
-                            {
-                                componentType = "MinimapDisplayComponent";
-                            };
                         };
                     };
 
@@ -218,11 +214,6 @@ class CfgVehicles
                             class EmptyDisplay
                             {
                                 componentType = "EmptyDisplayComponent";
-                            };
-
-                            class MinimapDisplay
-                            {
-                                componentType = "MinimapDisplayComponent";
                             };
                         };
                     };
@@ -300,6 +291,7 @@ class CfgVehicles
 
                     class CargoTurret_Links: NewTurret
                     {
+                        stabilizedInAxes = 0;
                         disableSoundAttenuation = 0;
                         soundAttenuationTurret = "TankAttenuation";
                         gunnerCompartments= "Compartment2";

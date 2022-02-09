@@ -34,6 +34,9 @@ class CfgVehicles
         driverCompartments = "Compartment1";
         enableGPS = 0;
 
+        class TransportBackpacks {delete _xx_B_AssaultPack_rgr;};
+        class TransportItems {delete _xx_Toolkit;};
+
         class AcreIntercoms
         {
             class Intercom_1
@@ -122,9 +125,6 @@ class CfgVehicles
                 };
             };
         };
-
-        class TransportBackpacks {delete _xx_B_AssaultPack_rgr;};
-        class TransportItems {delete _xx_Toolkit;};
 
         class Turrets: Turrets
         {

@@ -1,10 +1,12 @@
 class CfgVehicles
 {
     class LandVehicle;
+
     class Tank: LandVehicle
     {
         class NewTurret;
     };
+
     class Tank_F: Tank
     {
         class Components;
@@ -30,6 +32,18 @@ class CfgVehicles
         attenuationEffectType = "TankAttenuation";
         driverCompartments = "Compartment1";
         enableGPS = 0;
+
+        class TransportBackpacks
+        {
+            delete _xx_B_AssaultPack_rgr;
+
+            class _xx_milan_Bag
+            {
+                backpack = "Redd_Milan_Static_Barrel";
+                count = 5;
+            };
+        };
+        class TransportItems {delete _xx_Toolkit;};
 
         class AcreIntercoms
         {
@@ -125,18 +139,6 @@ class CfgVehicles
             };
         };
 
-        class TransportBackpacks
-        {
-            delete _xx_B_AssaultPack_rgr;
-
-            class _xx_milan_Bag
-            {
-                backpack = "Redd_Milan_Static_Barrel";
-                count = 5;
-            };
-        };
-        class TransportItems {delete _xx_Toolkit;};
-
         class Turrets: Turrets
         {
             class MainTurret: MainTurret
@@ -202,6 +204,7 @@ class CfgVehicles
                 {
                     class CommanderOptic: CommanderOptics
                     {
+                        stabilizedInAxes = 0;
                         disableSoundAttenuation = 0;
                         soundAttenuationTurret = "TankAttenuation";
                         gunnerCompartments= "Compartment2";
@@ -222,13 +225,9 @@ class CfgVehicles
                                     {
                                         componentType = "EmptyDisplayComponent";
                                     };
-
-                                    class MinimapDisplay
-                                    {
-                                        componentType = "MinimapDisplayComponent";
-                                    };
                                 };
                             };
+
                             class VehicleSystemsDisplayManagerComponentRight
                             {
                                 componentType = "VehicleSystemsDisplayManager";
@@ -242,11 +241,6 @@ class CfgVehicles
                                     class EmptyDisplay
                                     {
                                         componentType = "EmptyDisplayComponent";
-                                    };
-
-                                    class MinimapDisplay
-                                    {
-                                        componentType = "MinimapDisplayComponent";
                                     };
                                 };
                             };
@@ -305,10 +299,10 @@ class CfgVehicles
 
         class Bino_Turret_Com: NewTurret
         {
+            stabilizedInAxes = 0;
             disableSoundAttenuation = 0;
             soundAttenuationTurret = "TankAttenuation";
             gunnerCompartments = "Compartment3";
-            stabilizedInAxes = 0;
 
             class Components
             {
@@ -350,10 +344,10 @@ class CfgVehicles
 
         class Bino_Turret_Loader: NewTurret
         {
+            stabilizedInAxes = 0;
             disableSoundAttenuation = 0;
             soundAttenuationTurret = "TankAttenuation";
             gunnerCompartments = "Compartment3";
-            stabilizedInAxes = 0;
 
             class Components
             {
