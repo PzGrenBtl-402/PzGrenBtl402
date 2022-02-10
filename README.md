@@ -37,7 +37,7 @@ This mod contains changes to Redd'n'Tanks, BwMod, NiArms, RHS and GM improving A
 
 ### General
 
-- ACRE Racks
+- ACRE Racks and attenuation rework
 - Increased vehicle space
 - Ability to fire vehicle smoke launcher as gunner and commander (also turned out)
 - [Redd'n'Tank/GM] Back compartment of the Marder is locked when ramp is closed (Driver and commander can access vehicle via the hatches)
