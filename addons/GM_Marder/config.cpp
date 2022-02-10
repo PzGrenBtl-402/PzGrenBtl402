@@ -16,7 +16,7 @@ class CfgPatches {
             "Redd_Bags"
         };
         author = ECSTRING(Main, authors);
-        authors[] = {"Timi007", "Lemonberries"};
+        authors[] = {"Timi007", "Lemonberries", "Mishkar"};
         url = ECSTRING(Main, URL);
         VERSION_CONFIG;
     };

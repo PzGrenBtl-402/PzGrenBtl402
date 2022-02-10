@@ -8,7 +8,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"PzGrenBtl402_Main", "Redd_Vehicles_Main"};
         author = ECSTRING(Main, authors);
-        authors[] = {""};
+        authors[] = {"Timi007", "Lemonberries"};
         url = ECSTRING(Main, URL);
         VERSION_CONFIG;
     };

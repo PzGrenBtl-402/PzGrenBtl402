@@ -6,9 +6,17 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_Redd_Main", "PzGrenBtl402_Milan", "PzGrenBtl402_ACRE", "PzGrenBtl402_SmokeLauncher", "redd_marder_1a5", "Redd_Bags"};
+        requiredAddons[] = {
+            "PzGrenBtl402_Main",
+            "PzGrenBtl402_Redd_Main",
+            "PzGrenBtl402_Milan",
+            "PzGrenBtl402_ACRE",
+            "PzGrenBtl402_SmokeLauncher",
+            "redd_marder_1a5",
+            "Redd_Bags"
+        };
         author = ECSTRING(Main, authors);
-        authors[] = {""};
+        authors[] = {"Lemonberries", "Mishkar", "Timi007"};
         url = ECSTRING(Main, URL);
         VERSION_CONFIG;
     };

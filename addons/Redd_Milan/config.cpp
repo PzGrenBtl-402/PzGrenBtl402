@@ -6,9 +6,15 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_Redd_Main", "PzGrenBtl402_Milan", "Redd_Milan_Static", "Redd_Bags"};
+        requiredAddons[] = {
+            "PzGrenBtl402_Main",
+            "PzGrenBtl402_Redd_Main",
+            "PzGrenBtl402_Milan",
+            "Redd_Milan_Static",
+            "Redd_Bags"
+        };
         author = ECSTRING(Main, authors);
-        authors[] = {""};
+        authors[] = {"Lemonberries", "Timi007"};
         url = ECSTRING(Main, URL);
         VERSION_CONFIG;
     };
