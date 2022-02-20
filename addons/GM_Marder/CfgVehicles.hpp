@@ -108,8 +108,8 @@ class CfgVehicles
             {
                 weapons[] = {"gm_20mm_rh202","gm_mg3_coax", "PzGrenBtl402_SmokeLauncher"};
                 magazines[] = {
-                    "PzGrenBtl402_400Rnd_20x139mm_hei_t_dm81",
-                    "PzGrenBtl402_100Rnd_20x139mm_apds_t_dm63",
+                    QGVAR(100Rnd_20x139mm_apds_t_dm63),
+                    QGVAR(400Rnd_20x139mm_hei_t_dm81),
                     "gm_500Rnd_762x51mm_b_t_DM21_mg3",
                     "gm_500Rnd_762x51mm_b_t_DM21_mg3",
                     "gm_500Rnd_762x51mm_b_t_DM21_mg3",
