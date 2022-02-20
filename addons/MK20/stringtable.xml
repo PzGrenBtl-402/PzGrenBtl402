@@ -2,20 +2,20 @@
 <Project name="PzGrenBtl402">
     <Package name="MK20">
         <Key ID="STR_PzGrenBtl402_MK20_heAmmoDisplayName">
-            <Original>MK 20mm HE-T</Original>
-            <German>MK 20mm HE-T</German>
+            <Original>Belt 25 rounds 20x139mm HE-T</Original>
+            <German>Gurt 25 Patronen 20x139mm HE-T</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_MK20_apAmmoDisplayName">
-            <Original>MK 20mm APDS-T</Original>
-            <German>MK 20mm APDS-T</German>
+            <Original>Belt 25 rounds 20x139mm APDS-T</Original>
+            <German>Gurt 25 Patronen 20x139mm APDS-T</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_MK20_heAmmoDescription">
-            <Original>TODO</Original>
-            <German>TODO</German>
+            <Original>Ammobelt with 25 rounds of HE-T for the autocannon 20x139mm.</Original>
+            <German>Patronengurt mit 25 Patronen der Sorte HE-T für die Maschinenkannone 20x139mm.</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_MK20_apAmmoDescription">
-            <Original>TODO</Original>
-            <German>TODO</German>
+            <Original>Ammobelt with 25 rounds of APDS-T for the autocannon 20x139mm.</Original>
+            <German>Patronengurt mit 25 Patronen der Sorte APDS-T für die Maschinenkannone 20x139mm.</German>
         </Key>
 
         <Key ID="STR_PzGrenBtl402_MK20_loadingfailed">
@@ -35,12 +35,12 @@
             <German>Keine Munition im Fahrzeug.</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_MK20_loadedAmmoHE">
-            <Original>%1 rounds 20mm HE-T loaded.</Original>
-            <German>%1 Patronen 20mm HE-T geladen.</German>
+            <Original>%1 rounds 20x139mm HE-T loaded.</Original>
+            <German>%1 Patronen 20x139mm HE-T geladen.</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_MK20_loadedAmmoAP">
-            <Original>%1 rounds 20mm APDS-T loaded.</Original>
-            <German>%1 Patronen 20mm APDS-T geladen.</German>
+            <Original>%1 rounds 20x139mm APDS-T loaded.</Original>
+            <German>%1 Patronen 20x139mm APDS-T geladen.</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_MK20_loadHE">
             <Original>Reload MK 20mm HE-T</Original>

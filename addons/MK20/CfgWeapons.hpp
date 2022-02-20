@@ -6,7 +6,7 @@ class CfgWeapons {
         author = ECSTRING(Main, authors);
         scope = 0;
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 10;
+            mass = 20;
         };
         GVAR(fillAmount) = 25; // 25 Patronen
     };
