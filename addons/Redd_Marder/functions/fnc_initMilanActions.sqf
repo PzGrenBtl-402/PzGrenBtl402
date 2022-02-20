@@ -104,3 +104,45 @@ private _unloadIcon = QPATHTOEF(Milan,data\ui\holdaction_unload_milan);
     false,
     false
 ] call BIS_fnc_holdActionAdd;
+
+// MK HE laden
+private _loadIcon = QPATHTOEF(Milan,data\ui\holdaction_load_milan);
+[
+    _veh,
+    "MK 20mm HE-T laden",
+    _loadIcon,
+    _loadIcon,
+    "_this == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
+    "_caller == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
+    {},
+    {},
+    {[_target, 'HE'] call PzGrenBtl402_Redd_Marder_fnc_loadMK},
+    {},
+    [],
+    10,
+    nil,
+    false,
+    false,
+    false
+] call BIS_fnc_holdActionAdd;
+
+// MK AP laden
+private _loadIcon = QPATHTOEF(Milan,data\ui\holdaction_load_milan);
+[
+    _veh,
+    "MK 20mm APDS-T laden",
+    _loadIcon,
+    _loadIcon,
+    "_this == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
+    "_caller == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
+    {},
+    {},
+    {[_target, 'AP'] call PzGrenBtl402_Redd_Marder_fnc_loadMK},
+    {},
+    [],
+    10,
+    nil,
+    false,
+    false,
+    false
+] call BIS_fnc_holdActionAdd;

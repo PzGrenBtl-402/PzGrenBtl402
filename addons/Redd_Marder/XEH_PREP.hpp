@@ -9,5 +9,6 @@ PREP(handleFired);
 PREP(initActions);
 PREP(initMilanActions);
 PREP(loadMilan);
+PREP(loadMK);
 PREP(openRamp);
 PREP(unloadMilan);
