@@ -21,12 +21,12 @@ params ["_veh"];
 if (!hasInterface) exitWith {};
 
 // MK HE laden
-private _loadIcon = QPATHTOEF(Milan,data\ui\holdaction_load_milan);
+private _loadHeIcon = QPATHTOEF(MK20,data\ui\holdaction_load_he.paa);
 [
     _veh,
-    LLSTRING(loadMkHE),
-    _loadIcon,
-    _loadIcon,
+    LELSTRING(MK20,loadHE),
+    _loadHeIcon,
+    _loadHeIcon,
     "_this == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
     "_caller == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
     {},
@@ -45,12 +45,12 @@ private _loadIcon = QPATHTOEF(Milan,data\ui\holdaction_load_milan);
 ] call BIS_fnc_holdActionAdd;
 
 // MK AP laden
-private _loadIcon = QPATHTOEF(Milan,data\ui\holdaction_load_milan);
+private _loadApIcon = QPATHTOEF(MK20,data\ui\holdaction_load_ap.paa);
 [
     _veh,
-    LLSTRING(loadMkAP),
-    _loadIcon,
-    _loadIcon,
+    LELSTRING(MK20,loadAP),
+    _loadApIcon,
+    _loadApIcon,
     "_this == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
     "_caller == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
     {},

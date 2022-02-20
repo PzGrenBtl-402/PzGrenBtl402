@@ -12,6 +12,7 @@ class CfgPatches {
             "PzGrenBtl402_Milan",
             "PzGrenBtl402_ACRE",
             "PzGrenBtl402_SmokeLauncher",
+            "PzGrenBtl402_MK20",
             "redd_marder_1a5",
             "Redd_Bags"
         };
