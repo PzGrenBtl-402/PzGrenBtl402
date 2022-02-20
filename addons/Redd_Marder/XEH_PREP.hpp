@@ -8,6 +8,7 @@ PREP(disassembleMilan);
 PREP(handleFired);
 PREP(initActions);
 PREP(initMilanActions);
+PREP(initMKActions);
 PREP(loadMilan);
 PREP(loadMK);
 PREP(openRamp);

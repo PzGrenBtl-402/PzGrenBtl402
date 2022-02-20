@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="Redd_Marder">
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_loadMkfailed">
+            <Original>Laden nicht möglich!</Original>
+            <German>Laden nicht möglich!</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_loadMkGunnerInVehicle">
+            <Original>Richtschütze besetzt Waffe.</Original>
+            <German>Richtschütze besetzt Waffe.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_loadMkMagazineFull">
+            <Original>Munitionskasten voll.</Original>
+            <German>Munitionskasten voll.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_loadMkNoAmmoInVehicle">
+            <Original>Keine Munition im Fahrzeug.</Original>
+            <German>Keine Munition im Fahrzeug.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_loadedMkAmmoHE">
+            <Original>%1 Patronen 20mm HE-T geladen.</Original>
+            <German>%1 Patronen 20mm HE-T geladen.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_loadedMkAmmoAP">
+            <Original>%1 Patronen 20mm APDS-T geladen.</Original>
+            <German>%1 Patronen 20mm APDS-T geladen.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_loadMkAP">
+            <Original>MK 20mm APDS-T laden</Original>
+            <German>MK 20mm APDS-T laden</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_loadMkHE">
+            <Original>MK 20mm HE-T laden</Original>
+            <German>MK 20mm HE-T laden</German>
+        </Key>
+    </Package>
+</Project>
