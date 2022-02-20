@@ -5,10 +5,19 @@ class CfgVehicles {
         author = ECSTRING(Main, authors);
         scope = 0;
         scopeCurator = 0;
-        editorCategory = "EdCat_Equipment";
-        editorSubcategory = "EdSubcat_InventoryItems";
-        vehicleClass = "Items";
-        model = "\A3\Weapons_F\DummyItemHorizontal.p3d";
+        editorSubcategory = "EdSubcat_Military";
+        icon="iconObject_2x1";
+        model = "\A3\Structures_F_EPB\Items\Military\Ammobox_rounds_F.p3d";
+        editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Ammobox_rounds_F.jpg";
+        mapSize = 0.34;
+		class SimpleObject {
+			eden = 1;
+			animate[] = {};
+			hide[] = {};
+			verticalOffset = 0.105;
+			verticalOffsetWorld = 0;
+			init = "''";
+		};
         class TransportItems {};
     };
 
