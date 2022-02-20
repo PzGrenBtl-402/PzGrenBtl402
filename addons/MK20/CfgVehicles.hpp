@@ -12,10 +12,9 @@ class CfgVehicles {
         class TransportItems {};
     };
 
-    class GVAR(he_ammo_item_base): GVAR(ammo_item_base) {
+    class GVAR(he_ammo_item): GVAR(ammo_item_base) {
         displayName = CSTRING(heAmmoDisplayName);
-        scope = 2;
-        scopeCurator = 2;
+        scope = 1;
         class TransportItems {
             class GVAR(he_ammo) {
                 name = QGVAR(he_ammo);
@@ -23,10 +22,9 @@ class CfgVehicles {
             };
         };
     };
-    class GVAR(ap_ammo_item_base): GVAR(ammo_item_base) {
+    class GVAR(ap_ammo_item): GVAR(ammo_item_base) {
         displayName = CSTRING(apAmmoDisplayName);
-        scope = 2;
-        scopeCurator = 2;
+        scope = 1;
         class TransportItems {
             class GVAR(ap_ammo) {
                 name = QGVAR(ap_ammo);

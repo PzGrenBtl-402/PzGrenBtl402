@@ -4,8 +4,8 @@ class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
         units[] = {
-            QGVAR(he_ammo_item_base),
-            QGVAR(ap_ammo_item_base)
+            QGVAR(he_ammo_item),
+            QGVAR(ap_ammo_item)
         };
         weapons[] = {
             QGVAR(he_ammo),
