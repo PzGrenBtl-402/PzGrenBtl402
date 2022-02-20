@@ -17,6 +17,8 @@
  *
  */
 
+#define LOADING_TIME 15
+
 params [["_veh", objNull, [objNull]], ["_ammoType", "", [""]]];
 
 if (isNull _veh || _ammoType isEqualTo "") exitWith {};
@@ -58,7 +60,7 @@ if !(_ammoItem in itemCargo _veh) exitWith {
     ] call CBA_fnc_notify;
 };
 
-[5, [_veh, _ammoType, _ammoCount, _magType, _ammoItem], {
+[LOADING_TIME, [_veh, _ammoType, _ammoCount, _magType, _ammoItem], {
     params ["_args"];
     _args params ["_veh", "_ammoType", "_ammoCount", "_magType", "_ammoItem"];
 

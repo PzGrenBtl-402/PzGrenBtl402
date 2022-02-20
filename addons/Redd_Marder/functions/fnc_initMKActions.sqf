@@ -16,6 +16,8 @@
  *
  */
 
+#define HOLD_TIME 5
+
 params ["_veh"];
 
 if (!hasInterface) exitWith {};
@@ -27,8 +29,8 @@ private _loadHeIcon = QPATHTOEF(MK20,data\ui\holdaction_load_he.paa);
     LELSTRING(MK20,loadHE),
     _loadHeIcon,
     _loadHeIcon,
-    "_this == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
-    "_caller == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
+    "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
+    "_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
     {},
     {},
     {
@@ -37,7 +39,7 @@ private _loadHeIcon = QPATHTOEF(MK20,data\ui\holdaction_load_he.paa);
     },
     {},
     [],
-    10,
+    HOLD_TIME,
     nil,
     false,
     false,
@@ -51,8 +53,8 @@ private _loadApIcon = QPATHTOEF(MK20,data\ui\holdaction_load_ap.paa);
     LELSTRING(MK20,loadAP),
     _loadApIcon,
     _loadApIcon,
-    "_this == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
-    "_caller == fullCrew [_target, 'cargo', true] select 0 select 0 && isNull gunner _target",
+    "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
+    "_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
     {},
     {},
     {
@@ -61,7 +63,7 @@ private _loadApIcon = QPATHTOEF(MK20,data\ui\holdaction_load_ap.paa);
     },
     {},
     [],
-    10,
+    HOLD_TIME,
     nil,
     false,
     false,
