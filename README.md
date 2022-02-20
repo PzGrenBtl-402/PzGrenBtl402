@@ -16,6 +16,7 @@ This mod contains changes to Redd'n'Tanks, BwMod, NiArms, RHS and GM improving A
 - Remove NVG of Marder
 - Small changes to Marder (initial gun zeoring to 800 m; Don't lock turret when driver is turned out; Shortcut for commander to go higher; ...)
 - Custom TOW reloading system
+- Custom Mk20 reloading system (ammo as inventory items)
 
 ### BwMod
 
