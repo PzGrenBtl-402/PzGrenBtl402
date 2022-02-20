@@ -10,14 +10,14 @@ class CfgVehicles {
         model = "\A3\Structures_F_EPB\Items\Military\Ammobox_rounds_F.p3d";
         editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Ammobox_rounds_F.jpg";
         mapSize = 0.34;
-		class SimpleObject {
-			eden = 1;
-			animate[] = {};
-			hide[] = {};
-			verticalOffset = 0.105;
-			verticalOffsetWorld = 0;
-			init = "''";
-		};
+        class SimpleObject {
+            eden = 1;
+            animate[] = {};
+            hide[] = {};
+            verticalOffset = 0.105;
+            verticalOffsetWorld = 0;
+            init = "''";
+        };
         class TransportItems {};
     };
 
