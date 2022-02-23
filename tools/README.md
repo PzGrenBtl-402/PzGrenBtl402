@@ -11,11 +11,9 @@
 
 ### Initial Setup
 
-Execute `setup.bat` in `tools` folder (Windows) or download [this HEMTT binary](https://github.com/BrettMayson/HEMTT/releases/latest) and place hemtt in project root (Linux).
+Execute `setup.bat` in `tools` folder.
 
 #### File Patching Setup
-
-*Not available on Linux as there is no officially supported Arma 3 client for Linux.*
 
 Create the following links manually. First, create `z` folder in your Arma 3 directory. Then run the following command as admin, replacing the text in brackets with the appropriate paths:
 ```cmd
@@ -24,11 +22,23 @@ mklink /J "[Arma 3 installation folder]\z\PzGrenBtl402" "[location of the PzGren
 
 ### Create a Test Build
 
-To create a development build to test changes or to debug something, execute `build.bat` (Windows) or run `$ hemtt build` (Linux) in the root folder. This will populate the `addons` folder with PBOs. These PBOs still point to the source files in their respective folders however, which allows you to use [file patching](#file-patching). This also means that you cannot distribute this build to others.
+To create a development build to test changes or to debug something, execute `build.bat` in the root folder. This will populate the `addons` folder with PBOs. These PBOs still point to the source files in their respective folders however, which allows you to use [file patching](#file-patching). This also means that you cannot distribute this build to others.
 
 ### Create a Release Build
 
-To create a complete build that you can use without the source files, execute `build_release.bat` (Windows) or run `$ hemtt build --release -f` (Linux) in the root folder. This will populate the release folder with binarized PBOs that you can redistribute. These handle like those of any other mod.
+To create a complete build that you can use without the source files, execute `build_release.bat` in the root folder. This will populate the release folder with binarized PBOs that you can redistribute. These handle like those of any other mod.
+
+If you want the release build to be optimized you will need following requirements:
+- Arma 3 Tools
+- P-drive
+- [Python 3.x](https://www.python.org/downloads/)
+- [ArmaScriptCompiler](https://github.com/dedmen/ArmaScriptCompiler) (included if `setup.bat` was used)
+Create the following link manually. First, create `z` folder in your P-drive. Then run the following command as admin, replacing the text in brackets with the appropriate paths:
+```cmd
+mklink /J "P:\z\PzGrenBtl402" "[location of the PzGrenBtl402 project]"
+```
+Execute `build_release.bat` in the project root folder. Your builds will now be optimized.  
+*P-drive needs to be mounted if you want to build the release.*
 
 ## File Patching
 

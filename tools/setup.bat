@@ -1,23 +1,28 @@
 ;@Findstr -bv ;@F "%~f0" | powershell -Command - & pause & goto:eof
 
+# Unzip backwards compatibility (Windows 8)
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+function Unzip {
+    param([string]$zipfile, [string]$outpath)
+
+    [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
+}
+
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $client = New-Object Net.WebClient
 
-Write-Output "=> Creating Temp working directory ..."
-New-Item -ItemType Directory -Path ".\temp" -Force | Out-Null
-
-Write-Output "=> Downloading HEMTT (Windows) ..."
-$client.DownloadFile("https://github.com/BrettMayson/HEMTT/releases/download/v0.7.6/hemtt-v0.7.6-x86_64-pc-windows-msvc.zip", ".\temp\hemtt.zip")
+Write-Output "=> Downloading tools ..."
+$client.DownloadFile("http://dev.idi-systems.com/tools/acre2_tools_user.zip", "acre2_tools_user.zip")
 $client.dispose()
 
-Write-Output "=> Extracting HEMTT ..."
-Expand-Archive ".\temp\hemtt.zip" -DestinationPath ".\temp\hemtt"
+Write-Output "=> Cleaning old ..."
+Remove-Item "..\hemtt.exe" -ErrorAction Ignore
+Remove-Item "..\ArmaScriptCompiler.exe" -ErrorAction Ignore
 
-Move-Item -Path ".\temp\hemtt\hemtt.exe" -Destination "..\hemtt.exe" -Force
+Write-Output "=> Extracting ..."
+Unzip "acre2_tools_user.zip" "..\."
+Remove-Item "acre2_tools_user.zip"
 
-Remove-Item -Recurse -Force -Path ".\temp"
+Remove-Item "..\hemtt" -ErrorAction Ignore
 
-Write-Output "=> Updating HEMTT ..."
-Invoke-Expression "..\hemtt.exe update"
-
-Write-Output "=> HEMTT successfully installed to project!"
+Write-Output "=> Tools successfully installed to project!"
