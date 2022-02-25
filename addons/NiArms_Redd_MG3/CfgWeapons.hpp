@@ -1,7 +1,7 @@
 class CfgWeapons {
     class Redd_MG3;
     class Redd_MG3_Static: Redd_MG3 {
-        magazineWell[] += {GVAR(mg3_762x51)};
+        magazineWell[] += {QGVAR(mg3_762x51)};
         magazines[] += { // ACE CSW needs all compatible magazines in this array for reloading
             "hlc_50Rnd_762x51_B_MG3",
             "hlc_50Rnd_762x51_mdim_MG3",
