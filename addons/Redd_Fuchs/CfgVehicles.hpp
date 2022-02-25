@@ -35,7 +35,7 @@ class CfgVehicles
                 shortName = ECSTRING(ACRE, BVShort);
                 allowedPositions[] = {"driver", "gunner", {"turret", {0,3}}};
                 disabledPositions[] = {};
-                limitedPositions[] = {"commander", {"turret", [1]}, {"cargo", "all"}, {"ffv", "all"}};
+                limitedPositions[] = {"commander", {"turret", {1}}, {"cargo", "all"}, {"ffv", "all"}};
                 numLimitedPositions = 2;
                 masterPositions[] = {};
                 connectedByDefault = 1;
