@@ -29,8 +29,8 @@ private _rearmHeIcon = QPATHTOEF(MK20,data\ui\holdaction_rearm_he.paa);
     LELSTRING(MK20,rearmHE),
     _rearmHeIcon,
     _rearmHeIcon,
-    "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
-    "_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
+    QUOTE([ARR_2(_target, _this)] call FUNC(canRearmMK)),
+    QUOTE([ARR_2(_target, _caller)] call FUNC(canRearmMK)),
     {},
     {},
     {
@@ -53,8 +53,8 @@ private _rearmApIcon = QPATHTOEF(MK20,data\ui\holdaction_rearm_ap.paa);
     LELSTRING(MK20,rearmAP),
     _rearmApIcon,
     _rearmApIcon,
-    "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
-    "_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
+    QUOTE([ARR_2(_target, _this)] call FUNC(canRearmMK)),
+    QUOTE([ARR_2(_target, _caller)] call FUNC(canRearmMK)),
     {},
     {},
     {
