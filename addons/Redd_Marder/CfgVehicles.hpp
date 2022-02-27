@@ -43,6 +43,9 @@ class CfgVehicles
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
         PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
 
+        smokeLauncherGrenadeCount = 3;
+        smokeLauncherAngle = 120;
+
         class AcreIntercoms
         {
             class Intercom_1
