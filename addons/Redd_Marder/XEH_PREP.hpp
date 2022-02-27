@@ -12,4 +12,5 @@ PREP(initRearmMKActions);
 PREP(loadMilan);
 PREP(openRamp);
 PREP(rearmMK);
+PREP(setCamonet);
 PREP(unloadMilan);

@@ -462,6 +462,13 @@ class CfgVehicles
                 initPhase = 1; //Damit die Patrone beim ersten Aufbau versteckt ist
                 AnimPeriod = 0;
             };
+
+            class Spiegel_Source
+            {
+                source = "user";
+                initPhase = 1; // eingeklappt
+                animPeriod = 2;
+            };
         };
 
         class EventHandlers: EventHandlers
@@ -524,16 +531,20 @@ class CfgVehicles
             delete milan_auf;
             delete milan_ab;
 
-            class Tarnnetz_Boden_abbauen
-            {
-                displayName = "$STR_Redd_Tarnnetz_boden_abbauen";
-                position = "actionPoint";
-                radius = 5;
-                onlyforplayer = 1;
-                showWindow = 0;
-                condition = "player == (driver this) and !(this getVariable 'has_camonet') and (this getVariable 'has_camonet_large')";
-                statement = "[this,'camonet_large',player] call Redd_fnc_marder_camonet";
-            };
+            delete orangelicht_auf;
+            delete orangelicht_ab;
+            delete Orangelicht_an;
+            delete Orangelicht_aus;
+
+            delete Redd_removeflag;
+            delete Redd_redFlag;
+            delete Redd_greenFlag;
+            delete Redd_blueFlag;
+
+            delete Tarnnetz_Fzg_aufbauen;
+            delete Tarnnetz_Fzg_abbauen;
+            delete Tarnnetz_Boden_aufbauen;
+            delete Tarnnetz_Boden_abbauen;
         };
     };
 };

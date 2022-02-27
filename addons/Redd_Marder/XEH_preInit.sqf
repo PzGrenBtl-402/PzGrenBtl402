@@ -84,4 +84,5 @@ if (hasInterface) then {
     _this call FUNC(initActions);
     _this call FUNC(initMilanActions);
     _this call FUNC(initRearmMKActions);
+    _this call FUNC(setCamonet);
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
