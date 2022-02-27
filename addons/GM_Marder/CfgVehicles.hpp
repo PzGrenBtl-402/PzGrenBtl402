@@ -20,7 +20,7 @@ class CfgVehicles
         fuelCapacity = 100;
 
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
-        PzGrenBtl402_smokeLauncherMuzzle = "PzGrenBtl402_SmokeLauncher";
+        PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
 
         class AcreIntercoms
         {
@@ -102,11 +102,13 @@ class CfgVehicles
 
     class gm_marder1a0_base: gm_marder1_base
     {
+        smokeLauncherGrenadeCount = 6;
+
         class Turrets: Turrets
         {
             class MainTurret: MainTurret
             {
-                weapons[] = {"gm_20mm_rh202","gm_mg3_coax", "PzGrenBtl402_SmokeLauncher"};
+                weapons[] = {"gm_20mm_rh202", "gm_mg3_coax", QGVAR(SmokeLauncher)};
                 magazines[] = {
                     "gm_425Rnd_20x139mm_hei_t_dm81",
                     "gm_425Rnd_20x139mm_hei_t_dm81",
@@ -116,7 +118,7 @@ class CfgVehicles
                     "gm_500Rnd_762x51mm_b_t_DM21_mg3",
                     "gm_500Rnd_762x51mm_b_t_DM21_mg3",
                     "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    "gm_2Rnd_76mm_RP_dm35" // Smoke Mag
+                    QGVAR(1Rnd_76mm_RP_dm35) // Smoke Mag
                 };
 
                 class Turrets
