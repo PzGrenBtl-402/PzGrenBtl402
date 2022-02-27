@@ -3,7 +3,7 @@
  *  Author: Mishkar
  *
  *  Description:
- *      Initializes MK actions.
+ *      Initializes rearm MK actions.
  *
  *  Parameter(s):
  *      0: OBJECT - Vehicle (Marder).
@@ -23,19 +23,19 @@ params ["_veh"];
 if (!hasInterface) exitWith {};
 
 // MK HE laden
-private _loadHeIcon = QPATHTOEF(MK20,data\ui\holdaction_load_he.paa);
+private _rearmHeIcon = QPATHTOEF(MK20,data\ui\holdaction_rearm_he.paa);
 [
     _veh,
-    LELSTRING(MK20,loadHE),
-    _loadHeIcon,
-    _loadHeIcon,
+    LELSTRING(MK20,rearmHE),
+    _rearmHeIcon,
+    _rearmHeIcon,
     "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
     "_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
     {},
     {},
     {
         params ["_veh"];
-        [_veh, 'HE'] call FUNC(loadMK);
+        [_veh, 'HE'] call FUNC(rearmMK);
     },
     {},
     [],
@@ -47,19 +47,19 @@ private _loadHeIcon = QPATHTOEF(MK20,data\ui\holdaction_load_he.paa);
 ] call BIS_fnc_holdActionAdd;
 
 // MK AP laden
-private _loadApIcon = QPATHTOEF(MK20,data\ui\holdaction_load_ap.paa);
+private _rearmApIcon = QPATHTOEF(MK20,data\ui\holdaction_rearm_ap.paa);
 [
     _veh,
-    LELSTRING(MK20,loadAP),
-    _loadApIcon,
-    _loadApIcon,
+    LELSTRING(MK20,rearmAP),
+    _rearmApIcon,
+    _rearmApIcon,
     "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
     "_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
     {},
     {},
     {
         params ["_veh"];
-        [_veh, 'AP'] call FUNC(loadMK);
+        [_veh, 'AP'] call FUNC(rearmMK);
     },
     {},
     [],

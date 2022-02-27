@@ -18,8 +18,8 @@
             <German>Patronengurt mit 25 Patronen der Sorte APDS-T für die Maschinenkanone 20 mm x 139.</German>
         </Key>
 
-        <Key ID="STR_PzGrenBtl402_MK20_loadingfailed">
-            <Original>Reloading failed!</Original>
+        <Key ID="STR_PzGrenBtl402_MK20_rearmingFailed">
+            <Original>Rearming failed!</Original>
             <German>Laden nicht möglich!</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_MK20_failGunnerInVehicle">
@@ -34,29 +34,29 @@
             <Original>No ammo in vehicle inventory.</Original>
             <German>Keine Munition im Fahrzeug.</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_MK20_loadedAmmoHE">
-            <Original>%1 rounds 20 mm x 139 HE-T loaded.</Original>
+        <Key ID="STR_PzGrenBtl402_MK20_rearmedAmmoHE">
+            <Original>%1 rounds 20 mm x 139 HE-T rearmed.</Original>
             <German>%1 Patronen 20 mm x 139 HE-T geladen.</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_MK20_loadedAmmoAP">
-            <Original>%1 rounds 20 mm x 139 APDS-T loaded.</Original>
+        <Key ID="STR_PzGrenBtl402_MK20_rearmedAmmoAP">
+            <Original>%1 rounds 20 mm x 139 APDS-T rearmed.</Original>
             <German>%1 Patronen 20 mm x 139 APDS-T geladen.</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_MK20_loadHE">
-            <Original>Reload MK 20 mm HE-T</Original>
-            <German>MK 20 mm HE-T laden</German>
+        <Key ID="STR_PzGrenBtl402_MK20_rearmHE">
+            <Original>Rearm 20 mm x 139 HE-T</Original>
+            <German>20 mm x 139 HE-T laden</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_MK20_loadAP">
-            <Original>Reload MK 20 mm APDS-T</Original>
-            <German>MK 20 mm APDS-T laden</German>
+        <Key ID="STR_PzGrenBtl402_MK20_rearmAP">
+            <Original>Rearm 20 mm x 139 APDS-T</Original>
+            <German>20 mm x 139 APDS-T laden</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_MK20_loadingHE">
-            <Original>Reloading MK 20 mm HE-T</Original>
-            <German>Lade MK 20 mm HE-T</German>
+        <Key ID="STR_PzGrenBtl402_MK20_rearmingHE">
+            <Original>Rearming %1 rounds 20 mm x 139 HE-T</Original>
+            <German>Lade %1 Patronen 20 mm x 139 HE-T</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_MK20_loadingAP">
-            <Original>Reloading MK 20 mm APDS-T</Original>
-            <German>Lade MK 20 mm APDS-T</German>
+        <Key ID="STR_PzGrenBtl402_MK20_rearmingAP">
+            <Original>Rearming %1 rounds 20 mm x 139 APDS-T</Original>
+            <German>Lade %1 Patronen 20 mm x 139 APDS-T</German>
         </Key>
     </Package>
 </Project>

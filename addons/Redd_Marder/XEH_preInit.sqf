@@ -83,5 +83,5 @@ if (hasInterface) then {
 ["Redd_Marder_1A5_base", "InitPost", {
     _this call FUNC(initActions);
     _this call FUNC(initMilanActions);
-    _this call FUNC(initMKActions);
+    _this call FUNC(initRearmMKActions);
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
