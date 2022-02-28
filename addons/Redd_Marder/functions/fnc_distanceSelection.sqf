@@ -8,7 +8,7 @@
  *  Parameter(s):
  *      0: OBJECT - The unit.
  *      1: OBJECT - The vehicle with a selection.
- *      2: OBJECT - The selection name on the vehcile.
+ *      2: OBJECT - The selection name on the vehcile. E.g. "shell_eject_pos" for turret, "machinegun_eject_pos" for mg, "smoke9_pos" for smoke launcher
  *
  *  Returns:
  *      NUMBER - Distance between selection pos and unit.
