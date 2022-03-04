@@ -9,7 +9,7 @@ PREP(distanceSelection);
 PREP(handleFired);
 PREP(initActions);
 PREP(initMilanActions);
-PREP(initRearmMKActions);
+PREP(initRearmActions);
 PREP(loadMilan);
 PREP(openRamp);
 PREP(rearmMK);

@@ -12,7 +12,7 @@
  *      Nothing.
  *
  *  Example:
- *      _this call PzGrenBtl402_Redd_Marder_fnc_initMKActions
+ *      _this call PzGrenBtl402_Redd_Marder_fnc_initRearmActions
  *
  */
 
