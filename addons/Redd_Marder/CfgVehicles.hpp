@@ -41,7 +41,7 @@ class CfgVehicles
         class TransportItems {delete _xx_Toolkit;};
 
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
-        PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
+        PzGrenBtl402_smokeLauncherMuzzle = QEGVAR(Redd_Main,SmokeLauncher);
 
         smokeLauncherGrenadeCount = 3;
         smokeLauncherAngle = 120;
@@ -151,7 +151,7 @@ class CfgVehicles
                     "Redd_Gesichert",
                     "Redd_MK20",
                     "Redd_MG3",
-                    QGVAR(SmokeLauncher) // Add SmokeLauncher to gunner
+                    QEGVAR(Redd_Main,SmokeLauncher) // Add SmokeLauncher to gunner
                 };
                 magazines[] = {
                     "Redd_MK20_HE_Mag",

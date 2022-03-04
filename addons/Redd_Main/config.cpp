@@ -18,3 +18,4 @@ class CfgPatches {
 #include "CfgRscInGameUI.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgAnimationSourceSounds.hpp"
+#include "CfgMagazines.hpp"
