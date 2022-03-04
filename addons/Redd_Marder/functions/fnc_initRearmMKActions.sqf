@@ -17,16 +17,18 @@
  */
 
 #define HOLD_TIME 5
+#define REARM_DURATION 15
 
-params ["_veh"];
+params ["_vehicle"];
 
 if (!hasInterface) exitWith {};
 
 // MK HE laden
-private _rearmHeIcon = QPATHTOEF(MK20,data\ui\holdaction_rearm_he.paa);
+private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);
+private _heMagazineName = getText (configFile >> "CfgMagazines" >> "Redd_MK20_HE_Mag" >> "displayName");
 [
-    _veh,
-    LELSTRING(MK20,rearmHE),
+    _vehicle,
+    format [LELSTRING(Rearm,rearm), _heMagazineName],
     _rearmHeIcon,
     _rearmHeIcon,
     "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
@@ -34,8 +36,8 @@ private _rearmHeIcon = QPATHTOEF(MK20,data\ui\holdaction_rearm_he.paa);
     {},
     {},
     {
-        params ["_veh"];
-        [_veh, 'HE'] call FUNC(rearmMK);
+        params ["_vehicle"];
+        [_vehicle, [0], "Redd_MK20_HE_Mag", [QEGVAR(Rearm,mk20_he_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -47,10 +49,11 @@ private _rearmHeIcon = QPATHTOEF(MK20,data\ui\holdaction_rearm_he.paa);
 ] call BIS_fnc_holdActionAdd;
 
 // MK AP laden
-private _rearmApIcon = QPATHTOEF(MK20,data\ui\holdaction_rearm_ap.paa);
+private _rearmApIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_ap.paa);
+private _apMagazineName = getText (configFile >> "CfgMagazines" >> "Redd_MK20_HE_Mag" >> "displayName");
 [
-    _veh,
-    LELSTRING(MK20,rearmAP),
+    _vehicle,
+    format [LELSTRING(Rearm,rearm), _apMagazineName],
     _rearmApIcon,
     _rearmApIcon,
     "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
@@ -58,8 +61,8 @@ private _rearmApIcon = QPATHTOEF(MK20,data\ui\holdaction_rearm_ap.paa);
     {},
     {},
     {
-        params ["_veh"];
-        [_veh, 'AP'] call FUNC(rearmMK);
+        params ["_vehicle"];
+        [_vehicle, [0], "Redd_MK20_AP_Mag", [QEGVAR(Rearm,mk20_ap_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
     },
     {},
     [],

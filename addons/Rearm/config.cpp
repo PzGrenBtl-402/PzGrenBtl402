@@ -3,16 +3,10 @@
 class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
-        units[] = {
-            QGVAR(he_ammo_item),
-            QGVAR(ap_ammo_item)
-        };
-        weapons[] = {
-            QGVAR(he_ammo),
-            QGVAR(ap_ammo)
-        };
+        units[] = {};
+        weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main"};
+        requiredAddons[] = {"PzGrenBtl402_Main", "ace_rearm"};
         author = ECSTRING(Main, authors);
         authors[] = {"Timi007"};
         url = ECSTRING(Main, URL);
@@ -21,4 +15,4 @@ class CfgPatches {
 };
 
 #include "CfgVehicles.hpp"
-#include "CfgWeapons.hpp"
+#include "CfgMagazines.hpp"

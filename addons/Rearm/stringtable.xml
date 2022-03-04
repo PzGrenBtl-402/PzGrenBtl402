@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="Rearm">
+        <Key ID="STR_PzGrenBtl402_Rearm_mk20HeAmmoDisplayName">
+            <Original>Belt 25 rounds 20 mm x 139 HE-T</Original>
+            <German>Gurt 25 Patronen 20 mm x 139 HE-T</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_mk20ApAmmoDisplayName">
+            <Original>Belt 25 rounds 20 mm x 139 APDS-T</Original>
+            <German>Gurt 25 Patronen 20 mm x 139 APDS-T</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_mk20HeAmmoDescription">
+            <Original>Ammo belt with 25 rounds of HE-T for the autocannon 20 mm x 139.</Original>
+            <German>Patronengurt mit 25 Patronen der Sorte HE-T für die Maschinenkanone 20 mm x 139.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_mk20ApAmmoDescription">
+            <Original>Ammo belt with 25 rounds of APDS-T for the autocannon 20 mm x 139.</Original>
+            <German>Patronengurt mit 25 Patronen der Sorte APDS-T für die Maschinenkanone 20 mm x 139.</German>
+        </Key>
+
+        <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDisplayName">
+            <Original>Smoke 3 Grenade Pack</Original>
+            <German>Smoke 3 Grenade Pack</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_smoke6GrenadeAmmoDisplayName">
+            <Original>Smoke 6 Grenade Pack</Original>
+            <German>Smoke 6 Grenade Pack</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDescription">
+            <Original>Smoke 3 Grenade Pack</Original>
+            <German>Smoke 3 Grenade Pack</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_smoke6GrenadeAmmoDescription">
+            <Original>Smoke 6 Grenade Pack</Original>
+            <German>Smoke 6 Grenade Pack</German>
+        </Key>
+
+        <Key ID="STR_PzGrenBtl402_Rearm_rearmingFailed">
+            <Original>Rearming failed!</Original>
+            <German>Laden nicht möglich!</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_failGunnerInVehicle">
+            <Original>Gunner still in vehicle.</Original>
+            <German>Richtschütze besetzt Waffe.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_failMagazineFull">
+            <Original>Magazine full.</Original>
+            <German>Munitionskasten voll.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_failNoAmmoInVehicle">
+            <Original>No ammo in vehicle inventory.</Original>
+            <German>Keine Munition im Fahrzeug.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_rearmed">
+            <Original>%1 rounds %2 rearmed.</Original>
+            <German>%1 Patronen %2 geladen.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_rearm">
+            <Original>Rearm %1</Original>
+            <German>%1 laden</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_rearming">
+            <Original>Rearming %1 rounds of %2 ...</Original>
+            <German>Lade %1 Patronen %2 ...</German>
+        </Key>
+    </Package>
+</Project>
