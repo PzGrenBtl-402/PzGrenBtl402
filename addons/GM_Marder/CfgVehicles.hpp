@@ -9,8 +9,9 @@ class CfgVehicles
 
     class gm_marder1_base: gm_tracked_APC_base
     {
-        class MachineGunTurret_base;
+        class CargoTurret;
         class CommanderTurret_base;
+        class MachineGunTurret_base;
         class Turrets: Turrets
         {
             class MainTurret;
@@ -18,6 +19,11 @@ class CfgVehicles
 
         maximumLoad = 10000;
         fuelCapacity = 100;
+        disableSoundAttenuation = 0;
+        attenuationEffectType = "TankAttenuation";
+        driverCompartments = "Compartment1";
+        cargoCompartments[] = {"Compartment2"};
+        enableGPS = 0;
 
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
         PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
@@ -106,9 +112,32 @@ class CfgVehicles
 
         class Turrets: Turrets
         {
+            class CargoTurret_01: CargoTurret
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments= "Compartment2";
+            };
+
+            class SquadLeaderTurret: MainTurret
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments= "Compartment2";
+            };
+
             class MainTurret: MainTurret
             {
-                weapons[] = {"gm_20mm_rh202", "gm_mg3_coax", QGVAR(SmokeLauncher)};
+                discreteDistanceInitIndex = 7; // Set initial gun zeoring to 800 m
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments= "Compartment3";
+
+                weapons[] = {
+                    "gm_20mm_rh202",
+                    "gm_mg3_coax",
+                    QGVAR(SmokeLauncher)
+                };
                 magazines[] = {
                     "gm_425Rnd_20x139mm_hei_t_dm81",
                     "gm_425Rnd_20x139mm_hei_t_dm81",
@@ -125,12 +154,20 @@ class CfgVehicles
                 {
                     class CommanderTurret: CommanderTurret_base
                     {
+                        disableSoundAttenuation = 0;
+                        soundAttenuationTurret = "TankAttenuation";
+                        gunnerCompartments= "Compartment3";
+
                         weapons[] = {}; // Move SmokeLauncher to gunner
                         magazines[] = {};
                     };
 
                     class MilanTurret_01: MachineGunTurret_base
                     {
+                        disableSoundAttenuation = 0;
+                        soundAttenuationTurret = "TankAttenuation";
+                        gunnerCompartments= "Compartment4";
+
                         magazines[] = {};
                     };
                 };
