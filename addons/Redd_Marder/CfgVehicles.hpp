@@ -159,12 +159,6 @@ class CfgVehicles
                     "Redd_MK20_HE_Mag",
                     "Redd_MK20_AP_Mag",
                     "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
                     "Redd_SmokeLauncherMag" // PzGrenBtl402_SmokeLauncher still uses Redds Mags
                 };
 

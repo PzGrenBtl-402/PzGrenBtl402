@@ -45,41 +45,50 @@ if (_ammoItemIndex < 0) exitWith {
 
 private _ammoItem = _compatibleAmmoItems select _ammoItemIndex;
 
-private _magazines = magazinesAmmo [_vehicle, true];
-private _magIndex = _magazines findIf {(_x select 0) == _magazineClass};
-if (_magIndex < 0) exitWith {ERROR_1("Vehicle does not have magazine '%1'", _magazineClass)};
-private _ammoCount = (_magazines select _magIndex) select 1;
-
-private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _magazineClass >> "count");
 private _rounds = getNumber (configFile >> "CfgMagazines" >> _ammoItem >> "count");
+private _maxMagazines [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getMaxMagazines;
+private _ammoCounts = [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getTurretMagazineAmmo;
 
-if (_ammoCount > (_maxAmmo - _rounds)) exitWith {
+TRACE_3("Magagzines", _ammoCounts, _maxMagazines, _rounds);
+
+private _ammoToAdd = _rounds;
+for "_i" from (count _ammoCounts - 1) to 0 do {
+    private _count = _ammoCounts select _i;
+    private _maxAmmo = _maxMagazines select _i;
+    if (_count >= _maxAmmo) then {
+        continue;
+    };
+
+    if (_ammoToAdd <= 0) then {
+        break;
+    };
+
+    // 1: max 500, count 400, add 200
+    // 2: max 500, count 0, add 100
+    private _canAdd = (_maxAmmo - _count) min _ammoToAdd;
+    _ammoToAdd = (_ammoToAdd - _canAdd) max 0;
+    _ammoCounts set [_i, _count + _canAdd];
+};
+
+if (_ammoToAdd > 0) exitWith {
     [
         [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
         [LLSTRING(failMagazineFull)]
     ] call CBA_fnc_notify;
 };
 
-TRACE_2("Rearming amount", _ammoItem, _rounds);
-
-private _allMags = [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getTurretMagazineAmmo;
-
-TRACE_1("All mags", _allMags);
-
-// TODO: waffen mit mehreren mags funktionieren noch nicht -> MG3 (mags verschwinden, weil anzahl durch setTurretMagazineAmmo überschrieben wird -> array muss von hinten gefüllt werden)
-
 private _magazineName = getText (configFile >> "CfgMagazines" >> _ammoItem >> "displayName");
 
 [
     _rearmingDuration,
-    [_vehicle, _turretPath, _magazineClass, _magazineName, _ammoItem, _ammoCount, _rounds],
+    [_vehicle, _turretPath, _magazineClass, _magazineName, _ammoItem, _ammoCounts, _rounds],
     {
         params ["_args"];
-        _args params ["_vehicle", "_turretPath", "_magazineClass", "_magazineName", "_ammoItem", "_ammoCount", "_rounds"];
+        _args params ["_vehicle", "_turretPath", "_magazineClass", "_magazineName", "_ammoItem", "_ammoCounts", "_rounds"];
 
         // this uses ACEs version of adding ammo because BIS command is broken
         // redirects to ace_rearm_fnc_setTurretMagazineAmmo
-        [QGVAR(setTurretMagazineAmmo), [_vehicle, _turretPath, _magazineClass, [_ammoCount + _rounds]]] call CBA_fnc_serverEvent; // remoteExec server (endpoint defined in postInit)
+        [QGVAR(setTurretMagazineAmmo), [_vehicle, _turretPath, _magazineClass, _ammoCounts]] call CBA_fnc_serverEvent; // remoteExec server (endpoint defined in postInit)
 
         [_vehicle, _ammoItem] call CBA_fnc_removeMagazineCargo;
 
