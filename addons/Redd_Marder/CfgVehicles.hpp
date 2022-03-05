@@ -545,6 +545,9 @@ class CfgVehicles
             delete Tarnnetz_Fzg_abbauen;
             delete Tarnnetz_Boden_aufbauen;
             delete Tarnnetz_Boden_abbauen;
+
+            delete Spiegel_ausklappen;
+            delete Spiegel_einklappen;
         };
     };
 };
