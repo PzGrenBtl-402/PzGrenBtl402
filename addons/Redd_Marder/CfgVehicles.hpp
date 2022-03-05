@@ -55,7 +55,7 @@ class CfgVehicles
                 allowedPositions[] = {"crew"};
                 disabledPositions[] = {};
                 limitedPositions[] = {{"cargo", "all"}, {"ffv", "all"}};
-                numLimitedPositions = 1;
+                numLimitedPositions = 3;
                 masterPositions[] = {};
                 connectedByDefault = 1;
             };
