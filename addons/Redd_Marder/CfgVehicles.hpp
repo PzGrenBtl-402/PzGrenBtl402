@@ -37,6 +37,8 @@ class CfgVehicles
         cargoCompartments[] = {"Compartment2"};
         enableGPS = 0;
 
+        ace_vehicles_engineStartDelay = 5;
+
         class TransportBackpacks {delete _xx_B_AssaultPack_rgr;};
         class TransportItems {delete _xx_Toolkit;};
 
@@ -55,7 +57,7 @@ class CfgVehicles
                 allowedPositions[] = {"crew"};
                 disabledPositions[] = {};
                 limitedPositions[] = {{"cargo", "all"}, {"ffv", "all"}};
-                numLimitedPositions = 1;
+                numLimitedPositions = 3;
                 masterPositions[] = {};
                 connectedByDefault = 1;
             };
@@ -545,6 +547,9 @@ class CfgVehicles
             delete Tarnnetz_Fzg_abbauen;
             delete Tarnnetz_Boden_aufbauen;
             delete Tarnnetz_Boden_abbauen;
+
+            delete Spiegel_ausklappen;
+            delete Spiegel_einklappen;
         };
     };
 };
