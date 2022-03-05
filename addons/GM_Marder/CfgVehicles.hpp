@@ -25,6 +25,8 @@ class CfgVehicles
         cargoCompartments[] = {"Compartment2"};
         enableGPS = 0;
 
+        ace_vehicles_engineStartDelay = 5;
+
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
         PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
 

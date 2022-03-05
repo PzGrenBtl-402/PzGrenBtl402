@@ -37,6 +37,8 @@ class CfgVehicles
         cargoCompartments[] = {"Compartment2"};
         enableGPS = 0;
 
+        ace_vehicles_engineStartDelay = 5;
+
         class TransportBackpacks {delete _xx_B_AssaultPack_rgr;};
         class TransportItems {delete _xx_Toolkit;};
 
