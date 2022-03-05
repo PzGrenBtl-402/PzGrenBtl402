@@ -23,9 +23,15 @@ params [["_vehicle", objNull, [objNull]], ["_ammoType", "", [""]]];
 
 if (isNull _vehicle || _ammoType isEqualTo "") exitWith {};
 
+private _magHE = "Redd_MK20_HE_Mag";
+private _magAP = "Redd_MK20_AP_Mag";
+
+private _magIndexHE = _vehicle magazinesTurret [[0], true] find _magHE;
+private _magIndexAP = _vehicle magazinesTurret [[0], true] find _magAP;
+
 private _ammoConfig = switch _ammoType do {
-    case 'HE': {[0, 250, "Redd_MK20_HE_Mag", QEGVAR(MK20,he_ammo)]}; // magazine index, max ammo count, mag type, ammo item
-    case 'AP': {[1, 100, "Redd_MK20_AP_Mag", QEGVAR(MK20,ap_ammo)]};
+    case 'HE': {[_magIndexHE, 250, _magHE, QEGVAR(MK20,he_ammo)]}; // magazine index, max ammo count, mag type, ammo item
+    case 'AP': {[_magIndexAP, 100, _magAP, QEGVAR(MK20,ap_ammo)]};
     default {[]};
 };
 
