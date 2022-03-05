@@ -25,7 +25,7 @@ if (!hasInterface) exitWith {};
 
 // MK HE laden
 private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);
-private _heMagazineName = getText (configFile >> "CfgMagazines" >> "Redd_MK20_HE_Mag" >> "displayName");
+private _heMagazineName = getText (configFile >> "CfgMagazines" >> QEGVAR(Rearm,mk20_he_ammo) >> "displayName");
 [
     _vehicle,
     format [LELSTRING(Rearm,rearm), _heMagazineName],
@@ -50,7 +50,7 @@ private _heMagazineName = getText (configFile >> "CfgMagazines" >> "Redd_MK20_HE
 
 // MK AP laden
 private _rearmApIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_ap.paa);
-private _apMagazineName = getText (configFile >> "CfgMagazines" >> "Redd_MK20_HE_Mag" >> "displayName");
+private _apMagazineName = getText (configFile >> "CfgMagazines" >> QEGVAR(Rearm,mk20_ap_ammo) >> "displayName");
 [
     _vehicle,
     format [LELSTRING(Rearm,rearm), _apMagazineName],
@@ -66,6 +66,83 @@ private _apMagazineName = getText (configFile >> "CfgMagazines" >> "Redd_MK20_HE
     },
     {},
     [],
+    HOLD_TIME,
+    nil,
+    false,
+    false,
+    false
+] call BIS_fnc_holdActionAdd;
+
+// Nebeltöpfe auffüllen
+private _rearmSmokeIcon = "";
+private _smokeMagazineName = getText (configFile >> "CfgMagazines" >> QEGVAR(Rearm,smoke_3grenade_ammo) >> "displayName");
+[
+    _vehicle,
+    format [LELSTRING(Rearm,rearm), _smokeMagazineName],
+    _rearmSmokeIcon,
+    _rearmSmokeIcon,
+    QUOTE([ARR_4(_target, _this, 'smoke9_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_4(_target, _caller, 'smoke9_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    {},
+    {},
+    {
+        params ["_vehicle"];
+        [_vehicle, [0], "Redd_SmokeLauncherMag", [QEGVAR(Rearm,smoke_3grenade_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
+    },
+    {},
+    [],
+    HOLD_TIME,
+    nil,
+    false,
+    false,
+    false
+] call BIS_fnc_holdActionAdd;
+
+// MG laden
+private _rearmMGIcon = "";
+private _mgMagazineName = getText (configFile >> "CfgMagazines" >> "Redd_Mg3_Mag" >> "displayName");
+// List of all mags which can be used to rearm the turret MG3
+// Sorted decending to rearm with the bigger mags first
+private _mg3CompatibleMags = [
+    "hlc_250Rnd_762x51_B_MG3",
+    "hlc_250Rnd_762x51_M_MG3",
+    "hlc_250Rnd_762x51_mdim_MG3",
+    "hlc_250Rnd_762x51_Barrier_MG3",
+    "hlc_250Rnd_762x51_T_MG3",
+
+    "gm_120Rnd_762x51mm_B_T_DM21_mg3_grn",
+    "gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn",
+    "gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn",
+
+    "hlc_100Rnd_762x51_B_MG3",
+    "hlc_100Rnd_762x51_M_MG3",
+    "hlc_100Rnd_762x51_mdim_MG3",
+    "hlc_100Rnd_762x51_Barrier_MG3",
+    "hlc_100Rnd_762x51_T_MG3",
+
+    "hlc_50Rnd_762x51_B_MG3",
+    "hlc_50Rnd_762x51_M_MG3",
+    "hlc_50Rnd_762x51_mdim_MG3",
+    "hlc_50Rnd_762x51_Barrier_MG3",
+    "hlc_50Rnd_762x51_T_MG3"
+];
+[
+    _vehicle,
+    format [LELSTRING(Rearm,rearm), _mgMagazineName],
+    _rearmMGIcon,
+    _rearmMGIcon,
+    QUOTE([ARR_4(_target, _this, 'machinegun_eject_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_4(_target, _caller, 'machinegun_eject_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    {},
+    {},
+    {
+        params ["_vehicle", "", "", "_args"];
+        _args params ["_mg3CompatibleMags"];
+
+        [_vehicle, [0], "Redd_Mg3_Mag", _mg3CompatibleMags, REARM_DURATION] call EFUNC(Rearm,rearm);
+    },
+    {},
+    [_mg3CompatibleMags],
     HOLD_TIME,
     nil,
     false,

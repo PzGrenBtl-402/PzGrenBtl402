@@ -23,6 +23,8 @@
 
 params [["_vehicle", objNull, [objNull]], ["_turretPath", [0], [[]]], ["_magazineClass", "", [""]], ["_compatibleAmmoItems", [], [[]]], ["_rearmingDuration", 15, [0]]];
 
+TRACE_1("Rearm called", _this);
+
 if (isNull _vehicle || _magazineClass isEqualTo "" || _compatibleAmmoItems isEqualTo []) exitWith {};
 
 if (!isNull gunner _vehicle) exitWith {
@@ -32,8 +34,8 @@ if (!isNull gunner _vehicle) exitWith {
     ] call CBA_fnc_notify;
 };
 
-private _itemCargo = itemCargo _vehicle;
-private _ammoItemIndex = _compatibleAmmoItems findIf {_x in _itemCargo};
+private _magazineCargo = magazineCargo _vehicle;
+private _ammoItemIndex = _compatibleAmmoItems findIf {_x in _magazineCargo};
 if (_ammoItemIndex < 0) exitWith {
     [
         [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
@@ -60,7 +62,13 @@ if (_ammoCount > (_maxAmmo - _rounds)) exitWith {
 
 TRACE_2("Rearming amount", _ammoItem, _rounds);
 
-private _magazineName = getText (configFile >> "CfgMagazines" >> _magazineClass >> "displayName");
+private _allMags = [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getTurretMagazineAmmo;
+
+TRACE_1("All mags", _allMags);
+
+// TODO: waffen mit mehreren mags funktionieren noch nicht -> MG3 (mags verschwinden, weil anzahl durch setTurretMagazineAmmo überschrieben wird -> array muss von hinten gefüllt werden)
+
+private _magazineName = getText (configFile >> "CfgMagazines" >> _ammoItem >> "displayName");
 
 [
     _rearmingDuration,
@@ -73,7 +81,7 @@ private _magazineName = getText (configFile >> "CfgMagazines" >> _magazineClass 
         // redirects to ace_rearm_fnc_setTurretMagazineAmmo
         [QGVAR(setTurretMagazineAmmo), [_vehicle, _turretPath, _magazineClass, [_ammoCount + _rounds]]] call CBA_fnc_serverEvent; // remoteExec server (endpoint defined in postInit)
 
-        [_vehicle, _ammoItem] call CBA_fnc_removeItemCargo;
+        [_vehicle, _ammoItem] call CBA_fnc_removeMagazineCargo;
 
         private _successText = format [LLSTRING(rearmed), _rounds, _magazineName];
         [_successText, 1, [0, 0.9, 0, 1]] call CBA_fnc_notify;
