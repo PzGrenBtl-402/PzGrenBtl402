@@ -66,7 +66,7 @@ if (_ammoToAdd > 0) exitWith {
 
 // Disable turret
 private _originalDamage = _vehicle getHitPointDamage "hitturret";
-_vehicle setHitPointDamage ["hitturret", 1, false, player];
+[QGVAR(setTurretDamage), [_vehicle, 1], _vehicle] call CBA_fnc_targetEvent;
 
 private _magazineName = [_ammoItem] call EFUNC(Rearm,getMagazineName);
 
@@ -85,7 +85,7 @@ private _magazineName = [_ammoItem] call EFUNC(Rearm,getMagazineName);
         [_vehicle, _ammoItem, 1, _rounds] call CBA_fnc_removeMagazineCargo;
 
         // Enable turret
-        _vehicle setHitPointDamage ["hitturret", _originalDamage, false, player];
+        [QGVAR(setTurretDamage), [_vehicle, _originalDamage], _vehicle] call CBA_fnc_targetEvent;
 
         [format [LLSTRING(rearmed), _magazineName], 1, [0, 0.9, 0, 1]] call CBA_fnc_notify;
     },
@@ -95,7 +95,7 @@ private _magazineName = [_ammoItem] call EFUNC(Rearm,getMagazineName);
         _args params ["_vehicle", "_originalDamage"];
 
         // Enable turret
-        _vehicle setHitPointDamage ["hitturret", _originalDamage, false, player];
+        [QGVAR(setTurretDamage), [_vehicle, _originalDamage], _vehicle] call CBA_fnc_targetEvent;
     },
     format [LLSTRING(rearming), _magazineName],
     nil,
