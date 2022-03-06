@@ -11,11 +11,11 @@
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_mk20HeAmmoDescription">
             <Original>Caliber: 20 x 139 mm HE-T&lt;br /&gt;Rounds: 25&lt;br /&gt;Used in: MK 20 RH 202</Original>
-            <German>Kaliber: 20 x 139 mm HE-T&lt;br /&gt;Patronen: 25&lt;br /&gt;Eingesetzt in: MK 20 RH 202</German>
+            <German>Kaliber: 20 x 139 mm HE-T&lt;br /&gt;Patronen: 25&lt;br /&gt;Eingesetzt von: MK 20 RH 202</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_mk20ApAmmoDescription">
             <Original>Caliber: 20 x 139 mm APDS-T&lt;br /&gt;Rounds: 25&lt;br /&gt;Used in: MK 20 RH 202</Original>
-            <German>Kaliber: 20 x 139 mm APDS-T&lt;br /&gt;Patronen: 25&lt;br /&gt;Eingesetzt in: MK 20 RH 202</German>
+            <German>Kaliber: 20 x 139 mm APDS-T&lt;br /&gt;Patronen: 25&lt;br /&gt;Eingesetzt von: MK 20 RH 202</German>
         </Key>
 
         <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDisplayName">
@@ -28,11 +28,11 @@
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDescription">
             <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 3&lt;br /&gt;Used in: Smoke Launcher of Marder 1A5</Original>
-            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 3&lt;br /&gt;Eingesetzt in: Nebelmittelwurfanlage des Marders 1A5</German>
+            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 3&lt;br /&gt;Eingesetzt von: Nebelmittelwurfanlage des Marders 1A5</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_smoke6GrenadeAmmoDescription">
             <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 6&lt;br /&gt;Used in: Smoke Launcher of Marder 1A1 and 1A2</Original>
-            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 6&lt;br /&gt;Eingesetzt in: Nebelmittelwurfanlage des Marders 1A1 und 1A2</German>
+            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 6&lt;br /&gt;Eingesetzt von: Nebelmittelwurfanlage des Marders 1A1 und 1A2</German>
         </Key>
 
         <Key ID="STR_PzGrenBtl402_Rearm_rearmingFailed">
