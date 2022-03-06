@@ -77,7 +77,7 @@ private _apMagazineName = [QEGVAR(Rearm,mk20_ap_ammo)] call EFUNC(Rearm,getMagaz
 ] call BIS_fnc_holdActionAdd;
 
 // Nebeltöpfe auffüllen
-private _rearmSmokeIcon = "";
+private _rearmSmokeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_smoke.paa);
 private _smokeMagazineName = [QEGVAR(Rearm,smoke_3grenade_ammo)] call EFUNC(Rearm,getMagazineName);
 [
     _vehicle,
