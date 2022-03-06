@@ -27,12 +27,12 @@
             <German>6 Schnellnebelwurfkörper DM55</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDescription">
-            <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 3&lt;br /&gt;Used in: Smoke Launcher of Marder 1A1 and 1A2</Original>
-            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 3&lt;br /&gt;Eingesetzt in: Nebelmittelwurfanlage des Marders 1A1 und 1A2</German>
+            <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 3&lt;br /&gt;Used in: Smoke Launcher of Marder 1A5</Original>
+            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 3&lt;br /&gt;Eingesetzt in: Nebelmittelwurfanlage des Marders 1A5</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_smoke6GrenadeAmmoDescription">
-            <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 6&lt;br /&gt;Used in: Smoke Launcher of Marder 1A5</Original>
-            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 6&lt;br /&gt;Eingesetzt in: Nebelmittelwurfanlage des Marders 1A5</German>
+            <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 6&lt;br /&gt;Used in: Smoke Launcher of Marder 1A1 and 1A2</Original>
+            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 6&lt;br /&gt;Eingesetzt in: Nebelmittelwurfanlage des Marders 1A1 und 1A2</German>
         </Key>
 
         <Key ID="STR_PzGrenBtl402_Rearm_rearmingFailed">
