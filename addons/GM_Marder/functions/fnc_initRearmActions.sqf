@@ -23,6 +23,9 @@ params ["_vehicle"];
 
 if (!hasInterface) exitWith {};
 
+private _rearmMKShowCondition = "_this isEqualTo (fullCrew [_target, 'turret', true] select 2 select 0) && {!isTurnedOut _this} && {isNull gunner _target}";
+private _rearmMKProgressCondition = "_caller isEqualTo (fullCrew [_target, 'turret', true] select 2 select 0) && {!isTurnedOut _caller} && {isNull gunner _target}";
+
 // MK HE laden
 private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);
 private _heMagazineName = [QEGVAR(Rearm,mk20_he_ammo)] call EFUNC(Rearm,getMagazineName);
@@ -31,8 +34,8 @@ private _heMagazineName = [QEGVAR(Rearm,mk20_he_ammo)] call EFUNC(Rearm,getMagaz
     format [LELSTRING(Rearm,rearm), _heMagazineName],
     _rearmHeIcon,
     _rearmHeIcon,
-    "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
-    "_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
+    _rearmMKShowCondition,
+    _rearmMKProgressCondition,
     {},
     {},
     {
@@ -56,8 +59,8 @@ private _apMagazineName = [QEGVAR(Rearm,mk20_ap_ammo)] call EFUNC(Rearm,getMagaz
     format [LELSTRING(Rearm,rearm), _apMagazineName],
     _rearmApIcon,
     _rearmApIcon,
-    "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
-    "_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target",
+    _rearmMKShowCondition,
+    _rearmMKProgressCondition,
     {},
     {},
     {
