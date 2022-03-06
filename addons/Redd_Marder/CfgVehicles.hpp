@@ -152,18 +152,12 @@ class CfgVehicles
                 weapons[] = {
                     "Redd_Gesichert",
                     "Redd_MK20",
-                    "Redd_MG3",
+                    QEGVAR(Redd_Main,mg3), // Modified reload time for Rearm
                     QGVAR(SmokeLauncher) // Add SmokeLauncher to gunner
                 };
                 magazines[] = {
                     "Redd_MK20_HE_Mag",
                     "Redd_MK20_AP_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
                     "Redd_Mg3_Mag",
                     "Redd_SmokeLauncherMag" // PzGrenBtl402_SmokeLauncher still uses Redds Mags
                 };
@@ -471,6 +465,19 @@ class CfgVehicles
                 initPhase = 1; // eingeklappt
                 animPeriod = 2;
             };
+
+            // Changes for Rearm (own MG weapon class)
+            class recoil_source_2
+			{
+				source = "reload";
+				weapon = QEGVAR(Redd_Main,mg3);
+			};
+            class flash_mg3_source
+			{
+				source = "reload";
+				weapon = QEGVAR(Redd_Main,mg3);
+				initPhase = 0;
+			};
         };
 
         class EventHandlers: EventHandlers

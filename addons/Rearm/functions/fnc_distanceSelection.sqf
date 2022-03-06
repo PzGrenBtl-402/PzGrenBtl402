@@ -14,7 +14,7 @@
  *      NUMBER - Distance between selection pos and unit.
  *
  *  Example:
- *      [player, cursorObject, "shell_eject_pos"] call PzGrenBtl402_Redd_Marder_fnc_distanceSelection
+ *      [player, cursorObject, "shell_eject_pos"] call PzGrenBtl402_Rearm_fnc_distanceSelection
  *
  */
 

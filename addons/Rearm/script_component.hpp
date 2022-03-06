@@ -1,17 +1,17 @@
-#define COMPONENT MK20
-#define COMPONENT_BEAUTIFIED MK20
+#define COMPONENT Rearm
+#define COMPONENT_BEAUTIFIED Rearm
 #include "\z\PzGrenBtl402\addons\Main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
 // #define CBA_DEBUG_SYNCHRONOUS
 
-#ifdef DEBUG_ENABLED_MK20
+#ifdef DEBUG_ENABLED_REARM
     #define DEBUG_MODE_FULL
 #endif
 
-#ifdef DEBUG_SETTINGS_MK20
-    #define DEBUG_SETTINGS DEBUG_SETTINGS_MK20
+#ifdef DEBUG_SETTINGS_REARM
+    #define DEBUG_SETTINGS DEBUG_SETTINGS_REARM
 #endif
 
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"

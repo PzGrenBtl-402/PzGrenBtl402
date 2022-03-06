@@ -16,6 +16,7 @@ class CfgVehicles
         {
             class MainTurret;
         };
+        class AnimationSources;
 
         maximumLoad = 10000;
         fuelCapacity = 100;
@@ -136,21 +137,15 @@ class CfgVehicles
                 gunnerCompartments= "Compartment3";
 
                 weapons[] = {
-                    "gm_20mm_rh202",
-                    "gm_mg3_coax",
+                    QGVAR(20mm_rh202), // Modified reload time for Rearm
+                    QGVAR(mg3_coax), // Modified reload time for Rearm
                     QGVAR(SmokeLauncher)
                 };
                 magazines[] = {
                     "gm_425Rnd_20x139mm_hei_t_dm81",
                     "gm_75Rnd_20x139mm_apds_t_dm63",
                     "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    QGVAR(1Rnd_76mm_RP_dm35) // Smoke Mag
+                    QGVAR(1Rnd_76mm_RP_dm35) // Marder A1/2 have 1 rnd 6 smoke granades
                 };
 
                 class Turrets
@@ -175,6 +170,26 @@ class CfgVehicles
                     };
                 };
             };
+        };
+
+        class AnimationSources: AnimationSources
+        {
+            // Changes for Rearm (modified 20mm_rh202 and mg3 classes)
+            class MainTurret_reload_source
+			{
+				source = "reload";
+				weapon = QGVAR(20mm_rh202);
+			};
+			class MainTurret_ammorandom_source
+			{
+				source = "ammorandom";
+				weapon = QGVAR(20mm_rh202);
+			};
+            class MainTurret_coax_ammorandom_source
+			{
+				source = "ammorandom";
+				weapon = QGVAR(mg3_coax);
+			};
         };
     };
 };
