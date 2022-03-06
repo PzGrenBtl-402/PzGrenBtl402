@@ -117,6 +117,11 @@ private _mg3CompatibleMags = [
     "gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn",
     "gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn",
 
+    "BWA3_120Rnd_762x51_soft",
+    "BWA3_120Rnd_762x51_Tracer_soft",
+    "BWA3_120Rnd_762x51",
+    "BWA3_120Rnd_762x51_Tracer",
+
     "hlc_100Rnd_762x51_B_MG3",
     "hlc_100Rnd_762x51_M_MG3",
     "hlc_100Rnd_762x51_mdim_MG3",
