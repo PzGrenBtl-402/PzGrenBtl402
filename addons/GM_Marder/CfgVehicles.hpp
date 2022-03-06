@@ -176,20 +176,20 @@ class CfgVehicles
         {
             // Changes for Rearm (modified 20mm_rh202 and mg3 classes)
             class MainTurret_reload_source
-			{
-				source = "reload";
-				weapon = QGVAR(20mm_rh202);
-			};
-			class MainTurret_ammorandom_source
-			{
-				source = "ammorandom";
-				weapon = QGVAR(20mm_rh202);
-			};
+            {
+                source = "reload";
+                weapon = QGVAR(20mm_rh202);
+            };
+            class MainTurret_ammorandom_source
+            {
+                source = "ammorandom";
+                weapon = QGVAR(20mm_rh202);
+            };
             class MainTurret_coax_ammorandom_source
-			{
-				source = "ammorandom";
-				weapon = QGVAR(mg3_coax);
-			};
+            {
+                source = "ammorandom";
+                weapon = QGVAR(mg3_coax);
+            };
         };
     };
 };
