@@ -29,7 +29,7 @@ class CfgMagazines {
         displayName = CSTRING(smoke3GrenadeAmmoDisplayName);
         descriptionShort = CSTRING(smoke3GrenadeAmmoDescription);
         descriptionUse = CSTRING(smoke3GrenadeAmmoDescription);
-        picture = QPATHTOF(data\ui\mk20_he_ammo_item_icon.paa);
+        picture = QPATHTOF(data\ui\smoke_3_ammo_item_icon.paa);
         mass = 15;
         count = 1;
     };
@@ -38,7 +38,7 @@ class CfgMagazines {
         displayName = CSTRING(smoke6GrenadeAmmoDisplayName);
         descriptionShort = CSTRING(smoke6GrenadeAmmoDescription);
         descriptionUse = CSTRING(smoke6GrenadeAmmoDescription);
-        picture = QPATHTOF(data\ui\mk20_ap_ammo_item_icon.paa);
+        picture = QPATHTOF(data\ui\smoke_6_ammo_item_icon.paa);
         mass = 30;
         count = 1;
     };
