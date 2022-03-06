@@ -2,37 +2,37 @@
 <Project name="PzGrenBtl402">
     <Package name="Rearm">
         <Key ID="STR_PzGrenBtl402_Rearm_mk20HeAmmoDisplayName">
-            <Original>Belt 25 rounds 20 mm x 139 HE-T</Original>
-            <German>Gurt 25 Patronen 20 mm x 139 HE-T</German>
+            <Original>20 x 139 mm 25rnd Belt HE-T</Original>
+            <German>20 x 139 mm 25 Patronen Gurt HE-T</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_mk20ApAmmoDisplayName">
-            <Original>Belt 25 rounds 20 mm x 139 APDS-T</Original>
-            <German>Gurt 25 Patronen 20 mm x 139 APDS-T</German>
+            <Original>20 x 139 mm 25rnd Belt APDS-T</Original>
+            <German>20 x 139 mm 25 Patronen Gurt APDS-T</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_mk20HeAmmoDescription">
-            <Original>Ammo belt with 25 rounds of HE-T for the autocannon 20 mm x 139.</Original>
-            <German>Patronengurt mit 25 Patronen der Sorte HE-T für die Maschinenkanone 20 mm x 139.</German>
+            <Original>Caliber: 20 x 139 mm HE-T&lt;br /&gt;Rounds: 25&lt;br /&gt;Used in: MK 20 RH 202</Original>
+            <German>Kaliber: 20 x 139 mm HE-T&lt;br /&gt;Patronen: 25&lt;br /&gt;Eingesetzt in: MK 20 RH 202</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_mk20ApAmmoDescription">
-            <Original>Ammo belt with 25 rounds of APDS-T for the autocannon 20 mm x 139.</Original>
-            <German>Patronengurt mit 25 Patronen der Sorte APDS-T für die Maschinenkanone 20 mm x 139.</German>
+            <Original>Caliber: 20 x 139 mm APDS-T&lt;br /&gt;Rounds: 25&lt;br /&gt;Used in: MK 20 RH 202</Original>
+            <German>Kaliber: 20 x 139 mm APDS-T&lt;br /&gt;Patronen: 25&lt;br /&gt;Eingesetzt in: MK 20 RH 202</German>
         </Key>
 
         <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDisplayName">
-            <Original>Smoke 3 Grenade Pack</Original>
-            <German>Smoke 3 Grenade Pack</German>
+            <Original>3 Smoke Grenades DM55</Original>
+            <German>3 Schnellnebelwurfkörper DM55</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_smoke6GrenadeAmmoDisplayName">
-            <Original>Smoke 6 Grenade Pack</Original>
-            <German>Smoke 6 Grenade Pack</German>
+            <Original>6 Smoke Grenades DM55</Original>
+            <German>6 Schnellnebelwurfkörper DM55</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDescription">
-            <Original>Smoke 3 Grenade Pack</Original>
-            <German>Smoke 3 Grenade Pack</German>
+            <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 3&lt;br /&gt;Used in: Smoke Launcher of Marder 1A1 and 1A2</Original>
+            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 3&lt;br /&gt;Eingesetzt in: Nebelmittelwurfanlage des Marders 1A1 und 1A2</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_smoke6GrenadeAmmoDescription">
-            <Original>Smoke 6 Grenade Pack</Original>
-            <German>Smoke 6 Grenade Pack</German>
+            <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 6&lt;br /&gt;Used in: Smoke Launcher of Marder 1A5</Original>
+            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 6&lt;br /&gt;Eingesetzt in: Nebelmittelwurfanlage des Marders 1A5</German>
         </Key>
 
         <Key ID="STR_PzGrenBtl402_Rearm_rearmingFailed">
