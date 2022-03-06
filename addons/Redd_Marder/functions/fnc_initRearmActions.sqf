@@ -23,8 +23,8 @@ params ["_vehicle"];
 
 if (!hasInterface) exitWith {};
 
-private _rearmMKShowCondition = "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target";
-private _rearmMKProgressCondition = "_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && isNull gunner _target";
+private _rearmMKShowCondition = "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0)";
+private _rearmMKProgressCondition = "_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0)";
 
 // MK HE laden
 private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);

@@ -25,13 +25,6 @@ params [["_vehicle", objNull, [objNull]], ["_turretPath", [0], [[]]], ["_magazin
 
 if (isNull _vehicle || _magazineClass isEqualTo "" || _compatibleAmmoItems isEqualTo []) exitWith {};
 
-if (!isNull gunner _vehicle) exitWith {
-    [
-        [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
-        [LLSTRING(failGunnerInVehicle)]
-    ] call CBA_fnc_notify;
-};
-
 private _preferredAmmoItem = [_vehicle, _compatibleAmmoItems] call FUNC(getPreferredAmmoItem);
 if (_preferredAmmoItem isEqualTo []) exitWith {
     [
@@ -71,14 +64,19 @@ if (_ammoToAdd > 0) exitWith {
     ] call CBA_fnc_notify;
 };
 
+// Disable turret
+private _originalDamage = _vehicle getHitPointDamage "hitturret";
+_vehicle setHitPointDamage ["hitturret", 1, false, player];
+
 private _magazineName = [_ammoItem] call EFUNC(Rearm,getMagazineName);
 
 [
     _rearmingDuration,
-    [_vehicle, _turretPath, _magazineClass, _magazineName, _ammoItem, _ammoCounts, _rounds],
+    [_vehicle, _originalDamage, _turretPath, _magazineClass, _magazineName, _ammoItem, _ammoCounts, _rounds],
     {
+        // On Success
         params ["_args"];
-        _args params ["_vehicle", "_turretPath", "_magazineClass", "_magazineName", "_ammoItem", "_ammoCounts", "_rounds"];
+        _args params ["_vehicle", "_originalDamage", "_turretPath", "_magazineClass", "_magazineName", "_ammoItem", "_ammoCounts", "_rounds"];
 
         // this uses ACEs version of adding ammo because BIS command is broken
         // redirects to ace_rearm_fnc_setTurretMagazineAmmo
@@ -86,9 +84,19 @@ private _magazineName = [_ammoItem] call EFUNC(Rearm,getMagazineName);
 
         [_vehicle, _ammoItem, 1, _rounds] call CBA_fnc_removeMagazineCargo;
 
+        // Enable turret
+        _vehicle setHitPointDamage ["hitturret", _originalDamage, false, player];
+
         [format [LLSTRING(rearmed), _magazineName], 1, [0, 0.9, 0, 1]] call CBA_fnc_notify;
     },
-    {},
+    {
+        // On Fail
+        params ["_args"];
+        _args params ["_vehicle", "_originalDamage"];
+
+        // Enable turret
+        _vehicle setHitPointDamage ["hitturret", _originalDamage, false, player];
+    },
     format [LLSTRING(rearming), _magazineName],
     nil,
     ["isNotInside"]

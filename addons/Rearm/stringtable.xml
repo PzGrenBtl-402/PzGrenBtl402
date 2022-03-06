@@ -39,10 +39,6 @@
             <Original>Rearming failed!</Original>
             <German>Laden nicht möglich!</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_Rearm_failGunnerInVehicle">
-            <Original>Gunner still in vehicle.</Original>
-            <German>Richtschütze besetzt Waffe.</German>
-        </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_failMagazineFull">
             <Original>Magazine full.</Original>
             <German>Munitionskasten voll.</German>
