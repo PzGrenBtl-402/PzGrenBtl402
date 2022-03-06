@@ -99,7 +99,7 @@ private _smokeMagazineName = [QEGVAR(Rearm,smoke_6grenade_ammo)] call EFUNC(Rear
 ] call BIS_fnc_holdActionAdd;
 
 // MG laden
-private _rearmMGIcon = "";
+private _rearmMGIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mg.paa);
 private _mgMagazineName = getText (configFile >> "CfgWeapons" >> QGVAR(mg3_coax) >> "displayName");
 // List of all mags which can be used to rearm the turret MG3
 // Sorted decending to rearm with the bigger mags first
