@@ -45,16 +45,15 @@ if (_ammoItemIndex < 0) exitWith {
 
 private _ammoItem = _compatibleAmmoItems select _ammoItemIndex;
 
+private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _magazineClass >> "count");
 private _rounds = getNumber (configFile >> "CfgMagazines" >> _ammoItem >> "count");
-private _maxMagazines [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getMaxMagazines;
 private _ammoCounts = [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getTurretMagazineAmmo;
 
-TRACE_3("Magagzines", _ammoCounts, _maxMagazines, _rounds);
+TRACE_3("Magagzines", _ammoCounts, _maxAmmo, _rounds);
 
 private _ammoToAdd = _rounds;
 for "_i" from (count _ammoCounts - 1) to 0 do {
     private _count = _ammoCounts select _i;
-    private _maxAmmo = _maxMagazines select _i;
     if (_count >= _maxAmmo) then {
         continue;
     };
@@ -63,12 +62,12 @@ for "_i" from (count _ammoCounts - 1) to 0 do {
         break;
     };
 
-    // 1: max 500, count 400, add 200
-    // 2: max 500, count 0, add 100
     private _canAdd = (_maxAmmo - _count) min _ammoToAdd;
     _ammoToAdd = (_ammoToAdd - _canAdd) max 0;
     _ammoCounts set [_i, _count + _canAdd];
 };
+
+TRACE_1("New ammo counts", _ammoCounts);
 
 if (_ammoToAdd > 0) exitWith {
     [
@@ -77,7 +76,7 @@ if (_ammoToAdd > 0) exitWith {
     ] call CBA_fnc_notify;
 };
 
-private _magazineName = getText (configFile >> "CfgMagazines" >> _ammoItem >> "displayName");
+private _magazineName = [_ammoItem] call EFUNC(Rearm,getMagazineName);
 
 [
     _rearmingDuration,
@@ -92,11 +91,10 @@ private _magazineName = getText (configFile >> "CfgMagazines" >> _ammoItem >> "d
 
         [_vehicle, _ammoItem] call CBA_fnc_removeMagazineCargo;
 
-        private _successText = format [LLSTRING(rearmed), _rounds, _magazineName];
-        [_successText, 1, [0, 0.9, 0, 1]] call CBA_fnc_notify;
+        [format [LLSTRING(rearmed), _magazineName], 1, [0, 0.9, 0, 1]] call CBA_fnc_notify;
     },
     {},
-    format [LLSTRING(rearming), _rounds, _magazineName],
+    format [LLSTRING(rearming), _magazineName],
     nil,
     ["isNotInside"]
 ] call ace_common_fnc_progressBar;

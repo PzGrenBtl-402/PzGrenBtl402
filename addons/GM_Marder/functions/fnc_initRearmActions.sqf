@@ -25,7 +25,7 @@ if (!hasInterface) exitWith {};
 
 // MK HE laden
 private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);
-private _heMagazineName = getText (configFile >> "CfgMagazines" >> QEGVAR(Rearm,mk20_he_ammo) >> "displayName");
+private _heMagazineName = [QEGVAR(Rearm,mk20_he_ammo)] call EFUNC(Rearm,getMagazineName);
 [
     _vehicle,
     format [LELSTRING(Rearm,rearm), _heMagazineName],
@@ -50,7 +50,7 @@ private _heMagazineName = getText (configFile >> "CfgMagazines" >> QEGVAR(Rearm,
 
 // MK AP laden
 private _rearmApIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_ap.paa);
-private _apMagazineName = getText (configFile >> "CfgMagazines" >> QEGVAR(Rearm,mk20_ap_ammo) >> "displayName");
+private _apMagazineName = [QEGVAR(Rearm,mk20_ap_ammo)] call EFUNC(Rearm,getMagazineName);
 [
     _vehicle,
     format [LELSTRING(Rearm,rearm), _apMagazineName],
@@ -75,14 +75,14 @@ private _apMagazineName = getText (configFile >> "CfgMagazines" >> QEGVAR(Rearm,
 
 // Nebeltöpfe auffüllen
 private _rearmSmokeIcon = "";
-private _smokeMagazineName = getText (configFile >> "CfgMagazines" >> QEGVAR(Rearm,smoke_6grenade_ammo) >> "displayName");
+private _smokeMagazineName = [QEGVAR(Rearm,smoke_6grenade_ammo)] call EFUNC(Rearm,getMagazineName);
 [
     _vehicle,
     format [LELSTRING(Rearm,rearm), _smokeMagazineName],
     _rearmSmokeIcon,
     _rearmSmokeIcon,
-    QUOTE([ARR_4(_target, _this, 'smoke3_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_4(_target, _caller, 'smoke3_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_4(_target, _this, 'mainturret_coax', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_4(_target, _caller, 'mainturret_coax', 2)] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {
@@ -100,7 +100,7 @@ private _smokeMagazineName = getText (configFile >> "CfgMagazines" >> QEGVAR(Rea
 
 // MG laden
 private _rearmMGIcon = "";
-private _mgMagazineName = getText (configFile >> "CfgMagazines" >> "gm_mg3_coax" >> "displayName");
+private _mgMagazineName = getText (configFile >> "CfgWeapons" >> QGVAR(mg3_coax) >> "displayName");
 // List of all mags which can be used to rearm the turret MG3
 // Sorted decending to rearm with the bigger mags first
 private _mg3CompatibleMags = [
@@ -131,8 +131,8 @@ private _mg3CompatibleMags = [
     format [LELSTRING(Rearm,rearm), _mgMagazineName],
     _rearmMGIcon,
     _rearmMGIcon,
-    QUOTE([ARR_4(_target, _this, 'machinegun_eject_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_4(_target, _caller, 'machinegun_eject_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_4(_target, _this, 'mainturret_coax', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_4(_target, _caller, 'mainturret_coax', 2)] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {

@@ -52,16 +52,16 @@
             <German>Keine Munition im Fahrzeug.</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_rearmed">
-            <Original>%1 rounds %2 rearmed.</Original>
-            <German>%1 Patronen %2 geladen.</German>
+            <Original>%1 rearmed.</Original>
+            <German>%1 geladen.</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_rearm">
             <Original>Rearm %1</Original>
-            <German>%1 laden</German>
+            <German>Lade %1</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_rearming">
-            <Original>Rearming %1 rounds of %2 ...</Original>
-            <German>Lade %1 Patronen %2 ...</German>
+            <Original>Rearming %1 ...</Original>
+            <German>Lade %1 ...</German>
         </Key>
     </Package>
 </Project>
