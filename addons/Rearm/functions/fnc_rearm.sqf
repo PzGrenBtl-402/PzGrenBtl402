@@ -23,8 +23,6 @@
 
 params [["_vehicle", objNull, [objNull]], ["_turretPath", [0], [[]]], ["_magazineClass", "", [""]], ["_compatibleAmmoItems", [], [[]]], ["_rearmingDuration", 15, [0]]];
 
-TRACE_1("Rearm called", _this);
-
 if (isNull _vehicle || _magazineClass isEqualTo "" || _compatibleAmmoItems isEqualTo []) exitWith {};
 
 if (!isNull gunner _vehicle) exitWith {
@@ -34,19 +32,16 @@ if (!isNull gunner _vehicle) exitWith {
     ] call CBA_fnc_notify;
 };
 
-private _magazineCargo = magazineCargo _vehicle;
-private _ammoItemIndex = _compatibleAmmoItems findIf {_x in _magazineCargo};
-if (_ammoItemIndex < 0) exitWith {
+private _preferredAmmoItem = [_vehicle, _compatibleAmmoItems] call FUNC(getPreferredAmmoItem);
+if (_preferredAmmoItem isEqualTo []) exitWith {
     [
         [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
         [LLSTRING(failNoAmmoInVehicle)]
     ] call CBA_fnc_notify;
 };
-
-private _ammoItem = _compatibleAmmoItems select _ammoItemIndex;
+_preferredAmmoItem params ["_ammoItem", "_rounds"];
 
 private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _magazineClass >> "count");
-private _rounds = getNumber (configFile >> "CfgMagazines" >> _ammoItem >> "count");
 private _ammoCounts = [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getTurretMagazineAmmo;
 
 TRACE_3("Magagzines", _ammoCounts, _maxAmmo, _rounds);
@@ -89,7 +84,7 @@ private _magazineName = [_ammoItem] call EFUNC(Rearm,getMagazineName);
         // redirects to ace_rearm_fnc_setTurretMagazineAmmo
         [QGVAR(setTurretMagazineAmmo), [_vehicle, _turretPath, _magazineClass, _ammoCounts]] call CBA_fnc_serverEvent; // remoteExec server (endpoint defined in postInit)
 
-        [_vehicle, _ammoItem] call CBA_fnc_removeMagazineCargo;
+        [_vehicle, _ammoItem, 1, _rounds] call CBA_fnc_removeMagazineCargo;
 
         [format [LLSTRING(rearmed), _magazineName], 1, [0, 0.9, 0, 1]] call CBA_fnc_notify;
     },
