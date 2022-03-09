@@ -21,6 +21,5 @@
 
 params ["_vehicle", "_player", "_selection", "_radius"];
 
-isNull (gunner _vehicle) &&
 {isNull objectParent _player} && // not in vehicle
 {([_player, _vehicle, _selection] call FUNC(distanceSelection)) < _radius} // "machinegun_eject_pos" for mg; "smoke9_pos" for smoke launcher
