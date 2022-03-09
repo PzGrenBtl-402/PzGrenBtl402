@@ -31,6 +31,7 @@ class CfgWeapons
     class gm_mg3_coax;
     class GVAR(mg3_coax): gm_mg3_coax
     {
+        autoReload = 1;
         magazineReloadTime = 0.1;
     };
 };
