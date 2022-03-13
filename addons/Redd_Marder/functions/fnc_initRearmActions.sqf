@@ -40,7 +40,7 @@ private _heMagazineName = [QEGVAR(Rearm,mk20_he_ammo)] call EFUNC(Rearm,getMagaz
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], "Redd_MK20_HE_Mag", [QEGVAR(Rearm,mk20_he_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "Redd_MK20_HE_Mag", [QEGVAR(Rearm,mk20_he_ammo)], EGVAR(Rearm,rearmMK20Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -65,7 +65,7 @@ private _apMagazineName = [QEGVAR(Rearm,mk20_ap_ammo)] call EFUNC(Rearm,getMagaz
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], "Redd_MK20_AP_Mag", [QEGVAR(Rearm,mk20_ap_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "Redd_MK20_AP_Mag", [QEGVAR(Rearm,mk20_ap_ammo)], EGVAR(Rearm,rearmMK20Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -90,7 +90,7 @@ private _smokeMagazineName = [QEGVAR(Rearm,smoke_3grenade_ammo)] call EFUNC(Rear
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], "Redd_SmokeLauncherMag", [QEGVAR(Rearm,smoke_3grenade_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "Redd_SmokeLauncherMag", [QEGVAR(Rearm,smoke_3grenade_ammo)], EGVAR(Rearm,rearmSmoke3Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -147,7 +147,7 @@ private _mg3CompatibleMags = [
         params ["_vehicle", "", "", "_args"];
         _args params ["_mg3CompatibleMags"];
 
-        [_vehicle, [0], "Redd_Mg3_Mag", _mg3CompatibleMags, REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "Redd_Mg3_Mag", _mg3CompatibleMags, EGVAR(Rearm,rearmMG3Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [_mg3CompatibleMags],

@@ -8,7 +8,7 @@ Fast Recompiling via function
     #define LINKFUNC(x) {_this call FUNC(x)}
     #define PREP_RECOMPILE_START    if (isNil "PZGRENBTL402_PREP_RECOMPILE") then {PZGRENBTL402_RECOMPILES = []; PZGRENBTL402_PREP_RECOMPILE = {{call _x} forEach PZGRENBTL402_RECOMPILES;}}; private _recomp = {
     #define PREP_RECOMPILE_END      }; call _recomp; PZGRENBTL402_RECOMPILES pushBack _recomp;\
-        [LELSTRING(Main,settingCategoryCommon), QGVAR(recompile), "Recompile Functions", {\
+        [[LELSTRING(Main,category), "Debug"], QGVAR(recompile), "Recompile Functions", {\
             private _start = diag_tickTime;\
             [] call PZGRENBTL402_PREP_RECOMPILE;\
             private _end = diag_tickTime;\

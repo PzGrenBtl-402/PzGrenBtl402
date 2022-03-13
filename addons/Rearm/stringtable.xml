@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="PzGrenBtl402">
     <Package name="Rearm">
+        <Key ID="STR_PzGrenBtl402_Rearm_subCategory">
+            <Original>Vehicle Rearm</Original>
+            <German>Fahrzeugaufmunitionierung</German>
+        </Key>
+
+        <Key ID="STR_PzGrenBtl402_Rearm_settingsMk20Duration">
+            <Original>Rearm duration for 25rnd MK20</Original>
+            <German>Ladezeit für 25 Patronen MK20</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_settingsMk20Duration_tooltip">
+            <Original>Time it takes to rearm one 20 x 139 mm 25rnd Belt.</Original>
+            <German>Die Zeit, die es braucht, um einen 20 x 139 mm 25 Patronen Gurt zu laden.</German>
+        </Key>
+
         <Key ID="STR_PzGrenBtl402_Rearm_mk20HeAmmoDisplayName">
             <Original>20 x 139 mm 25rnd Belt HE-T</Original>
             <German>20 x 139 mm 25 Patronen Gurt HE-T</German>
@@ -33,6 +47,24 @@
         <Key ID="STR_PzGrenBtl402_Rearm_smoke6GrenadeAmmoDescription">
             <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 6&lt;br /&gt;Used in: Smoke Launcher of Marder 1A1 and 1A2</Original>
             <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 6&lt;br /&gt;Eingesetzt von: Nebelmittelwurfanlage des Marders 1A1 und 1A2</German>
+        </Key>
+
+        <Key ID="STR_PzGrenBtl402_Rearm_settingsSmoke3Duration">
+            <Original>Rearm duration for 3 smoke grenades</Original>
+            <German>Ladezeit für 3 Schnellnebelwurfkörper</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_settingsSmoke3Duration_tooltip">
+            <Original>Time it takes to rearm 3 smoke grenades DM55.</Original>
+            <German>Die Zeit, die es braucht, um 3 Schnellnebelwurfkörper DM55 zu laden.</German>
+        </Key>
+
+        <Key ID="STR_PzGrenBtl402_Rearm_settingsMG3Duration">
+            <Original>Rearm duration for MG3</Original>
+            <German>Ladezeit für MG3</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_settingsMG3Duration_tooltip">
+            <Original>Time it takes to rearm one 7.62 x 51 mm MG3 Belt.</Original>
+            <German>Die Zeit, die es braucht, um einen 7,62 x 51 mm MG3 Gurt zu laden.</German>
         </Key>
 
         <Key ID="STR_PzGrenBtl402_Rearm_rearmingFailed">
