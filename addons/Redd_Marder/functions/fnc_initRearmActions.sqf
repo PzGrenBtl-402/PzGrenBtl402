@@ -17,7 +17,6 @@
  */
 
 #define HOLD_TIME 5
-#define REARM_DURATION 15
 
 params ["_vehicle"];
 
