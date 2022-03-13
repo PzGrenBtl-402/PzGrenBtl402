@@ -81,7 +81,11 @@
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_rearmed">
             <Original>%1 rearmed.</Original>
-            <German>%1 geladen.</German>
+            <German>%1 fertig geladen.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_rearmInterrupted">
+            <Original>Rearming interrupted</Original>
+            <German>Laden unterbrochen</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_rearm">
             <Original>Rearm %1</Original>

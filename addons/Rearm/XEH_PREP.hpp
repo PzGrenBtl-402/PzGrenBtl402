@@ -1,6 +1,10 @@
 PREP(canRearmFromOutside);
 PREP(distanceSelection);
+PREP(getAvailableAmmoItems)
 PREP(getMagazineMaxAmmo);
 PREP(getMagazineName);
-PREP(getPreferredAmmoItem);
+PREP(getRefillAmmoItems);
 PREP(rearm);
+PREP(rearmProgress);
+PREP(simulateRearmEvents);
+PREP(sortAvailableAmmoItems);

@@ -25,44 +25,38 @@ params [["_vehicle", objNull, [objNull]], ["_turretPath", [0], [[]]], ["_magazin
 
 if (isNull _vehicle || _magazineClass isEqualTo "" || _compatibleAmmoItems isEqualTo []) exitWith {};
 
-private _preferredAmmoItem = [_vehicle, _compatibleAmmoItems] call FUNC(getPreferredAmmoItem);
-if (_preferredAmmoItem isEqualTo []) exitWith {
+private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _magazineClass >> "count");
+private _ammoCounts = [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getTurretMagazineAmmo;
+
+private _roundsToRearm = 0;
+{
+    _roundsToRearm = _roundsToRearm + (_maxAmmo - _x);
+} foreach _ammoCounts;
+
+TRACE_3("Magagzines", _ammoCounts, _maxAmmo, _roundsToRearm);
+
+private _availableItems = [_vehicle, _compatibleAmmoItems] call FUNC(getAvailableAmmoItems);
+if (_availableItems isEqualTo []) exitWith {
     [
         [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
         [LLSTRING(failNoAmmoInVehicle)]
     ] call CBA_fnc_notify;
 };
-_preferredAmmoItem params ["_ammoItem", "_rounds"];
 
-private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _magazineClass >> "count");
-private _ammoCounts = [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getTurretMagazineAmmo;
-
-TRACE_3("Magagzines", _ammoCounts, _maxAmmo, _rounds);
-
-private _ammoToAdd = _rounds;
-for "_i" from (count _ammoCounts - 1) to 0 do {
-    private _count = _ammoCounts select _i;
-    if (_count >= _maxAmmo) then {
-        continue;
-    };
-
-    if (_ammoToAdd <= 0) then {
-        break;
-    };
-
-    private _canAdd = (_maxAmmo - _count) min _ammoToAdd;
-    _ammoToAdd = (_ammoToAdd - _canAdd) max 0;
-    _ammoCounts set [_i, _count + _canAdd];
-};
-
-TRACE_1("New ammo counts", _ammoCounts);
-
-if (_ammoToAdd > 0) exitWith {
+private _refillAmmoItems = [_compatibleAmmoItems, _availableItems, _roundsToRearm] call FUNC(getAvailableAmmoItems);
+if (_refillAmmoItems isEqualTo []) exitWith {
     [
         [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
         [LLSTRING(failMagazineFull)]
     ] call CBA_fnc_notify;
 };
+
+TRACE_2("Refill ammo items", _refillAmmoItems, _roundsToRearm);
+
+private _simEvents = [_ammoCounts, _maxAmmo, _refillAmmoItems, _rearmingDuration] call FUNC(simulateRearmEvents);
+private _totalTime = _simEvents select (count _simEvents - 1) select 0;
+
+TRACE_2("Simulated events", _simEvents, _totalTime);
 
 // Disable turret
 private _originalDamage = _vehicle getHitPointDamage "hitturret";
@@ -71,33 +65,11 @@ private _originalDamage = _vehicle getHitPointDamage "hitturret";
 private _magazineName = [_ammoItem] call EFUNC(Rearm,getMagazineName);
 
 [
-    _rearmingDuration,
-    [_vehicle, _originalDamage, _turretPath, _magazineClass, _magazineName, _ammoItem, _ammoCounts, _rounds],
-    {
-        // On Success
-        params ["_args"];
-        _args params ["_vehicle", "_originalDamage", "_turretPath", "_magazineClass", "_magazineName", "_ammoItem", "_ammoCounts", "_rounds"];
-
-        // this uses ACEs version of adding ammo because BIS command is broken
-        // redirects to ace_rearm_fnc_setTurretMagazineAmmo
-        [QGVAR(setTurretMagazineAmmo), [_vehicle, _turretPath, _magazineClass, _ammoCounts]] call CBA_fnc_serverEvent; // remoteExec server (endpoint defined in postInit)
-
-        [_vehicle, _ammoItem, 1, _rounds] call CBA_fnc_removeMagazineCargo;
-
-        // Enable turret
-        [QGVAR(setTurretDamage), [_vehicle, _originalDamage], _vehicle] call CBA_fnc_targetEvent;
-
-        [format [LLSTRING(rearmed), _magazineName], 1, [0, 0.9, 0, 1]] call CBA_fnc_notify;
-    },
-    {
-        // On Fail
-        params ["_args"];
-        _args params ["_vehicle", "_originalDamage"];
-
-        // Enable turret
-        [QGVAR(setTurretDamage), [_vehicle, _originalDamage], _vehicle] call CBA_fnc_targetEvent;
-    },
+    _totalTime,
+    [_vehicle, _originalDamage, _turretPath, _magazineClass, _magazineName, _simEvents],
+    LINKFUNC(rearmFinished),
+    LINKFUNC(rearmFinished),
     format [LLSTRING(rearming), _magazineName],
-    nil,
+    LINKFUNC(rearmProgress),
     ["isNotInside"]
 ] call ace_common_fnc_progressBar;
