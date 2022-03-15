@@ -78,7 +78,7 @@ class CfgGroups
                         position[] = {0,5,0};
                         rank = "LIEUTENANT";
                         side = 0;
-                        vehicle = "PzGrenBtl_MSV_Sergeant_2000";
+                        vehicle = "PzGrenBtl_MSV_Officer_2000";
                     };
 
                     class Unit1
@@ -200,7 +200,7 @@ class CfgGroups
                         position[] = {0,5,0};
                         rank = "LIEUTENANT";
                         side = 0;
-                        vehicle = "PzGrenBtl_MSV_Sergeant_2000";
+                        vehicle = "PzGrenBtl_MSV_Officer_2000";
                     };
 
                     class Unit1
@@ -319,7 +319,7 @@ class CfgGroups
                         position[] = {0,5,0};
                         rank = "LIEUTENANT";
                         side = 0;
-                        vehicle = "PzGrenBtl_MSV_Sergeant_94";
+                        vehicle = "PzGrenBtl_MSV_Officer_94";
                     };
 
                     class Unit1
@@ -425,7 +425,7 @@ class CfgGroups
                         position[] = {0,5,0};
                         rank = "LIEUTENANT";
                         side = 0;
-                        vehicle = "PzGrenBtl_MSV_Sergeant_94";
+                        vehicle = "PzGrenBtl_MSV_Officer_94";
                     };
 
                     class Unit1
@@ -528,7 +528,7 @@ class CfgGroups
                         position[] = {0,5,0};
                         rank = "LIEUTENANT";
                         side = 0;
-                        vehicle = "PzGrenBtl_MSV_Sergeant_86";
+                        vehicle = "PzGrenBtl_MSV_Officer_86";
                     };
 
                     class Unit1
@@ -634,7 +634,7 @@ class CfgGroups
                         position[] = {0,5,0};
                         rank = "LIEUTENANT";
                         side = 0;
-                        vehicle = "PzGrenBtl_MSV_Sergeant_86";
+                        vehicle = "PzGrenBtl_MSV_Officer_86";
                     };
 
                     class Unit1
@@ -737,7 +737,7 @@ class CfgGroups
                         position[] = {0,5,0};
                         rank = "LIEUTENANT";
                         side = 0;
-                        vehicle = "PzGrenBtl_MSV_Sergeant_83";
+                        vehicle = "PzGrenBtl_MSV_Officer_83";
                     };
 
                     class Unit1
@@ -843,7 +843,7 @@ class CfgGroups
                         position[] = {0,5,0};
                         rank = "LIEUTENANT";
                         side = 0;
-                        vehicle = "PzGrenBtl_MSV_Sergeant_83";
+                        vehicle = "PzGrenBtl_MSV_Officer_83";
                     };
 
                     class Unit1
@@ -946,7 +946,7 @@ class CfgGroups
                         position[] = {0,5,0};
                         rank = "LIEUTENANT";
                         side = 0;
-                        vehicle = "PzGrenBtl_MSV_Sergeant_81";
+                        vehicle = "PzGrenBtl_MSV_Officer_81";
                     };
 
                     class Unit1
@@ -1052,7 +1052,7 @@ class CfgGroups
                         position[] = {0,5,0};
                         rank = "LIEUTENANT";
                         side = 0;
-                        vehicle = "PzGrenBtl_MSV_Sergeant_81";
+                        vehicle = "PzGrenBtl_MSV_Officer_81";
                     };
 
                     class Unit1
