@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="Rearm">
+        <Key ID="STR_PzGrenBtl402_Rearm_mk20HeAmmoDisplayName">
+            <Original>20 x 139 mm 25rnd Belt HE-T</Original>
+            <German>20 x 139 mm 25 Patronen Gurt HE-T</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_mk20ApAmmoDisplayName">
+            <Original>20 x 139 mm 25rnd Belt APDS-T</Original>
+            <German>20 x 139 mm 25 Patronen Gurt APDS-T</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_mk20HeAmmoDescription">
+            <Original>Caliber: 20 x 139 mm HE-T&lt;br /&gt;Rounds: 25&lt;br /&gt;Used in: MK 20 RH 202</Original>
+            <German>Kaliber: 20 x 139 mm HE-T&lt;br /&gt;Patronen: 25&lt;br /&gt;Eingesetzt von: MK 20 RH 202</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_mk20ApAmmoDescription">
+            <Original>Caliber: 20 x 139 mm APDS-T&lt;br /&gt;Rounds: 25&lt;br /&gt;Used in: MK 20 RH 202</Original>
+            <German>Kaliber: 20 x 139 mm APDS-T&lt;br /&gt;Patronen: 25&lt;br /&gt;Eingesetzt von: MK 20 RH 202</German>
+        </Key>
+
+        <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDisplayName">
+            <Original>3 Smoke Grenades DM55</Original>
+            <German>3 Schnellnebelwurfkörper DM55</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_smoke6GrenadeAmmoDisplayName">
+            <Original>6 Smoke Grenades DM55</Original>
+            <German>6 Schnellnebelwurfkörper DM55</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDescription">
+            <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 3&lt;br /&gt;Used in: Smoke Launcher of Marder 1A5</Original>
+            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 3&lt;br /&gt;Eingesetzt von: Nebelmittelwurfanlage des Marders 1A5</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_smoke6GrenadeAmmoDescription">
+            <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 6&lt;br /&gt;Used in: Smoke Launcher of Marder 1A1 and 1A2</Original>
+            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 6&lt;br /&gt;Eingesetzt von: Nebelmittelwurfanlage des Marders 1A1 und 1A2</German>
+        </Key>
+
+        <Key ID="STR_PzGrenBtl402_Rearm_rearmingFailed">
+            <Original>Rearming failed!</Original>
+            <German>Laden nicht möglich!</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_failMagazineFull">
+            <Original>Magazine full.</Original>
+            <German>Munitionskasten voll.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_failNoAmmoInVehicle">
+            <Original>No ammo in vehicle inventory.</Original>
+            <German>Keine Munition im Fahrzeug.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_rearmed">
+            <Original>%1 rearmed.</Original>
+            <German>%1 geladen.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_rearm">
+            <Original>Rearm %1</Original>
+            <German>Lade %1</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_rearming">
+            <Original>Rearming %1 ...</Original>
+            <German>Lade %1 ...</German>
+        </Key>
+    </Package>
+</Project>

@@ -3,6 +3,7 @@ PREP(canUnloadMilan);
 PREP(closeRamp);
 PREP(initActions);
 PREP(initMilanActions);
+PREP(initRearmActions);
 PREP(loadMilan);
 PREP(openRamp);
 PREP(removeMilanMagazines);

@@ -37,11 +37,16 @@ class CfgVehicles
         cargoCompartments[] = {"Compartment2"};
         enableGPS = 0;
 
+        ace_vehicles_engineStartDelay = 5;
+
         class TransportBackpacks {delete _xx_B_AssaultPack_rgr;};
         class TransportItems {delete _xx_Toolkit;};
 
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
         PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
+
+        smokeLauncherGrenadeCount = 3;
+        smokeLauncherAngle = 120;
 
         class AcreIntercoms
         {
@@ -52,7 +57,7 @@ class CfgVehicles
                 allowedPositions[] = {"crew"};
                 disabledPositions[] = {};
                 limitedPositions[] = {{"cargo", "all"}, {"ffv", "all"}};
-                numLimitedPositions = 1;
+                numLimitedPositions = 3;
                 masterPositions[] = {};
                 connectedByDefault = 1;
             };
@@ -147,18 +152,12 @@ class CfgVehicles
                 weapons[] = {
                     "Redd_Gesichert",
                     "Redd_MK20",
-                    "Redd_MG3",
+                    QEGVAR(Redd_Main,mg3), // Modified reload time for Rearm
                     QGVAR(SmokeLauncher) // Add SmokeLauncher to gunner
                 };
                 magazines[] = {
                     "Redd_MK20_HE_Mag",
                     "Redd_MK20_AP_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
-                    "Redd_Mg3_Mag",
                     "Redd_Mg3_Mag",
                     "Redd_SmokeLauncherMag" // PzGrenBtl402_SmokeLauncher still uses Redds Mags
                 };
@@ -459,6 +458,26 @@ class CfgVehicles
                 initPhase = 1; //Damit die Patrone beim ersten Aufbau versteckt ist
                 AnimPeriod = 0;
             };
+
+            class Spiegel_Source
+            {
+                source = "user";
+                initPhase = 1; // eingeklappt
+                animPeriod = 2;
+            };
+
+            // Changes for Rearm (own MG weapon class)
+            class recoil_source_2
+            {
+                source = "reload";
+                weapon = QEGVAR(Redd_Main,mg3);
+            };
+            class flash_mg3_source
+            {
+                source = "reload";
+                weapon = QEGVAR(Redd_Main,mg3);
+                initPhase = 0;
+            };
         };
 
         class EventHandlers: EventHandlers
@@ -521,16 +540,23 @@ class CfgVehicles
             delete milan_auf;
             delete milan_ab;
 
-            class Tarnnetz_Boden_abbauen
-            {
-                displayName = "$STR_Redd_Tarnnetz_boden_abbauen";
-                position = "actionPoint";
-                radius = 5;
-                onlyforplayer = 1;
-                showWindow = 0;
-                condition = "player == (driver this) and !(this getVariable 'has_camonet') and (this getVariable 'has_camonet_large')";
-                statement = "[this,'camonet_large',player] call Redd_fnc_marder_camonet";
-            };
+            delete orangelicht_auf;
+            delete orangelicht_ab;
+            delete Orangelicht_an;
+            delete Orangelicht_aus;
+
+            delete Redd_removeflag;
+            delete Redd_redFlag;
+            delete Redd_greenFlag;
+            delete Redd_blueFlag;
+
+            delete Tarnnetz_Fzg_aufbauen;
+            delete Tarnnetz_Fzg_abbauen;
+            delete Tarnnetz_Boden_aufbauen;
+            delete Tarnnetz_Boden_abbauen;
+
+            delete Spiegel_ausklappen;
+            delete Spiegel_einklappen;
         };
     };
 };

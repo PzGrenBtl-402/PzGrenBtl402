@@ -12,7 +12,7 @@ class CfgPatches {
             "PzGrenBtl402_Milan",
             "PzGrenBtl402_ACRE",
             "PzGrenBtl402_SmokeLauncher",
-            "PzGrenBtl402_MK20",
+            "PzGrenBtl402_Rearm",
             "redd_marder_1a5",
             "Redd_Bags"
         };
@@ -23,8 +23,6 @@ class CfgPatches {
     };
 };
 
-#include "CfgAmmo.hpp"
 #include "CfgEventHandlers.hpp"
-#include "CfgMagazines.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"

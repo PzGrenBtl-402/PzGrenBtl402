@@ -13,7 +13,7 @@
  *      BOOLEAN - Can load MILAN.
  *
  *  Example:
- *      this call PzGrenBtl402_Redd_Marder_fnc_canLoadMilan
+ *      [cursorObject, player] call PzGrenBtl402_Redd_Marder_fnc_canLoadMilan
  *
  */
 

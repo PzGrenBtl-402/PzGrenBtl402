@@ -9,18 +9,27 @@ class CfgVehicles
 
     class gm_marder1_base: gm_tracked_APC_base
     {
-        class MachineGunTurret_base;
+        class CargoTurret;
         class CommanderTurret_base;
+        class MachineGunTurret_base;
         class Turrets: Turrets
         {
             class MainTurret;
         };
+        class AnimationSources;
 
         maximumLoad = 10000;
         fuelCapacity = 100;
+        disableSoundAttenuation = 0;
+        attenuationEffectType = "TankAttenuation";
+        driverCompartments = "Compartment1";
+        cargoCompartments[] = {"Compartment2"};
+        enableGPS = 0;
+
+        ace_vehicles_engineStartDelay = 5;
 
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
-        PzGrenBtl402_smokeLauncherMuzzle = "PzGrenBtl402_SmokeLauncher";
+        PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
 
         class AcreIntercoms
         {
@@ -31,7 +40,7 @@ class CfgVehicles
                 allowedPositions[] = {"driver", "gunner", "commander", {"turret", {0,1}}};
                 disabledPositions[] = {};
                 limitedPositions[] = {{"cargo", "all"}, {"ffv", "all"}, {"turret", {1}}};
-                numLimitedPositions = 1;
+                numLimitedPositions = 3;
                 masterPositions[] = {};
                 connectedByDefault = 1;
             };
@@ -102,36 +111,84 @@ class CfgVehicles
 
     class gm_marder1a0_base: gm_marder1_base
     {
+        smokeLauncherGrenadeCount = 6;
+
         class Turrets: Turrets
         {
+            class CargoTurret_01: CargoTurret
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments= "Compartment2";
+            };
+
+            class SquadLeaderTurret: MainTurret
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments= "Compartment2";
+            };
+
             class MainTurret: MainTurret
             {
-                weapons[] = {"gm_20mm_rh202","gm_mg3_coax", "PzGrenBtl402_SmokeLauncher"};
+                discreteDistanceInitIndex = 7; // Set initial gun zeoring to 800 m
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments= "Compartment3";
+
+                weapons[] = {
+                    QGVAR(20mm_rh202), // Modified reload time for Rearm
+                    QGVAR(mg3_coax), // Modified reload time for Rearm
+                    QGVAR(SmokeLauncher)
+                };
                 magazines[] = {
                     "gm_425Rnd_20x139mm_hei_t_dm81",
-                    "gm_425Rnd_20x139mm_hei_t_dm81",
-                    "gm_75Rnd_20x139mm_apds_t_dm63",
                     "gm_75Rnd_20x139mm_apds_t_dm63",
                     "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    "gm_500Rnd_762x51mm_b_t_DM21_mg3",
-                    "gm_2Rnd_76mm_RP_dm35" // Smoke Mag
+                    QGVAR(1Rnd_76mm_RP_dm35) // Marder A1/2 have 1 rnd 6 smoke granades
                 };
 
                 class Turrets
                 {
                     class CommanderTurret: CommanderTurret_base
                     {
+                        disableSoundAttenuation = 0;
+                        soundAttenuationTurret = "TankAttenuation";
+                        gunnerCompartments= "Compartment3";
+
                         weapons[] = {}; // Move SmokeLauncher to gunner
                         magazines[] = {};
                     };
 
                     class MilanTurret_01: MachineGunTurret_base
                     {
+                        disableSoundAttenuation = 0;
+                        soundAttenuationTurret = "TankAttenuation";
+                        gunnerCompartments= "Compartment4";
+
                         magazines[] = {};
                     };
                 };
+            };
+        };
+
+        class AnimationSources: AnimationSources
+        {
+            // Changes for Rearm (modified 20mm_rh202 and mg3 classes)
+            class MainTurret_reload_source
+            {
+                source = "reload";
+                weapon = QGVAR(20mm_rh202);
+            };
+            class MainTurret_ammorandom_source
+            {
+                source = "ammorandom";
+                weapon = QGVAR(20mm_rh202);
+            };
+            class MainTurret_coax_ammorandom_source
+            {
+                source = "ammorandom";
+                weapon = QGVAR(mg3_coax);
             };
         };
     };
