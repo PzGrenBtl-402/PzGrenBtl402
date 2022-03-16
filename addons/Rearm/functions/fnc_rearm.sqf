@@ -25,6 +25,9 @@ params [["_vehicle", objNull, [objNull]], ["_turretPath", [0], [[]]], ["_magazin
 
 if (isNull _vehicle || _magazineClass isEqualTo "" || _compatibleAmmoItems isEqualTo []) exitWith {};
 
+private _rearmingMags = _vehicle getVariable [QGVAR(rearming), []];
+if (_magazineClass in _rearmingMags) exitWith {ERROR_1("Already reaming %1", _magazineClass)};
+
 private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _magazineClass >> "count");
 private _ammoCounts = [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getTurretMagazineAmmo;
 
@@ -59,14 +62,20 @@ private _totalTime = _simEvents select (count _simEvents - 1) select 0;
 TRACE_2("Simulated events", _simEvents, _totalTime);
 
 // Disable turret
-private _originalDamage = _vehicle getHitPointDamage "hitturret";
-[QGVAR(setTurretDamage), [_vehicle, 1], _vehicle] call CBA_fnc_targetEvent;
+if (_rearmingMags isEqualTo []) then {
+    private _originalDamage = _vehicle getHitPointDamage "hitturret";
+    _vehicle setVariable [QGVAR(originalTurretDamage), _originalDamage, true];
+    [QGVAR(setTurretDamage), [_vehicle, 1], _vehicle] call CBA_fnc_targetEvent;
+};
 
 private _magazineName = [_ammoItem] call EFUNC(Rearm,getMagazineName);
 
+_rearmingMags pushBack _magazineClass;
+_vehicle setVariable [QGVAR(rearming), _rearmingMags, true];
+
 [
     _totalTime,
-    [_vehicle, _originalDamage, _turretPath, _magazineClass, _magazineName, _simEvents],
+    [_vehicle, _turretPath, _magazineClass, _magazineName, _simEvents],
     LINKFUNC(rearmFinished),
     LINKFUNC(rearmFinished),
     format [LLSTRING(rearming), _magazineName],

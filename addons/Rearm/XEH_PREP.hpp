@@ -1,3 +1,4 @@
+PREP(canRearm);
 PREP(canRearmFromOutside);
 PREP(distanceSelection);
 PREP(getAvailableAmmoItems)

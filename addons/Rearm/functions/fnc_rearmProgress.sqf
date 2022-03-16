@@ -19,7 +19,7 @@
  */
 
 params ["_args", "_elapsedTime", "_totalTime"];
-_args params ["_vehicle", "_originalDamage", "_turretPath", "_magazineClass", "_magazineName", "_simEvents"];
+_args params ["_vehicle", "_turretPath", "_magazineClass", "_magazineName", "_simEvents"];
 
 if !((_simEvents select 0) params ["_nextEventTime", "_ammoItem", "_ammoCounts"]) exitWith {
     ERROR("No Event");

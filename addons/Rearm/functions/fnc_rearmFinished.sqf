@@ -20,10 +20,20 @@
  */
 
 params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
-_args params ["_vehicle", "_originalDamage", "_turretPath", "_magazineClass", "_magazineName", "_simEvents"];
+_args params ["_vehicle", "_turretPath", "_magazineClass", "_magazineName", "_simEvents"];
 
-// Enable turret
-[QGVAR(setTurretDamage), [_vehicle, _originalDamage], _vehicle] call CBA_fnc_targetEvent;
+private _rearmingMags = _vehicle getVariable [QGVAR(rearming), []];
+private _i = _rearmingMags findIf {_x == _magazineClass};
+if (_i < 0) exitWith {ERROR_1("%1 was not rearmed", _magazineClass)};
+_rearmingMags deleteAt _i;
+_vehicle setVariable [QGVAR(rearming), _rearmingMags, true];
+
+// Enable turret if no other players are rearming
+if (_rearmingMags isEqualTo []) then {
+    private _originalDamage = getVariable [QGVAR(originalTurretDamage), 0];
+    _vehicle setVariable [QGVAR(originalTurretDamage), nil, true];
+    [QGVAR(setTurretDamage), [_vehicle, _originalDamage], _vehicle] call CBA_fnc_targetEvent;
+};
 
 if (_errorCode isEqualTo 0) then {
     [format [LLSTRING(rearmed), _magazineName], 1, [0, 0.9, 0, 1]] call CBA_fnc_notify;
