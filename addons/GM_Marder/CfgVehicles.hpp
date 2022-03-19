@@ -137,7 +137,7 @@ class CfgVehicles
                 gunnerCompartments= "Compartment3";
 
                 weapons[] = {
-                    QGVAR(20mm_rh202), // Modified reload time for Rearm
+                    QGVAR(20mm_rh202), // Modified reload time for Rearm and single fire mode
                     QGVAR(mg3_coax), // Modified reload time for Rearm
                     QGVAR(SmokeLauncher)
                 };
