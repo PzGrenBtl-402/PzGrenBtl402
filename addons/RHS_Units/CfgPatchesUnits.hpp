@@ -65,7 +65,7 @@ units[] = {
     "PzGrenBtl_MSV_Medic_81",
     "PzGrenBtl_MSV_SVD_81",
     "PzGrenBtl_MSV_MG_81",
-    "PzGrenBtl_MSV_MG2_81"
+    "PzGrenBtl_MSV_MG2_81",
     "PzGrenBtl_MSV_Officer_81",
     "PzGrenBtl_MSV_Crew_Commander_81",
     "PzGrenBtl_MSV_Crew_81"
