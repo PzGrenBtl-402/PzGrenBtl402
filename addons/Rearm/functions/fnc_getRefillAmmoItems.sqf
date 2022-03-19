@@ -26,6 +26,8 @@
 
 params ["_ammoItems", "_availableMagazines", "_roundsToRearm"];
 
+TRACE_1("Called getRefillAmmoItems", _this);
+
 ([_availableMagazines, _ammoItems] call FUNC(sortAvailableAmmoItems)) params ["_magazineClass", "_magazineAmmo"];
 
 private _refillItems = [];
@@ -49,13 +51,11 @@ private _rounds = 0;
     _refillAmmo pushBack _ammo;
 } forEach _ammoItems;
 
+TRACE_2("Selected ammo items", _refillItems, _refillAmmo);
+
 // Magazine is full
 if (_refillItems isEqualTo []) exitWith {
     []
 };
 
-private _refillItems = [_refillItems, _refillAmmo];
-
-TRACE_1("Selected ammo items", _refillItems);
-
-_refillItems
+[_refillItems, _refillAmmo]

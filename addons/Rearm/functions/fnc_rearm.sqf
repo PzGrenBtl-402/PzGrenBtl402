@@ -23,6 +23,8 @@
 
 params [["_vehicle", objNull, [objNull]], ["_turretPath", [0], [[]]], ["_magazineClass", "", [""]], ["_compatibleAmmoItems", [], [[]]], ["_rearmingDuration", 15, [0]]];
 
+TRACE_1("Called rearm", _this);
+
 if (isNull _vehicle || _magazineClass isEqualTo "" || _compatibleAmmoItems isEqualTo []) exitWith {};
 
 private _rearmingMags = _vehicle getVariable [QGVAR(rearming), []];
@@ -38,6 +40,13 @@ private _roundsToRearm = 0;
 
 TRACE_3("Magagzines", _ammoCounts, _maxAmmo, _roundsToRearm);
 
+if (_roundsToRearm isEqualTo 0) exitWith {
+    [
+        [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
+        [LLSTRING(failMagazineFull)]
+    ] call CBA_fnc_notify;
+};
+
 private _availableItems = [_vehicle, _compatibleAmmoItems] call FUNC(getAvailableAmmoItems);
 if (_availableItems isEqualTo []) exitWith {
     [
@@ -46,7 +55,7 @@ if (_availableItems isEqualTo []) exitWith {
     ] call CBA_fnc_notify;
 };
 
-private _refillAmmoItems = [_compatibleAmmoItems, _availableItems, _roundsToRearm] call FUNC(getAvailableAmmoItems);
+private _refillAmmoItems = [_compatibleAmmoItems, _availableItems, _roundsToRearm] call FUNC(getRefillAmmoItems);
 if (_refillAmmoItems isEqualTo []) exitWith {
     [
         [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
@@ -57,7 +66,7 @@ if (_refillAmmoItems isEqualTo []) exitWith {
 TRACE_2("Refill ammo items", _refillAmmoItems, _roundsToRearm);
 
 private _simEvents = [_ammoCounts, _maxAmmo, _refillAmmoItems, _rearmingDuration] call FUNC(simulateRearmEvents);
-private _totalTime = _simEvents select (count _simEvents - 1) select 0;
+private _totalTime = _simEvents select (count _simwEvents - 1) select 0;
 
 TRACE_2("Simulated events", _simEvents, _totalTime);
 

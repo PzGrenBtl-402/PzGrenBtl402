@@ -22,9 +22,9 @@ params ["_vehicle"];
 
 if (!hasInterface) exitWith {};
 
-private _rearmHEShowCondition = QUOTE(_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && {[ARR_3(_target, _this, 'Redd_MK20_HE_Mag')] call FUNC(canRearm)});
-private _rearmAPShowCondition = QUOTE(_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0) && {[ARR_3(_target, _this, 'Redd_MK20_AP_Mag')] call FUNC(canRearm)});
-private _rearmMKProgressCondition = QUOTE(_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0));
+private _rearmHEShowCondition = QUOTE([ARR_3(_target, _this, 'Redd_MK20_HE_Mag')] call FUNC(canRearmMK));
+private _rearmAPShowCondition = QUOTE([ARR_3(_target, _this, 'Redd_MK20_AP_Mag')] call FUNC(canRearmMK));
+private _rearmMKProgressCondition = QUOTE([ARR_3(_target, _this)] call FUNC(canRearmMKProgress));
 
 // MK HE laden
 private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);

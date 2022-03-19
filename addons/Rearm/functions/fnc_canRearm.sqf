@@ -7,17 +7,16 @@
  *
  *  Parameter(s):
  *      0: OBJECT - Vehicle.
- *      1: OBJECT - Player.
  *      2: STRING - Magazine class.
  *
  *  Returns:
  *      BOOLEAN - No players currently rearm given magazin class.
  *
  *  Example:
- *      [vehicle, player, "Redd_MK20_HE_Mag"] call PzGrenBtl402_Rearm_fnc_canRearm
+ *      [vehicle, "Redd_MK20_HE_Mag"] call PzGrenBtl402_Rearm_fnc_canRearm
  *
  */
 
-params ["_vehicle", "_player", "_magazineClass"];
+params ["_vehicle", "_magazineClass"];
 
 !(_magazineClass in (_vehicle getVariable [QGVAR(rearming), []]))

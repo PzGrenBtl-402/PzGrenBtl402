@@ -21,6 +21,8 @@
 
 params ["_vehicle", "_ammoItems"];
 
+TRACE_1("Called getAvailableAmmoItems", _this);
+
 // We only need ammo items
 private _magazineClassCargo = [];
 private _magazineAmmoCargo = [];

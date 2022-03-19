@@ -20,6 +20,8 @@
 params ["_ammoItems", "_ammoItemPriority"];
 _ammoItems params ["_items", "_counts"];
 
+TRACE_1("Called sortAvailableAmmoItems", _this);
+
 private _sortedItems = [];
 private _sortedCounts = [];
 {
@@ -31,8 +33,10 @@ private _sortedCounts = [];
         };
 
         _sortedItems pushBack _x;
-        _sortedItems pushBack (_counts select _forEachIndex);
+        _sortedCounts pushBack (_counts select _forEachIndex);
     } forEach _items;
 } foreach _ammoItemPriority;
+
+TRACE_2("Sorted items", _sortedItems, _sortedCounts);
 
 [_sortedItems, _sortedCounts]

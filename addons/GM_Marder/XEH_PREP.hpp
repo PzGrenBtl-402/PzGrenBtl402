@@ -1,4 +1,6 @@
 PREP(canLoadMilan);
+PREP(canRearmMK);
+PREP(canRearmMKProgress);
 PREP(canUnloadMilan);
 PREP(closeRamp);
 PREP(initActions);
