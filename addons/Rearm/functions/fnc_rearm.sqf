@@ -66,7 +66,7 @@ if (_refillAmmoItems isEqualTo []) exitWith {
 TRACE_2("Refill ammo items", _refillAmmoItems, _roundsToRearm);
 
 private _simEvents = [_ammoCounts, _maxAmmo, _refillAmmoItems, _rearmingDuration] call FUNC(simulateRearmEvents);
-private _totalTime = _simEvents select (count _simwEvents - 1) select 0;
+private _totalTime = _simEvents select (count _simEvents - 1) select 0;
 
 TRACE_2("Simulated events", _simEvents, _totalTime);
 
@@ -77,7 +77,7 @@ if (_rearmingMags isEqualTo []) then {
     [QGVAR(setTurretDamage), [_vehicle, 1], _vehicle] call CBA_fnc_targetEvent;
 };
 
-private _magazineName = [_ammoItem] call EFUNC(Rearm,getMagazineName);
+private _magazineName = [_magazineClass] call FUNC(getMagazineName);
 
 _rearmingMags pushBack _magazineClass;
 _vehicle setVariable [QGVAR(rearming), _rearmingMags, true];
@@ -85,9 +85,9 @@ _vehicle setVariable [QGVAR(rearming), _rearmingMags, true];
 [
     _totalTime,
     [_vehicle, _turretPath, _magazineClass, _magazineName, _simEvents],
-    LINKFUNC(rearmFinished),
-    LINKFUNC(rearmFinished),
+    {_this call FUNC(rearmFinished)},
+    {_this call FUNC(rearmFinished)},
     format [LLSTRING(rearming), _magazineName],
-    LINKFUNC(rearmProgress),
+    {_this call FUNC(rearmProgress)},
     ["isNotInside"]
 ] call ace_common_fnc_progressBar;

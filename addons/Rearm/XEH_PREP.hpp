@@ -6,6 +6,7 @@ PREP(getMagazineMaxAmmo);
 PREP(getMagazineName);
 PREP(getRefillAmmoItems);
 PREP(rearm);
+PREP(rearmFinished);
 PREP(rearmProgress);
 PREP(simulateRearmEvents);
 PREP(sortAvailableAmmoItems);

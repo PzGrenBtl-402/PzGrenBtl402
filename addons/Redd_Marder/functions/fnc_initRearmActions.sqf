@@ -84,8 +84,8 @@ private _smokeMagazineName = [QEGVAR(Rearm,smoke_3grenade_ammo)] call EFUNC(Rear
     format [LELSTRING(Rearm,rearm), _smokeMagazineName],
     _rearmSmokeIcon,
     _rearmSmokeIcon,
-    QUOTE([ARR_4(_target, _this, 'smoke9_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_4(_target, _caller, 'smoke9_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _this, 'smoke9_pos', 2, 'Redd_SmokeLauncherMag')] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _caller, 'smoke9_pos', 2, 'Redd_SmokeLauncherMag')] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {
@@ -139,8 +139,8 @@ private _mg3CompatibleMags = [
     format [LELSTRING(Rearm,rearm), _mgMagazineName],
     _rearmMGIcon,
     _rearmMGIcon,
-    QUOTE([ARR_4(_target, _this, 'machinegun_eject_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_4(_target, _caller, 'machinegun_eject_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _this, 'machinegun_eject_pos', 2, 'Redd_Mg3_Mag')] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _caller, 'machinegun_eject_pos', 2, 'Redd_Mg3_Mag')] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {

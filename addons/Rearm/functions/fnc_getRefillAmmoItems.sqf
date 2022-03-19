@@ -28,27 +28,32 @@ params ["_ammoItems", "_availableMagazines", "_roundsToRearm"];
 
 TRACE_1("Called getRefillAmmoItems", _this);
 
-([_availableMagazines, _ammoItems] call FUNC(sortAvailableAmmoItems)) params ["_magazineClass", "_magazineAmmo"];
+([_availableMagazines, _ammoItems] call FUNC(sortAvailableAmmoItems)) params ["_magazineClasses", "_magazineAmmo"];
 
 private _refillItems = [];
 private _refillAmmo = [];
 private _rounds = 0;
 {
     private _ammoItem = _x;
-    private _index = _magazineClass findIf {_x == _ammoItem};
-    if (_index isEqualTo -1) then {
-        continue;
-    };
 
-    private _ammo = _magazineAmmo select _index;
-    if ((_rounds + _ammo) > _roundsToRearm) then {
-        continue; // Current ammo item does not fit in mag, try next one with lower ammo count
-    };
+    {
+        private _magazineClass = _x;
 
-    _rounds = _rounds + _ammo;
+        if (_ammoItem != _magazineClass) then {
+            continue;
+        };
 
-    _refillItems pushBack (_magazineClass select _index);
-    _refillAmmo pushBack _ammo;
+        private _ammo = _magazineAmmo select _forEachIndex;
+        if ((_rounds + _ammo) > _roundsToRearm) then {
+            continue; // Current ammo item does not fit in mag, try next one with possibly lower ammo count
+        };
+
+        _rounds = _rounds + _ammo;
+
+        _refillItems pushBack _magazineClass;
+        _refillAmmo pushBack _ammo;
+
+    } forEach _magazineClasses;
 } forEach _ammoItems;
 
 TRACE_2("Selected ammo items", _refillItems, _refillAmmo);
