@@ -17,14 +17,14 @@
  */
 
 #define HOLD_TIME 5
-#define REARM_DURATION 15
 
 params ["_vehicle"];
 
 if (!hasInterface) exitWith {};
 
-private _rearmMKShowCondition = "_this isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0)";
-private _rearmMKProgressCondition = "_caller isEqualTo (fullCrew [_target, 'cargo', true] select 0 select 0)";
+private _rearmHEShowCondition = QUOTE([ARR_3(_target, _this, 'Redd_MK20_HE_Mag')] call FUNC(canRearmMK));
+private _rearmAPShowCondition = QUOTE([ARR_3(_target, _this, 'Redd_MK20_AP_Mag')] call FUNC(canRearmMK));
+private _rearmMKProgressCondition = QUOTE([ARR_2(_target, _this)] call FUNC(canRearmMKProgress));
 
 // MK HE laden
 private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);
@@ -34,13 +34,13 @@ private _heMagazineName = [QEGVAR(Rearm,mk20_he_ammo)] call EFUNC(Rearm,getMagaz
     format [LELSTRING(Rearm,rearm), _heMagazineName],
     _rearmHeIcon,
     _rearmHeIcon,
-    _rearmMKShowCondition,
+    _rearmHEShowCondition,
     _rearmMKProgressCondition,
     {},
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], "Redd_MK20_HE_Mag", [QEGVAR(Rearm,mk20_he_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "Redd_MK20_HE_Mag", [QEGVAR(Rearm,mk20_he_ammo)], EGVAR(Rearm,rearmMK20Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -59,13 +59,13 @@ private _apMagazineName = [QEGVAR(Rearm,mk20_ap_ammo)] call EFUNC(Rearm,getMagaz
     format [LELSTRING(Rearm,rearm), _apMagazineName],
     _rearmApIcon,
     _rearmApIcon,
-    _rearmMKShowCondition,
+    _rearmAPShowCondition,
     _rearmMKProgressCondition,
     {},
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], "Redd_MK20_AP_Mag", [QEGVAR(Rearm,mk20_ap_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "Redd_MK20_AP_Mag", [QEGVAR(Rearm,mk20_ap_ammo)], EGVAR(Rearm,rearmMK20Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -84,13 +84,13 @@ private _smokeMagazineName = [QEGVAR(Rearm,smoke_3grenade_ammo)] call EFUNC(Rear
     format [LELSTRING(Rearm,rearm), _smokeMagazineName],
     _rearmSmokeIcon,
     _rearmSmokeIcon,
-    QUOTE([ARR_4(_target, _this, 'smoke9_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_4(_target, _caller, 'smoke9_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _this, 'smoke9_pos', 2, 'Redd_SmokeLauncherMag')] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _caller, 'smoke9_pos', 2, 'Redd_SmokeLauncherMag')] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], "Redd_SmokeLauncherMag", [QEGVAR(Rearm,smoke_3grenade_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "Redd_SmokeLauncherMag", [QEGVAR(Rearm,smoke_3grenade_ammo)], EGVAR(Rearm,rearmSmoke3Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -139,15 +139,15 @@ private _mg3CompatibleMags = [
     format [LELSTRING(Rearm,rearm), _mgMagazineName],
     _rearmMGIcon,
     _rearmMGIcon,
-    QUOTE([ARR_4(_target, _this, 'machinegun_eject_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_4(_target, _caller, 'machinegun_eject_pos', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _this, 'machinegun_eject_pos', 2, 'Redd_Mg3_Mag')] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _caller, 'machinegun_eject_pos', 2, 'Redd_Mg3_Mag')] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {
         params ["_vehicle", "", "", "_args"];
         _args params ["_mg3CompatibleMags"];
 
-        [_vehicle, [0], "Redd_Mg3_Mag", _mg3CompatibleMags, REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "Redd_Mg3_Mag", _mg3CompatibleMags, EGVAR(Rearm,rearmMG3Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [_mg3CompatibleMags],

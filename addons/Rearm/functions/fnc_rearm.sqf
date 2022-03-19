@@ -23,81 +23,71 @@
 
 params [["_vehicle", objNull, [objNull]], ["_turretPath", [0], [[]]], ["_magazineClass", "", [""]], ["_compatibleAmmoItems", [], [[]]], ["_rearmingDuration", 15, [0]]];
 
+TRACE_1("Called rearm", _this);
+
 if (isNull _vehicle || _magazineClass isEqualTo "" || _compatibleAmmoItems isEqualTo []) exitWith {};
 
-private _preferredAmmoItem = [_vehicle, _compatibleAmmoItems] call FUNC(getPreferredAmmoItem);
-if (_preferredAmmoItem isEqualTo []) exitWith {
-    [
-        [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
-        [LLSTRING(failNoAmmoInVehicle)]
-    ] call CBA_fnc_notify;
-};
-_preferredAmmoItem params ["_ammoItem", "_rounds"];
+private _rearmingMags = _vehicle getVariable [QGVAR(rearming), []];
+if (_magazineClass in _rearmingMags) exitWith {ERROR_1("Already reaming %1", _magazineClass)};
 
 private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _magazineClass >> "count");
 private _ammoCounts = [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getTurretMagazineAmmo;
 
-TRACE_3("Magagzines", _ammoCounts, _maxAmmo, _rounds);
+private _roundsToRearm = 0;
+{
+    _roundsToRearm = _roundsToRearm + (_maxAmmo - _x);
+} foreach _ammoCounts;
 
-private _ammoToAdd = _rounds;
-for "_i" from (count _ammoCounts - 1) to 0 do {
-    private _count = _ammoCounts select _i;
-    if (_count >= _maxAmmo) then {
-        continue;
-    };
+TRACE_3("Magagzines", _ammoCounts, _maxAmmo, _roundsToRearm);
 
-    if (_ammoToAdd <= 0) then {
-        break;
-    };
-
-    private _canAdd = (_maxAmmo - _count) min _ammoToAdd;
-    _ammoToAdd = (_ammoToAdd - _canAdd) max 0;
-    _ammoCounts set [_i, _count + _canAdd];
-};
-
-TRACE_1("New ammo counts", _ammoCounts);
-
-if (_ammoToAdd > 0) exitWith {
+if (_roundsToRearm isEqualTo 0) exitWith {
     [
         [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
         [LLSTRING(failMagazineFull)]
     ] call CBA_fnc_notify;
 };
 
-// Disable turret
-private _originalDamage = _vehicle getHitPointDamage "hitturret";
-[QGVAR(setTurretDamage), [_vehicle, 1], _vehicle] call CBA_fnc_targetEvent;
+private _availableItems = [_vehicle, _compatibleAmmoItems] call FUNC(getAvailableAmmoItems);
+if (_availableItems isEqualTo []) exitWith {
+    [
+        [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
+        [LLSTRING(failNoAmmoInVehicle)]
+    ] call CBA_fnc_notify;
+};
 
-private _magazineName = [_ammoItem] call EFUNC(Rearm,getMagazineName);
+private _refillAmmoItems = [_compatibleAmmoItems, _availableItems, _roundsToRearm] call FUNC(getRefillAmmoItems);
+if (_refillAmmoItems isEqualTo []) exitWith {
+    [
+        [LLSTRING(rearmingFailed), 1.5, [0.9, 0, 0, 1]],
+        [LLSTRING(failMagazineFull)]
+    ] call CBA_fnc_notify;
+};
+
+TRACE_2("Refill ammo items", _refillAmmoItems, _roundsToRearm);
+
+private _simEvents = [_ammoCounts, _maxAmmo, _refillAmmoItems, _rearmingDuration] call FUNC(simulateRearmEvents);
+private _totalTime = _simEvents select (count _simEvents - 1) select 0;
+
+TRACE_2("Simulated events", _simEvents, _totalTime);
+
+// Disable turret
+if (_rearmingMags isEqualTo []) then {
+    private _originalDamage = _vehicle getHitPointDamage "hitturret";
+    _vehicle setVariable [QGVAR(originalTurretDamage), _originalDamage, true];
+    [QGVAR(setTurretDamage), [_vehicle, 1], _vehicle] call CBA_fnc_targetEvent;
+};
+
+private _magazineName = [_magazineClass] call FUNC(getMagazineName);
+
+_rearmingMags pushBack _magazineClass;
+_vehicle setVariable [QGVAR(rearming), _rearmingMags, true];
 
 [
-    _rearmingDuration,
-    [_vehicle, _originalDamage, _turretPath, _magazineClass, _magazineName, _ammoItem, _ammoCounts, _rounds],
-    {
-        // On Success
-        params ["_args"];
-        _args params ["_vehicle", "_originalDamage", "_turretPath", "_magazineClass", "_magazineName", "_ammoItem", "_ammoCounts", "_rounds"];
-
-        // this uses ACEs version of adding ammo because BIS command is broken
-        // redirects to ace_rearm_fnc_setTurretMagazineAmmo
-        [QGVAR(setTurretMagazineAmmo), [_vehicle, _turretPath, _magazineClass, _ammoCounts]] call CBA_fnc_serverEvent; // remoteExec server (endpoint defined in postInit)
-
-        [_vehicle, _ammoItem, 1, _rounds] call CBA_fnc_removeMagazineCargo;
-
-        // Enable turret
-        [QGVAR(setTurretDamage), [_vehicle, _originalDamage], _vehicle] call CBA_fnc_targetEvent;
-
-        [format [LLSTRING(rearmed), _magazineName], 1, [0, 0.9, 0, 1]] call CBA_fnc_notify;
-    },
-    {
-        // On Fail
-        params ["_args"];
-        _args params ["_vehicle", "_originalDamage"];
-
-        // Enable turret
-        [QGVAR(setTurretDamage), [_vehicle, _originalDamage], _vehicle] call CBA_fnc_targetEvent;
-    },
+    _totalTime,
+    [_vehicle, _turretPath, _magazineClass, _magazineName, _simEvents],
+    {_this call FUNC(rearmFinished)},
+    {_this call FUNC(rearmFinished)},
     format [LLSTRING(rearming), _magazineName],
-    nil,
+    {_this call FUNC(rearmProgress)},
     ["isNotInside"]
 ] call ace_common_fnc_progressBar;

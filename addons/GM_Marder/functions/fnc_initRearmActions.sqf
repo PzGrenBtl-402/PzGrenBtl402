@@ -17,14 +17,14 @@
  */
 
 #define HOLD_TIME 5
-#define REARM_DURATION 15
 
 params ["_vehicle"];
 
 if (!hasInterface) exitWith {};
 
-private _rearmMKShowCondition = "_this isEqualTo (fullCrew [_target, 'turret', true] select 2 select 0) && {!isTurnedOut _this}";
-private _rearmMKProgressCondition = "_caller isEqualTo (fullCrew [_target, 'turret', true] select 2 select 0) && {!isTurnedOut _caller}";
+private _rearmHEShowCondition = QUOTE([ARR_3(_target, _this, 'gm_425Rnd_20x139mm_hei_t_dm81')] call FUNC(canRearmMK));
+private _rearmAPShowCondition = QUOTE([ARR_3(_target, _this, 'gm_75Rnd_20x139mm_apds_t_dm63')] call FUNC(canRearmMK));
+private _rearmMKProgressCondition = QUOTE([ARR_2(_target, _this)] call FUNC(canRearmMKProgress));
 
 // MK HE laden
 private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);
@@ -34,13 +34,13 @@ private _heMagazineName = [QEGVAR(Rearm,mk20_he_ammo)] call EFUNC(Rearm,getMagaz
     format [LELSTRING(Rearm,rearm), _heMagazineName],
     _rearmHeIcon,
     _rearmHeIcon,
-    _rearmMKShowCondition,
+    _rearmHEShowCondition,
     _rearmMKProgressCondition,
     {},
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], "gm_425Rnd_20x139mm_hei_t_dm81", [QEGVAR(Rearm,mk20_he_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "gm_425Rnd_20x139mm_hei_t_dm81", [QEGVAR(Rearm,mk20_he_ammo)], EGVAR(Rearm,rearmMK20Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -59,13 +59,13 @@ private _apMagazineName = [QEGVAR(Rearm,mk20_ap_ammo)] call EFUNC(Rearm,getMagaz
     format [LELSTRING(Rearm,rearm), _apMagazineName],
     _rearmApIcon,
     _rearmApIcon,
-    _rearmMKShowCondition,
+    _rearmAPShowCondition,
     _rearmMKProgressCondition,
     {},
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], "gm_75Rnd_20x139mm_apds_t_dm63", [QEGVAR(Rearm,mk20_ap_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "gm_75Rnd_20x139mm_apds_t_dm63", [QEGVAR(Rearm,mk20_ap_ammo)], EGVAR(Rearm,rearmMK20Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -84,13 +84,13 @@ private _smokeMagazineName = [QEGVAR(Rearm,smoke_6grenade_ammo)] call EFUNC(Rear
     format [LELSTRING(Rearm,rearm), _smokeMagazineName],
     _rearmSmokeIcon,
     _rearmSmokeIcon,
-    QUOTE([ARR_4(_target, _this, 'mainturret_coax', 2)] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_4(_target, _caller, 'mainturret_coax', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _this, 'mainturret_coax', 2, QQGVAR(1Rnd_76mm_RP_dm35))] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _caller, 'mainturret_coax', 2, QQGVAR(1Rnd_76mm_RP_dm35))] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], QGVAR(1Rnd_76mm_RP_dm35), [QEGVAR(Rearm,smoke_6grenade_ammo)], REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], QGVAR(1Rnd_76mm_RP_dm35), [QEGVAR(Rearm,smoke_6grenade_ammo)], 2 * EGVAR(Rearm,rearmSmoke3Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -139,15 +139,15 @@ private _mg3CompatibleMags = [
     format [LELSTRING(Rearm,rearm), _mgMagazineName],
     _rearmMGIcon,
     _rearmMGIcon,
-    QUOTE([ARR_4(_target, _this, 'mainturret_coax', 2)] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_4(_target, _caller, 'mainturret_coax', 2)] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _this, 'mainturret_coax', 2, 'gm_500Rnd_762x51mm_b_t_DM21_mg3')] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target, _caller, 'mainturret_coax', 2, 'gm_500Rnd_762x51mm_b_t_DM21_mg3')] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {
         params ["_vehicle", "", "", "_args"];
         _args params ["_mg3CompatibleMags"];
 
-        [_vehicle, [0], "gm_500Rnd_762x51mm_b_t_DM21_mg3", _mg3CompatibleMags, REARM_DURATION] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "gm_500Rnd_762x51mm_b_t_DM21_mg3", _mg3CompatibleMags, EGVAR(Rearm,rearmMG3Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [_mg3CompatibleMags],

@@ -3,6 +3,8 @@ PREP(canAssembleMilan);
 PREP(canDisassembleMilan);
 PREP(canLoadMilan);
 PREP(canUnloadMilan);
+PREP(canRearmMK);
+PREP(canRearmMKProgress);
 PREP(closeRamp);
 PREP(disassembleMilan);
 PREP(handleFired);
