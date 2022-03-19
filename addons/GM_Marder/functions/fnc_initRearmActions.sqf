@@ -24,7 +24,7 @@ if (!hasInterface) exitWith {};
 
 private _rearmHEShowCondition = QUOTE([ARR_3(_target, _this, 'gm_425Rnd_20x139mm_hei_t_dm81')] call FUNC(canRearmMK));
 private _rearmAPShowCondition = QUOTE([ARR_3(_target, _this, 'gm_75Rnd_20x139mm_apds_t_dm63')] call FUNC(canRearmMK));
-private _rearmMKProgressCondition = QUOTE([ARR_3(_target, _this)] call FUNC(canRearmMKProgress));
+private _rearmMKProgressCondition = QUOTE([ARR_2(_target, _this)] call FUNC(canRearmMKProgress));
 
 // MK HE laden
 private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);

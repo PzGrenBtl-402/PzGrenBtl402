@@ -24,7 +24,7 @@ if (!hasInterface) exitWith {};
 
 private _rearmHEShowCondition = QUOTE([ARR_3(_target, _this, 'Redd_MK20_HE_Mag')] call FUNC(canRearmMK));
 private _rearmAPShowCondition = QUOTE([ARR_3(_target, _this, 'Redd_MK20_AP_Mag')] call FUNC(canRearmMK));
-private _rearmMKProgressCondition = QUOTE([ARR_3(_target, _this)] call FUNC(canRearmMKProgress));
+private _rearmMKProgressCondition = QUOTE([ARR_2(_target, _this)] call FUNC(canRearmMKProgress));
 
 // MK HE laden
 private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);
