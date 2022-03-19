@@ -25,7 +25,7 @@ This mod contains changes to Redd'n'Tanks, BwMod, NiArms, RHS and GM improving A
 ### GM
 
 - Add Fuchs door actions
-- More ammo for the Marder
+- Single fire mode for Marder
 
 ### RHS
 
