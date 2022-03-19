@@ -24,4 +24,4 @@ params ["_vehicle", "_player", "_selection", "_radius", "_magazineClass"];
 
 isNull objectParent _player && // not in vehicle
 {([_player, _vehicle, _selection] call FUNC(distanceSelection)) < _radius} && // "machinegun_eject_pos" for mg; "smoke9_pos" for smoke launcher
-{[_player, _vehicle, _magazineClass] call FUNC(canRearm)}
+{[_player, _magazineClass] call FUNC(canRearm)}
