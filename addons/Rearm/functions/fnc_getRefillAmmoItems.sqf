@@ -33,17 +33,19 @@ TRACE_1("Called getRefillAmmoItems", _this);
 private _refillItems = [];
 private _refillAmmo = [];
 private _rounds = 0;
+
+private ["_ammoItem", "_magazineClass", "_ammo"];
 {
-    private _ammoItem = _x;
+    _ammoItem = _x;
 
     {
-        private _magazineClass = _x;
+        _magazineClass = _x;
 
         if (_ammoItem != _magazineClass) then {
             continue;
         };
 
-        private _ammo = _magazineAmmo select _forEachIndex;
+        _ammo = _magazineAmmo select _forEachIndex;
         if ((_rounds + _ammo) > _roundsToRearm) then {
             continue; // Current ammo item does not fit in mag, try next one with possibly lower ammo count
         };

@@ -33,10 +33,11 @@ _ammoCounts sort true;
 private _time = 0;
 private _events = [];
 
+private ["_ammoToAdd", "_count", "_canAdd"];
 {
-    private _ammoToAdd = _x;
+    _ammoToAdd = _x;
     for "_i" from (count _ammoCounts - 1) to 0 do {
-        private _count = _ammoCounts select _i;
+        _count = _ammoCounts select _i;
         if (_count >= _maxAmmo) then {
             continue;
         };
@@ -45,7 +46,7 @@ private _events = [];
             break;
         };
 
-        private _canAdd = (_maxAmmo - _count) min _ammoToAdd;
+        _canAdd = (_maxAmmo - _count) min _ammoToAdd;
         _ammoToAdd = (_ammoToAdd - _canAdd) max 0;
         _ammoCounts set [_i, _count + _canAdd];
     };

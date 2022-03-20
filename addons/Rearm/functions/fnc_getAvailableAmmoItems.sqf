@@ -26,11 +26,13 @@ TRACE_1("Called getAvailableAmmoItems", _this);
 // We only need ammo items
 private _magazineClassCargo = [];
 private _magazineAmmoCargo = [];
+
+private "_maxAmmo";
 {
     _x params ["_class", "_ammo"];
 
     if (_ammoItems findIf {_x == _class} isNotEqualTo -1) then { // case insensitive search
-        private _maxAmmo = [_class] call FUNC(getMagazineMaxAmmo);
+        _maxAmmo = [_class] call FUNC(getMagazineMaxAmmo);
         if (_maxAmmo isEqualTo _ammo) then { // Ammo item needs to be full
             _magazineClassCargo pushBack _class;
             _magazineAmmoCargo pushBack _ammo;

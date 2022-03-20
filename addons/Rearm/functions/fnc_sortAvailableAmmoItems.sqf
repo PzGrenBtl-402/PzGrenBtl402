@@ -24,8 +24,10 @@ TRACE_1("Called sortAvailableAmmoItems", _this);
 
 private _sortedItems = [];
 private _sortedCounts = [];
+
+private "_prio";
 {
-    private _prio = _x;
+    _prio = _x;
 
     {
         if (_x != _prio) then {
