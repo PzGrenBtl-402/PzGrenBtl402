@@ -38,6 +38,9 @@ if (!_success) exitWith {false}; // Item does not exist in vehicle anymore
 // redirects to ace_rearm_fnc_setTurretMagazineAmmo
 [QGVAR(setTurretMagazineAmmo), [_vehicle, _turretPath, _magazineClass, _ammoCounts]] call CBA_fnc_serverEvent; // remoteExec server (endpoint defined in postInit)
 
+private _itemName = [_ammoItemClass] call FUNC(getMagazineName);
+[format [LLSTRING(rearmed), _itemName], 1, [0, 0.9, 0, 1]] call CBA_fnc_notify;
+
 _simEvents deleteAt 0; // Pop off the event
 
 true

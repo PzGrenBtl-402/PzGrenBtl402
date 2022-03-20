@@ -39,8 +39,6 @@ if (_rearmingMags isEqualTo []) then {
     [QGVAR(setTurretDamage), [_vehicle, _originalDamage], _vehicle] call CBA_fnc_targetEvent;
 };
 
-if (_errorCode isEqualTo 0) then {
-    [format [LLSTRING(rearmed), _magazineName], 1, [0, 0.9, 0, 1]] call CBA_fnc_notify;
-} else {
+if (_errorCode isNotEqualTo 0) then {
     [LLSTRING(rearmInterrupted), 1, [0.9, 0, 0, 1]] call CBA_fnc_notify;
 };
