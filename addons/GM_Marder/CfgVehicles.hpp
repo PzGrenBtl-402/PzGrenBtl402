@@ -119,14 +119,14 @@ class CfgVehicles
             {
                 disableSoundAttenuation = 0;
                 soundAttenuationTurret = "TankAttenuation";
-                gunnerCompartments= "Compartment2";
+                gunnerCompartments = "Compartment2";
             };
 
             class SquadLeaderTurret: MainTurret
             {
                 disableSoundAttenuation = 0;
                 soundAttenuationTurret = "TankAttenuation";
-                gunnerCompartments= "Compartment2";
+                gunnerCompartments = "Compartment2";
             };
 
             class MainTurret: MainTurret
@@ -134,7 +134,7 @@ class CfgVehicles
                 discreteDistanceInitIndex = 7; // Set initial gun zeoring to 800 m
                 disableSoundAttenuation = 0;
                 soundAttenuationTurret = "TankAttenuation";
-                gunnerCompartments= "Compartment3";
+                gunnerCompartments = "Compartment3";
 
                 weapons[] = {
                     QGVAR(20mm_rh202), // Modified reload time for Rearm and single fire mode
@@ -154,7 +154,7 @@ class CfgVehicles
                     {
                         disableSoundAttenuation = 0;
                         soundAttenuationTurret = "TankAttenuation";
-                        gunnerCompartments= "Compartment3";
+                        gunnerCompartments = "Compartment3";
 
                         weapons[] = {}; // Move SmokeLauncher to gunner
                         magazines[] = {};
@@ -164,7 +164,7 @@ class CfgVehicles
                     {
                         disableSoundAttenuation = 0;
                         soundAttenuationTurret = "TankAttenuation";
-                        gunnerCompartments= "Compartment4";
+                        gunnerCompartments = "Compartment4";
 
                         magazines[] = {};
                     };
