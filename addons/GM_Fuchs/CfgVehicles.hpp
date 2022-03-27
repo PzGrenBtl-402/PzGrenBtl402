@@ -3,12 +3,69 @@ class CfgVehicles
     class gm_wheeled_APC_base;
     class gm_fuchs_base: gm_wheeled_APC_base
     {
+        class CargoTurret;
+        class CommanderTurret_base;
+        class MachineGunTurret_base;
+        class Turrets;
         class UserActions;
     };
 
     class gm_fuchsa0_base: gm_fuchs_base
     {
         maximumLoad = 10000;
+        disableSoundAttenuation = 0;
+        attenuationEffectType = "TankAttenuation";
+        driverCompartments = "Compartment1";
+        cargoCompartments[] = {"Compartment2"};
+        enableGPS = 0;
+
+        ace_vehicles_engineStartDelay = 5;
+
+        class Turrets: Turrets
+        {
+            class CommanderTurret: CommanderTurret_base
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment1";
+            };
+
+            class MachineGunTurret_01: MachineGunTurret_base
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment3";
+
+                magazines[] =
+                {
+                    "gm_120Rnd_762x51mm_b_t_DM21_mg3_grn",
+                    "gm_120Rnd_762x51mm_b_t_DM21_mg3_grn",
+                    "gm_120Rnd_762x51mm_b_t_DM21_mg3_grn",
+                    "gm_120Rnd_762x51mm_b_t_DM21_mg3_grn"
+                };
+            };
+
+            class SquadLeaderTurret: CargoTurret
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment2";
+            };
+
+            class CargoTurret_03: CargoTurret
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment2";
+            };
+
+            class CargoTurret_08: CargoTurret_03
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment2";
+            };
+        };
 
         class UserActions: UserActions
         {
@@ -66,9 +123,9 @@ class CfgVehicles
             {
                 displayName = ECSTRING(ACRE, BV);
                 shortName = ECSTRING(ACRE, BVShort);
-                allowedPositions[] = {"driver", {"turret", {0}, {2}}};
+                allowedPositions[] = {"driver", "commander", {"turret", {2}}};
                 disabledPositions[] = {};
-                limitedPositions[] = {{"cargo", "all"}, {"turret", {1}, {3}, {4}, {5}}};
+                limitedPositions[] = {"gunner", {"cargo", "all"}, {"turret", {3}, {4}, {5}}};
                 numLimitedPositions = 3;
                 masterPositions[] = {};
                 connectedByDefault = 1;
@@ -98,6 +155,24 @@ class CfgVehicles
                 intercom[] = {"all"};
             };
         };
+
+        class Turrets: Turrets
+        {
+            class MachineGunTurret_02: MachineGunTurret_base
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment4";
+
+                magazines[] =
+                {
+                    "gm_120Rnd_762x51mm_b_t_DM21_mg3_grn",
+                    "gm_120Rnd_762x51mm_b_t_DM21_mg3_grn",
+                    "gm_120Rnd_762x51mm_b_t_DM21_mg3_grn",
+                    "gm_120Rnd_762x51mm_b_t_DM21_mg3_grn"
+                };
+            };
+        };
     };
 
     class gm_fuchsa0_reconnaissance_base: gm_fuchsa0_base
@@ -108,9 +183,9 @@ class CfgVehicles
             {
                 displayName = ECSTRING(ACRE, BV);
                 shortName = ECSTRING(ACRE, BVShort);
-                allowedPositions[] = {"driver", {"turret", {0}, {4}}};
+                allowedPositions[] = {"driver", "commander", {"turret", {4}}};
                 disabledPositions[] = {};
-                limitedPositions[] = {{"cargo", "all"}, {"turret", {1}, {2}, {3}, {5}}};
+                limitedPositions[] = {"gunner", {"cargo", "all"}, {"turret", {2}, {3}, {5}}};
                 numLimitedPositions = 3;
                 masterPositions[] = {};
                 connectedByDefault = 1;
@@ -153,6 +228,16 @@ class CfgVehicles
                 intercom[] = {"all"};
             };
         };
+
+        class Turrets: Turrets
+        {
+            class MilanTurret_01: MachineGunTurret_base
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment4";
+            };
+        };
     };
 
     class gm_fuchsa0_command_base: gm_fuchsa0_base
@@ -163,7 +248,7 @@ class CfgVehicles
             {
                 displayName = ECSTRING(ACRE, BV);
                 shortName = ECSTRING(ACRE, BVShort);
-                allowedPositions[] = {"driver", {"turret", {0}, {1}}};
+                allowedPositions[] = {"driver", "commander", {"turret", {1}}};
                 disabledPositions[] = {};
                 limitedPositions[] = {{"cargo", "all"}, {"turret", {2}, {3}}};
                 numLimitedPositions = 3;
