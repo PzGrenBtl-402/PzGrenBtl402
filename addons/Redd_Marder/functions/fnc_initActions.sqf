@@ -27,7 +27,7 @@ if (hasInterface) then {
         private _text = format [localize _str, _vehName];
         private _actionID = _veh addAction _params;
         _veh setUserActionText [_actionID, _text, "", _picture];
-    } forEach GVAR(getInOutParams);
+    } forEach GVAR(getInParams);
 };
 
 if (isServer && locked _veh isNotEqualTo 2) then {
