@@ -57,31 +57,12 @@ if (hasInterface) then {
         getText (_getInDriverAction >> "textDefault")
     ];
 
-    private _getOutAction = configFile >> "CfgActions" >> "GetOut";
-    private _getOutParams = [
-        [
-            "", // will be set with setUserActionText
-            {
-                params ["_veh", "_unit"];
-                _unit action ["getOut", _veh];
-            },
-            nil,
-            getNumber (_getOutAction >> "priority"),
-            false,
-            true,
-            getText (_getOutAction >> "shortcut"),
-            "(_this in [driver _target, commander _target]) && {(locked _target) isEqualTo 2}", //_target = _veh, _this = player
-            4
-        ],
-        "str_action_getout",
-        getText (_getOutAction >> "textDefault")
-    ];
-
-    GVAR(getInOutParams) = [_getInCommanderParams, _getInDriverParams, _getOutParams];
+    GVAR(getInParams) = [_getInCommanderParams, _getInDriverParams];
 };
 
 ["Redd_Marder_1A5_base", "InitPost", {
     _this call FUNC(initActions);
+    _this call FUNC(initLadderActions);
     _this call FUNC(initMilanActions);
     _this call FUNC(initRearmActions);
     _this call FUNC(setCamonet);

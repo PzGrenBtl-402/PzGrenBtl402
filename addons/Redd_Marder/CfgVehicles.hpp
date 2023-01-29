@@ -466,12 +466,41 @@ class CfgVehicles
                 animPeriod = 2;
             };
 
+            class Redd_Sandsacke_Links
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod = 0;
+            };
+
+            class Redd_Sandsacke_Rechts
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod = 0;
+            };
+
+            class Redd_sandsackrolle_links
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod = 0;
+            };
+
+            class Redd_sandsackrolle_rechts
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod = 0;
+            };
+
             // Changes for Rearm (own MG weapon class)
             class recoil_source_2
             {
                 source = "reload";
                 weapon = QEGVAR(Redd_Main,mg3);
             };
+
             class flash_mg3_source
             {
                 source = "reload";
@@ -495,7 +524,7 @@ class CfgVehicles
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
-                condition = "(player in [driver this, gunner this, this turretUnit [0,3]]) && (this animationSourcePhase 'heck_luke_rotation' == 0) && (alive this)";
+                condition = "(player in [driver this, gunner this, this turretUnit [0, 3]]) && (this animationSourcePhase 'heck_luke_rotation' == 0) && (alive this)";
                 statement = QUOTE(this call FUNC(openRamp));
             };
 
@@ -506,7 +535,7 @@ class CfgVehicles
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
-                condition = "(player in [driver this, gunner this, this turretUnit [0,3]]) && (this animationSourcePhase 'heck_luke_rotation' > 0) && (alive this)";
+                condition = "(player in [driver this, gunner this, this turretUnit [0, 3]]) && (this animationSourcePhase 'heck_luke_rotation' > 0) && (alive this)";
                 statement = QUOTE(this call FUNC(closeRamp));
             };
 
@@ -518,8 +547,8 @@ class CfgVehicles
                 onlyforplayer = 1;
                 showWindow = 0;
                 shortcut = "turnOut";
-                condition = "(this turretUnit [0,0] == player) and (this animationSourcePhase 'hatchCommander' > 0) and (alive this)";
-                statement = "(missionNamespace getVariable ['bis_fnc_moduleRemoteControl_unit', player]) action ['moveToTurret', this, [2]];[this,[[0,0],true]] remoteExecCall ['lockTurret'];this setVariable ['Redd_Marder_Bino_In', true, true];";
+                condition = "(this turretUnit [0, 0] == player) and (this animationSourcePhase 'hatchCommander' > 0) and (alive this)";
+                statement = "(missionNamespace getVariable ['bis_fnc_moduleRemoteControl_unit', player]) action ['moveToTurret', this, [2]]; [this, [[0, 0], true]] remoteExecCall ['lockTurret']; this setVariable ['Redd_Marder_Bino_In', true, true];";
             };
 
             class Bino_out
@@ -531,7 +560,95 @@ class CfgVehicles
                 showWindow = 0;
                 shortcut = "turnIn";
                 condition = "(this turretUnit [2] == player) and (alive this)";
-                statement = "(missionNamespace getVariable ['bis_fnc_moduleRemoteControl_unit', player]) action ['moveToTurret', this, [0,0]];[this,[[0,0],false]] remoteExecCall ['lockTurret'];this setVariable ['Redd_Marder_Bino_In', false, true];";
+                statement = "(missionNamespace getVariable ['bis_fnc_moduleRemoteControl_unit', player]) action ['moveToTurret', this, [0,0]]; [this, [[0, 0], false]] remoteExecCall ['lockTurret']; this setVariable ['Redd_Marder_Bino_In', false, true];";
+            };
+
+            class getOutHatchCommander
+            {
+                displayName = "Aussteigen durch Luke";
+                position = "actionsPoint";
+                radius = 10;
+                onlyforplayer = 1;
+                showWindow = 0;
+                condition = "(alive this) and (this turretUnit [0, 0] == player) and (isTurnedOut player)";
+                statement = "[this, player, 'commander'] spawn PzGrenBtl402_Redd_Marder_fnc_getOutHatch";
+            };
+
+            class getOutHatchDriver
+            {
+                displayName = "Aussteigen durch Luke";
+                position = "actionsPoint";
+                radius = 10;
+                onlyforplayer = 1;
+                showWindow = 0;
+                condition = "(alive this) and (this turretUnit [-1] == player) and (isTurnedOut player)";
+                statement = "[this, player, 'driver'] spawn PzGrenBtl402_Redd_Marder_fnc_getOutHatch";
+            };
+
+            class getOutHatchLeft
+            {
+                displayName = "Aussteigen durch Luke";
+                position = "actionsPoint";
+                radius = 10;
+                onlyforplayer = 1;
+                showWindow = 0;
+                condition = "(alive this) and (this turretUnit [0, 1] == player) and (isTurnedOut player)";
+                statement = "[this, player, 'left'] spawn PzGrenBtl402_Redd_Marder_fnc_getOutHatch";
+            };
+
+            class getOutHatchRight
+            {
+                displayName = "Aussteigen durch Luke";
+                position = "actionsPoint";
+                radius = 10;
+                onlyforplayer = 1;
+                showWindow = 0;
+                condition = "(alive this) and (this turretUnit [0, 2] == player) and (isTurnedOut player)";
+                statement = "[this, player, 'right'] spawn PzGrenBtl402_Redd_Marder_fnc_getOutHatch";
+            };
+
+            class getOutHatchMiddle
+            {
+                displayName = "Aussteigen durch Luke";
+                position = "actionsPoint";
+                radius = 10;
+                onlyforplayer = 1;
+                showWindow = 0;
+                condition = "(alive this) and (this turretUnit [0, 3] == player) and (isTurnedOut player)";
+                statement = "[this, player, 'middle'] spawn PzGrenBtl402_Redd_Marder_fnc_getOutHatch";
+            };
+
+            class movePassengerOneToHatchLeft
+            {
+                displayName = "Zum Lukenplatz wechseln";
+                position = "actionsPoint";
+                radius = 10;
+                onlyforplayer = 1;
+                showWindow = 0;
+                condition = "(alive this) and (this getCargoIndex player == 1) and (isNull (this turretunit [0, 1]))";
+                statement = "player action ['moveToTurret', this, [0, 1]]";
+            };
+
+            class movePassengerTwoToHatchLeft
+            {
+                displayName = "Zum Lukenplatz wechseln";
+                position = "actionsPoint";
+                radius = 10;
+                onlyforplayer = 1;
+                showWindow = 0;
+                condition = "(alive this) and (this getCargoIndex player == 2) and (isNull (this turretunit [0, 1]))";
+                statement = "player action ['moveToTurret', this, [0, 1]]";
+            };
+
+            class movePassengerThreeToHatchRight
+            {
+                displayName = "Zum Lukenplatz wechseln";
+                position = "actionsPoint";
+                radius = 10;
+                onlyforplayer = 1;
+                showWindow = 0;
+                condition = "(alive this) and (this getCargoIndex player == 3) and (isNull (this turretunit [0, 2]))";
+                statement = "player action ['moveToTurret', this, [0, 2]]";
             };
 
             delete heckluke_auf_2;
@@ -557,6 +674,11 @@ class CfgVehicles
 
             delete Spiegel_ausklappen;
             delete Spiegel_einklappen;
+
+            delete Sandsacke_auf_Links;
+            delete Sandsacke_auf_Rechts;
+            delete Sandsacke_ab_Links;
+            delete Sandsacke_ab_Rechts;
         };
     };
 };
