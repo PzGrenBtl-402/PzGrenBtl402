@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="Redd_Marder">
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_getOutHatch">
+            <Original>Get out through hatch</Original>
+            <German>Aussteigen durch Luke</German>
+        </Key>
+
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_attachLadder">
+            <Original>Set up ladder</Original>
+            <German>Leiter aufstellen</German>
+        </Key>
+
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_moveToHatch">
+            <Original>Switch to hatch seat</Original>
+            <German>Zum Lukenplatz wechseln</German>
+        </Key>
+    </Package>
+</Project>

@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /**
- *  Author: Mishkar
+ *  Author: Mishkar, Timi007
  *
  *  Description:
  *      Initializes Ladder actions.
@@ -16,22 +16,26 @@
  *
  */
 
-
 params ["_veh"];
 
 if (!hasInterface) exitWith {};
 
+private _ladderIcon = QPATHTOF(data\ui\holdaction_ladder.paa);
+
 // Leiter Links aufbauen
 [
     _veh,
-    "Leiter aufstellen",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-    "(alive _target) and (_target turretUnit [0, 1] == _this) and (isTurnedOut _this) and ('ACE_TacticalLadder_Pack' in backpackCargo _target)",
-    "(alive _target) and (_target turretUnit [0, 1] == _this) and (isTurnedOut _this) and ('ACE_TacticalLadder_Pack' in backpackCargo _target)",
+    LLSTRING(attachLadder),
+    _ladderIcon,
+    _ladderIcon,
+    QUOTE([ARR_3(_target, _this, 'left')] call FUNC(canAttachLadder)),
+    QUOTE([ARR_3(_target, _this, 'left')] call FUNC(canAttachLadder)),
     {},
     {},
-    {[_target, "left"] call PzGrenBtl402_Redd_Marder_fnc_attachLadder},
+    {
+        params ["_vehicle"];
+        [_vehicle, "left"] call FUNC(attachLadder);
+    },
     {},
     [],
     5,
@@ -44,14 +48,17 @@ if (!hasInterface) exitWith {};
 // Leiter Rechts aufbauen
 [
     _veh,
-    "Leiter aufstellen",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-    "(alive _target) and (_target turretUnit [0, 2] == _this) and (isTurnedOut _this) and ('ACE_TacticalLadder_Pack' in backpackCargo _target)",
-    "(alive _target) and (_target turretUnit [0, 2] == _this) and (isTurnedOut _this) and ('ACE_TacticalLadder_Pack' in backpackCargo _target)",
+    LLSTRING(attachLadder),
+    _ladderIcon,
+    _ladderIcon,
+    QUOTE([ARR_3(_target, _this, 'right')] call FUNC(canAttachLadder)),
+    QUOTE([ARR_3(_target, _this, 'right')] call FUNC(canAttachLadder)),
     {},
     {},
-    {[_target, "right"] call PzGrenBtl402_Redd_Marder_fnc_attachLadder},
+    {
+        params ["_vehicle"];
+        [_vehicle, "right"] call FUNC(attachLadder);
+    },
     {},
     [],
     5,

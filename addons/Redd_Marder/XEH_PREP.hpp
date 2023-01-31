@@ -1,6 +1,7 @@
 PREP(assembleMilan);
 PREP(attachLadder);
 PREP(canAssembleMilan);
+PREP(canAttachLadder);
 PREP(canDisassembleMilan);
 PREP(canLoadMilan);
 PREP(canUnloadMilan);
