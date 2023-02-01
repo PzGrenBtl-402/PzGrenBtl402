@@ -24,7 +24,7 @@ if (isNull _veh || isNull _caller || _hatch isEqualTo "") exitWith {};
 
 _caller action ["getOut", _veh];
 
-[{
+[{isNull objectParent (_this select 1)}, { // wait until player is out of vehicle
     params ["_veh", "_caller", "_hatch"];
 
     switch (_hatch) do {
@@ -55,5 +55,5 @@ _caller action ["getOut", _veh];
     [{
         params ["_caller"];
         detach _caller;
-    }, [_caller], 0.5] call CBA_fnc_waitAndExecute;
-}, _this, 0.5] call CBA_fnc_waitAndExecute;
+    }, [_caller], 0.1] call CBA_fnc_waitAndExecute;
+}, _this] call CBA_fnc_waitUntilAndExecute;
