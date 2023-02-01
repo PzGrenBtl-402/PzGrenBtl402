@@ -520,6 +520,7 @@ class CfgVehicles
             class heckluke_auf
             {
                 displayName = "$STR_heckluke_auf";
+                displayNameDefault = "$STR_heckluke_auf";
                 position = "HecklukePoint";
                 radius = 10;
                 onlyforplayer = 1;
@@ -531,6 +532,7 @@ class CfgVehicles
             class heckluke_zu
             {
                 displayName = "$STR_heckluke_zu";
+                displayNameDefault = "$STR_heckluke_zu";
                 position = "HecklukePoint";
                 radius = 10;
                 onlyforplayer = 1;
@@ -542,6 +544,7 @@ class CfgVehicles
             class Bino_in
             {
                 displayName = "$STR_Hoeher_steigen";
+                displayNameDefault = "$STR_Hoeher_steigen";
                 position = "actionPoint";
                 radius = 25;
                 onlyforplayer = 1;
@@ -554,6 +557,7 @@ class CfgVehicles
             class Bino_out
             {
                 displayName = "$STR_Tiefer_steigen";
+                displayNameDefault = "$STR_Tiefer_steigen";
                 position = "actionPoint";
                 radius = 25;
                 onlyforplayer = 1;
@@ -566,12 +570,13 @@ class CfgVehicles
             class GetOutHatchCommander
             {
                 displayName = CSTRING(getOutHatch);
+                displayNameDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\getout_ca.paa' size='1.8' shadow=2 />";
                 position = "actionsPoint";
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
                 priority = 6.2;
-                textDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\getout_ca.paa' size='1.8' shadow=2 />";
+                shortcut = "GetOut";
                 condition = "(alive this) && {this turretUnit [0, 0] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
                 statement = QUOTE([ARR_3(this, ACE_player, 'commander')] call FUNC(getOutHatch));
             };
@@ -603,11 +608,13 @@ class CfgVehicles
             class MovePassengerOneToHatchLeft
             {
                 displayName = CSTRING(moveToHatch);
+                displayNameDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa' size='1.8' shadow=2 />";
                 position = "actionsPoint";
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
-                textDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa' size='1.8' shadow=2 />";
+                priority = 1.35;
+                shortcut = "SwapGunner";
                 condition = "(alive this) && (this getCargoIndex ACE_player isEqualTo 1) && (isNull (this turretunit [0, 1]))";
                 statement = "ACE_player action ['moveToTurret', this, [0, 1]]";
             };

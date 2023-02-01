@@ -32,11 +32,9 @@ GVAR(ladder) = _ladder;
 GVAR(currentStep) = _currentStep max MIN_ALLOWED_STEP;
 GVAR(currentAngle) = _ladder animationPhase "rotate";
 
-TRACE_3("Init settings", _currentStep, GVAR(currentStep), GVAR(currentAngle));
-
 [
     "",
     LLSTRING(deployLadder),
     localize "STR_ACE_TacticalLadder_Adjust",
-    [["control", localize "str_disp_conf_yaxis" + " " + localize "STR_ACE_TacticalLadder_AdjustTilt"]]
+    [["control", LLSTRING(adjustTiltLadder)]]
 ] call ace_interaction_fnc_showMouseHint;

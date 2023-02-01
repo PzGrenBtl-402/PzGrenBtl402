@@ -13,5 +13,9 @@
             <Original>Adjust ladder</Original>
             <German>Leiter anpassen</German>
         </Key>
+        <Key ID="STR_PzGrenBtl402_Ladder_adjustTiltLadder">
+            <Original>Tilt ladder</Original>
+            <German>Leiter kippen</German>
+        </Key>
     </Package>
 </Project>

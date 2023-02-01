@@ -7,7 +7,7 @@
  *
  *  Parameter(s):
  *      0: OBJECT - Player.
- *      1: NUMBER - Key.
+ *      1: NUMBER - Key pressed.
  *
  *  Returns:
  *       Success.
