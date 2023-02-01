@@ -88,6 +88,7 @@ class CfgVehicles
             class heckklappe_auf
             {
                 displayName = CSTRING(openRamp);
+                displayNameDefault = CSTRING(openRamp);
                 position = "actionPoint";
                 radius = 10;
                 onlyforplayer = 1;
@@ -99,6 +100,7 @@ class CfgVehicles
             class heckklappe_zu
             {
                 displayName = CSTRING(closeRamp);
+                displayNameDefault = CSTRING(closeRamp);
                 position = "actionPoint";
                 radius = 10;
                 onlyforplayer = 1;
