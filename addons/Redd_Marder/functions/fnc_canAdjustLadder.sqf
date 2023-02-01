@@ -3,7 +3,7 @@
  *  Author: Timi007
  *
  *  Description:
- *      Checks if ladder can be attacked to marder.
+ *      Checks if player can adjust attached ladder on vehicle.
  *
  *  Parameter(s):
  *      0: OBJECT - Vehicle (Marder).
@@ -11,10 +11,10 @@
  *      2: STRING - Vehicle side (left or right).
  *
  *  Returns:
- *       BOOLEAN - Can attack ladder to vehicle.
+ *       BOOLEAN - Can adjust ladder.
  *
  *  Example:
- *      _this call PzGrenBtl402_Redd_Marder_fnc_canAttachLadder
+ *      _this call PzGrenBtl402_Redd_Marder_fnc_canAdjustLadder
  *
  */
 
@@ -33,8 +33,8 @@ switch (_side) do {
     };
 };
 
-(alive _veh) &&
-{isNull _ladder} &&
+!isNull _ladder &&
+{isNull EGVAR(Ladder,ladder)} && // Does not currently adjust the ladder
 {(_veh turretUnit _turret) isEqualTo _player} &&
 {isTurnedOut _player} &&
-{"ACE_TacticalLadder_Pack" in backpackCargo _veh}
+{[_ladder] call ace_tacticalladder_fnc_isLadderEmpty}

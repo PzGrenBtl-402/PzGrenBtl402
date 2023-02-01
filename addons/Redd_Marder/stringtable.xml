@@ -5,12 +5,6 @@
             <Original>Get out through hatch</Original>
             <German>Aussteigen durch Luke</German>
         </Key>
-
-        <Key ID="STR_PzGrenBtl402_Redd_Marder_attachLadder">
-            <Original>Set up ladder</Original>
-            <German>Leiter aufstellen</German>
-        </Key>
-
         <Key ID="STR_PzGrenBtl402_Redd_Marder_moveToHatch">
             <Original>Switch to hatch seat</Original>
             <German>Zum Lukenplatz wechseln</German>
