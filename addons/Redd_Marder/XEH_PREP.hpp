@@ -1,6 +1,7 @@
 PREP(assembleMilan);
-PREP(attachLadder);
+PREP(canAdjustLadder);
 PREP(canAssembleMilan);
+PREP(canAttachLadder);
 PREP(canDisassembleMilan);
 PREP(canLoadMilan);
 PREP(canUnloadMilan);
@@ -9,6 +10,7 @@ PREP(canRearmMKProgress);
 PREP(canUnloadMilan);
 PREP(closeRamp);
 PREP(disassembleMilan);
+PREP(getAttachedLadder);
 PREP(getOutHatch);
 PREP(handleFired);
 PREP(initActions);

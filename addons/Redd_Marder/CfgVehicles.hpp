@@ -524,7 +524,7 @@ class CfgVehicles
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
-                condition = "(player in [driver this, gunner this, this turretUnit [0, 3]]) && (this animationSourcePhase 'heck_luke_rotation' == 0) && (alive this)";
+                condition = "(ACE_player in [driver this, gunner this, this turretUnit [0, 3]]) && (this animationSourcePhase 'heck_luke_rotation' == 0) && (alive this)";
                 statement = QUOTE(this call FUNC(openRamp));
             };
 
@@ -535,7 +535,7 @@ class CfgVehicles
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
-                condition = "(player in [driver this, gunner this, this turretUnit [0, 3]]) && (this animationSourcePhase 'heck_luke_rotation' > 0) && (alive this)";
+                condition = "(ACE_player in [driver this, gunner this, this turretUnit [0, 3]]) && (this animationSourcePhase 'heck_luke_rotation' > 0) && (alive this)";
                 statement = QUOTE(this call FUNC(closeRamp));
             };
 
@@ -547,8 +547,8 @@ class CfgVehicles
                 onlyforplayer = 1;
                 showWindow = 0;
                 shortcut = "turnOut";
-                condition = "(this turretUnit [0, 0] == player) and (this animationSourcePhase 'hatchCommander' > 0) and (alive this)";
-                statement = "(missionNamespace getVariable ['bis_fnc_moduleRemoteControl_unit', player]) action ['moveToTurret', this, [2]]; [this, [[0, 0], true]] remoteExecCall ['lockTurret']; this setVariable ['Redd_Marder_Bino_In', true, true];";
+                condition = "(this turretUnit [0, 0] isEqualTo ACE_player) && (this animationSourcePhase 'hatchCommander' > 0) && (alive this)";
+                statement = "ACE_player action ['moveToTurret', this, [2]]; [this, [[0, 0], true]] remoteExecCall ['lockTurret']; this setVariable ['Redd_Marder_Bino_In', true, true];";
             };
 
             class Bino_out
@@ -559,96 +559,69 @@ class CfgVehicles
                 onlyforplayer = 1;
                 showWindow = 0;
                 shortcut = "turnIn";
-                condition = "(this turretUnit [2] == player) and (alive this)";
-                statement = "(missionNamespace getVariable ['bis_fnc_moduleRemoteControl_unit', player]) action ['moveToTurret', this, [0,0]]; [this, [[0, 0], false]] remoteExecCall ['lockTurret']; this setVariable ['Redd_Marder_Bino_In', false, true];";
+                condition = "(this turretUnit [2] isEqualTo ACE_player) && (alive this)";
+                statement = "ACE_player action ['moveToTurret', this, [0,0]]; [this, [[0, 0], false]] remoteExecCall ['lockTurret']; this setVariable ['Redd_Marder_Bino_In', false, true];";
             };
 
-            class getOutHatchCommander
+            class GetOutHatchCommander
             {
-                displayName = "Aussteigen durch Luke";
+                displayName = CSTRING(getOutHatch);
                 position = "actionsPoint";
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
-                condition = "(alive this) and (this turretUnit [0, 0] == player) and (isTurnedOut player)";
-                statement = "[this, player, 'commander'] spawn PzGrenBtl402_Redd_Marder_fnc_getOutHatch";
+                priority = 6.2;
+                textDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\getout_ca.paa' size='1.8' shadow=2 />";
+                condition = "(alive this) && {this turretUnit [0, 0] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
+                statement = QUOTE([ARR_3(this, ACE_player, 'commander')] call FUNC(getOutHatch));
             };
 
-            class getOutHatchDriver
+            class GetOutHatchDriver: GetOutHatchCommander
             {
-                displayName = "Aussteigen durch Luke";
+                condition = "(alive this) && (this turretUnit [-1] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
+                statement = QUOTE([ARR_3(this, ACE_player, 'driver')] call FUNC(getOutHatch));
+            };
+
+            class GetOutHatchLeft: GetOutHatchCommander
+            {
+                condition = "(alive this) && (this turretUnit [0, 1] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
+                statement = QUOTE([ARR_3(this, ACE_player, 'left')] call FUNC(getOutHatch));
+            };
+
+            class GetOutHatchRight: GetOutHatchCommander
+            {
+                condition = "(alive this) && (this turretUnit [0, 2] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
+                statement = QUOTE([ARR_3(this, ACE_player, 'right')] call FUNC(getOutHatch));
+            };
+
+            class GetOutHatchMiddle: GetOutHatchCommander
+            {
+                condition = "(alive this) && (this turretUnit [0, 3] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
+                statement = QUOTE([ARR_3(this, ACE_player, 'middle')] call FUNC(getOutHatch));
+            };
+
+            class MovePassengerOneToHatchLeft
+            {
+                displayName = CSTRING(moveToHatch);
                 position = "actionsPoint";
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
-                condition = "(alive this) and (this turretUnit [-1] == player) and (isTurnedOut player)";
-                statement = "[this, player, 'driver'] spawn PzGrenBtl402_Redd_Marder_fnc_getOutHatch";
+                textDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa' size='1.8' shadow=2 />";
+                condition = "(alive this) && (this getCargoIndex ACE_player isEqualTo 1) && (isNull (this turretunit [0, 1]))";
+                statement = "ACE_player action ['moveToTurret', this, [0, 1]]";
             };
 
-            class getOutHatchLeft
+            class MovePassengerTwoToHatchLeft: MovePassengerOneToHatchLeft
             {
-                displayName = "Aussteigen durch Luke";
-                position = "actionsPoint";
-                radius = 10;
-                onlyforplayer = 1;
-                showWindow = 0;
-                condition = "(alive this) and (this turretUnit [0, 1] == player) and (isTurnedOut player)";
-                statement = "[this, player, 'left'] spawn PzGrenBtl402_Redd_Marder_fnc_getOutHatch";
+                condition = "(alive this) && (this getCargoIndex player isEqualTo 2) && (isNull (this turretunit [0, 1]))";
+                statement = "ACE_player action ['moveToTurret', this, [0, 1]]";
             };
 
-            class getOutHatchRight
+            class MovePassengerThreeToHatchRight: MovePassengerOneToHatchLeft
             {
-                displayName = "Aussteigen durch Luke";
-                position = "actionsPoint";
-                radius = 10;
-                onlyforplayer = 1;
-                showWindow = 0;
-                condition = "(alive this) and (this turretUnit [0, 2] == player) and (isTurnedOut player)";
-                statement = "[this, player, 'right'] spawn PzGrenBtl402_Redd_Marder_fnc_getOutHatch";
-            };
-
-            class getOutHatchMiddle
-            {
-                displayName = "Aussteigen durch Luke";
-                position = "actionsPoint";
-                radius = 10;
-                onlyforplayer = 1;
-                showWindow = 0;
-                condition = "(alive this) and (this turretUnit [0, 3] == player) and (isTurnedOut player)";
-                statement = "[this, player, 'middle'] spawn PzGrenBtl402_Redd_Marder_fnc_getOutHatch";
-            };
-
-            class movePassengerOneToHatchLeft
-            {
-                displayName = "Zum Lukenplatz wechseln";
-                position = "actionsPoint";
-                radius = 10;
-                onlyforplayer = 1;
-                showWindow = 0;
-                condition = "(alive this) and (this getCargoIndex player == 1) and (isNull (this turretunit [0, 1]))";
-                statement = "player action ['moveToTurret', this, [0, 1]]";
-            };
-
-            class movePassengerTwoToHatchLeft
-            {
-                displayName = "Zum Lukenplatz wechseln";
-                position = "actionsPoint";
-                radius = 10;
-                onlyforplayer = 1;
-                showWindow = 0;
-                condition = "(alive this) and (this getCargoIndex player == 2) and (isNull (this turretunit [0, 1]))";
-                statement = "player action ['moveToTurret', this, [0, 1]]";
-            };
-
-            class movePassengerThreeToHatchRight
-            {
-                displayName = "Zum Lukenplatz wechseln";
-                position = "actionsPoint";
-                radius = 10;
-                onlyforplayer = 1;
-                showWindow = 0;
-                condition = "(alive this) and (this getCargoIndex player == 3) and (isNull (this turretunit [0, 2]))";
-                statement = "player action ['moveToTurret', this, [0, 2]]";
+                condition = "(alive this) && (this getCargoIndex ACE_player isEqualTo 3) && (isNull (this turretunit [0, 2]))";
+                statement = "ACE_player action ['moveToTurret', this, [0, 2]]";
             };
 
             delete heckluke_auf_2;
