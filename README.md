@@ -6,7 +6,6 @@ This mod contains changes to Redd'n'Tanks, BwMod, NiArms, RHS and GM improving A
 
 ### Redd'n'Tank
 
-- Ability to assemble static MG3 with the primary weapon MG3 (NiArms/GM/BwMod)
 - Replace Redd MG3 Sound with NiArms Sounds
 - Marder Milan can only be assembled if the tripod is in the vehicle cargo
 - Assemble Marder Milan also with GM Milan tripod
@@ -16,7 +15,8 @@ This mod contains changes to Redd'n'Tanks, BwMod, NiArms, RHS and GM improving A
 - Remove NVG of Marder
 - Small changes to Marder (initial gun zeoring to 800 m; Don't lock turret when driver is turned out; Shortcut for commander to go higher; ...)
 - Custom TOW reloading system
-- Custom Mk20 reloading system (ammo as inventory items)
+- Get in and out of Marder through hatches
+- Ability to setup ladder on top of Marder (for breaching into buildings)
 
 ### BwMod
 
@@ -26,6 +26,7 @@ This mod contains changes to Redd'n'Tanks, BwMod, NiArms, RHS and GM improving A
 
 - Add Fuchs door actions
 - Single fire mode for Marder
+- More durable buildings (can take more damage)
 
 ### RHS
 
@@ -38,8 +39,10 @@ This mod contains changes to Redd'n'Tanks, BwMod, NiArms, RHS and GM improving A
 
 ### General
 
+- [NiArms/GM/BwMod] Ability to assemble static MG3 with the primary weapon MG3
 - ACRE Racks and attenuation rework
 - Increased vehicle space
 - Ability to fire vehicle smoke launcher as gunner and commander (also turned out)
 - [Redd'n'Tank/GM] Back compartment of the Marder is locked when ramp is closed (Driver and commander can access vehicle via the hatches)
 - [Redd'n'Tank/GM] Custom Milan reloading system (One Milan tube bag is one shot)
+- [Redd'n'Tank/GM] Custom weapon reloading system for Marder (ammo as inventory items, reload on top of vehicle)
