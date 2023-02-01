@@ -9,5 +9,17 @@
             <Original>Switch to hatch seat</Original>
             <German>Zum Lukenplatz wechseln</German>
         </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_openRamp">
+            <Original>Open rear ramp</Original>
+            <German>Heckklappe öffnen</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_closeRamp">
+            <Original>Close rear ramp</Original>
+            <German>Heckklappe schließen</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_openRamp3DENTooltip">
+            <Original>Open rear ramp when Marder spawns in.</Original>
+            <German>Heckklappe beim Spawnen des Marders öffnen.</German>
+        </Key>
     </Package>
 </Project>

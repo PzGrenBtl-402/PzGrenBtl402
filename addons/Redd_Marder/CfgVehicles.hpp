@@ -519,8 +519,8 @@ class CfgVehicles
         {
             class heckluke_auf
             {
-                displayName = "$STR_heckluke_auf";
-                displayNameDefault = "$STR_heckluke_auf";
+                displayName = CSTRING(openRamp);
+                displayNameDefault = CSTRING(openRamp);
                 position = "HecklukePoint";
                 radius = 10;
                 onlyforplayer = 1;
@@ -531,8 +531,8 @@ class CfgVehicles
 
             class heckluke_zu
             {
-                displayName = "$STR_heckluke_zu";
-                displayNameDefault = "$STR_heckluke_zu";
+                displayName = CSTRING(closeRamp);
+                displayNameDefault = CSTRING(closeRamp);
                 position = "HecklukePoint";
                 radius = 10;
                 onlyforplayer = 1;
@@ -659,6 +659,20 @@ class CfgVehicles
             delete Sandsacke_auf_Rechts;
             delete Sandsacke_ab_Links;
             delete Sandsacke_ab_Rechts;
+        };
+
+        class Attributes
+        {
+            class GVAR(RampAttribute)
+            {
+                displayName = CSTRING(openRamp);
+                tooltip = CSTRING(openRamp3DENTooltip);
+                property = QGVAR(RampAttribute);
+                control = "Checkbox";
+                expression = "_this setVariable ['%s', _value];";
+                defaultValue = 0;
+                typeName = "BOOL";
+            };
         };
     };
 };
