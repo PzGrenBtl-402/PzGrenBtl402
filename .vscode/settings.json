@@ -16,5 +16,8 @@
         "**/*.hpp": "cpp",
         // "**/*.cpp": "ext",
         "**/XEH_PREP.hpp": "sqf",
-    }
+        "*.rpt": "log",
+    },
+    "sqf.enableACE3": true,
+    "sqf.enableCBA": true,
 }
