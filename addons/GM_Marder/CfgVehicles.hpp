@@ -92,7 +92,7 @@ class CfgVehicles
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
-                condition = "(player in [driver this, gunner this, this turretUnit [1]]) && (this doorPhase 'hatch_1_1_source' isEqualTo 0) && (alive this)";
+                condition = "(ACE_player in [driver this, gunner this, this turretUnit [1]]) && (this doorPhase 'hatch_1_1_source' isEqualTo 0) && (alive this)";
                 statement = QUOTE(this call FUNC(openRamp));
             };
 
@@ -103,7 +103,7 @@ class CfgVehicles
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
-                condition = "(player in [driver this, gunner this, this turretUnit [1]]) && (this doorPhase 'hatch_1_1_source' isEqualTo 1) && (alive this)";
+                condition = "(ACE_player in [driver this, gunner this, this turretUnit [1]]) && (this doorPhase 'hatch_1_1_source' isEqualTo 1) && (alive this)";
                 statement = QUOTE(this call FUNC(closeRamp));
             };
         };
