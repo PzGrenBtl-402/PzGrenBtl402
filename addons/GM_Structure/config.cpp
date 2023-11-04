@@ -10,6 +10,7 @@ class CfgPatches {
             "PzGrenBtl402_Main",
             "gm_structures_euro_80"
         };
+        skipWhenMissingDependencies = 1;
         author = ECSTRING(Main, authors);
         authors[] = {"Lemonberries"};
         url = ECSTRING(Main, URL);

@@ -15,6 +15,7 @@ class CfgPatches {
             "gm_vehicles_land_tracked_marder1",
             "Redd_Bags"
         };
+        skipWhenMissingDependencies = 1;
         author = ECSTRING(Main, authors);
         authors[] = {"Timi007", "Lemonberries", "Mishkar"};
         url = ECSTRING(Main, URL);

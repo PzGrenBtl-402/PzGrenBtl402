@@ -7,6 +7,7 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_ACRE", "gm_vehicles_land_wheeled_luchs"};
+        skipWhenMissingDependencies = 1;
         author = ECSTRING(Main, authors);
         authors[] = {"Mishkar"};
         url = ECSTRING(Main, URL);
