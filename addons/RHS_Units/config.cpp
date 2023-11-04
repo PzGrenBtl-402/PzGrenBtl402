@@ -6,7 +6,7 @@ class CfgPatches {
         #include "CfgPatchesUnits.hpp"
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main", "rhs_main"};
+        requiredAddons[] = {"PzGrenBtl402_Main", "rhs_main_loadorder"};
         author = ECSTRING(Main, authors);
         authors[] = {"Lemonberries"};
         url = ECSTRING(Main, URL);
