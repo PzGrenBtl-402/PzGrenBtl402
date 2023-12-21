@@ -15,6 +15,7 @@ This mod contains changes to Redd'n'Tanks, BWMod, NIArms, RHS and GM improving A
 
 Optional:
 - [GM](https://store.steampowered.com/app/1042220/Arma_3_Creator_DLC_Global_Mobilization__Cold_War_Germany/)
+- [Rosche](https://steamcommunity.com/sharedfiles/filedetails/?id=1527410521)
 
 ## Modifications
 
@@ -50,6 +51,12 @@ Optional:
 
 - Added ACE Tracer effect
 - Reduced mass of MG3 ammo
+- Increase fire rate MG3 to 1200 rpm
+
+### Rosche
+
+- Replace open/close door actions of buildings because they do not check if the door is locked
+- More durable buildings (can take more damage)
 
 ### General
 
