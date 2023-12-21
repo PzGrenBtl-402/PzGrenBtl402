@@ -8,10 +8,11 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"PzGrenBtl402_Main", "hlcweapons_MG3s"};
         author = ECSTRING(Main, authors);
-        authors[] = {"Mishkar"};
+        authors[] = {"Mishkar", "Lemonberries"};
         url = ECSTRING(Main, URL);
         VERSION_CONFIG;
     };
 };
 
 #include "CfgMagazines.hpp"
+#include "CfgWeapons.hpp"
