@@ -42,6 +42,7 @@ Optional:
 - Add Fuchs door actions
 - Single fire mode for Marder
 - More durable buildings (can take more damage)
+- Allow GM wire cutter to cut Arma vanilla NATO wires
 
 ### RHS
 
