@@ -304,7 +304,6 @@ class CfgVehicles
         respawnMagazines[] = {"rhs_30Rnd_545x39_7N6_AK","rhs_30Rnd_545x39_7N6_AK","rhs_30Rnd_545x39_7N6_AK","rhs_30Rnd_545x39_7N6_AK","rhs_30Rnd_545x39_7N6_AK","rhs_30Rnd_545x39_7N6_AK","rhs_30Rnd_545x39_7N6_AK","rhs_30Rnd_545x39_7N6_AK","rhs_mag_rgd5","rhs_mag_rgd5"};
         respawnWeapons[] = {"rhs_weap_ak74","Throw","Put"};
         weapons[] = {"rhs_weap_ak74","Throw","Put"};
-        respawnWeapons[] = {"rhs_weap_ak74","Throw","Put"};
     };
 
     class PzGrenBtl_MSV_AutoRifleman_86: PzGrenBtl_MSV_AutoRifleman_94
