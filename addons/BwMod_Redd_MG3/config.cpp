@@ -13,9 +13,9 @@ class CfgPatches {
             "bwa3_mg3",
             "bwa3_mg5"
         };
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {"Zumi", "Timi007"};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };

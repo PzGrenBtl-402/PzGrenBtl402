@@ -11,9 +11,9 @@ class CfgPatches {
             "gm_weapons_items"
         };
         skipWhenMissingDependencies = 1;
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {"Lemonberries"};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };

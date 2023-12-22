@@ -11,9 +11,9 @@ class CfgPatches {
             "gm_structures_euro_80"
         };
         skipWhenMissingDependencies = 1;
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {"Lemonberries"};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };

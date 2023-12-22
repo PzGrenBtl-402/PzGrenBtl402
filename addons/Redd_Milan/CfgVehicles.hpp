@@ -17,7 +17,7 @@ class CfgVehicles {
                 gunnerGetInAction = "PlayerProne";
                 gunnerGetOutAction = "PlayerProne";
                 magazines[] = {}; //Waffe ohne Patrone
-                turretInfoType = QEGVAR(Redd_Main, RSC_Milan);
+                turretInfoType = QEGVAR(Redd_Main,RSC_Milan);
 
                 class OpticsIn {
                     class Day1 {

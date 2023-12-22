@@ -5,8 +5,8 @@ class CfgVehicles {
 
         class AcreRacks {
             class Rack_1 {
-                displayName = ECSTRING(ACRE, RackA);
-                shortName = ECSTRING(ACRE, RackAShort);
+                displayName = ECSTRING(ACRE,RackA);
+                shortName = ECSTRING(ACRE,RackAShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"inside"};
                 disabledPositions[] = {};
@@ -16,8 +16,8 @@ class CfgVehicles {
                 intercom[] = {"none"};
             };
             class Rack_2 {
-                displayName = ECSTRING(ACRE, RackB);
-                shortName = ECSTRING(ACRE, RackBShort);
+                displayName = ECSTRING(ACRE,RackB);
+                shortName = ECSTRING(ACRE,RackBShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"inside"};
                 disabledPositions[] = {};

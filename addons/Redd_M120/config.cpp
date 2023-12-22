@@ -11,9 +11,9 @@ class CfgPatches {
             "Redd_Tank_M120_Tampella",
             "rnt_ace_compatibility"
         };
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {""};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };

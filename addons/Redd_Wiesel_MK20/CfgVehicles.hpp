@@ -28,7 +28,7 @@ class CfgVehicles
     class Redd_Tank_Wiesel_1A4_MK20_base: Tank_F
     {
         maximumLoad = 10000;
-        driverWeaponsInfoType = QEGVAR(Redd_Main, RSC_Driver);
+        driverWeaponsInfoType = QEGVAR(Redd_Main,RSC_Driver);
         disableSoundAttenuation = 0;
         attenuationEffectType = "TankAttenuation";
         driverCompartments = "Compartment1";
@@ -41,8 +41,8 @@ class CfgVehicles
         {
             class Intercom_1
             {
-                displayName = ECSTRING(ACRE, BV);
-                shortName = ECSTRING(ACRE, BVShort);
+                displayName = ECSTRING(ACRE,BV);
+                shortName = ECSTRING(ACRE,BVShort);
                 allowedPositions[] = {"crew"};
                 disabledPositions[] = {};
                 limitedPositions[] = {};
@@ -57,15 +57,15 @@ class CfgVehicles
         acre_infantryPhoneCustomRinging[] = {};
         acre_infantryPhoneIntercom[] = {"all"};
         acre_infantryPhoneControlActions[] = {"all"};
-        acre_eventInfantryPhone = QEFUNC(ACRE, noApiFunction);
+        acre_eventInfantryPhone = QEFUNC(ACRE,noApiFunction);
         acre_infantryPhonePosition[] = {};
 
         class AcreRacks
         {
             class Rack_1
             {
-                displayName = ECSTRING(ACRE, RackA);
-                shortName = ECSTRING(ACRE, RackAShort);
+                displayName = ECSTRING(ACRE,RackA);
+                shortName = ECSTRING(ACRE,RackAShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"gunner"};
                 disabledPositions[] = {};
@@ -77,8 +77,8 @@ class CfgVehicles
 
             class Rack_2
             {
-                displayName = ECSTRING(ACRE, RackB);
-                shortName = ECSTRING(ACRE, RackBShort);
+                displayName = ECSTRING(ACRE,RackB);
+                shortName = ECSTRING(ACRE,RackBShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"gunner"};
                 disabledPositions[] = {};

@@ -10,9 +10,9 @@ class CfgPatches {
             "PzGrenBtl402_Main",
             "ace_tacticalladder"
         };
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {"Mishkar", "Timi007"};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };

@@ -31,8 +31,8 @@ class CfgVehicles
         {
             class Intercom_1
             {
-                displayName = ECSTRING(ACRE, BV);
-                shortName = ECSTRING(ACRE, BVShort);
+                displayName = ECSTRING(ACRE,BV);
+                shortName = ECSTRING(ACRE,BVShort);
                 allowedPositions[] = {"driver", "gunner", {"turret", {0,3}}};
                 disabledPositions[] = {};
                 limitedPositions[] = {"commander", {"turret", {1}}, {"cargo", "all"}, {"ffv", "all"}};
@@ -47,15 +47,15 @@ class CfgVehicles
         acre_infantryPhoneCustomRinging[] = {};
         acre_infantryPhoneIntercom[] = {"all"};
         acre_infantryPhoneControlActions[] = {"all"};
-        acre_eventInfantryPhone = QEFUNC(ACRE, noApiFunction);
+        acre_eventInfantryPhone = QEFUNC(ACRE,noApiFunction);
         acre_infantryPhonePosition[] = {-1.1, -3.3, -0.4};
 
         class AcreRacks
         {
             class Rack_1
             {
-                displayName = ECSTRING(ACRE, RackA);
-                shortName = ECSTRING(ACRE, RackAShort);
+                displayName = ECSTRING(ACRE,RackA);
+                shortName = ECSTRING(ACRE,RackAShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {{"ffv", {0,2}}};
                 disabledPositions[] = {};
@@ -66,8 +66,8 @@ class CfgVehicles
             };
             class Rack_2
             {
-                displayName = ECSTRING(ACRE, RackB);
-                shortName = ECSTRING(ACRE, RackBShort);
+                displayName = ECSTRING(ACRE,RackB);
+                shortName = ECSTRING(ACRE,RackBShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {{"ffv", {0,2}}};
                 disabledPositions[] = {};
