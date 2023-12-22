@@ -17,4 +17,5 @@ keys/*
 .hemtt/local
 hemtt
 hemtt.exe
+.hemttout
 ####

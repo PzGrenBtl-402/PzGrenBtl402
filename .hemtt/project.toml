@@ -1,0 +1,28 @@
+name = "PzGrenBtl 402"
+mainprefix = "z"
+prefix = "PzGrenBtl402"
+author = "PzGrenBtl 402"
+
+[files]
+include = [
+    "mod.cpp",
+    "README.md",
+    "LICENSE",
+    "PzGrenBtl402_Logo.paa",
+    "meta.cpp"
+]
+
+[version]
+git_hash = 0
+
+[asc]
+enabled = true
+exclude = [
+    "/xeh_prep.sqf"
+]
+
+[hemtt.config]
+preset = "Hemtt"
+
+[hemtt.release]
+folder = "PzGrenBtl402"
