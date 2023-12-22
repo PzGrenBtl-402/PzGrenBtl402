@@ -12,17 +12,20 @@ function Unzip {
 $client = New-Object Net.WebClient
 
 Write-Output "=> Downloading tools ..."
-$client.DownloadFile("http://dev.idi-systems.com/tools/acre2_tools_user.zip", "acre2_tools_user.zip")
+$url = "https://github.com/BrettMayson/HEMTT/releases/latest/download/windows-x64.zip"
+$client.DownloadFile($url, "hemtt.zip")
 $client.dispose()
 
-Write-Output "=> Cleaning old ..."
+Write-Output "=> Cleaning old tools ..."
+Remove-Item "..\hemtt" -ErrorAction Ignore
 Remove-Item "..\hemtt.exe" -ErrorAction Ignore
 Remove-Item "..\ArmaScriptCompiler.exe" -ErrorAction Ignore
 
 Write-Output "=> Extracting ..."
-Unzip "acre2_tools_user.zip" "..\."
-Remove-Item "acre2_tools_user.zip"
+Unzip "hemtt.zip" "..\."
+Remove-Item "hemtt.zip"
 
-Remove-Item "..\hemtt" -ErrorAction Ignore
+Write-Output "=> Verifying ..."
+Start-Process -FilePath ..\hemtt.exe -ArgumentList --version -NoNewWindow -Wait
 
 Write-Output "=> Tools successfully installed to project!"

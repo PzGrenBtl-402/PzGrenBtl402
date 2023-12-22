@@ -13,9 +13,9 @@ class CfgPatches {
             "Redd_Milan_Static",
             "Redd_Bags"
         };
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {"Lemonberries", "Timi007"};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };

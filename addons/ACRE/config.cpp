@@ -7,9 +7,9 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"PzGrenBtl402_Main", "acre_sys_attenuate"};
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {"Timi007", "Mishkar"};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };

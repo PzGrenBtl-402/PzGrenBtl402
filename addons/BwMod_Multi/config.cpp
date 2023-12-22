@@ -7,9 +7,9 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_ACRE", "bwa3_multi"};
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {"Mishkar"};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };

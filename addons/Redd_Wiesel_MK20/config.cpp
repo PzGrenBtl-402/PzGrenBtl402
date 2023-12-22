@@ -12,9 +12,9 @@ class CfgPatches {
             "PzGrenBtl402_Redd_Main",
             "redd_tank_wiesel_1a4_mk20"
         };
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {"Lemonberries", "Mishkar"};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };

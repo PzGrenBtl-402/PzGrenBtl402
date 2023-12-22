@@ -16,9 +16,9 @@ class CfgPatches {
             "Redd_Bags"
         };
         skipWhenMissingDependencies = 1;
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {"Timi007", "Lemonberries", "Mishkar"};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };

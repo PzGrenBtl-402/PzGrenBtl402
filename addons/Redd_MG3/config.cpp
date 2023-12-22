@@ -13,9 +13,9 @@ class CfgPatches {
             "Redd_Bags",
             "ace_csw"
         };
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {"Zumi", "Timi007"};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };

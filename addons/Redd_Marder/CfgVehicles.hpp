@@ -30,7 +30,7 @@ class CfgVehicles
     class Redd_Marder_1A5_base: Tank_F
     {
         maximumLoad = 10000;
-        driverWeaponsInfoType = QEGVAR(Redd_Main, RSC_Driver);
+        driverWeaponsInfoType = QEGVAR(Redd_Main,RSC_Driver);
         disableSoundAttenuation = 0;
         attenuationEffectType = "TankAttenuation";
         driverCompartments = "Compartment1";
@@ -52,8 +52,8 @@ class CfgVehicles
         {
             class Intercom_1
             {
-                displayName = ECSTRING(ACRE, BV);
-                shortName = ECSTRING(ACRE, BVShort);
+                displayName = ECSTRING(ACRE,BV);
+                shortName = ECSTRING(ACRE,BVShort);
                 allowedPositions[] = {"crew"};
                 disabledPositions[] = {};
                 limitedPositions[] = {{"cargo", "all"}, {"ffv", "all"}};
@@ -68,15 +68,15 @@ class CfgVehicles
         acre_infantryPhoneCustomRinging[] = {};
         acre_infantryPhoneIntercom[] = {"all"};
         acre_infantryPhoneControlActions[] = {"all"};
-        acre_eventInfantryPhone = QEFUNC(ACRE, noApiFunction);
+        acre_eventInfantryPhone = QEFUNC(ACRE,noApiFunction);
         acre_infantryPhonePosition[] = {-1.23, -3.37, -0.78};
 
         class AcreRacks
         {
             class Rack_1
             {
-                displayName = ECSTRING(ACRE, RackA);
-                shortName = ECSTRING(ACRE, RackAShort);
+                displayName = ECSTRING(ACRE,RackA);
+                shortName = ECSTRING(ACRE,RackAShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"gunner"};
                 disabledPositions[] = {};
@@ -88,8 +88,8 @@ class CfgVehicles
 
             class Rack_2
             {
-                displayName = ECSTRING(ACRE, RackB);
-                shortName = ECSTRING(ACRE, RackBShort);
+                displayName = ECSTRING(ACRE,RackB);
+                shortName = ECSTRING(ACRE,RackBShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {"gunner"};
                 disabledPositions[] = {};
@@ -144,7 +144,7 @@ class CfgVehicles
                 discreteDistanceInitIndex = 6; // Set initial gun zeoring to 800 m
                 lockWhenDriverOut = 0; // Don't lock turret when driver is turned out
                 stabilizedInAxes = 0;
-                turretInfoType = QEGVAR(Redd_Main, RSC_Turret);
+                turretInfoType = QEGVAR(Redd_Main,RSC_Turret);
                 disableSoundAttenuation = 0;
                 soundAttenuationTurret = "TankAttenuation";
                 gunnerCompartments= "Compartment3";
@@ -223,7 +223,7 @@ class CfgVehicles
                     class CommanderOptics: CommanderOptics
                     {
                         stabilizedInAxes = 0;
-                        turretInfoType = QEGVAR(Redd_Main, RSC_Turret);
+                        turretInfoType = QEGVAR(Redd_Main,RSC_Turret);
                         disableSoundAttenuation = 0;
                         soundAttenuationTurret = "TankAttenuation";
                         gunnerCompartments= "Compartment3";
@@ -339,7 +339,7 @@ class CfgVehicles
             {
                 magazines[] = {}; //Waffe ist direkt nach dem Aufbau leer, Patrone muss manuell geladen werden
                 stabilizedInAxes = 0;
-                turretInfoType = QEGVAR(Redd_Main, RSC_Milan);
+                turretInfoType = QEGVAR(Redd_Main,RSC_Milan);
                 disableSoundAttenuation = 0;
                 soundAttenuationTurret = "TankAttenuation";
                 gunnerCompartments= "Compartment4";
@@ -578,31 +578,31 @@ class CfgVehicles
                 priority = 6.2;
                 shortcut = "GetOut";
                 condition = "(alive this) && {this turretUnit [0, 0] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
-                statement = QUOTE([ARR_3(this, ACE_player, 'commander')] call FUNC(getOutHatch));
+                statement = QUOTE([ARR_3(this,ACE_player,'commander')] call FUNC(getOutHatch));
             };
 
             class GetOutHatchDriver: GetOutHatchCommander
             {
                 condition = "(alive this) && (this turretUnit [-1] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
-                statement = QUOTE([ARR_3(this, ACE_player, 'driver')] call FUNC(getOutHatch));
+                statement = QUOTE([ARR_3(this,ACE_player,'driver')] call FUNC(getOutHatch));
             };
 
             class GetOutHatchLeft: GetOutHatchCommander
             {
                 condition = "(alive this) && (this turretUnit [0, 1] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
-                statement = QUOTE([ARR_3(this, ACE_player, 'left')] call FUNC(getOutHatch));
+                statement = QUOTE([ARR_3(this,ACE_player,'left')] call FUNC(getOutHatch));
             };
 
             class GetOutHatchRight: GetOutHatchCommander
             {
                 condition = "(alive this) && (this turretUnit [0, 2] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
-                statement = QUOTE([ARR_3(this, ACE_player, 'right')] call FUNC(getOutHatch));
+                statement = QUOTE([ARR_3(this,ACE_player,'right')] call FUNC(getOutHatch));
             };
 
             class GetOutHatchMiddle: GetOutHatchCommander
             {
                 condition = "(alive this) && (this turretUnit [0, 3] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
-                statement = QUOTE([ARR_3(this, ACE_player, 'middle')] call FUNC(getOutHatch));
+                statement = QUOTE([ARR_3(this,ACE_player,'middle')] call FUNC(getOutHatch));
             };
 
             class MovePassengerOneToHatchLeft

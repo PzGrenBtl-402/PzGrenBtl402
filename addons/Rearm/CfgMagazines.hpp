@@ -1,7 +1,7 @@
 class CfgMagazines {
     class CA_Magazine;
     class GVAR(ammo_base): CA_Magazine {
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         scope = 0;
     };
 

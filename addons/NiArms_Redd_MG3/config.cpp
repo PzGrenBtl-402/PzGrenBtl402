@@ -12,9 +12,9 @@ class CfgPatches {
             "ace_csw",
             "hlcweapons_MG3s"
         };
-        author = ECSTRING(Main, authors);
+        author = ECSTRING(Main,authors);
         authors[] = {"Zumi", "Timi007"};
-        url = ECSTRING(Main, URL);
+        url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };
