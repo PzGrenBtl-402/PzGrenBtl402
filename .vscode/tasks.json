@@ -19,12 +19,7 @@
             "detail": "Build Arma addon with HEMTT for release.",
             "type": "process",
             "command": "hemtt.exe",
-            "args": [
-                "build",
-                "--release",
-                "--time",
-                "-f"
-            ],
+            "args": ["release"],
             "group": "build"
         }
     ]
