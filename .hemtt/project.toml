@@ -13,6 +13,7 @@ include = [
 ]
 
 [version]
+path = "addons/Main/script_version.hpp"
 git_hash = 0
 
 [asc]
