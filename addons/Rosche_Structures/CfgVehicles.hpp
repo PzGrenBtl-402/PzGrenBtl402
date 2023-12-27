@@ -23,6 +23,9 @@ class CfgVehicles {
 
         // Replace Open/Close door actions because
         // they do not check if the door is locked in the original
+
+        // The door inheritance structure was also changed to make more sense
+        // This will cause Updating base class log messages in the RPT
         class UserActions {
             DOOR_USERACTION(01,1);
             DOOR_USERACTION(02,2);
