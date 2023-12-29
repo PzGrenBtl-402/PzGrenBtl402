@@ -1,4 +1,3 @@
-release/*
 logs
 private_keys
 *.cache
@@ -11,11 +10,11 @@ Thumbs.db
 *.sqfc
 *.exe
 
-## Added by HEMTT
-releases/*
-keys/*
-.hemtt/local
+#### HEMTT
 hemtt
 hemtt.exe
-.hemttout
+release/
+releases/
+keys/
+.hemttout/
 ####
