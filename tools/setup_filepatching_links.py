@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-########################
-#  Metis Setup Script  #
-########################
+###############################
+#  PzGrenBtl402 Setup Script  #
+###############################
 
 import os
 import sys
@@ -17,11 +17,11 @@ PROJECTDIR = "PzGrenBtl402"
 def main():
     FULLDIR = f"{MAINDIR}\\{PROJECTDIR}"
     print(f"""
-  #######################################
-  # Metis Development Environment Setup #
-  #######################################
+  ##############################################
+  # PzGrenBtl402 Development Environment Setup #
+  ##############################################
 
-  This script will create your Metis dev environment for you.
+  This script will create your PzGrenBtl402 dev environment for you.
 
   Before you run this, you should already have:
     - The Arma 3 Tools installed properly via Steam
@@ -29,9 +29,9 @@ def main():
 
   If you have not done those things yet, please abort this script in the next step and do so first.
 
-  This script will create two hard links on your system, both pointing to your Metis project folder:
-    [Arma 3 installation directory]\\{FULLDIR} => Metis project HEMTT dev build folder
-    P:\\{FULLDIR}                              => Metis project HEMTT dev build folder""")
+  This script will create two hard links on your system, both pointing to your PzGrenBtl402 project folder:
+    [Arma 3 installation directory]\\{FULLDIR} => PzGrenBtl402 project HEMTT dev build folder
+    P:\\{FULLDIR}                              => PzGrenBtl402 project HEMTT dev build folder""")
     print("\n")
 
     try:
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     exitcode = main()
 
     if exitcode > 0:
-        print("\nSomething went wrong during the setup. If these issues persist, please follow the instructions on the Metis wiki to perform the setup manually.")
+        print("\nSomething went wrong during the setup. If these issues persist, please follow the instructions on the PzGrenBtl402 wiki to perform the setup manually.")
     else:
         print("\nSetup successfully completed.")
 
