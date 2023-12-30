@@ -15,9 +15,20 @@ Execute `setup.bat` in `tools` folder.
 
 #### File Patching Setup
 
-Create the following links manually. First, create `z` folder in your Arma 3 directory. Then run the following command as admin, replacing the text in brackets with the appropriate paths:
+##### Script
+
+If you have [Python](https://www.python.org/downloads/) installed, you can run following in the `tools` folder:
 ```cmd
-mklink /J "[Arma 3 installation folder]\z\PzGrenBtl402" "[location of the PzGrenBtl402 project]"
+python setup_filepatching_links.py
+```
+
+##### Manuel
+
+Create the following links manually. First, create `z` folder in your Arma 3 directory. 
+If you have not already run a HEMTT dev build, you will need to create `[location of the PzGrenBtl402 project]\.hemttout\dev` folder first. 
+Then run the following command as admin, replacing the text in brackets with the appropriate paths:
+```cmd
+mklink /J "[Arma 3 installation folder]\z\PzGrenBtl402" "[location of the PzGrenBtl402 project]\.hemttout\dev"
 ```
 
 ### Create a Test Build
@@ -27,22 +38,6 @@ To create a development build to test changes or to debug something, execute `bu
 ### Create a Release Build
 
 To create a complete build that you can use without the source files, execute `build_release.bat` in the root folder. This will populate the release folder with binarized PBOs that you can redistribute. These handle like those of any other mod.
-
-If you want the release build to be optimized you will need following requirements:
-- Arma 3 Tools
-- P-drive
-- [Python 3.x](https://www.python.org/downloads/)
-- [ArmaScriptCompiler](https://github.com/dedmen/ArmaScriptCompiler) (included if `setup.bat` was used)
-
-To create the required links for ArmaScriptCompiler execute `setup.py` in the `tools` folder.  
-If that fails, you can create the links manually. First, create `z` folder in your P-drive. Then run the following command as admin, replacing the text in brackets with the appropriate paths:
-```cmd
-mklink /J "P:\z\PzGrenBtl402" "[location of the PzGrenBtl402 project]"
-```
-Copy the folder structure in the `include` folder to `P:\`. The folders in the P-Drive should look like `P:\x\cba\addons\...`.
-
-Execute `build_release.bat` in the project root folder. Your builds will now be optimized.  
-*P-drive needs to be mounted if you want to build the release.*
 
 ## File Patching
 
