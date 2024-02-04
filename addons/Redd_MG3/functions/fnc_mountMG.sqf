@@ -29,7 +29,7 @@ if (stance _player isNotEqualTo "PRONE") then {
 playSound "ACE_BarrelSwap";
 
 [
-    MG_MOUNT_TIME,
+    GVAR(lafetteMountTime),
     [_player, _tripod],
     {
         params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];

@@ -29,7 +29,7 @@ if (stance _player isNotEqualTo "PRONE") then {
 playSound "ACE_BarrelSwap";
 
 [
-    DISASSEMBLE_TIME,
+    GVAR(lafetteDisassembleTime),
     [_mg3Static, _player],
     {
         params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
