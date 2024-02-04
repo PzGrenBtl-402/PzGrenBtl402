@@ -39,8 +39,6 @@ class CfgVehicles {
             };
         };
 
-        delete assembleInfo;
-
         class ACE_CSW {
             enabled = 1;
             proxyWeapon = "Redd_MG3_Static"; // Adjusted in CfgWeapons
@@ -70,7 +68,6 @@ class CfgVehicles {
             class XEH_CLASS: XEH_CLASS_BASE {};
         };
     };
-
 
     class ace_csw_sag30Tripod;
     class GVAR(Tripod): ace_csw_sag30Tripod {

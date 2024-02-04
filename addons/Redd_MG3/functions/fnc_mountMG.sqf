@@ -45,7 +45,6 @@ playSound "ACE_BarrelSwap";
         deleteVehicle _tripod;
 
         private _mg3Static = createVehicle ["rnt_mg3_static", [0, 0, 0], [], 0, "CAN_COLLIDE"];
-        ["ace_csw_disableVanillaAssembly", [_mg3Static]] call CBA_fnc_globalEvent;
         _mg3Static setDir _tripodDir;
         _mg3Static setPosATL _tripodPos;
 
@@ -59,6 +58,8 @@ playSound "ACE_BarrelSwap";
 
         [{
             params ["_mg3Static", "_weaponType"];
+
+            [_mg3Static, "disableWeaponAssembly", "ace_csw", true] call ace_common_fnc_statusEffect_set;
 
             _mg3Static setVariable [QGVAR(mgType), _weaponType, true];
         }, [_mg3Static, _weaponType]] call CBA_fnc_execNextFrame; // need to wait a frame to allow setting object vars
