@@ -16,12 +16,6 @@ include = [
 path = "addons/Main/script_version.hpp"
 git_hash = 0
 
-[asc]
-enabled = true
-exclude = [
-    "/xeh_prep.sqf"
-]
-
 [hemtt.config]
 preset = "Hemtt"
 
