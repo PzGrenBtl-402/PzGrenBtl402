@@ -8,12 +8,9 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "PzGrenBtl402_Main",
-            "WL_House_01",
-            "HAG_Garage",
-            "Hag_Barn_1",
-            "HAG_bridges"
+            "A3_Data_F_Mod_Loadorder",
+            "A3_Data_F_Enoch_Loadorder"
         };
-        skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);
         authors[] = {"Timi007"};
         url = ECSTRING(Main,URL);
@@ -21,5 +18,4 @@ class CfgPatches {
     };
 };
 
-#include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"

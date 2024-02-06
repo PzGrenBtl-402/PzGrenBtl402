@@ -16,6 +16,8 @@
         statement = QUOTE([ARR_3(this,'Door_##id',0)] call FUNC(door)); \
     }
 
+#define SET_ARMOR(BASE,CLS) class CLS: BASE { armor = 100000; }
+
 class CfgVehicles {
     class House_F;
     class Land_WL_House_01_A: House_F {
@@ -93,4 +95,16 @@ class CfgVehicles {
             DOOR_USERACTION(01,1);
         };
     };
+
+    class House;
+    // HAG_Garage
+    SET_ARMOR(House,Land_Hag_Garage);
+
+    // Hag_Barn_1
+    SET_ARMOR(House,Land_Hag_barn_1);
+
+    // HAG_bridges
+    SET_ARMOR(House,Land_Hag_pillar);
+    SET_ARMOR(House,Land_hag_bridge_rail);
+    SET_ARMOR(House,land_hag_bridge_road);
 };
