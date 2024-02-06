@@ -16,6 +16,7 @@ This mod contains changes to Redd'n'Tanks, BWMod, NIArms, RHS and GM improving A
 Optional:
 - [GM](https://store.steampowered.com/app/1042220/Arma_3_Creator_DLC_Global_Mobilization__Cold_War_Germany/)
 - [Rosche](https://steamcommunity.com/sharedfiles/filedetails/?id=1527410521)
+- [CUP Terrains - Core](https://steamcommunity.com/sharedfiles/filedetails/?id=583496184)
 
 ## Modifications
 
@@ -57,6 +58,14 @@ Optional:
 ### Rosche
 
 - Replace open/close door actions of buildings because they do not check if the door is locked
+- More durable buildings (can take more damage)
+
+### CUP Terrains
+
+- More durable buildings (can take more damage)
+
+### A3
+
 - More durable buildings (can take more damage)
 
 ### General
