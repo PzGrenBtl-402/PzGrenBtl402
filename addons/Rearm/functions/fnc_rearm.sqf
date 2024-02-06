@@ -23,12 +23,12 @@
 
 params [["_vehicle", objNull, [objNull]], ["_turretPath", [0], [[]]], ["_magazineClass", "", [""]], ["_compatibleAmmoItems", [], [[]]], ["_rearmingDuration", 15, [0]]];
 
-TRACE_1("Called rearm", _this);
+TRACE_1("Called rearm",_this);
 
 if (isNull _vehicle || _magazineClass isEqualTo "" || _compatibleAmmoItems isEqualTo []) exitWith {};
 
 private _rearmingMags = _vehicle getVariable [QGVAR(rearming), []];
-if (_magazineClass in _rearmingMags) exitWith {ERROR_1("Already reaming %1", _magazineClass)};
+if (_magazineClass in _rearmingMags) exitWith {ERROR_1("Already reaming %1",_magazineClass)};
 
 private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _magazineClass >> "count");
 private _ammoCounts = [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc_getTurretMagazineAmmo;
@@ -38,7 +38,7 @@ private _roundsToRearm = 0;
     _roundsToRearm = _roundsToRearm + (_maxAmmo - _x);
 } foreach _ammoCounts;
 
-TRACE_3("Magagzines", _ammoCounts, _maxAmmo, _roundsToRearm);
+TRACE_3("Magagzines",_ammoCounts,_maxAmmo,_roundsToRearm);
 
 if (_roundsToRearm isEqualTo 0) exitWith {
     [
@@ -63,12 +63,12 @@ if (_refillAmmoItems isEqualTo []) exitWith {
     ] call CBA_fnc_notify;
 };
 
-TRACE_2("Refill ammo items", _refillAmmoItems, _roundsToRearm);
+TRACE_2("Refill ammo items",_refillAmmoItems,_roundsToRearm);
 
 private _simEvents = [_ammoCounts, _maxAmmo, _refillAmmoItems, _rearmingDuration] call FUNC(simulateRearmEvents);
 private _totalTime = _simEvents select (count _simEvents - 1) select 0;
 
-TRACE_2("Simulated events", _simEvents, _totalTime);
+TRACE_2("Simulated events",_simEvents,_totalTime);
 
 // Disable turret
 if (_rearmingMags isEqualTo []) then {

@@ -22,15 +22,15 @@
 params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
 _args params ["_vehicle", "_turretPath", "_magazineClass", "_magazineName"];
 
-TRACE_2("Rearm finished", _errorCode, _this);
+TRACE_2("Rearm finished",_errorCode,_this);
 
 private _rearmingMags = _vehicle getVariable [QGVAR(rearming), []];
 private _i = _rearmingMags findIf {_x == _magazineClass};
-if (_i < 0) exitWith {ERROR_1("%1 was not rearmed", _magazineClass)};
+if (_i < 0) exitWith {ERROR_1("%1 was not rearmed",_magazineClass)};
 _rearmingMags deleteAt _i;
 _vehicle setVariable [QGVAR(rearming), _rearmingMags, true];
 
-TRACE_1("Removing rearming from queue", _rearmingMags);
+TRACE_1("Removing rearming from queue",_rearmingMags);
 
 // Enable turret if no other players are rearming
 if (_rearmingMags isEqualTo []) then {

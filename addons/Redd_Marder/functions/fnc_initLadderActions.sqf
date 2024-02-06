@@ -30,8 +30,8 @@ private _ladderIcon = QPATHTOEF(Ladder,data\ui\holdaction_ladder.paa);
     LELSTRING(Ladder,attachLadder),
     _ladderIcon,
     _ladderIcon,
-    QUOTE([ARR_3(_target, _this, 'left')] call FUNC(canAttachLadder)),
-    QUOTE([ARR_3(_target, _this, 'left')] call FUNC(canAttachLadder)),
+    QUOTE([ARR_3(_target,_this,'left')] call FUNC(canAttachLadder)),
+    QUOTE([ARR_3(_target,_this,'left')] call FUNC(canAttachLadder)),
     {},
     {},
     {
@@ -56,8 +56,8 @@ private _ladderIcon = QPATHTOEF(Ladder,data\ui\holdaction_ladder.paa);
     LELSTRING(Ladder,attachLadder),
     _ladderIcon,
     _ladderIcon,
-    QUOTE([ARR_3(_target, _this, 'right')] call FUNC(canAttachLadder)),
-    QUOTE([ARR_3(_target, _this, 'right')] call FUNC(canAttachLadder)),
+    QUOTE([ARR_3(_target,_this,'right')] call FUNC(canAttachLadder)),
+    QUOTE([ARR_3(_target,_this,'right')] call FUNC(canAttachLadder)),
     {},
     {},
     {
@@ -91,7 +91,7 @@ _veh addAction [
     true,
     true,
     "",
-    QUOTE([ARR_3(_target, _this, 'left')] call FUNC(canAdjustLadder))
+    QUOTE([ARR_3(_target,_this,'left')] call FUNC(canAdjustLadder))
 ];
 
 // Rechte Leiter anpassen
@@ -109,5 +109,5 @@ _veh addAction [
     true,
     true,
     "",
-    QUOTE([ARR_3(_target, _this, 'right')] call FUNC(canAdjustLadder))
+    QUOTE([ARR_3(_target,_this,'right')] call FUNC(canAdjustLadder))
 ];

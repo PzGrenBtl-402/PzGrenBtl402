@@ -22,9 +22,9 @@ params ["_vehicle"];
 
 if (!hasInterface) exitWith {};
 
-private _rearmHEShowCondition = QUOTE([ARR_3(_target, _this, 'Redd_MK20_HE_Mag')] call FUNC(canRearmMK));
-private _rearmAPShowCondition = QUOTE([ARR_3(_target, _this, 'Redd_MK20_AP_Mag')] call FUNC(canRearmMK));
-private _rearmMKProgressCondition = QUOTE([ARR_2(_target, _this)] call FUNC(canRearmMKProgress));
+private _rearmHEShowCondition = QUOTE([ARR_3(_target,_this,'Redd_MK20_HE_Mag')] call FUNC(canRearmMK));
+private _rearmAPShowCondition = QUOTE([ARR_3(_target,_this,'Redd_MK20_AP_Mag')] call FUNC(canRearmMK));
+private _rearmMKProgressCondition = QUOTE([ARR_2(_target,_this)] call FUNC(canRearmMKProgress));
 
 // MK HE laden
 private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);
@@ -84,8 +84,8 @@ private _smokeMagazineName = [QEGVAR(Rearm,smoke_3grenade_ammo)] call EFUNC(Rear
     format [LELSTRING(Rearm,rearm), _smokeMagazineName],
     _rearmSmokeIcon,
     _rearmSmokeIcon,
-    QUOTE([ARR_5(_target, _this, 'smoke9_pos', 2, 'Redd_SmokeLauncherMag')] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_5(_target, _caller, 'smoke9_pos', 2, 'Redd_SmokeLauncherMag')] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target,_this,'smoke9_pos',2,'Redd_SmokeLauncherMag')] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target,_caller,'smoke9_pos',2,'Redd_SmokeLauncherMag')] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {
@@ -139,8 +139,8 @@ private _mg3CompatibleMags = [
     format [LELSTRING(Rearm,rearm), _mgMagazineName],
     _rearmMGIcon,
     _rearmMGIcon,
-    QUOTE([ARR_5(_target, _this, 'machinegun_eject_pos', 2, 'Redd_Mg3_Mag')] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_5(_target, _caller, 'machinegun_eject_pos', 2, 'Redd_Mg3_Mag')] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target,_this,'machinegun_eject_pos',2,'Redd_Mg3_Mag')] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target,_caller,'machinegun_eject_pos',2,'Redd_Mg3_Mag')] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {

@@ -20,7 +20,7 @@
 params ["_ammoItems", "_ammoItemPriority"];
 _ammoItems params ["_items", "_counts"];
 
-TRACE_1("Called sortAvailableAmmoItems", _this);
+TRACE_1("Called sortAvailableAmmoItems",_this);
 
 private _sortedItems = [];
 private _sortedCounts = [];
@@ -39,6 +39,6 @@ private "_prio";
     } forEach _items;
 } foreach _ammoItemPriority;
 
-TRACE_2("Sorted items", _sortedItems, _sortedCounts);
+TRACE_2("Sorted items",_sortedItems,_sortedCounts);
 
 [_sortedItems, _sortedCounts]

@@ -24,7 +24,7 @@
 params ["_ammoCounts", "_maxAmmo", "_refillAmmoItems", "_timePerRefill"];
 _refillAmmoItems params ["_refillItems", "_refillAmounts"];
 
-TRACE_1("Called simulateRearmEvents", _this);
+TRACE_1("Called simulateRearmEvents",_this);
 
 // Copy array, don't modify origial
 _ammoCounts = +_ammoCounts;

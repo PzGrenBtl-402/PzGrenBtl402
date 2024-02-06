@@ -22,9 +22,9 @@ params ["_vehicle"];
 
 if (!hasInterface) exitWith {};
 
-private _rearmHEShowCondition = QUOTE([ARR_3(_target, _this, 'gm_425Rnd_20x139mm_hei_t_dm81')] call FUNC(canRearmMK));
-private _rearmAPShowCondition = QUOTE([ARR_3(_target, _this, 'gm_75Rnd_20x139mm_apds_t_dm63')] call FUNC(canRearmMK));
-private _rearmMKProgressCondition = QUOTE([ARR_2(_target, _this)] call FUNC(canRearmMKProgress));
+private _rearmHEShowCondition = QUOTE([ARR_3(_target,_this,'gm_425Rnd_20x139mm_hei_t_dm81')] call FUNC(canRearmMK));
+private _rearmAPShowCondition = QUOTE([ARR_3(_target,_this,'gm_75Rnd_20x139mm_apds_t_dm63')] call FUNC(canRearmMK));
+private _rearmMKProgressCondition = QUOTE([ARR_2(_target,_this)] call FUNC(canRearmMKProgress));
 
 // MK HE laden
 private _rearmHeIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mk20_he.paa);
@@ -84,8 +84,8 @@ private _smokeMagazineName = [QEGVAR(Rearm,smoke_6grenade_ammo)] call EFUNC(Rear
     format [LELSTRING(Rearm,rearm), _smokeMagazineName],
     _rearmSmokeIcon,
     _rearmSmokeIcon,
-    QUOTE([ARR_5(_target, _this, 'mainturret_coax', 2, QQGVAR(1Rnd_76mm_RP_dm35))] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_5(_target, _caller, 'mainturret_coax', 2, QQGVAR(1Rnd_76mm_RP_dm35))] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target,_this,'mainturret_coax',2,QQGVAR(1Rnd_76mm_RP_dm35))] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target,_caller,'mainturret_coax',2,QQGVAR(1Rnd_76mm_RP_dm35))] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {
@@ -139,8 +139,8 @@ private _mg3CompatibleMags = [
     format [LELSTRING(Rearm,rearm), _mgMagazineName],
     _rearmMGIcon,
     _rearmMGIcon,
-    QUOTE([ARR_5(_target, _this, 'mainturret_coax', 2, 'gm_500Rnd_762x51mm_b_t_DM21_mg3')] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_5(_target, _caller, 'mainturret_coax', 2, 'gm_500Rnd_762x51mm_b_t_DM21_mg3')] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target,_this,'mainturret_coax',2,'gm_500Rnd_762x51mm_b_t_DM21_mg3')] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target,_caller,'mainturret_coax',2,'gm_500Rnd_762x51mm_b_t_DM21_mg3')] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {

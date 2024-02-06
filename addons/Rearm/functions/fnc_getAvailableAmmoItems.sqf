@@ -21,7 +21,7 @@
 
 params ["_vehicle", "_ammoItems"];
 
-TRACE_1("Called getAvailableAmmoItems", _this);
+TRACE_1("Called getAvailableAmmoItems",_this);
 
 // We only need ammo items
 private _magazineClassCargo = [];
@@ -40,7 +40,7 @@ private "_maxAmmo";
     };
 } forEach (magazinesAmmoCargo _vehicle);
 
-TRACE_2("Filtered mags", _magazineClassCargo, _magazineAmmoCargo);
+TRACE_2("Filtered mags",_magazineClassCargo,_magazineAmmoCargo);
 
 // No compatible ammo item in vehicle inventory
 if (_magazineClassCargo isEqualTo []) exitWith {
