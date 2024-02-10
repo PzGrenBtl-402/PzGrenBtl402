@@ -16,12 +16,42 @@
         statement = QUOTE([ARR_3(this,'Door_##id',0)] call FUNC(door)); \
     }
 
-#define SET_ARMOR(BASE,CLS) class CLS: BASE { armor = 100000; }
+#define HOUSE_ARMOR 100000
+#define SET_ARMOR(BASE,CLS) class CLS: BASE { armor = HOUSE_ARMOR; }
+#define SET_GLASS_HITPOINT_ARMOR(id) class Glass_##id##_hitpoint { armor = 0.00001; }
 
 class CfgVehicles {
     class House_F;
     class Land_WL_House_01_A: House_F {
-        armor = 100000;
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(01);
+            SET_GLASS_HITPOINT_ARMOR(02);
+            SET_GLASS_HITPOINT_ARMOR(03);
+            SET_GLASS_HITPOINT_ARMOR(04);
+            SET_GLASS_HITPOINT_ARMOR(05);
+            SET_GLASS_HITPOINT_ARMOR(06);
+            SET_GLASS_HITPOINT_ARMOR(07);
+            SET_GLASS_HITPOINT_ARMOR(08);
+            SET_GLASS_HITPOINT_ARMOR(09);
+            SET_GLASS_HITPOINT_ARMOR(10);
+            SET_GLASS_HITPOINT_ARMOR(11);
+            SET_GLASS_HITPOINT_ARMOR(12);
+            SET_GLASS_HITPOINT_ARMOR(13);
+            SET_GLASS_HITPOINT_ARMOR(14);
+            SET_GLASS_HITPOINT_ARMOR(15);
+            SET_GLASS_HITPOINT_ARMOR(16);
+            SET_GLASS_HITPOINT_ARMOR(17);
+            SET_GLASS_HITPOINT_ARMOR(18);
+            SET_GLASS_HITPOINT_ARMOR(19);
+            SET_GLASS_HITPOINT_ARMOR(20);
+            SET_GLASS_HITPOINT_ARMOR(21);
+            SET_GLASS_HITPOINT_ARMOR(22);
+            SET_GLASS_HITPOINT_ARMOR(23);
+            SET_GLASS_HITPOINT_ARMOR(24);
+            SET_GLASS_HITPOINT_ARMOR(25);
+        };
 
         // Replace Open/Close door actions because
         // they do not check if the door is locked in the original
@@ -46,7 +76,34 @@ class CfgVehicles {
     };
 
     class Land_WL_House_02_A: House_F {
-        armor = 100000;
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(01);
+            SET_GLASS_HITPOINT_ARMOR(02);
+            SET_GLASS_HITPOINT_ARMOR(03);
+            SET_GLASS_HITPOINT_ARMOR(04);
+            SET_GLASS_HITPOINT_ARMOR(05);
+            SET_GLASS_HITPOINT_ARMOR(06);
+            SET_GLASS_HITPOINT_ARMOR(07);
+            SET_GLASS_HITPOINT_ARMOR(08);
+            SET_GLASS_HITPOINT_ARMOR(09);
+            SET_GLASS_HITPOINT_ARMOR(10);
+            SET_GLASS_HITPOINT_ARMOR(11);
+            SET_GLASS_HITPOINT_ARMOR(12);
+            SET_GLASS_HITPOINT_ARMOR(13);
+            SET_GLASS_HITPOINT_ARMOR(14);
+            SET_GLASS_HITPOINT_ARMOR(15);
+            SET_GLASS_HITPOINT_ARMOR(16);
+            SET_GLASS_HITPOINT_ARMOR(17);
+            SET_GLASS_HITPOINT_ARMOR(18);
+            SET_GLASS_HITPOINT_ARMOR(19);
+            SET_GLASS_HITPOINT_ARMOR(20);
+            SET_GLASS_HITPOINT_ARMOR(21);
+            SET_GLASS_HITPOINT_ARMOR(22);
+            SET_GLASS_HITPOINT_ARMOR(23);
+            SET_GLASS_HITPOINT_ARMOR(24);
+        };
 
         class UserActions {
             DOOR_USERACTION(01,1);
@@ -64,7 +121,32 @@ class CfgVehicles {
     };
 
     class Land_WL_House_03_A: House_F {
-        armor = 100000;
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(01);
+            SET_GLASS_HITPOINT_ARMOR(02);
+            SET_GLASS_HITPOINT_ARMOR(03);
+            SET_GLASS_HITPOINT_ARMOR(04);
+            SET_GLASS_HITPOINT_ARMOR(05);
+            SET_GLASS_HITPOINT_ARMOR(06);
+            SET_GLASS_HITPOINT_ARMOR(07);
+            SET_GLASS_HITPOINT_ARMOR(08);
+            SET_GLASS_HITPOINT_ARMOR(09);
+            SET_GLASS_HITPOINT_ARMOR(10);
+            SET_GLASS_HITPOINT_ARMOR(11);
+            SET_GLASS_HITPOINT_ARMOR(12);
+            SET_GLASS_HITPOINT_ARMOR(13);
+            SET_GLASS_HITPOINT_ARMOR(14);
+            SET_GLASS_HITPOINT_ARMOR(15);
+            SET_GLASS_HITPOINT_ARMOR(16);
+            SET_GLASS_HITPOINT_ARMOR(17);
+            SET_GLASS_HITPOINT_ARMOR(18);
+            SET_GLASS_HITPOINT_ARMOR(19);
+            SET_GLASS_HITPOINT_ARMOR(20);
+            SET_GLASS_HITPOINT_ARMOR(21);
+            SET_GLASS_HITPOINT_ARMOR(22);
+        };
 
         class UserActions {
             DOOR_USERACTION(01,1);
@@ -77,7 +159,25 @@ class CfgVehicles {
     };
 
     class Land_WL_House_04_A: House_F {
-        armor = 100000;
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(01);
+            SET_GLASS_HITPOINT_ARMOR(02);
+            SET_GLASS_HITPOINT_ARMOR(03);
+            SET_GLASS_HITPOINT_ARMOR(04);
+            SET_GLASS_HITPOINT_ARMOR(05);
+            SET_GLASS_HITPOINT_ARMOR(06);
+            SET_GLASS_HITPOINT_ARMOR(07);
+            SET_GLASS_HITPOINT_ARMOR(08);
+            SET_GLASS_HITPOINT_ARMOR(09);
+            SET_GLASS_HITPOINT_ARMOR(10);
+            SET_GLASS_HITPOINT_ARMOR(11);
+            SET_GLASS_HITPOINT_ARMOR(12);
+            SET_GLASS_HITPOINT_ARMOR(13);
+            SET_GLASS_HITPOINT_ARMOR(14);
+            SET_GLASS_HITPOINT_ARMOR(15);
+        };
 
         class UserActions {
             DOOR_USERACTION(01,1);
@@ -89,7 +189,7 @@ class CfgVehicles {
     };
 
     class Land_WL_House_05_A: House_F {
-        armor = 100000;
+        armor = HOUSE_ARMOR;
 
         class UserActions {
             DOOR_USERACTION(01,1);
