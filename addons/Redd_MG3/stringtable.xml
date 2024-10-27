@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="PzGrenBtl402">
     <Package name="Redd_MG3">
-        <Key ID="STR_PzGrenBtl402_Redd_MG3_subCategory">
+        <Key ID="STR_PzGrenBtl402_Redd_MG3_disassemble">
+            <Original>Disassemble MG3 Tripod</Original>
+            <German>MG3-Lafette demontieren</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_MG3_lafette_displayname">
             <Original>MG3 Tripod</Original>
             <German>MG3-Lafette</German>
         </Key>
-
+        <Key ID="STR_PzGrenBtl402_Redd_MG3_mount">
+            <Original>Mount MG3</Original>
+            <German>MG3 lafettieren</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_MG3_mounting">
+            <Original>Mounting MG3</Original>
+            <German>Lafettiere MG3</German>
+        </Key>
         <Key ID="STR_PzGrenBtl402_Redd_MG3_settingsLafetteDisassembleTime">
             <Original>MG3 Tripod disassemble time</Original>
             <German>MG3-Lafette Abbauzeit</German>
@@ -22,20 +33,7 @@
             <Original>Time it takes to mount the MG3 onto a tripod.</Original>
             <German>Die Zeit, die es braucht, um ein MG3 zu lafettieren.</German>
         </Key>
-
-        <Key ID="STR_PzGrenBtl402_Redd_MG3_mount">
-            <Original>Mount MG3</Original>
-            <German>MG3 lafettieren</German>
-        </Key>
-        <Key ID="STR_PzGrenBtl402_Redd_MG3_mounting">
-            <Original>Mounting MG3</Original>
-            <German>Lafettiere MG3</German>
-        </Key>
-        <Key ID="STR_PzGrenBtl402_Redd_MG3_disassemble">
-            <Original>Disassemble MG3 Tripod</Original>
-            <German>MG3-Lafette demontieren</German>
-        </Key>
-        <Key ID="STR_PzGrenBtl402_Redd_MG3_lafette_displayname">
+        <Key ID="STR_PzGrenBtl402_Redd_MG3_subCategory">
             <Original>MG3 Tripod</Original>
             <German>MG3-Lafette</German>
         </Key>

@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="PzGrenBtl402">
     <Package name="Ladder">
-        <Key ID="STR_PzGrenBtl402_Ladder_attachLadder">
-            <Original>Set up ladder</Original>
-            <German>Leiter aufstellen</German>
-        </Key>
-        <Key ID="STR_PzGrenBtl402_Ladder_deployLadder">
-            <Original>Deploy ladder</Original>
-            <German>Leiter fixieren</German>
-        </Key>
         <Key ID="STR_PzGrenBtl402_Ladder_adjustLadder">
             <Original>Adjust ladder</Original>
             <German>Leiter anpassen</German>
@@ -16,6 +8,14 @@
         <Key ID="STR_PzGrenBtl402_Ladder_adjustTiltLadder">
             <Original>Tilt ladder</Original>
             <German>Leiter kippen</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Ladder_attachLadder">
+            <Original>Set up ladder</Original>
+            <German>Leiter aufstellen</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Ladder_deployLadder">
+            <Original>Deploy ladder</Original>
+            <German>Leiter fixieren</German>
         </Key>
     </Package>
 </Project>

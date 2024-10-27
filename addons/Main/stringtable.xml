@@ -3,54 +3,54 @@
     <Package name="Main">
         <Key ID="STR_PzGrenBtl402_Main_URL">
             <English>https://pzgrenbtl402.de/</English>
-            <German>https://pzgrenbtl402.de/</German>
+            <Czech>https://pzgrenbtl402.de/</Czech>
+            <French>https://pzgrenbtl402.de/</French>
+            <Spanish>https://pzgrenbtl402.de/</Spanish>
+            <Italian>https://pzgrenbtl402.de/</Italian>
             <Polish>https://pzgrenbtl402.de/</Polish>
             <Portuguese>https://pzgrenbtl402.de/</Portuguese>
             <Russian>https://pzgrenbtl402.de/</Russian>
-            <Czech>https://pzgrenbtl402.de/</Czech>
-            <Spanish>https://pzgrenbtl402.de/</Spanish>
-            <Italian>https://pzgrenbtl402.de/</Italian>
-            <French>https://pzgrenbtl402.de/</French>
+            <German>https://pzgrenbtl402.de/</German>
             <Korean>https://pzgrenbtl402.de/</Korean>
             <Japanese>https://pzgrenbtl402.de/</Japanese>
-            <Chinesesimp>https://pzgrenbtl402.de/</Chinesesimp>
             <Chinese>https://pzgrenbtl402.de/</Chinese>
-            <Hungarian>https://pzgrenbtl402.de/</Hungarian>
+            <Chinesesimp>https://pzgrenbtl402.de/</Chinesesimp>
             <Turkish>https://pzgrenbtl402.de/</Turkish>
+            <Hungarian>https://pzgrenbtl402.de/</Hungarian>
         </Key>
         <Key ID="STR_PzGrenBtl402_Main_authors">
             <English>PzGrenBtl 402</English>
-            <German>PzGrenBtl 402</German>
+            <Czech>PzGrenBtl 402</Czech>
+            <French>PzGrenBtl 402</French>
+            <Spanish>PzGrenBtl 402</Spanish>
+            <Italian>PzGrenBtl 402</Italian>
             <Polish>PzGrenBtl 402</Polish>
             <Portuguese>PzGrenBtl 402</Portuguese>
             <Russian>PzGrenBtl 402</Russian>
-            <Czech>PzGrenBtl 402</Czech>
-            <Spanish>PzGrenBtl 402</Spanish>
-            <Italian>PzGrenBtl 402</Italian>
-            <French>PzGrenBtl 402</French>
+            <German>PzGrenBtl 402</German>
             <Korean>PzGrenBtl 402</Korean>
             <Japanese>PzGrenBtl 402</Japanese>
-            <Chinesesimp>PzGrenBtl 402</Chinesesimp>
             <Chinese>PzGrenBtl 402</Chinese>
-            <Hungarian>PzGrenBtl 402</Hungarian>
+            <Chinesesimp>PzGrenBtl 402</Chinesesimp>
             <Turkish>PzGrenBtl 402</Turkish>
+            <Hungarian>PzGrenBtl 402</Hungarian>
         </Key>
         <Key ID="STR_PzGrenBtl402_Main_category">
             <English>PzGrenBtl 402</English>
-            <German>PzGrenBtl 402</German>
+            <Czech>PzGrenBtl 402</Czech>
+            <French>PzGrenBtl 402</French>
+            <Spanish>PzGrenBtl 402</Spanish>
+            <Italian>PzGrenBtl 402</Italian>
             <Polish>PzGrenBtl 402</Polish>
             <Portuguese>PzGrenBtl 402</Portuguese>
             <Russian>PzGrenBtl 402</Russian>
-            <Czech>PzGrenBtl 402</Czech>
-            <Spanish>PzGrenBtl 402</Spanish>
-            <Italian>PzGrenBtl 402</Italian>
-            <French>PzGrenBtl 402</French>
+            <German>PzGrenBtl 402</German>
             <Korean>PzGrenBtl 402</Korean>
             <Japanese>PzGrenBtl 402</Japanese>
-            <Chinesesimp>PzGrenBtl 402</Chinesesimp>
             <Chinese>PzGrenBtl 402</Chinese>
-            <Hungarian>PzGrenBtl 402</Hungarian>
+            <Chinesesimp>PzGrenBtl 402</Chinesesimp>
             <Turkish>PzGrenBtl 402</Turkish>
+            <Hungarian>PzGrenBtl 402</Hungarian>
         </Key>
     </Package>
 </Project>

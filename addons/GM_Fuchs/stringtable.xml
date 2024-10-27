@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="PzGrenBtl402">
     <Package name="GM_Fuchs">
-        <Key ID="STR_PzGrenBtl402_GM_Fuchs_openDoors">
-            <Original>Open doors</Original>
-            <German>Türen öffnen</German>
-        </Key>
         <Key ID="STR_PzGrenBtl402_GM_Fuchs_closeDoors">
             <Original>Close doors</Original>
             <German>Türen schließen</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_GM_Fuchs_openDoors">
+            <Original>Open doors</Original>
+            <German>Türen öffnen</German>
         </Key>
     </Package>
 </Project>

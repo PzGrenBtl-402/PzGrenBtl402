@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="PzGrenBtl402">
     <Package name="ACRE">
+        <Key ID="STR_PzGrenBtl402_ACRE_BV">
+            <Original>Bordverständigungsanlage</Original>
+            <German>Bordverständigungsanlage</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_ACRE_BVShort">
+            <Original>BV</Original>
+            <German>BV</German>
+        </Key>
         <Key ID="STR_PzGrenBtl402_ACRE_RackA">
             <Original>Funkkreis A</Original>
             <German>Funkkreis A</German>
@@ -24,14 +32,6 @@
         <Key ID="STR_PzGrenBtl402_ACRE_RackCShort">
             <Original>Krs C</Original>
             <German>Krs C</German>
-        </Key>
-        <Key ID="STR_PzGrenBtl402_ACRE_BV">
-            <Original>Bordverständigungsanlage</Original>
-            <German>Bordverständigungsanlage</German>
-        </Key>
-        <Key ID="STR_PzGrenBtl402_ACRE_BVShort">
-            <Original>BV</Original>
-            <German>BV</German>
         </Key>
     </Package>
 </Project>

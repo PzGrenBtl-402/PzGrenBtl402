@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="PzGrenBtl402">
     <Package name="Redd_Marder">
+        <Key ID="STR_PzGrenBtl402_Redd_Marder_closeRamp">
+            <Original>Close rear ramp</Original>
+            <German>Heckklappe schließen</German>
+        </Key>
         <Key ID="STR_PzGrenBtl402_Redd_Marder_getOutHatch">
             <Original>Get out through hatch</Original>
             <German>Aussteigen durch Luke</German>
@@ -12,10 +16,6 @@
         <Key ID="STR_PzGrenBtl402_Redd_Marder_openRamp">
             <Original>Open rear ramp</Original>
             <German>Heckklappe öffnen</German>
-        </Key>
-        <Key ID="STR_PzGrenBtl402_Redd_Marder_closeRamp">
-            <Original>Close rear ramp</Original>
-            <German>Heckklappe schließen</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Redd_Marder_openRamp3DENTooltip">
             <Original>Open rear ramp when Marder spawns in.</Original>

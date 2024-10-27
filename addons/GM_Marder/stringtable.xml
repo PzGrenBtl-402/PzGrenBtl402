@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="PzGrenBtl402">
     <Package name="GM_Marder">
-        <Key ID="STR_PzGrenBtl402_GM_Marder_openRamp">
-            <Original>Open rear ramp</Original>
-            <German>Heckklappe öffnen</German>
-        </Key>
         <Key ID="STR_PzGrenBtl402_GM_Marder_closeRamp">
             <Original>Close rear ramp</Original>
             <German>Heckklappe schließen</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_GM_Marder_openRamp">
+            <Original>Open rear ramp</Original>
+            <German>Heckklappe öffnen</German>
         </Key>
     </Package>
 </Project>
