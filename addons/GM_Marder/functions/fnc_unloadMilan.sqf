@@ -19,4 +19,4 @@
 params ["_veh"];
 
 [_veh, ["gm_1Rnd_milan_heat_dm92", [0,1]]] remoteExecCall ["removeMagazineTurret"];
-_veh addBackPackCargoGlobal ["Redd_Milan_Static_Barrel", 1];
+_veh addBackpackCargoGlobal ["Redd_Milan_Static_Barrel", 1];

@@ -19,7 +19,7 @@ GVAR(currentAngle) = 0;
 ["ace_unconscious", {
     params ["_unit"];
 
-    if (!local _unit) exitwith {};
+    if (!local _unit) exitWith {};
 
     if (!isNull GVAR(ladder)) then {
         [_unit, 1] call FUNC(confirmLadderAdjust);

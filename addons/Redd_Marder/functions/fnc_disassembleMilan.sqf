@@ -22,4 +22,4 @@ _veh animateSource ["Hide_Milan_Source", 1];
 
 private _milanClass = _veh getVariable [QGVAR(milanTripod), "Redd_Milan_Static_Tripod"];
 _veh setVariable [QGVAR(milanTripod), nil, true]; // Remove var again
-_veh addBackPackCargoGlobal [_milanClass, 1];
+_veh addBackpackCargoGlobal [_milanClass, 1];

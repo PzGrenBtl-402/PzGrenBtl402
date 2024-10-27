@@ -40,7 +40,7 @@ playSound "ACE_BarrelSwap";
 
             [_player, _magazineClass, _ammoCount, true] call CBA_fnc_addMagazine;
             _target removeMagazinesTurret [_magazineClass, [0]];
-        } foreach (magazinesAmmo [_mg3Static, false]);
+        } forEach (magazinesAmmo [_mg3Static, false]);
 
         private _weaponHolders = nearestObjects [_player, ["WeaponHolder"], 2, true];
         if (_weaponHolders isEqualTo []) then {

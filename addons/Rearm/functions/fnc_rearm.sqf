@@ -36,7 +36,7 @@ private _ammoCounts = [_vehicle, _turretPath, _magazineClass] call ace_rearm_fnc
 private _roundsToRearm = 0;
 {
     _roundsToRearm = _roundsToRearm + (_maxAmmo - _x);
-} foreach _ammoCounts;
+} forEach _ammoCounts;
 
 TRACE_3("Magagzines",_ammoCounts,_maxAmmo,_roundsToRearm);
 

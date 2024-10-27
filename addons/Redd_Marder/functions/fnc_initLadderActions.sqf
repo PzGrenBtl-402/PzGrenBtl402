@@ -82,7 +82,7 @@ _veh addAction [
     {
         params ["_target", "_caller"];
         private _ladder = [_target, QGVAR(ladderLeft)] call FUNC(getAttachedLadder);
-        if (isNull _ladder) exitwith {};
+        if (isNull _ladder) exitWith {};
 
         [_ladder, _caller] call EFUNC(Ladder,adjustLadder);
     },
@@ -100,7 +100,7 @@ _veh addAction [
     {
         params ["_target", "_caller"];
         private _ladder = [_target, QGVAR(ladderRight)] call FUNC(getAttachedLadder);
-        if (isNull _ladder) exitwith {};
+        if (isNull _ladder) exitWith {};
 
         [_ladder, _caller] call EFUNC(Ladder,adjustLadder);
     },

@@ -21,7 +21,7 @@ params [["_vehicle", objNull, [objNull]], ["_setCamonet", true, [true]]];
 
 if (isNull _vehicle) exitWith {};
 
-private _camotnetAnimPhase = if (_setCamonet) then {0} else {1};
+private _camotnetAnimPhase = [1, 0] select _setCamonet;
 private _camonetAnimSource = switch (typeOf _vehicle) do {
     case "Redd_Marder_1A5_Flecktarn": {"marder_netz_wanne_hide_Source"};
     case "Redd_Marder_1A5_Tropentarn": {"marder_netz_wanne_d_hide_Source"};

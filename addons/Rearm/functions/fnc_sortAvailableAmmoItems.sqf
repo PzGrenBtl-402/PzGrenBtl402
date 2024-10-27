@@ -37,7 +37,7 @@ private "_prio";
         _sortedItems pushBack _x;
         _sortedCounts pushBack (_counts select _forEachIndex);
     } forEach _items;
-} foreach _ammoItemPriority;
+} forEach _ammoItemPriority;
 
 TRACE_2("Sorted items",_sortedItems,_sortedCounts);
 
