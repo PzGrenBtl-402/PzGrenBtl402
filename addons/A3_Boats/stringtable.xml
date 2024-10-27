@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="A3_Boats">
+        <Key ID="STR_PzGrenBtl402_A3_Boats_CRRC">
+            <Original>S-Boot</Original>
+            <German>S-Boot</German>
+        </Key>
+    </Package>
+</Project>
