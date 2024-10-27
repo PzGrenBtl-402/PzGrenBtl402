@@ -67,6 +67,7 @@ Optional:
 ### A3
 
 - More durable buildings (can take more damage)
+- Make CRRCs more agile
 
 ### General
 
