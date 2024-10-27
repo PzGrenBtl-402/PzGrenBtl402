@@ -39,8 +39,26 @@ class CfgVehicles
 
         ace_vehicles_engineStartDelay = 5;
 
-        class TransportBackpacks {delete _xx_B_AssaultPack_rgr;};
-        class TransportItems {delete _xx_Toolkit;};
+        class TransportBackpacks {
+            delete _xx_B_AssaultPack_rgr;
+        };
+        class TransportItems {
+            delete _xx_Toolkit;
+        };
+        class TransportMagazines {
+            class _xx_mk20_ap_ammo {
+                magazine = QEGVAR(Rearm,mk20_ap_ammo);
+                count = 9;
+            };
+            class _xx_mk20_he_ammo {
+                magazine = QEGVAR(Rearm,mk20_he_ammo);
+                count = 21;
+            };
+            class _xx_smoke_3grenade_ammo {
+                magazine = QEGVAR(Rearm,smoke_3grenade_ammo);
+                count = 2;
+            };
+        };
 
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
         PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
