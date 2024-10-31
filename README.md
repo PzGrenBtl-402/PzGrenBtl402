@@ -11,12 +11,12 @@ This mod contains changes to Redd'n'Tanks, BWMod, NIArms, RHS and GM improving A
 - [NIArms Core](https://steamcommunity.com/sharedfiles/filedetails/?id=667454606)
 - [NIArms MG3 GPMGs](https://steamcommunity.com/sharedfiles/filedetails/?id=774809509)
 - [Redd'n'Tank Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=1128145626)
-- [RHSAFRF](https://steamcommunity.com/workshop/filedetails/?id=843425103)
 
 Optional:
 - [GM](https://store.steampowered.com/app/1042220/Arma_3_Creator_DLC_Global_Mobilization__Cold_War_Germany/)
 - [Rosche](https://steamcommunity.com/sharedfiles/filedetails/?id=1527410521)
 - [CUP Terrains - Core](https://steamcommunity.com/sharedfiles/filedetails/?id=583496184)
+- [RHSAFRF](https://steamcommunity.com/workshop/filedetails/?id=843425103)
 
 ## Modifications
 
