@@ -12,6 +12,7 @@ class CfgPatches {
             "ace_csw",
             "hlcweapons_MG3s"
         };
+        skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);
         authors[] = {"Zumi", "Timi007"};
         url = ECSTRING(Main,URL);

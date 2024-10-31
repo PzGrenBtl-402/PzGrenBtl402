@@ -7,6 +7,7 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"PzGrenBtl402_Main", "hlcweapons_core", "ace_tracers"};
+        skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);
         authors[] = {"Timi007"};
         url = ECSTRING(Main,URL);

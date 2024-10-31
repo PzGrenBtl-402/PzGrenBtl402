@@ -8,8 +8,6 @@ This mod contains changes to Redd'n'Tanks, BWMod, NIArms, RHS and GM improving A
 - [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057)
 - [ACRE2](https://steamcommunity.com/sharedfiles/filedetails/?id=751965892)
 - [BWMod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537)
-- [NIArms Core](https://steamcommunity.com/sharedfiles/filedetails/?id=667454606)
-- [NIArms MG3 GPMGs](https://steamcommunity.com/sharedfiles/filedetails/?id=774809509)
 - [Redd'n'Tank Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=1128145626)
 
 Optional:
@@ -17,6 +15,8 @@ Optional:
 - [Rosche](https://steamcommunity.com/sharedfiles/filedetails/?id=1527410521)
 - [CUP Terrains - Core](https://steamcommunity.com/sharedfiles/filedetails/?id=583496184)
 - [RHSAFRF](https://steamcommunity.com/workshop/filedetails/?id=843425103)
+- [NIArms Core](https://steamcommunity.com/sharedfiles/filedetails/?id=667454606)
+- [NIArms MG3 GPMGs](https://steamcommunity.com/sharedfiles/filedetails/?id=774809509)
 
 ## Modifications
 
