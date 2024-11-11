@@ -7,6 +7,8 @@ class CfgVehicles {
 
     class House_F;
     SET_ARMOR(House_F,Land_CoalPlant_01_LoadingHouse_F);
+    SET_ARMOR(House_F,land_smokestack_01_factory_f);
+    SET_ARMOR(House_F,land_powerstation_01_f);
 
     SET_ARMOR(House_F,Land_GH_House_1_F);
     SET_ARMOR(House_F,Land_GH_House_2_F);
@@ -914,8 +916,202 @@ class CfgVehicles {
         };
     };
 
-    // TODO
-    // Land_SCF_01_storageBin_small_F
-    // Land_ReservoirTank_Rust_F
-    // Land_i_Addon_03mid_V1_F
+    class Land_Factory_02_F: House_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+            SET_GLASS_HITPOINT_ARMOR(2);
+            SET_GLASS_HITPOINT_ARMOR(3);
+            SET_GLASS_HITPOINT_ARMOR(4);
+            SET_GLASS_HITPOINT_ARMOR(5);
+            SET_GLASS_HITPOINT_ARMOR(6);
+            SET_GLASS_HITPOINT_ARMOR(7);
+            SET_GLASS_HITPOINT_ARMOR(8);
+            SET_GLASS_HITPOINT_ARMOR(9);
+            SET_GLASS_HITPOINT_ARMOR(10);
+            SET_GLASS_HITPOINT_ARMOR(11);
+            SET_GLASS_HITPOINT_ARMOR(12);
+            SET_GLASS_HITPOINT_ARMOR(13);
+            SET_GLASS_HITPOINT_ARMOR(14);
+            SET_GLASS_HITPOINT_ARMOR(15);
+        };
+    };
+
+    class Land_GarageOffice_01_F: House_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+            SET_GLASS_HITPOINT_ARMOR(2);
+            SET_GLASS_HITPOINT_ARMOR(3);
+            SET_GLASS_HITPOINT_ARMOR(4);
+        };
+    };
+
+    class Land_GarageRow_01_large_F: House_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+            SET_GLASS_HITPOINT_ARMOR(2);
+            SET_GLASS_HITPOINT_ARMOR(3);
+            SET_GLASS_HITPOINT_ARMOR(4);
+            SET_GLASS_HITPOINT_ARMOR(5);
+            SET_GLASS_HITPOINT_ARMOR(6);
+            SET_GLASS_HITPOINT_ARMOR(7);
+            SET_GLASS_HITPOINT_ARMOR(8);
+        };
+    };
+
+    class Land_CementWorks_01_base_F: House_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+            SET_GLASS_HITPOINT_ARMOR(2);
+            SET_GLASS_HITPOINT_ARMOR(3);
+            SET_GLASS_HITPOINT_ARMOR(4);
+            SET_GLASS_HITPOINT_ARMOR(5);
+            SET_GLASS_HITPOINT_ARMOR(6);
+            SET_GLASS_HITPOINT_ARMOR(7);
+            SET_GLASS_HITPOINT_ARMOR(8);
+            SET_GLASS_HITPOINT_ARMOR(9);
+            SET_GLASS_HITPOINT_ARMOR(10);
+            SET_GLASS_HITPOINT_ARMOR(11);
+            SET_GLASS_HITPOINT_ARMOR(12);
+            SET_GLASS_HITPOINT_ARMOR(13);
+            SET_GLASS_HITPOINT_ARMOR(14);
+            SET_GLASS_HITPOINT_ARMOR(15);
+            SET_GLASS_HITPOINT_ARMOR(16);
+            SET_GLASS_HITPOINT_ARMOR(17);
+            SET_GLASS_HITPOINT_ARMOR(18);
+            SET_GLASS_HITPOINT_ARMOR(19);
+            SET_GLASS_HITPOINT_ARMOR(20);
+            SET_GLASS_HITPOINT_ARMOR(21);
+            SET_GLASS_HITPOINT_ARMOR(22);
+            SET_GLASS_HITPOINT_ARMOR(23);
+            SET_GLASS_HITPOINT_ARMOR(24);
+            SET_GLASS_HITPOINT_ARMOR(25);
+            SET_GLASS_HITPOINT_ARMOR(26);
+            SET_GLASS_HITPOINT_ARMOR(27);
+            SET_GLASS_HITPOINT_ARMOR(28);
+            SET_GLASS_HITPOINT_ARMOR(29);
+            SET_GLASS_HITPOINT_ARMOR(30);
+            SET_GLASS_HITPOINT_ARMOR(31);
+            SET_GLASS_HITPOINT_ARMOR(32);
+        };
+    };
+
+    class Land_Airport_Tower_F: House_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+            SET_GLASS_HITPOINT_ARMOR(2);
+            SET_GLASS_HITPOINT_ARMOR(3);
+            SET_GLASS_HITPOINT_ARMOR(4);
+            SET_GLASS_HITPOINT_ARMOR(5);
+            SET_GLASS_HITPOINT_ARMOR(6);
+            SET_GLASS_HITPOINT_ARMOR(7);
+            SET_GLASS_HITPOINT_ARMOR(8);
+            SET_GLASS_HITPOINT_ARMOR(9);
+            SET_GLASS_HITPOINT_ARMOR(10);
+            SET_GLASS_HITPOINT_ARMOR(11);
+            SET_GLASS_HITPOINT_ARMOR(12);
+            SET_GLASS_HITPOINT_ARMOR(13);
+            SET_GLASS_HITPOINT_ARMOR(14);
+            SET_GLASS_HITPOINT_ARMOR(15);
+            SET_GLASS_HITPOINT_ARMOR(16);
+            SET_GLASS_HITPOINT_ARMOR(17);
+            SET_GLASS_HITPOINT_ARMOR(18);
+            SET_GLASS_HITPOINT_ARMOR(19);
+            SET_GLASS_HITPOINT_ARMOR(20);
+            SET_GLASS_HITPOINT_ARMOR(21);
+            SET_GLASS_HITPOINT_ARMOR(22);
+            SET_GLASS_HITPOINT_ARMOR(23);
+            SET_GLASS_HITPOINT_ARMOR(24);
+            SET_GLASS_HITPOINT_ARMOR(25);
+            SET_GLASS_HITPOINT_ARMOR(26);
+            SET_GLASS_HITPOINT_ARMOR(27);
+            SET_GLASS_HITPOINT_ARMOR(28);
+            SET_GLASS_HITPOINT_ARMOR(29);
+            SET_GLASS_HITPOINT_ARMOR(30);
+            SET_GLASS_HITPOINT_ARMOR(31);
+            SET_GLASS_HITPOINT_ARMOR(32);
+            SET_GLASS_HITPOINT_ARMOR(33);
+            SET_GLASS_HITPOINT_ARMOR(34);
+        };
+    };
+
+    class Land_Barracks_02_F: House_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+            SET_GLASS_HITPOINT_ARMOR(2);
+            SET_GLASS_HITPOINT_ARMOR(3);
+            SET_GLASS_HITPOINT_ARMOR(4);
+            SET_GLASS_HITPOINT_ARMOR(5);
+            SET_GLASS_HITPOINT_ARMOR(6);
+            SET_GLASS_HITPOINT_ARMOR(7);
+            SET_GLASS_HITPOINT_ARMOR(8);
+            SET_GLASS_HITPOINT_ARMOR(9);
+            SET_GLASS_HITPOINT_ARMOR(10);
+            SET_GLASS_HITPOINT_ARMOR(11);
+            SET_GLASS_HITPOINT_ARMOR(12);
+        };
+    };
+
+    class land_coalplant_01_mainbuilding_f: House_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+            SET_GLASS_HITPOINT_ARMOR(2);
+            SET_GLASS_HITPOINT_ARMOR(3);
+            SET_GLASS_HITPOINT_ARMOR(4);
+            SET_GLASS_HITPOINT_ARMOR(5);
+            SET_GLASS_HITPOINT_ARMOR(6);
+            SET_GLASS_HITPOINT_ARMOR(7);
+            SET_GLASS_HITPOINT_ARMOR(8);
+            SET_GLASS_HITPOINT_ARMOR(9);
+            SET_GLASS_HITPOINT_ARMOR(10);
+            SET_GLASS_HITPOINT_ARMOR(11);
+            SET_GLASS_HITPOINT_ARMOR(12);
+            SET_GLASS_HITPOINT_ARMOR(13);
+            SET_GLASS_HITPOINT_ARMOR(14);
+        };
+    };
+
+    class land_i_shed_ind_old_f: House_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+            SET_GLASS_HITPOINT_ARMOR(2);
+            SET_GLASS_HITPOINT_ARMOR(3);
+            SET_GLASS_HITPOINT_ARMOR(4);
+            SET_GLASS_HITPOINT_ARMOR(5);
+            SET_GLASS_HITPOINT_ARMOR(6);
+            SET_GLASS_HITPOINT_ARMOR(7);
+            SET_GLASS_HITPOINT_ARMOR(8);
+            SET_GLASS_HITPOINT_ARMOR(9);
+            SET_GLASS_HITPOINT_ARMOR(10);
+            SET_GLASS_HITPOINT_ARMOR(11);
+            SET_GLASS_HITPOINT_ARMOR(12);
+            SET_GLASS_HITPOINT_ARMOR(13);
+            SET_GLASS_HITPOINT_ARMOR(14);
+            SET_GLASS_HITPOINT_ARMOR(15);
+            SET_GLASS_HITPOINT_ARMOR(16);
+            SET_GLASS_HITPOINT_ARMOR(17);
+            SET_GLASS_HITPOINT_ARMOR(18);
+            SET_GLASS_HITPOINT_ARMOR(19);
+            SET_GLASS_HITPOINT_ARMOR(20);
+            SET_GLASS_HITPOINT_ARMOR(21);
+            SET_GLASS_HITPOINT_ARMOR(22);
+            SET_GLASS_HITPOINT_ARMOR(23);
+            SET_GLASS_HITPOINT_ARMOR(24);
+        };
+    };
 };
