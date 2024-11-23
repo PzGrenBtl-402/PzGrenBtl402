@@ -240,8 +240,12 @@ class CfgVehicles
                 {
                     class CommanderOptics: CommanderOptics
                     {
+                        // Turret is not stabilized
                         stabilizedInAxes = 0;
+
+                        // Turret HUD
                         turretInfoType = QEGVAR(Redd_Main,RSC_Turret);
+
                         disableSoundAttenuation = 0;
                         soundAttenuationTurret = "TankAttenuation";
                         gunnerCompartments= "Compartment3";
