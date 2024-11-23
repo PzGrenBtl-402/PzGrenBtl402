@@ -355,7 +355,7 @@ class CfgVehicles
 
             class Redd_Milan: NewTurret
             {
-                magazines[] = {}; //Waffe ist direkt nach dem Aufbau leer, Patrone muss manuell geladen werden
+                magazines[] = {}; // Empty Milan when assembled, must be loaded manually with action
                 stabilizedInAxes = 0;
                 turretInfoType = QEGVAR(Redd_Main,RSC_Milan);
                 disableSoundAttenuation = 0;
@@ -472,15 +472,15 @@ class CfgVehicles
 
             class ReloadMagazine
             {
-                source = "user"; //Hide-Animation auf User-Kontrolle umschreiben, um sie über Eventhandler kontrollieren zu können
-                initPhase = 1; //Damit die Patrone beim ersten Aufbau versteckt ist
+                source = "user"; // Let us control when to hide the Milan tube
+                initPhase = 1; // Hide tube when assembled
                 AnimPeriod = 0;
             };
 
             class Spiegel_Source
             {
                 source = "user";
-                initPhase = 1; // eingeklappt
+                initPhase = 1; // fold in
                 animPeriod = 2;
             };
 
@@ -529,7 +529,7 @@ class CfgVehicles
 
         class EventHandlers: EventHandlers
         {
-            fired = QUOTE(_this call FUNC(handleFired); _this call redd_fnc_Marder_Fired); //Patrone an der Waffe verstecken und Magazin entfernen, gleichzeitig RnT Funktion weiterhin aufrufen
+            fired = QUOTE(_this call FUNC(handleFired); _this call redd_fnc_Marder_Fired); // Hide tube and remove magazine of Milan
             class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
         };
 
