@@ -916,6 +916,44 @@ class CfgVehicles {
         };
     };
 
+    class Land_Workshop_01_F: House_Small_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+        };
+    };
+
+    SET_ARMOR(House_Small_F,Land_Workshop_02_F);
+
+    class Land_Workshop_03_F: House_Small_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+            SET_GLASS_HITPOINT_ARMOR(2);
+            SET_GLASS_HITPOINT_ARMOR(3);
+            SET_GLASS_HITPOINT_ARMOR(4);
+            SET_GLASS_HITPOINT_ARMOR(5);
+        };
+    };
+
+    class Land_Workshop_04_F: House_Small_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+        };
+    };
+
+    class Land_Workshop_05_F: House_Small_F {
+        armor = HOUSE_ARMOR;
+
+        class HitPoints {
+            SET_GLASS_HITPOINT_ARMOR(1);
+        };
+    };
+
     class Land_Factory_02_F: House_F {
         armor = HOUSE_ARMOR;
 
