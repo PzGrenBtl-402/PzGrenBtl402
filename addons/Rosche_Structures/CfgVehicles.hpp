@@ -1,3 +1,5 @@
+#include "\z\PzGrenBtl402\addons\Main\script_armor_macros.hpp"
+
 #define DOOR_USERACTION(id,index) \
     class OpenDoor_##id { \
         displayName = "$STR_dn_out_o_door"; \
@@ -15,12 +17,6 @@
         condition = QUOTE((this animationPhase 'Door_##id##_rot') >= 0.5); \
         statement = QUOTE([ARR_3(this,'Door_##id',0)] call FUNC(door)); \
     }
-
-// Orininal armor for houses 2000
-#define HOUSE_ARMOR 100000
-#define SET_ARMOR(BASE,CLS) class CLS: BASE { armor = HOUSE_ARMOR; }
-// Original 0.001 -> 2 / 2000
-#define SET_GLASS_HITPOINT_ARMOR(id) class Glass_##id##_hitpoint { armor = QUOTE(2 / HOUSE_ARMOR); }
 
 class CfgVehicles {
     class House_F;
