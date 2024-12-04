@@ -18,11 +18,8 @@ class CfgVehicles {
 
         acre_hasInfantryPhone = 1;
         acre_infantryPhoneDisableRinging = 1;
-        acre_infantryPhoneCustomRinging[] = {};
         acre_infantryPhoneIntercom[] = {"all"};
         acre_infantryPhoneControlActions[] = {"all"};
-        acre_eventInfantryPhone = QEFUNC(ACRE,noApiFunction);
-        acre_infantryPhonePosition[] = {-1.35, -3.81, 1.38};
 
         class AcreRacks {
             class Rack_1 {
