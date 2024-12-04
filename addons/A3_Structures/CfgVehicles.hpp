@@ -17,18 +17,6 @@ class CfgVehicles {
     SET_ARMOR(House_F,Land_ControlTower_01_F);
     SET_ARMOR(House_F,Land_ControlTower_02_F);
 
-    class Land_ControlTower_02_F: House_F {
-        armor = HOUSE_ARMOR;
-
-        class HitPoints {
-            SET_GLASS_HITPOINT_ARMOR(1);
-            SET_GLASS_HITPOINT_ARMOR(2);
-            SET_GLASS_HITPOINT_ARMOR(3);
-            SET_GLASS_HITPOINT_ARMOR(4);
-            SET_GLASS_HITPOINT_ARMOR(5);
-        };
-    };
-
     class Land_GuardHouse_02_F: House_F {
         armor = HOUSE_ARMOR;
 
