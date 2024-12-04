@@ -2,7 +2,7 @@ class CfgWeapons {
     class ItemCore;
     class HeadgearItem;
 
-    class BWA3_OpsCore: ItemCore {
+    class BWA3_OpsCore_FastMT: ItemCore {
         class ItemInfo: HeadgearItem {
             allowedslots[] = {TYPE_VEST, TYPE_UNIFORM, TYPE_BACKPACK};
             mass = 1;
