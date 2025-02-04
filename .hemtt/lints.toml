@@ -1,0 +1,5 @@
+[sqf.var_all_caps]
+options.ignore = [
+    "PZGRENBTL402_RECOMPILES",
+    "PZGRENBTL402_PREP_RECOMPILE"
+]
