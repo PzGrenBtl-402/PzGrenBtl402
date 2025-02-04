@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="ACRE_Speaker">
+        <Key ID="STR_PzGrenBtl402_ACRE_Speaker_DisableSpeaker">
+            <Original>Disable speaker</Original>
+            <German>Lautsprecher ausschalten</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_ACRE_Speaker_EnableSpeaker">
+            <Original>Enable speaker</Original>
+            <German>Lautsprecher anschalten</German>
+        </Key>
+    </Package>
+</Project>
