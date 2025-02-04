@@ -22,6 +22,7 @@ class CfgVehicles {
         class ACE_Actions {
             class ACE_MainActions;
         };
+        class ACE_SelfActions;
     };
     class StaticMGWeapon: StaticWeapon {};
     class HMG_01_base_F: StaticMGWeapon {};
@@ -51,22 +52,27 @@ class CfgVehicles {
             ammoLoadTime = 5;
             ammoUnloadTime = 4;
         };
+
         class ACE_Actions: ACE_Actions {
+            delete MG3_load;
+
             class ACE_MainActions: ACE_MainActions {
                 displayName = CSTRING(lafette_displayname);
-                condition = "alive _target";
-                position = "";
 
                 class GVAR(disassemble) {
                     displayName = CSTRING(disassemble);
-                    condition = "(count crew _target) isEqualTo 0";
+                    condition = "(crew _target) isEqualTo []";
                     statement = QUOTE(call FUNC(disassemble));
                 };
             };
         };
 
+        class ACE_SelfActions: ACE_SelfActions {
+            delete MG3_load;
+        };
+
         class EventHandlers {
-            // Readd CBA XEH EventHandlers. (Redd didn't inherit from base eventhandles overwriting all eventhandles including XEH)
+            // Readd CBA XEH EventHandlers. (Redd didn't inherit from base event handles overwriting all event handles including XEH)
             class XEH_CLASS: XEH_CLASS_BASE {};
         };
     };
