@@ -81,7 +81,7 @@ class CfgVehicles {
     class GMG_TriPod: StaticGrenadeLauncher {};
     class GMG_01_base_F: GMG_TriPod {};
 
-	class rnt_gmw_static: GMG_01_base_F {
+    class rnt_gmw_static: GMG_01_base_F {
         class ACE_Actions: ACE_Actions {
             class ACE_MainActions: ACE_MainActions {
                 condition = "alive _target";
