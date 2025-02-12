@@ -3,7 +3,7 @@ class CfgVehicles {
     class Land_Razorwire_F: NonStrategic {
         class UserActions {
             class GM_UseBoltCutters {
-                condition = "alive this and !(this getVariable ['gm_noBoltCutting', false]) and ('gm_boltcutter' in items player)";
+                condition = "(alive this) && {!(this getVariable ['gm_noBoltCutting', false])} && {'gm_boltcutter' in ([call CBA_fnc_currentUnit] call CBA_fnc_uniqueUnitItems)}";
                 displayName = "$STR_DN_GM_BOLTCUTTER_PREPARE";
                 displayNameDefault = "<img image='\gm\gm_weapons\gm_items\data\ui\holdaction_boltcutter_ca.paa' size='2.5' />";
                 hideOnUse = 1;
@@ -14,6 +14,22 @@ class CfgVehicles {
                 shortcut = "";
                 showWindow = 0;
                 statement = "[this] call gm_boltcutter_fnc_addAction;";
+            };
+        };
+    };
+
+    class Man;
+    class CAManBase: Man {
+        class ACE_SelfActions {
+            class ACE_Equipment {
+                class PzGrenBtl402_Grenades {
+                    displayName = CSTRING(FragCategory);
+                    icon = QPATHTOF(data\ui\grenade_icon.paa);
+                    exceptions[] = {"isNotInside", "isNotSitting"};
+                    insertChildren = QUOTE(call FUNC(getGrenadeChildren));
+                    condition = "true";
+                    statement = "";
+                };
             };
         };
     };

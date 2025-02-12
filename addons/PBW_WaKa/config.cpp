@@ -8,17 +8,15 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "PzGrenBtl402_Main",
-            "gm_weapons_items",
-            "gm_weapons_throw"
+            "PzGrenBtl402_GM_Weapons",
+            "pbw_handgrenades"
         };
         skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);
-        authors[] = {"Lemonberries", "Timi007"};
+        authors[] = {"Timi007"};
         url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };
 
-#include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
-#include "CfgAmmo.hpp"

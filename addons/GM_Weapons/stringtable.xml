@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="GM_Weapons">
+        <Key ID="STR_PzGrenBtl402_GM_Weapons_FragCategory">
+            <English>Grenade</English>
+            <German>Granate</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_GM_Weapons_MountFrag">
+            <English>Mount fragmentation sleeve</English>
+            <German>Splitterkörper anbringen</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_GM_Weapons_RemoveFrag">
+            <English>Remove fragmentation sleeve</English>
+            <German>Splitterkörper abnehmen</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_GM_Weapons_MountingFrag">
+            <English>Mounting fragmentation sleeve...</English>
+            <German>Splitterkörper anbringen...</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_GM_Weapons_RemovingFrag">
+            <English>Removing fragmentation sleeve...</English>
+            <German>Splitterkörper abnehmen...</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_GM_Weapons_GrenadeSwapTime">
+            <English>Fragmentation sleeve swap time</English>
+            <German>Zeit für Splitterkörperwechsel</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_GM_Weapons_GrenadeSwapTime_Tooltip">
+            <English>Time it takes to mount or remove the fragmentation sleeve of a single grenade.</English>
+            <German>Die Zeit in Sekunden, die es braucht, um den Splitterkörper einer Granate anzubringen oder abzunehmen.</German>
+        </Key>
+    </Package>
+</Project>
