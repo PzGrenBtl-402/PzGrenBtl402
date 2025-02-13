@@ -13,6 +13,7 @@ class CfgPatches {
             "bwa3_mg3",
             "bwa3_mg5"
         };
+        skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);
         authors[] = {"Zumi", "Timi007"};
         url = ECSTRING(Main,URL);
