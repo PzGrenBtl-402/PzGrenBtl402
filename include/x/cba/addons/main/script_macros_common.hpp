@@ -1275,9 +1275,11 @@ Author:
     #define ELSTRING(var1,var2) QUOTE(TRIPLES(STR,DOUBLES(PREFIX,var1),var2))
     #define CSTRING(var1) QUOTE(TRIPLES($STR,ADDON,var1))
     #define ECSTRING(var1,var2) QUOTE(TRIPLES($STR,DOUBLES(PREFIX,var1),var2))
+    #define SUBCSTRING(var1) QUOTE(TRIPLES($STR,SUBADDON,var1))
 
     #define LLSTRING(var1) localize QUOTE(TRIPLES(STR,ADDON,var1))
     #define LELSTRING(var1,var2) localize QUOTE(TRIPLES(STR,DOUBLES(PREFIX,var1),var2))
+    #define LSUBLSTRING(var1) localize QUOTE(TRIPLES(STR,SUBADDON,var1))
 #endif
 
 
@@ -1333,7 +1335,7 @@ Author:
 
 /* -------------------------------------------
 Macro: DEFAULT_PARAM()
-    DEPRECATED - Use param/params commands added in Arma 3 1.48
+    DEPRECATED - Use param/params commands added in Arma 3 1.48 - Will not work with HEMTT 1.13.2+
 
     Getting a default function parameter. This may be used together with <PARAMS_n()> to have a mix of required and
     optional parameters.
