@@ -7,16 +7,19 @@ This mod contains changes to Redd'n'Tanks, BWMod, NIArms, RHS and GM improving A
 - [CBA_A3](https://steamcommunity.com/sharedfiles/filedetails/?id=450814997)
 - [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057)
 - [ACRE2](https://steamcommunity.com/sharedfiles/filedetails/?id=751965892)
-- [BWMod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537)
 - [Redd'n'Tank Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=1128145626)
 
 Optional:
 - [GM](https://store.steampowered.com/app/1042220/Arma_3_Creator_DLC_Global_Mobilization__Cold_War_Germany/)
+- [BWMod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537)
 - [Rosche](https://steamcommunity.com/sharedfiles/filedetails/?id=1527410521)
 - [CUP Terrains - Core](https://steamcommunity.com/sharedfiles/filedetails/?id=583496184)
 - [RHSAFRF](https://steamcommunity.com/workshop/filedetails/?id=843425103)
+- [RHSTERRACORE](https://steamcommunity.com/sharedfiles/filedetails/?id=2288691268)
 - [NIArms Core](https://steamcommunity.com/sharedfiles/filedetails/?id=667454606)
 - [NIArms MG3 GPMGs](https://steamcommunity.com/sharedfiles/filedetails/?id=774809509)
+- [Global Ops Terrains](https://steamcommunity.com/sharedfiles/filedetails/?id=2917444360)
+- [Bundeswehr Waffenkammer (PBW)](https://steamcommunity.com/sharedfiles/filedetails/?id=2693900325)
 
 ## Modifications
 
@@ -44,6 +47,8 @@ Optional:
 - Single fire mode for Marder
 - More durable buildings (can take more damage)
 - Allow GM wire cutter to cut Arma vanilla NATO wires
+- Modify ACE fragmentation settings of DM51 and DM51A1 grenades
+- Add ACE self-interaction to swap fragmentation sleeve of DM51 and DM51A1 grenades
 
 ### RHS
 
@@ -60,9 +65,13 @@ Optional:
 - Replace open/close door actions of buildings because they do not check if the door is locked
 - More durable buildings (can take more damage)
 
-### CUP Terrains
+### CUP Terrains / RHSTERRACORE / Global Ops Terrains
 
 - More durable buildings (can take more damage)
+
+### ACE
+
+- Make flags lighter
 
 ### A3
 
@@ -72,7 +81,7 @@ Optional:
 ### General
 
 - [NiArms/GM/BwMod] Ability to assemble static MG3 with the primary weapon MG3
-- ACRE Racks and attenuation rework
+- ACRE Racks, attenuation rework, and speakers for manpacks and racks
 - Increased vehicle space
 - Ability to fire vehicle smoke launcher as gunner and commander (also turned out)
 - [Redd'n'Tank/GM] Back compartment of the Marder is locked when ramp is closed (Driver and commander can access vehicle via the hatches)
