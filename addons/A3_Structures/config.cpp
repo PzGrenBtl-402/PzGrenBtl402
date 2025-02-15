@@ -9,7 +9,8 @@ class CfgPatches {
         requiredAddons[] = {
             "PzGrenBtl402_Main",
             "A3_Data_F_Mod_Loadorder",
-            "A3_Data_F_Enoch_Loadorder"
+            "A3_Data_F_Enoch_Loadorder",
+            "A3_Data_F_Exp_Loadorder"
         };
         author = ECSTRING(Main,authors);
         authors[] = {"Timi007"};
