@@ -16,6 +16,7 @@
 
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"
 
+#define TYPE_HEADGEAR 605
 #define TYPE_VEST 701
 #define TYPE_UNIFORM 801
 #define TYPE_BACKPACK 901
