@@ -32,7 +32,7 @@ if (hasInterface) then {
 
 if (isServer) then {
     if (locked _veh isNotEqualTo 2) then {
-        [_veh, 2] remoteExecCall ["lock", _veh];
+        [QGVAR(lock), [_veh, 2], _veh] call CBA_fnc_targetEvent;
     };
 
     if (_veh getVariable [QGVAR(RampAttribute), false] isEqualTo true) then { // type checking

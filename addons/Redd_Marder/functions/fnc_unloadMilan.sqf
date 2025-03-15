@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /**
- *  Author: Lemonberries
+ *  Author: Lemonberries, Timi007
  *
  *  Description:
  *      Unloads MILAN.
@@ -12,12 +12,12 @@
  *      Nothing.
  *
  *  Example:
- *      this call PzGrenBtl402_Redd_Marder_fnc_unloadMilan
+ *      [cursorObject] call PzGrenBtl402_Redd_Marder_fnc_unloadMilan
  *
  */
 
 params ["_veh"];
 
-[_veh, ["Redd_Milan_Mag", [1]]] remoteExecCall ["removeMagazineTurret"];
+[QEGVAR(Milan,removeMagazineTurret), [_veh, [MILAN_MAGAZINE, MILAN_TURRET_PATH]], _veh, MILAN_TURRET_PATH] call CBA_fnc_turretEvent;
 _veh addBackpackCargoGlobal ["Redd_Milan_Static_Barrel", 1];
 _veh animateSource ["ReloadMagazine", 1];

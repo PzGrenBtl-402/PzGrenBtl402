@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /**
- *  Author: Lemonberries
+ *  Author: Lemonberries, Timi007
  *
  *  Description:
  *      Loads MILAN.
@@ -12,12 +12,12 @@
  *      Nothing.
  *
  *  Example:
- *      this call PzGrenBtl402_Redd_Marder_fnc_loadMILAN
+ *      [cursorObject] call PzGrenBtl402_Redd_Marder_fnc_loadMILAN
  *
  */
 
 params ["_veh"];
 
-[_veh, ["Redd_Milan_Mag", [1]]] remoteExecCall ["addMagazineTurret"];
+[QEGVAR(Milan,addMagazineTurret), [_veh, [MILAN_MAGAZINE, MILAN_TURRET_PATH]], _veh, MILAN_TURRET_PATH] call CBA_fnc_turretEvent;
 [_veh, "Redd_Milan_Static_Barrel"] call CBA_fnc_removeBackpackCargo;
 _veh animateSource ["ReloadMagazine", 0];

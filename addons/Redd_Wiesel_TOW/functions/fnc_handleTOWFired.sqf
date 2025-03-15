@@ -20,5 +20,5 @@
 params ["_veh", "_weapon"];
 
 if (_weapon == "Redd_TOW") then {
-    [_veh, ["Redd_TOW_Mag", [0]]] remoteExecCall ["removeMagazinesTurret"];
+    [QGVAR(removeMagazinesTurret), [_veh, [TOW_MAGAZINE, TOW_TURRET_PATH]], _veh, TOW_TURRET_PATH] call CBA_fnc_turretEvent;
 };

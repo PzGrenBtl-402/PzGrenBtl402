@@ -20,7 +20,6 @@ params ["_veh"];
 
 _veh animateDoor ["hatch_1_1_source", 1, false];
 
-[{(_this select 0) doorPhase "hatch_1_1_source" > 0.85}, {
-    params ["_veh"];
-    [_veh, 0] remoteExecCall ["lock", _veh];
-}, [_veh]] call CBA_fnc_waitUntilAndExecute;
+[{_this doorPhase "hatch_1_1_source" > 0.85}, {
+    [QGVAR(lock), [_this, 0], _this] call CBA_fnc_targetEvent;
+}, _veh] call CBA_fnc_waitUntilAndExecute;

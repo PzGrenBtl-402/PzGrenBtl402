@@ -15,3 +15,6 @@
 #endif
 
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"
+
+#define TOW_TURRET_PATH [0]
+#define TOW_MAGAZINE "Redd_TOW_Mag"

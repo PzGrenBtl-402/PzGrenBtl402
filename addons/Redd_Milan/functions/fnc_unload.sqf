@@ -19,6 +19,6 @@
 
 params ["_milan", "_player"];
 
-[_milan, "Redd_Milan_Mag"] remoteExecCall ["removeMagazines"];
+[QEGVAR(Milan,removeMagazines), [_milan, MILAN_MAGAZINE], _milan] call CBA_fnc_targetEvent;
 _player addBackpackGlobal "Redd_Milan_Static_Barrel";
 _milan animateSource ["ReloadMagazine", 1, true];

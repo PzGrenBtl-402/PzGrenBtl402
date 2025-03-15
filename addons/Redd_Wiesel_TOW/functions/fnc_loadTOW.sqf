@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /**
- *  Author: Lemonberries
+ *  Author: Lemonberries, Timi007
  *
  *  Description:
  *      Loads the TOW.
@@ -19,4 +19,4 @@
 params ["_veh"];
 
 [_veh, "Redd_Milan_Static_Barrel"] call CBA_fnc_removeBackpackCargo;
-[_veh, ["Redd_TOW_Mag", [0]]] remoteExecCall ["addMagazineTurret"];
+[QGVAR(addMagazineTurret), [_veh, [TOW_MAGAZINE, TOW_TURRET_PATH]], _veh, TOW_TURRET_PATH] call CBA_fnc_turretEvent;

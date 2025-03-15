@@ -1,11 +1,11 @@
 #include "script_component.hpp"
 /**
- *  Author: Lemonberries
+ *  Author: Lemonberries, Timi007
  *
  *  Description:
  *      Event triggered when the Marder fires a weapon.
- *      Hides MILAM Tube and resets MILAN magazines when MILAN is fired (for some reason the magazine stays even when the MILAN was fired).
- *      Triggers Redds SmokeLauncher.
+ *      Hides MILAN Tube and resets MILAN magazines when MILAN is fired (for some reason the magazine stays even when the MILAN was fired).
+ *      Triggers Redd's SmokeLauncher.
  *
  *  Parameter(s):
  *      0: OBJECT - Vehicle (Marder).
@@ -23,7 +23,7 @@ params ["_veh", "_weapon"];
 
 if (_weapon == "Redd_Milan") then {
     _veh animateSource ["ReloadMagazine", 1, true];
-    [_veh, ["Redd_Milan_Mag", [1]]] remoteExecCall ["removeMagazinesTurret"];
+    [QEGVAR(Milan,removeMagazinesTurret), [_veh, [MILAN_MAGAZINE, MILAN_TURRET_PATH]], _veh, MILAN_TURRET_PATH] call CBA_fnc_turretEvent;
 };
 
 if (_weapon == QGVAR(SmokeLauncher)) then {

@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /**
- *  Author: Lemonberries
+ *  Author: Lemonberries, Timi007
  *
  *  Description:
  *      Loads the milan.
@@ -19,6 +19,6 @@
 
 params ["_milan", "_player"];
 
-_milan addMagazineGlobal "Redd_Milan_Mag";
-[_milan] remoteExecCall ["reload"];
+_milan addMagazineGlobal MILAN_MAGAZINE;
+[QEGVAR(Milan,reload), [_milan], _milan] call CBA_fnc_targetEvent;
 removeBackpackGlobal _player;

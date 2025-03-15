@@ -12,11 +12,11 @@
  *      Nothing.
  *
  *  Example:
- *      this call PzGrenBtl402_GM_Marder_fnc_unloadMilan
+ *      [cursorObject] call PzGrenBtl402_GM_Marder_fnc_unloadMilan
  *
  */
 
 params ["_veh"];
 
-[_veh, ["gm_1Rnd_milan_heat_dm92", [0,1]]] remoteExecCall ["removeMagazineTurret"];
+[QEGVAR(Milan,removeMagazineTurret), [_veh, [MILAN_MAGAZINE, MILAN_TURRET_PATH]], _veh, MILAN_TURRET_PATH] call CBA_fnc_turretEvent;
 _veh addBackpackCargoGlobal ["Redd_Milan_Static_Barrel", 1];

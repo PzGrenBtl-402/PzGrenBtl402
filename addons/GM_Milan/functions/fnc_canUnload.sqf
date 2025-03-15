@@ -10,7 +10,7 @@
  *      1: OBJECT - Player.
  *
  *  Returns:
- *      BOOLEAN - Player can unload Milan.
+ *      BOOL - Player can unload Milan.
  *
  *  Example:
  *      [this, player] call PzGrenBtl402_GM_Milan_fnc_canUnload
@@ -19,5 +19,5 @@
 
 params ["_milan", "_player"];
 
-_player distance _milan < 2 &&
-{(count magazines _milan) isNotEqualTo 0}
+(_player distance _milan < ACTION_DISTANCE) &&
+{magazines _milan isNotEqualTo []}

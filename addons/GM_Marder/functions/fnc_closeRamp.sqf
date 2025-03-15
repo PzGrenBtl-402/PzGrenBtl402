@@ -19,5 +19,4 @@
 params ["_veh"];
 
 _veh animateDoor ["hatch_1_1_source", 0, false];
-
-[_veh, 2] remoteExecCall ["lock", _veh];
+[QGVAR(lock), [_veh, 2], _veh] call CBA_fnc_targetEvent;

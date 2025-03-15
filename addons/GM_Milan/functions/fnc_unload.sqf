@@ -1,9 +1,9 @@
 #include "script_component.hpp"
 /**
- *  Author: Lemonberries
+ *  Author: Lemonberries, Timi007
  *
  *  Description:
- *      Unloads the milan.
+ *      Unloads the MILAN.
  *
  *  Parameter(s):
  *      0: OBJECT - Milan to unload.
@@ -19,5 +19,5 @@
 
 params ["_milan", "_player"];
 
-[_milan, "gm_1Rnd_milan_heat_dm92"] remoteExecCall ["removeMagazines"];
+[QEGVAR(Milan,removeMagazines), [_milan, MILAN_MAGAZINE], _milan] call CBA_fnc_targetEvent;
 _player addBackpackGlobal "Redd_Milan_Static_Barrel";

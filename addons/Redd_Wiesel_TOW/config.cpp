@@ -13,7 +13,7 @@ class CfgPatches {
             "redd_tank_wiesel_1a2_tow"
         };
         author = ECSTRING(Main,authors);
-        authors[] = {"Lemonberries", "Mishkar"};
+        authors[] = {"Lemonberries", "Mishkar", "Timi007"};
         url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };

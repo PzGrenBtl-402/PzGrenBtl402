@@ -18,11 +18,12 @@
 
 params ["_milan"];
 
-player playAction "PutDown";
+private _player = call CBA_fnc_currentUnit;
+_player playAction "PutDown";
 
-[{((animationState player) select [25,7]) isEqualTo "putdown"}, {
-    params ["_milan"];
+[{((animationState (_this select 1)) select [25,7]) isEqualTo "putdown"}, {
+    params ["_milan", "_player"];
 
     deleteVehicle _milan;
-    player addBackpackGlobal "Redd_Milan_Static_Tripod";
-}, [_milan]] call CBA_fnc_waitUntilAndExecute;
+    _player addBackpackGlobal "Redd_Milan_Static_Tripod";
+}, [_milan, _player]] call CBA_fnc_waitUntilAndExecute;

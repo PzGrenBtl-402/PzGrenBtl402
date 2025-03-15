@@ -3,7 +3,7 @@
  *  Author: Timi007
  *
  *  Description:
- *      Removes all Milan magazines of the Marder. Must be executed where Marder is local.
+ *      Removes all MILAN magazines of the Marder.
  *
  *  Parameter(s):
  *      0: OBJECT - Marder.
@@ -18,6 +18,4 @@
 
 params ["_veh"];
 
-if (!local _veh) exitWith {};
-
-_veh removeMagazinesTurret ["gm_1Rnd_milan_heat_dm92", [0, 1]];
+[QEGVAR(Milan,removeMagazinesTurret), [_veh, [MILAN_MAGAZINE, MILAN_TURRET_PATH]], _veh, MILAN_TURRET_PATH] call CBA_fnc_turretEvent;

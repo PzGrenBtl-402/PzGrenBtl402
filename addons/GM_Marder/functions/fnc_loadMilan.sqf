@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /**
- *  Author: Lemonberries
+ *  Author: Lemonberries, Timi007
  *
  *  Description:
  *      Loads MILAN.
@@ -12,12 +12,12 @@
  *      Nothing.
  *
  *  Example:
- *      this call PzGrenBtl402_GM_Marder_fnc_loadMilan
+ *      [cursorObject] call PzGrenBtl402_GM_Marder_fnc_loadMilan
  *
  */
 
 params ["_veh"];
 
-[_veh, ["gm_1Rnd_milan_heat_dm92", [0,1]]] remoteExecCall ["removeMagazinesTurret"];  //Verschossene Magazine entfernen, da sonst der autoReload nicht sofort nachlädt
-[_veh, ["gm_1Rnd_milan_heat_dm92", [0,1]]] remoteExecCall ["addMagazineTurret"];
+[QEGVAR(Milan,removeMagazinesTurret), [_veh, [MILAN_MAGAZINE, MILAN_TURRET_PATH]], _veh, MILAN_TURRET_PATH] call CBA_fnc_turretEvent; // Remove fired magazines, otherwise the autoReload will not reload immediately
+[QEGVAR(Milan,addMagazineTurret), [_veh, [MILAN_MAGAZINE, MILAN_TURRET_PATH]], _veh, MILAN_TURRET_PATH] call CBA_fnc_turretEvent;
 [_veh, "Redd_Milan_Static_Barrel"] call CBA_fnc_removeBackpackCargo;

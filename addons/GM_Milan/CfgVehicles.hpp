@@ -28,7 +28,7 @@ class CfgVehicles
                 radius = 5;
                 onlyforplayer = 1;
                 showWindow = 0;
-                condition = "alive this && count magazines this isEqualTo 0 && count crew this isEqualTo 0";
+                condition = "(alive this) && {magazines this isEqualTo []} && {crew this isEqualTo []}";
                 statement = QUOTE(this call FUNC(disassemble));
             };
         };

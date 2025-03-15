@@ -21,7 +21,6 @@ params ["_veh"];
 _veh animateSource ["heck_luke_rotation", 1];
 _veh animate ["Hide_Knopf_Heck_luke", 0];
 
-[{(_this select 0) animationSourcePhase "heck_luke_rotation" > 0.9}, {
-    params ["_veh"];
-    [_veh, 0] remoteExecCall ["lock", _veh];
-}, [_veh]] call CBA_fnc_waitUntilAndExecute;
+[{_this animationSourcePhase "heck_luke_rotation" > 0.9}, {
+    [QGVAR(lock), [_this, 0], _this] call CBA_fnc_targetEvent;
+}, _veh] call CBA_fnc_waitUntilAndExecute;

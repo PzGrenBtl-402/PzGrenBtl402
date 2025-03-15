@@ -15,3 +15,6 @@
 #endif
 
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"
+
+#define MILAN_TURRET_PATH [1]
+#define MILAN_MAGAZINE "Redd_Milan_Mag"

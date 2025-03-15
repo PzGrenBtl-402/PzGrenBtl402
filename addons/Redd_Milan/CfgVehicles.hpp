@@ -57,6 +57,10 @@ class CfgVehicles {
                 condition = "alive this && (count magazines this) isEqualTo 0 && (count crew this) isEqualTo 0";
                 statement = QUOTE(this call FUNC(disassemble));
             };
+
+            delete Redd_removeflag;
+            delete Redd_redFlag;
+            delete Redd_greenFlag;
         };
     };
 

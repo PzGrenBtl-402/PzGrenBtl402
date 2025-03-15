@@ -15,3 +15,6 @@
 #endif
 
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"
+
+#define MILAN_MAGAZINE "gm_1Rnd_milan_heat_dm92"
+#define ACTION_DISTANCE 2
