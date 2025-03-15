@@ -175,6 +175,35 @@ class CfgVehicles {
     SET_ARMOR(House_F,Land_Addon_05_F);
 
     SET_ARMOR(House_F,Industry_base_F);
+    SET_ARMOR(House_F,Land_cmp_Tower_F);
+    SET_ARMOR(House_F,Land_Factory_Hopper_F);
+    SET_ARMOR(House_F,Land_Factory_Main_F);
+    SET_ARMOR(House_F,Land_Factory_Conv1_Main_F);
+    SET_ARMOR(House_F,Land_Factory_Conv2_F);
+
+    SET_ARMOR(House_F,Cargo_Tower_base_F);
+    SET_ARMOR(House_F,Cargo_HQ_base_F);
+    SET_ARMOR(House_F,Cargo_Patrol_base_F);
+
+    SET_ARMOR_WITH_WINDOWS_25(House_F,Land_Offices_01_V1_F);
+
+    SET_ARMOR_WITH_WINDOWS_60(House_F,Land_Hospital_main_F);
+    SET_ARMOR(House_F,Land_Hospital_side1_F);
+    SET_ARMOR(House_F,Land_Hospital_side2_F);
+
+    SET_ARMOR(House_F,Land_Castle_01_tower_F);
+
+    SET_ARMOR(House_F,Land_WIP_F);
+
+    SET_ARMOR(House_F,Land_Stadium_p1_F);
+    SET_ARMOR(House_F,Land_Stadium_p2_F);
+    SET_ARMOR(House_F,Land_Stadium_p3_F);
+    SET_ARMOR(House_F,Land_Stadium_p4_F);
+    SET_ARMOR(House_F,Land_Stadium_p5_F);
+    SET_ARMOR(House_F,Land_Stadium_p6_F);
+    SET_ARMOR(House_F,Land_Stadium_p7_F);
+    SET_ARMOR(House_F,Land_Stadium_p8_F);
+    SET_ARMOR(House_F,Land_Stadium_p9_F);
 
     class Infrastructure_base_F;
     SET_ARMOR_WITH_WINDOWS_14(Infrastructure_base_F,Land_Airport_02_controlTower_F);
@@ -229,4 +258,8 @@ class CfgVehicles {
     SET_ARMOR(House_Small_F,Land_Slum_03_F);
     SET_ARMOR(House_Small_F,Land_Slum_04_F);
     SET_ARMOR(House_Small_F,Land_Slum_05_F);
+
+    SET_ARMOR(House_Small_F,Land_d_Windmill01_F);
+    SET_ARMOR(House_Small_F,Land_spp_Transformer_F);
+    SET_ARMOR(House_Small_F,Cargo_House_base_F);
 };
