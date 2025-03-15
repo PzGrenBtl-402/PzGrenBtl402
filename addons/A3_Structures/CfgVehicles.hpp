@@ -142,7 +142,6 @@ class CfgVehicles {
 
     SET_ARMOR_WITH_WINDOWS_32(House_F,Land_Airport_center_F);
     SET_ARMOR_WITH_WINDOWS_61(Land_Airport_center_F,Land_Airport_left_F);
-    SET_ARMOR_WITH_WINDOWS_61(Land_Airport_left_F,Land_Airport_right_F);
 
     SET_ARMOR_WITH_WINDOWS_08(House_F,Land_Airport_01_controlTower_F);
     SET_ARMOR(House_F,Land_Airport_01_hangar_F);
