@@ -6,7 +6,7 @@ class CfgWeapons {
 
     class hlc_lmg_MG3: hlc_MG42_base {
         class FullAuto: FullAuto {
-            reloadtime = "(60/1200)";
+            reloadtime = 60 / 1200;
         };
     };
 };
