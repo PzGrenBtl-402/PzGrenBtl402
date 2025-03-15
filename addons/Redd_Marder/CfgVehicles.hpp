@@ -547,7 +547,7 @@ class CfgVehicles
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
-                condition = "(ACE_player in [driver this, gunner this, this turretUnit [0, 3]]) && (this animationSourcePhase 'heck_luke_rotation' == 0) && (alive this)";
+                condition = QUOTE([ARR_2(this,ACE_player)] call FUNC(canOpenRamp));
                 statement = QUOTE(this call FUNC(openRamp));
             };
 
@@ -559,7 +559,7 @@ class CfgVehicles
                 radius = 10;
                 onlyforplayer = 1;
                 showWindow = 0;
-                condition = "(ACE_player in [driver this, gunner this, this turretUnit [0, 3]]) && (this animationSourcePhase 'heck_luke_rotation' > 0) && (alive this)";
+                condition = QUOTE([ARR_2(this,ACE_player)] call FUNC(canCloseRamp));
                 statement = QUOTE(this call FUNC(closeRamp));
             };
 
@@ -572,7 +572,7 @@ class CfgVehicles
                 onlyforplayer = 1;
                 showWindow = 0;
                 shortcut = "turnOut";
-                condition = "(this turretUnit [0, 0] isEqualTo ACE_player) && (this animationSourcePhase 'hatchCommander' > 0) && (alive this)";
+                condition = "(alive this) && {this turretUnit [0, 0] isEqualTo ACE_player} && {this animationSourcePhase 'hatchCommander' > 0}";
                 statement = "ACE_player action ['moveToTurret', this, [2]]; [this, [[0, 0], true]] remoteExecCall ['lockTurret']; this setVariable ['Redd_Marder_Bino_In', true, true];";
             };
 
@@ -585,7 +585,7 @@ class CfgVehicles
                 onlyforplayer = 1;
                 showWindow = 0;
                 shortcut = "turnIn";
-                condition = "(this turretUnit [2] isEqualTo ACE_player) && (alive this)";
+                condition = "(alive this) && {this turretUnit [2] isEqualTo ACE_player}";
                 statement = "ACE_player action ['moveToTurret', this, [0,0]]; [this, [[0, 0], false]] remoteExecCall ['lockTurret']; this setVariable ['Redd_Marder_Bino_In', false, true];";
             };
 
@@ -605,25 +605,25 @@ class CfgVehicles
 
             class GetOutHatchDriver: GetOutHatchCommander
             {
-                condition = "(alive this) && (this turretUnit [-1] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
+                condition = "(alive this) && {this turretUnit [-1] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
                 statement = QUOTE([ARR_3(this,ACE_player,'driver')] call FUNC(getOutHatch));
             };
 
             class GetOutHatchLeft: GetOutHatchCommander
             {
-                condition = "(alive this) && (this turretUnit [0, 1] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
+                condition = "(alive this) && {this turretUnit [0, 1] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
                 statement = QUOTE([ARR_3(this,ACE_player,'left')] call FUNC(getOutHatch));
             };
 
             class GetOutHatchRight: GetOutHatchCommander
             {
-                condition = "(alive this) && (this turretUnit [0, 2] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
+                condition = "(alive this) && {this turretUnit [0, 2] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
                 statement = QUOTE([ARR_3(this,ACE_player,'right')] call FUNC(getOutHatch));
             };
 
             class GetOutHatchMiddle: GetOutHatchCommander
             {
-                condition = "(alive this) && (this turretUnit [0, 3] isEqualTo ACE_player) && (isTurnedOut ACE_player)";
+                condition = "(alive this) && {this turretUnit [0, 3] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
                 statement = QUOTE([ARR_3(this,ACE_player,'middle')] call FUNC(getOutHatch));
             };
 
@@ -637,19 +637,19 @@ class CfgVehicles
                 showWindow = 0;
                 priority = 1.35;
                 shortcut = "SwapGunner";
-                condition = "(alive this) && (this getCargoIndex ACE_player isEqualTo 1) && (isNull (this turretunit [0, 1]))";
+                condition = "(alive this) && {this getCargoIndex ACE_player isEqualTo 1} && {isNull (this turretUnit [0, 1])}";
                 statement = "ACE_player action ['moveToTurret', this, [0, 1]]";
             };
 
             class MovePassengerTwoToHatchLeft: MovePassengerOneToHatchLeft
             {
-                condition = "(alive this) && (this getCargoIndex player isEqualTo 2) && (isNull (this turretunit [0, 1]))";
+                condition = "(alive this) && {this getCargoIndex ACE_player isEqualTo 2} && {isNull (this turretUnit [0, 1])}";
                 statement = "ACE_player action ['moveToTurret', this, [0, 1]]";
             };
 
             class MovePassengerThreeToHatchRight: MovePassengerOneToHatchLeft
             {
-                condition = "(alive this) && (this getCargoIndex ACE_player isEqualTo 3) && (isNull (this turretunit [0, 2]))";
+                condition = "(alive this) && {this getCargoIndex ACE_player isEqualTo 3} && {isNull (this turretUnit [0, 2])}";
                 statement = "ACE_player action ['moveToTurret', this, [0, 2]]";
             };
 
