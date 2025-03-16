@@ -35,12 +35,13 @@ Whitelist these client-side only mods: `PzGrenBtl402_JSRS2025_NiArms_Compat_MG3,
 - Reduced HUD for static weapons and vehicles
 - Remove Marder commander stabilizer
 - Remove NVG of Marder
-- Small changes to Marder (initial gun zeroing to 800 m; Don't lock turret when driver is turned out; Shortcut for commander to go higher; ...)
+- Small changes to Marder (initial gun zeroing to 800 m; Don't lock turret when driver is turned out; Shortcut for commander to go higher; Remove laser range finder; ...)
 - Custom TOW reloading system
 - Get in and out of Marder through hatches
 - Ability to setup ladder on top of Marder (for breaching into buildings)
 - Add JSRS 2025 compatability
 - Replace mouse actions to switch AP and HE with weapon selection
+- Removed HUD compass and range finder of MILAN
 
 ### BWMod
 
