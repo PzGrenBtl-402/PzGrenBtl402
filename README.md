@@ -81,6 +81,10 @@ Optional:
 - More durable buildings (can take more damage)
 - Add modification of CRRCs that is more agile
 
+### ACRE
+
+- Add keybinds for switching working intercom radio (this is temporary until this feature is merged into ACRE)
+
 ### General
 
 - [NiArms/GM/BwMod] Ability to assemble static MG3 with the primary weapon MG3

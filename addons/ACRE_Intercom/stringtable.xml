@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="ACRE">
+        <Key ID="STR_PzGrenBtl402_ACRE_Intercom_catergory">
+            <Original>Bordverständigungsanlage</Original>
+            <German>Bordverständigungsanlage</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_ACRE_Intercom_nextWorkingRadioKey">
+            <English>Next Working Radio</English>
+            <German>Nächster Funkkreis</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_ACRE_Intercom_nextWorkingRadioKey_description">
+            <English>Switches to the next radio rack and sets it as the working radio within the first connected intercom network.</English>
+            <German>Setzt das nächste Funkgerät als aktiven Funkkreis im ersten verbundenen Bordfunknetzwerk.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_ACRE_Intercom_previousWorkingRadioKey">
+            <English>Previous Working Radio</English>
+            <German>Vorheriger Funkkreis</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_ACRE_Intercom_previousWorkingRadioKey_description">
+            <English>Switches to the previous radio rack and sets it as the working radio within the first connected intercom network.</English>
+            <German>Setzt das vorherige Funkgerät als aktiven Funkkreis im ersten verbundenen Bordfunknetzwerk.</German>
+        </Key>
+    </Package>
+</Project>
