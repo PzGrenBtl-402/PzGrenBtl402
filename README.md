@@ -22,6 +22,8 @@ Optional:
 - [Bundeswehr Waffenkammer (PBW)](https://steamcommunity.com/sharedfiles/filedetails/?id=2693900325)
 - [JSRS SOUNDMOD 2025 Beta](https://steamcommunity.com/sharedfiles/filedetails/?id=3407948300)
 
+Whitelist these client-side only mods: `PzGrenBtl402_JSRS2025_NiArms_Compat_MG3, PzGrenBtl402_JSRS2025_Redd_Compat, PzGrenBtl402_JSRS2025_Redd_Compat_NiArms_Sounds`
+
 ## Modifications
 
 ### Redd'n'Tank
