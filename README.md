@@ -20,12 +20,13 @@ Optional:
 - [NIArms MG3 GPMGs](https://steamcommunity.com/sharedfiles/filedetails/?id=774809509)
 - [Global Ops Terrains](https://steamcommunity.com/sharedfiles/filedetails/?id=2917444360)
 - [Bundeswehr Waffenkammer (PBW)](https://steamcommunity.com/sharedfiles/filedetails/?id=2693900325)
+- [JSRS SOUNDMOD 2025 Beta](https://steamcommunity.com/sharedfiles/filedetails/?id=3407948300)
 
 ## Modifications
 
 ### Redd'n'Tank
 
-- Replace Redd MG3 Sound with NiArms Sounds
+- Replace Redd MG3 Sound with NiArms Sounds (JSRS 2025 takes precedence)
 - Marder Milan can only be assembled if the tripod is in the vehicle cargo
 - Assemble Marder Milan also with GM Milan tripod
 - Fix missing Marder ramp sounds (Fixes RPT error)
@@ -36,6 +37,7 @@ Optional:
 - Custom TOW reloading system
 - Get in and out of Marder through hatches
 - Ability to setup ladder on top of Marder (for breaching into buildings)
+- Add JSRS 2025 compatability
 
 ### BWMod
 
@@ -59,6 +61,7 @@ Optional:
 - Added ACE Tracer effect
 - Reduced mass of MG3 ammo
 - Increase fire rate MG3 to 1200 rpm
+- Add JSRS 2025 compatability for MG3
 
 ### Rosche
 
