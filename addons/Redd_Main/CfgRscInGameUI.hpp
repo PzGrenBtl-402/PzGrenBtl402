@@ -20,10 +20,7 @@ class RscInGameUI {
     class GVAR(RSC_Turret): Redd_RCS_Turret {
         class CA_IGUI_elements_group: CA_IGUI_elements_group {
             class controls: controls {
-                class CA_TurretIndicator: CA_TurretIndicator {
-                    // Remove turret picture in gunner and commander optics
-                    DISABLE_FEATURE;
-                };
+                class CA_TurretIndicator: CA_TurretIndicator {};
                 class CA_HorizontalCompass: CA_HorizontalCompass {};
                 class AzimuthMark: AzimuthMark {};
                 class CA_Heading: CA_Heading {};
