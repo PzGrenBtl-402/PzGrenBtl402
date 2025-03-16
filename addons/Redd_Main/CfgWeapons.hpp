@@ -4,7 +4,7 @@ class Mode_FullAuto;
 class CfgWeapons {
     class missiles_titan;
     class Redd_Milan: missiles_titan {
-        magazineReloadTime = 0.1; //Armanachladezeit möglichst gering, um Ein-, Aussteigebug zu umgehen
+        magazineReloadTime = 0.1; // Keep reload time short in order to bypass the getin and getout bug
     };
 
     class Redd_MG3;
@@ -20,6 +20,7 @@ class CfgWeapons {
             "HE"
         };
         magazines[] = {};
+        ballisticsComputer = 2; // Manual zeroing
 
         class AP: autocannon_35mm {
             displayName = "MK20 Rh 202";
@@ -27,8 +28,15 @@ class CfgWeapons {
                 "Redd_MK20_AP_Mag",
                 "Redd_MK20_AP_Mag100"
             };
+            multiplier = 1;
             magazineReloadTime = 0.1;
+            ballisticsComputer = 2; // Manual zeroing
+            autoReload = 1;
+            autoFire = 0;
+            soundContinuous = 0;
             modes[] = {"Single","FullAuto","close","short","medium","far"};
+            soundBurst = 0;
+            shotFromTurret = 0;
 
             class FullAuto: Mode_FullAuto {
                 autoFire = 1;
@@ -132,8 +140,15 @@ class CfgWeapons {
                 "Redd_MK20_HE_Mag",
                 "Redd_MK20_HE_Mag275"
             };
+            multiplier = 1;
             magazineReloadTime = 0.1;
+            ballisticsComputer = 2; // Manual zeroing
+            autoReload = 1;
+            autoFire = 0;
+            soundContinuous = 0;
             modes[] = {"Single","FullAuto","close","short","medium","far"};
+            soundBurst = 0;
+            shotFromTurret = 0;
 
             class FullAuto: Mode_FullAuto {
                 autoFire = 1;
@@ -238,8 +253,15 @@ class CfgWeapons {
             magazines[] = {
                 "Redd_MK20_AP_Mag120"
             };
+            multiplier = 1;
             magazineReloadTime = 0.1;
+            ballisticsComputer = 2; // Manual zeroing
+            autoReload = 1;
+            autoFire = 0;
+            soundContinuous = 0;
             modes[] = {"Single","FullAuto","close","short","medium","far"};
+            soundBurst = 0;
+            shotFromTurret = 0;
 
             class FullAuto: Mode_FullAuto {
                 autoFire = 1;
@@ -342,8 +364,15 @@ class CfgWeapons {
             magazines[] = {
                 "Redd_MK20_HE_Mag200"
             };
+            multiplier = 1;
             magazineReloadTime = 0.1;
+            ballisticsComputer = 2; // Manual zeroing
+            autoReload = 1;
+            autoFire = 0;
+            soundContinuous = 0;
             modes[] = {"Single","FullAuto","close","short","medium","far"};
+            soundBurst = 0;
+            shotFromTurret = 0;
 
             class FullAuto: Mode_FullAuto {
                 autoFire = 1;
