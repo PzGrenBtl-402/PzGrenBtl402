@@ -40,6 +40,7 @@ Whitelist these client-side only mods: `PzGrenBtl402_JSRS2025_NiArms_Compat_MG3,
 - Get in and out of Marder through hatches
 - Ability to setup ladder on top of Marder (for breaching into buildings)
 - Add JSRS 2025 compatability
+- Replace mouse actions to switch AP and HE with weapon selection
 
 ### BWMod
 
@@ -96,3 +97,4 @@ Whitelist these client-side only mods: `PzGrenBtl402_JSRS2025_NiArms_Compat_MG3,
 - [Redd'n'Tank/GM] Back compartment of the Marder is locked when ramp is closed (Driver and commander can access vehicle via the hatches)
 - [Redd'n'Tank/GM] Custom Milan reloading system (One Milan tube bag is one shot)
 - [Redd'n'Tank/GM] Custom weapon reloading system for Marder (ammo as inventory items, reload on top of vehicle)
+- [Redd'n'Tank/GM] Add keybind to switch between AP and HE.

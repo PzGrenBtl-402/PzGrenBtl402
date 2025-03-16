@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="Common">
+        <Key ID="STR_PzGrenBtl402_Common_toggleHEAP">
+            <Original>Switch HE/AP magazines</Original>
+            <German>HE/AP Munition wechseln</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Common_toggleHEAP_description">
+            <Original>Toggles between AP and HE magazines for the MK20 gun from Redd and GM.</Original>
+            <German>Schaltet zwischen AP und HE für die MK20-Waffe von Redd und GM um.</German>
+        </Key>
+    </Package>
+</Project>
