@@ -5,8 +5,7 @@ class CfgWeapons {
     };
 
     class Redd_MG3;
-    class GVAR(mg3): Redd_MG3
-    {
+    class GVAR(mg3): Redd_MG3 {
         magazineReloadTime = 0.1;
     };
 };

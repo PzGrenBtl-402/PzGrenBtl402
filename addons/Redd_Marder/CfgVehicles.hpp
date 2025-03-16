@@ -159,7 +159,7 @@ class CfgVehicles
         {
             class MainTurret: MainTurret
             {
-                discreteDistanceInitIndex = 6; // Set initial gun zeoring to 800 m
+                discreteDistanceInitIndex = 6; // Set initial gun zeroing to 800 m
                 lockWhenDriverOut = 0; // Don't lock turret when driver is turned out
                 stabilizedInAxes = 0;
                 turretInfoType = QEGVAR(Redd_Main,RSC_Turret);
@@ -177,7 +177,7 @@ class CfgVehicles
                     "Redd_MK20_HE_Mag",
                     "Redd_MK20_AP_Mag",
                     "Redd_Mg3_Mag",
-                    "Redd_SmokeLauncherMag" // PzGrenBtl402_SmokeLauncher still uses Redds Mags
+                    "Redd_SmokeLauncherMag" // PzGrenBtl402_SmokeLauncher still uses Redd's Mags
                 };
 
                 // Remove NVG

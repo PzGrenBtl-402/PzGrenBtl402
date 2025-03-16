@@ -1,4 +1,4 @@
-// Fix RPT error because Redds referenced sound files are not found
+// Fix RPT error because Redd's referenced sound files are not found
 class CfgAnimationSourceSounds {
     class Redd_Heckluke_sound {
         class DoorMovementDone1 {
