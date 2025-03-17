@@ -19,6 +19,7 @@
 #define MILAN_TURRET_PATH [1]
 #define MILAN_MAGAZINE "Redd_Milan_Mag"
 
+#define GUNNER_TURRET [0]
 #define COMMANDER_TURRET_PATH [0, 0]
 #define COMMANDER_HIGHER_TURRET_PATH [2]
 #define DRIVER_TURRET_PATH [-1]

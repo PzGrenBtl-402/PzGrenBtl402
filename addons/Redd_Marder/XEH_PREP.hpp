@@ -8,6 +8,7 @@ PREP(canGetInMilan);
 PREP(canGetOutHatch);
 PREP(canGetOutMilan);
 PREP(canLoadMilan);
+PREP(canMoveGunnerToPassenger);
 PREP(canOpenRamp);
 PREP(canRearmMK);
 PREP(canRearmMKProgress);
