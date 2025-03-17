@@ -19,12 +19,13 @@ class CfgWeapons {
     };
 
     class hlc_lmg_MG3: hlc_MG42_base {
-        class BaseSoundModeType;
-        class StandardSound: BaseSoundModeType {
-            soundsetshot[] = {
-                "jsrs_2025_mg3_shot_soundset",
-                "jsrs_2025_weapon_snap_lmg_soundset",
-                "jsrs_2025_762mm_tails_soundset"
+        class FullAuto: FullAuto {
+            class StandardSound: BaseSoundModeType {
+                soundsetshot[] = {
+                    "jsrs_2025_mg3_shot_soundset",
+                    "jsrs_2025_weapon_snap_lmg_soundset",
+                    "jsrs_2025_762mm_tails_soundset"
+                };
             };
         };
     };
