@@ -79,9 +79,3 @@ if (hasInterface) then {
 
     GVAR(getInOutParams) = [_getInCommanderParams, _getInDriverParams, _getOutParams];
 };
-
-["gm_marder1_base", "InitPost", {
-    _this call FUNC(initActions);
-    _this call FUNC(initMilanActions);
-    _this call FUNC(initRearmActions);
-}, nil, nil, true] call CBA_fnc_addClassEventHandler;

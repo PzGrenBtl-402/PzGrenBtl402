@@ -16,6 +16,6 @@
  *
  */
 
-params ["_veh"];
+params ["_vehicle"];
 
-[QEGVAR(Milan,removeMagazinesTurret), [_veh, [MILAN_MAGAZINE, MILAN_TURRET_PATH]], _veh, MILAN_TURRET_PATH] call CBA_fnc_turretEvent;
+[QEGVAR(Milan,removeMagazinesTurret), [_vehicle, [MILAN_MAGAZINE, MILAN_TURRET_PATH]], _vehicle, MILAN_TURRET_PATH] call CBA_fnc_turretEvent;

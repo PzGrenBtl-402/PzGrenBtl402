@@ -15,7 +15,9 @@ if (hasInterface) then {
             "", // will be set with setUserActionText
             {
                 params ["_veh", "_unit"];
+
                 _unit playAction "GetInLow";
+
                 [{(animationState (_this select 1)) isEqualTo "amovpercmstpsnonwnondnon"}, {
                     params ["_veh", "_unit"];
                     [_unit, _veh] remoteExecCall ["moveInCommander", _unit];
@@ -39,7 +41,9 @@ if (hasInterface) then {
             "", // will be set with setUserActionText
             {
                 params ["_veh", "_unit"];
+
                 _unit playAction "GetInLow";
+
                 [{(animationState (_this select 1)) isEqualTo "amovpercmstpsnonwnondnon"}, {
                     params ["_veh", "_unit"];
                     [_unit, _veh] remoteExecCall ["moveInDriver", _unit];
@@ -59,11 +63,3 @@ if (hasInterface) then {
 
     GVAR(getInParams) = [_getInCommanderParams, _getInDriverParams];
 };
-
-["Redd_Marder_1A5_base", "InitPost", {
-    _this call FUNC(initActions);
-    _this call FUNC(initLadderActions);
-    _this call FUNC(initMilanActions);
-    _this call FUNC(initRearmActions);
-    _this call FUNC(setCamonet);
-}, nil, nil, true] call CBA_fnc_addClassEventHandler;

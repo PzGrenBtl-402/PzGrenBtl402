@@ -16,7 +16,7 @@
  *
  */
 
-params ["_veh"];
+params ["_vehicle"];
 
-[QEGVAR(Milan,removeMagazineTurret), [_veh, [MILAN_MAGAZINE, MILAN_TURRET_PATH]], _veh, MILAN_TURRET_PATH] call CBA_fnc_turretEvent;
-_veh addBackpackCargoGlobal ["Redd_Milan_Static_Barrel", 1];
+[QEGVAR(Milan,removeMagazineTurret), [_vehicle, [MILAN_MAGAZINE, MILAN_TURRET_PATH]], _vehicle, MILAN_TURRET_PATH] call CBA_fnc_turretEvent;
+_vehicle addBackpackCargoGlobal ["Redd_Milan_Static_Barrel", 1];
