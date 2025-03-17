@@ -7,6 +7,7 @@
  *
  *  Parameter(s):
  *      0: OBJECT - Vehicle (Marder).
+ *      1: BOOL - Close ramp instantly, do not play animation. (default: false)
  *
  *  Returns:
  *      Nothing.
@@ -16,8 +17,8 @@
  *
  */
 
-params ["_veh"];
+params [["_vehicle", objNull, [objNull]], ["_instantly", false, [false]]];
 
-_veh animateSource ["heck_luke_rotation", 0];
-_veh animate ["Hide_Knopf_Heck_luke", 1];
-[QGVAR(lock), [_veh, 2], _veh] call CBA_fnc_targetEvent;
+_vehicle animateSource ["heck_luke_rotation", 0, _instantly];
+_vehicle animate ["Hide_Knopf_Heck_luke", 1];
+[QGVAR(lock), [_vehicle, 2], _vehicle] call CBA_fnc_targetEvent;

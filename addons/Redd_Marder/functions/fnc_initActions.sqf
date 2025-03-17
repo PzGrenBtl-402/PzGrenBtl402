@@ -16,26 +16,26 @@
  *
  */
 
-params ["_veh"];
+params ["_vehicle"];
 
 if (hasInterface) then {
-    private _vehName = getText (configOf _veh >> "displayName");
+    private _displayName = getText (configOf _vehicle >> "displayName");
 
     {
         _x params ["_params", "_str", "_picture"];
 
-        private _text = format [localize _str, _vehName];
-        private _actionID = _veh addAction _params;
-        _veh setUserActionText [_actionID, _text, "", _picture];
+        private _text = format [localize _str, _displayName];
+        private _actionID = _vehicle addAction _params;
+        _vehicle setUserActionText [_actionID, _text, "", _picture];
     } forEach GVAR(getInParams);
 };
 
 if (isServer) then {
-    if (locked _veh isNotEqualTo 2) then {
-        [QGVAR(lock), [_veh, 2], _veh] call CBA_fnc_targetEvent;
+    if (locked _vehicle isNotEqualTo 2) then {
+        [QGVAR(lock), [_vehicle, 2], _vehicle] call CBA_fnc_targetEvent;
     };
 
-    if (_veh getVariable [QGVAR(RampAttribute), false] isEqualTo true) then { // type checking
-        [_veh] call FUNC(openRamp);
+    if (_vehicle getVariable [QGVAR(RampAttribute), false] isEqualTo true) then { // type checking
+        [_vehicle, true] call FUNC(openRamp);
     }
 };

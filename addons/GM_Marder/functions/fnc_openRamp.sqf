@@ -1,25 +1,26 @@
 #include "script_component.hpp"
 /**
- *  Author: Mishkar
+ *  Author: Mishkar, Timi007
  *
  *  Description:
  *      Opens ramp of the Marder.
  *
  *  Parameter(s):
  *      0: OBJECT - Vehicle (Marder).
+ *      1: BOOL - Open ramp instantly, do not play animation. (default: false)
  *
  *  Returns:
  *      Nothing.
  *
  *  Example:
- *      this call PzGrenBtl402_GM_Marder_fnc_openRamp
+ *      [cursorObject] call PzGrenBtl402_GM_Marder_fnc_openRamp
  *
  */
 
-params ["_veh"];
+params [["_vehicle", objNull, [objNull]], ["_instantly", false, [false]]];
 
-_veh animateDoor ["hatch_1_1_source", 1, false];
+_vehicle animateDoor ["hatch_1_1_source", 1, _instantly];
 
 [{_this doorPhase "hatch_1_1_source" > 0.85}, {
     [QGVAR(lock), [_this, 0], _this] call CBA_fnc_targetEvent;
-}, _veh] call CBA_fnc_waitUntilAndExecute;
+}, _vehicle] call CBA_fnc_waitUntilAndExecute;
