@@ -14,7 +14,7 @@
  *       BOOLEAN - Can attack ladder to vehicle.
  *
  *  Example:
- *      _this call PzGrenBtl402_Redd_Marder_fnc_canAttachLadder
+ *      [vehicle player, player, "left"] call PzGrenBtl402_Redd_Marder_fnc_canAttachLadder
  *
  */
 

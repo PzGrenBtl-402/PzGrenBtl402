@@ -20,5 +20,6 @@
 params ["_milan", "_player"];
 
 (_player distance _milan < ACTION_DISTANCE) &&
+{objectParent _player isNotEqualTo _milan} &&
 {'Redd_Milan_Static_Barrel' isEqualTo (backpack _player)} &&
 {magazines _milan isEqualTo []}

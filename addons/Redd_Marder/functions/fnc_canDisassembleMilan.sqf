@@ -13,14 +13,16 @@
  *      BOOL - Can disassemble MILAN.
  *
  *  Example:
- *      [this, player] call PzGrenBtl402_Redd_Marder_fnc_canDisassembleMilan
+ *      [vehicle player, player] call PzGrenBtl402_Redd_Marder_fnc_canDisassembleMilan
  *
  */
 
 params ["_veh", "_player"];
 
 (alive _veh) &&
-{_player isEqualTo commander _veh} &&
-{_veh animationSourcePhase "hatchCommander" isEqualTo 1} &&
 {_veh animationSourcePhase "Hide_Milan_Source" isEqualTo 0} &&
-{_veh magazinesTurret MILAN_TURRET_PATH isEqualTo []}
+{_veh magazinesTurret MILAN_TURRET_PATH isEqualTo []} &&
+{
+    ((_player isEqualTo commander _veh) && {_veh animationSourcePhase "hatchCommander" isEqualTo 1}) || // is commander and turned out
+    {_veh turretUnit COMMANDER_HIGHER_TURRET_PATH isEqualTo _player} // is in command turned higher
+}

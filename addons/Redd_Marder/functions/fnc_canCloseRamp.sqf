@@ -13,7 +13,7 @@
  *       BOOL - Can close ramp
  *
  *  Example:
- *      [this, player] call PzGrenBtl402_Redd_Marder_fnc_canCloseRamp
+ *      [vehicle player, player] call PzGrenBtl402_Redd_Marder_fnc_canCloseRamp
  *
  */
 

@@ -8,13 +8,13 @@
  *  Parameter(s):
  *      0: OBJECT - Vehicle (Marder).
  *      1: OBJECT - Player which gets out.
- *      1: STRING - Hatch the player get out from.
+ *      2: STRING - Hatch ("commander", "driver", "left", "right", "middle")
  *
  *  Returns:
  *      Nothing.
  *
  *  Example:
- *      this call PzGrenBtl402_Redd_Marder_fnc_getOutHatch
+ *      [vehicle player, player, "commander"] call PzGrenBtl402_Redd_Marder_fnc_getOutHatch
  *
  */
 

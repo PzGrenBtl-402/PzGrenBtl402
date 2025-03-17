@@ -14,7 +14,7 @@
  *       BOOLEAN - Can adjust ladder.
  *
  *  Example:
- *      _this call PzGrenBtl402_Redd_Marder_fnc_canAdjustLadder
+ *      [vehicle player, player, "left"] call PzGrenBtl402_Redd_Marder_fnc_canAdjustLadder
  *
  */
 

@@ -12,7 +12,7 @@
  *      Nothing.
  *
  *  Example:
- *      this call PzGrenBtl402_Redd_Marder_fnc_closeRamp
+ *      [vehicle player] call PzGrenBtl402_Redd_Marder_fnc_closeRamp
  *
  */
 

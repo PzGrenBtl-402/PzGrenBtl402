@@ -18,3 +18,5 @@
 
 #define MILAN_TURRET_PATH [0, 1]
 #define MILAN_MAGAZINE "gm_1Rnd_milan_heat_dm92"
+
+#define HATCH_RIGHT_FRONT_TURRET_PATH [3]

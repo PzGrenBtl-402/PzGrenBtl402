@@ -12,7 +12,7 @@
  *      Nothing.
  *
  *  Example:
- *      [cursorObject] call PzGrenBtl402_Redd_Marder_fnc_unloadMilan
+ *      [vehicle player] call PzGrenBtl402_Redd_Marder_fnc_unloadMilan
  *
  */
 

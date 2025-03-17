@@ -13,7 +13,7 @@
  *       BOOL - Can open ramp
  *
  *  Example:
- *      [this, player] call PzGrenBtl402_Redd_Marder_fnc_canOpenRamp
+ *      [vehicle player, player] call PzGrenBtl402_Redd_Marder_fnc_canOpenRamp
  *
  */
 

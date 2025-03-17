@@ -24,5 +24,6 @@ params ["_veh", "_player"];
 {_veh magazinesTurret MILAN_TURRET_PATH isNotEqualTo []} &&
 {
     ((_player isEqualTo commander _veh) && {_veh animationSourcePhase "hatchCommander" isEqualTo 1}) || // is commander and turned out
-    {_veh turretUnit MILAN_TURRET_PATH isEqualTo _player} // or inside MILAN
+    {_veh turretUnit COMMANDER_HIGHER_TURRET_PATH isEqualTo _player} || // is in command turned higher
+    {(_veh turretUnit HATCH_RIGHT_TURRET_PATH isEqualTo _player) && {isTurnedOut _player}} // is unit in hatch right
 }

@@ -599,31 +599,31 @@ class CfgVehicles
                 showWindow = 0;
                 priority = 6.2;
                 shortcut = "GetOut";
-                condition = "(alive this) && {this turretUnit [0, 0] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
+                condition = QUOTE([ARR_3(this,ACE_player,'commander')] call FUNC(canGetOutHatch));
                 statement = QUOTE([ARR_3(this,ACE_player,'commander')] call FUNC(getOutHatch));
             };
 
             class GetOutHatchDriver: GetOutHatchCommander
             {
-                condition = "(alive this) && {this turretUnit [-1] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
+                condition = QUOTE([ARR_3(this,ACE_player,'driver')] call FUNC(canGetOutHatch));
                 statement = QUOTE([ARR_3(this,ACE_player,'driver')] call FUNC(getOutHatch));
             };
 
             class GetOutHatchLeft: GetOutHatchCommander
             {
-                condition = "(alive this) && {this turretUnit [0, 1] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
+                condition = QUOTE([ARR_3(this,ACE_player,'left')] call FUNC(canGetOutHatch));
                 statement = QUOTE([ARR_3(this,ACE_player,'left')] call FUNC(getOutHatch));
             };
 
             class GetOutHatchRight: GetOutHatchCommander
             {
-                condition = "(alive this) && {this turretUnit [0, 2] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
+                condition = QUOTE([ARR_3(this,ACE_player,'right')] call FUNC(canGetOutHatch));
                 statement = QUOTE([ARR_3(this,ACE_player,'right')] call FUNC(getOutHatch));
             };
 
             class GetOutHatchMiddle: GetOutHatchCommander
             {
-                condition = "(alive this) && {this turretUnit [0, 3] isEqualTo ACE_player} && {isTurnedOut ACE_player}";
+                condition = QUOTE([ARR_3(this,ACE_player,'middle')] call FUNC(canGetOutHatch));
                 statement = QUOTE([ARR_3(this,ACE_player,'middle')] call FUNC(getOutHatch));
             };
 
@@ -651,6 +651,16 @@ class CfgVehicles
             {
                 condition = "(alive this) && {this getCargoIndex ACE_player isEqualTo 3} && {isNull (this turretUnit [0, 2])}";
                 statement = "ACE_player action ['moveToTurret', this, [0, 2]]";
+            };
+
+            class milan_in {
+                condition = QUOTE([ARR_2(this,ACE_player)] call FUNC(canGetInMilan));
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getInMilan));
+            };
+
+            class milan_aus {
+                condition = QUOTE([ARR_2(this,ACE_player)] call FUNC(canGetOutMilan));
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getOutMilan));
             };
 
             delete heckluke_auf_2;

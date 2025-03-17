@@ -24,5 +24,5 @@ params ["_veh", "_player"];
 {"Redd_Milan_Static_Barrel" in backpackCargo _veh} &&
 {
     ((_player isEqualTo commander _veh) && {isTurnedOut _player}) || // is commander and turned out
-    {_veh turretUnit MILAN_TURRET_PATH isEqualTo _player} // or inside MILAN
+    {(_veh turretUnit HATCH_RIGHT_FRONT_TURRET_PATH isEqualTo _player) && {isTurnedOut _player}} // is unit in hatch right
 }

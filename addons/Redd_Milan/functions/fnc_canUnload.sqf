@@ -20,4 +20,5 @@
 params ["_milan", "_player"];
 
 (_player distance _milan) < ACTION_DISTANCE &&
+{objectParent _player isNotEqualTo _milan} &&
 {magazines _milan isNotEqualTo []}
