@@ -28,7 +28,7 @@ if (hasInterface) then {
             true,
             true,
             getText (_getInCommanderAction >> "shortcut"),
-            "(isNull (commander _target)) && {(locked _target) isEqualTo 2} && {isNull objectParent _this}", //_target = _veh, _this = player
+            "(isNull (commander _target)) && {(locked _target) isEqualTo 2} && {isNull objectParent _this} && {!(_target lockedTurret [0, 0])}", //_target = _veh, _this = player
             1.5
         ],
         "str_action_getin_commander",
@@ -54,7 +54,7 @@ if (hasInterface) then {
             true,
             true,
             getText (_getInDriverAction >> "shortcut"),
-            "(isNull (driver _target)) && {(locked _target) isEqualTo 2} && {isNull objectParent _this}", //_target = _veh, _this = player
+            "(isNull (driver _target)) && {(locked _target) isEqualTo 2} && {isNull objectParent _this} && {!lockedDriver _target}", //_target = _veh, _this = player
             2
         ],
         "str_action_getin_driver",

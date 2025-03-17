@@ -20,5 +20,5 @@
 params ["_vehicle", "_unit"];
 
 (alive _vehicle) &&
-{_unit in [driver _vehicle, gunner _vehicle, _vehicle turretUnit [0, 3]]} &&
+{_unit in [driver _vehicle, gunner _vehicle, _vehicle turretUnit HATCH_MIDDLE_TURRET_PATH]} &&
 {_vehicle animationSourcePhase "heck_luke_rotation" isEqualTo 0}

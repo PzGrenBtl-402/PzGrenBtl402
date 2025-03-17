@@ -17,7 +17,8 @@
  *
  */
 
-params ["_veh", "_player"];
+params ["_vehicle", "_player"];
+TRACE_2("Get in milan",_vehicle,_player);
 
-_player action ["moveToTurret", _veh, MILAN_TURRET_PATH];
-[QGVAR(lockTurret), [_veh, [COMMANDER_TURRET_PATH, true]], _veh, COMMANDER_TURRET_PATH] call CBA_fnc_turretEvent;
+_player action ["moveToTurret", _vehicle, MILAN_TURRET_PATH];
+[_vehicle, COMMANDER_TURRET_PATH, _player] call FUNC(lockSeat);

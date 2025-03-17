@@ -18,42 +18,40 @@
  *
  */
 
-params [["_veh", objNull, [objNull]], ["_caller", objNull, [objNull]], ["_hatch", "", [""]]];
+params ["_vehicle", "_unit", "_hatch"];
 
-if (isNull _veh || isNull _caller || _hatch isEqualTo "") exitWith {};
-
-_caller action ["getOut", _veh];
+_unit action ["getOut", _vehicle];
 
 [{isNull objectParent (_this select 1)}, { // wait until player is out of vehicle
-    params ["_veh", "_caller", "_hatch"];
+    params ["_vehicle", "_unit", "_hatch"];
 
     switch (_hatch) do {
         case "commander": {
-            _caller attachTo [_veh, [1, 0, -0.3]];
+            _unit attachTo [_vehicle, [1, 0, -0.3]];
         };
 
         case "driver": {
-            _caller attachTo [_veh, [-0.9, 1.6, -0.6]];
+            _unit attachTo [_vehicle, [-0.9, 1.6, -0.6]];
         };
 
         case "left": {
-            _caller attachTo [_veh, [-0.6, -1.8, -0.4]];
-            _caller setDir 270;
+            _unit attachTo [_vehicle, [-0.6, -1.8, -0.4]];
+            _unit setDir 270;
         };
 
         case "right": {
-            _caller attachTo [_veh, [0.6, -1.8, -0.4]];
-            _caller setDir 90;
+            _unit attachTo [_vehicle, [0.6, -1.8, -0.4]];
+            _unit setDir 90;
         };
 
         case "middle": {
-            _caller attachTo [_veh, [0, -2.7, -0.4]];
-            _caller setDir 180;
+            _unit attachTo [_vehicle, [0, -2.7, -0.4]];
+            _unit setDir 180;
         };
     };
 
     [{
-        params ["_caller"];
-        detach _caller;
-    }, [_caller], 0.1] call CBA_fnc_waitAndExecute;
+        params ["_unit"];
+        detach _unit;
+    }, [_unit], 0.1] call CBA_fnc_waitAndExecute;
 }, _this] call CBA_fnc_waitUntilAndExecute;

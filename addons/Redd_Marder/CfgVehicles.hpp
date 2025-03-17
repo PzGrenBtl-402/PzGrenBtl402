@@ -533,8 +533,10 @@ class CfgVehicles
 
         class EventHandlers: EventHandlers
         {
-            fired = QUOTE(_this call FUNC(handleFired); _this call redd_fnc_Marder_Fired); // Hide tube and remove magazine of Milan
             class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+            fired = QUOTE(call FUNC(handleFired); call redd_fnc_Marder_Fired); // Hide tube and remove magazine of Milan
+            getIn = QUOTE(call FUNC(handleGetIn));
+            getOut = QUOTE(call FUNC(handleGetOut));
         };
 
         class UserActions
@@ -572,8 +574,8 @@ class CfgVehicles
                 onlyforplayer = 1;
                 showWindow = 0;
                 shortcut = "turnOut";
-                condition = "(alive this) && {this turretUnit [0, 0] isEqualTo ACE_player} && {this animationSourcePhase 'hatchCommander' > 0}";
-                statement = "ACE_player action ['moveToTurret', this, [2]]; [this, [[0, 0], true]] remoteExecCall ['lockTurret']; this setVariable ['Redd_Marder_Bino_In', true, true];";
+                condition = QUOTE((alive this) && {this turretUnit COMMANDER_TURRET_PATH isEqualTo ACE_player} && {this animationSourcePhase 'hatchCommander' > 0});
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getInCommanderHigher));
             };
 
             class Bino_out
@@ -585,8 +587,8 @@ class CfgVehicles
                 onlyforplayer = 1;
                 showWindow = 0;
                 shortcut = "turnIn";
-                condition = "(alive this) && {this turretUnit [2] isEqualTo ACE_player}";
-                statement = "ACE_player action ['moveToTurret', this, [0,0]]; [this, [[0, 0], false]] remoteExecCall ['lockTurret']; this setVariable ['Redd_Marder_Bino_In', false, true];";
+                condition = QUOTE((alive this) && {this turretUnit COMMANDER_HIGHER_TURRET_PATH isEqualTo ACE_player});
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getOutCommanderHigher));
             };
 
             class GetOutHatchCommander
@@ -637,31 +639,35 @@ class CfgVehicles
                 showWindow = 0;
                 priority = 1.35;
                 shortcut = "SwapGunner";
-                condition = "(alive this) && {this getCargoIndex ACE_player isEqualTo 1} && {isNull (this turretUnit [0, 1])}";
-                statement = "ACE_player action ['moveToTurret', this, [0, 1]]";
+                condition = QUOTE((alive this) && {this getCargoIndex ACE_player isEqualTo 1} && {isNull (this turretUnit HATCH_LEFT_TURRET_PATH)});
+                statement = QUOTE(ACE_player action [ARR_3('moveToTurret',this,HATCH_LEFT_TURRET_PATH)]);
             };
 
             class MovePassengerTwoToHatchLeft: MovePassengerOneToHatchLeft
             {
-                condition = "(alive this) && {this getCargoIndex ACE_player isEqualTo 2} && {isNull (this turretUnit [0, 1])}";
-                statement = "ACE_player action ['moveToTurret', this, [0, 1]]";
+                condition = QUOTE((alive this) && {this getCargoIndex ACE_player isEqualTo 2} && {isNull (this turretUnit HATCH_LEFT_TURRET_PATH)});
+                statement = QUOTE(ACE_player action [ARR_3('moveToTurret',this,HATCH_LEFT_TURRET_PATH)]);
             };
 
             class MovePassengerThreeToHatchRight: MovePassengerOneToHatchLeft
             {
-                condition = "(alive this) && {this getCargoIndex ACE_player isEqualTo 3} && {isNull (this turretUnit [0, 2])}";
-                statement = "ACE_player action ['moveToTurret', this, [0, 2]]";
+                condition = QUOTE((alive this) && {this getCargoIndex ACE_player isEqualTo 3} && {isNull (this turretUnit HATCH_RIGHT_TURRET_PATH)});
+                statement = QUOTE(ACE_player action [ARR_3('moveToTurret',this,HATCH_RIGHT_TURRET_PATH)]);
             };
 
-            class milan_in {
+            class milan_in
+            {
                 condition = QUOTE([ARR_2(this,ACE_player)] call FUNC(canGetInMilan));
                 statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getInMilan));
             };
 
-            class milan_aus {
+            class milan_aus
+            {
                 condition = QUOTE([ARR_2(this,ACE_player)] call FUNC(canGetOutMilan));
                 statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getOutMilan));
             };
+
+            delete fixTurretBug;
 
             delete heckluke_auf_2;
             delete heckluke_zu_2;
