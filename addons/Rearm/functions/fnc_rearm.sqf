@@ -66,7 +66,7 @@ if (_refillAmmoItems isEqualTo []) exitWith {
 TRACE_2("Refill ammo items",_refillAmmoItems,_roundsToRearm);
 
 private _simEvents = [_ammoCounts, _maxAmmo, _refillAmmoItems, _rearmingDuration] call FUNC(simulateRearmEvents);
-private _totalTime = _simEvents select (count _simEvents - 1) select 0;
+private _totalTime = _simEvents select -1 select 0;
 
 TRACE_2("Simulated events",_simEvents,_totalTime);
 
