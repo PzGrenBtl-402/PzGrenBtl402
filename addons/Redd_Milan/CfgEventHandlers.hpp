@@ -15,3 +15,11 @@ class Extended_PostInit_EventHandlers {
         init = QUOTE(call COMPILE_SCRIPT(XEH_postInit));
     };
 };
+
+class Extended_InitPost_EventHandlers {
+    class Redd_Milan_Static_Base {
+        class GVAR(actions) {
+            clientInit = QUOTE(call FUNC(addActions));
+        };
+    };
+};

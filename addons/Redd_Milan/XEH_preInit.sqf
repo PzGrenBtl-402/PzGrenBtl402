@@ -7,5 +7,3 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 ADDON = true;
-
-["Redd_Milan_Static_Base", "InitPost", LINKFUNC(addActions), nil, nil, true] call CBA_fnc_addClassEventHandler;

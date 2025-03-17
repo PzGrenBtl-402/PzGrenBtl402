@@ -31,7 +31,7 @@ class Extended_InitPost_EventHandlers {
             init = QUOTE(call FUNC(initRearmActions));
         };
         class GVAR(camonet) {
-            init = QUOTE(call FUNC(setCamonet));
+            serverInit = QUOTE([ARR_2(FUNC(setCamonet),_this)] call CBA_fnc_execNextFrame);
         };
     };
 };

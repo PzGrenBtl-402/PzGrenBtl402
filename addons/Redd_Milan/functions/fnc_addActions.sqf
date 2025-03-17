@@ -18,6 +18,8 @@
 
 params ["_milan"];
 
+if (!hasInterface) exitWith {};
+
 private _loadIcon = QPATHTOEF(Milan,data\ui\holdaction_load_milan);
 // Milan laden
 [
