@@ -20,15 +20,12 @@ Optional:
 - [NIArms MG3 GPMGs](https://steamcommunity.com/sharedfiles/filedetails/?id=774809509)
 - [Global Ops Terrains](https://steamcommunity.com/sharedfiles/filedetails/?id=2917444360)
 - [Bundeswehr Waffenkammer (PBW)](https://steamcommunity.com/sharedfiles/filedetails/?id=2693900325)
-- [JSRS SOUNDMOD 2025 Beta](https://steamcommunity.com/sharedfiles/filedetails/?id=3407948300)
-
-Whitelist these client-side only mods: `PzGrenBtl402_JSRS2025_NiArms_Compat_MG3, PzGrenBtl402_JSRS2025_Redd_Compat, PzGrenBtl402_JSRS2025_Redd_Compat_NiArms_Sounds`
 
 ## Modifications
 
 ### Redd'n'Tank
 
-- Replace Redd MG3 Sound with NiArms Sounds (JSRS 2025 takes precedence)
+- Replace Redd MG3 Sound with NiArms Sounds
 - Marder Milan can only be assembled if the tripod is in the vehicle cargo
 - Assemble Marder Milan also with GM Milan tripod
 - Fix missing Marder ramp sounds (Fixes RPT error)
@@ -39,7 +36,6 @@ Whitelist these client-side only mods: `PzGrenBtl402_JSRS2025_NiArms_Compat_MG3,
 - Custom TOW reloading system
 - Get in and out of Marder through hatches
 - Ability to setup ladder on top of Marder (for breaching into buildings)
-- Add JSRS 2025 compatability
 - Replace mouse actions to switch AP and HE with weapon selection
 - Removed HUD compass and range finder of MILAN
 
@@ -65,7 +61,6 @@ Whitelist these client-side only mods: `PzGrenBtl402_JSRS2025_NiArms_Compat_MG3,
 - Added ACE Tracer effect
 - Reduced mass of MG3 ammo
 - Increase fire rate MG3 to 1200 rpm
-- Add JSRS 2025 compatability for MG3
 
 ### Rosche
 
