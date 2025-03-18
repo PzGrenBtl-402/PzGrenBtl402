@@ -38,6 +38,7 @@ Optional:
 - Ability to setup ladder on top of Marder (for breaching into buildings)
 - Replace mouse actions to switch AP and HE with weapon selection
 - Removed HUD compass and range finder of MILAN
+- Ability to switch between passenger 1 and gunner seats
 
 ### BWMod
 
