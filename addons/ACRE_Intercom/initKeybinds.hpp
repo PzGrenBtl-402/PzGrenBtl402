@@ -1,7 +1,7 @@
 private _category = [LELSTRING(Main,category), LLSTRING(catergory)];
 [
     _category,
-    QGVAR(previousWorkingRadio),
+    QGVAR(setPreviousWorkingRadio),
     [LLSTRING(previousWorkingRadioKey), LLSTRING(previousWorkingRadioKey_description)],
     {
         [-1, true] call FUNC(switchWorkingRadioFast)
@@ -12,7 +12,7 @@ private _category = [LELSTRING(Main,category), LLSTRING(catergory)];
 
 [
     _category,
-    QGVAR(nextWorkingRadio),
+    QGVAR(setNextWorkingRadio),
     [LLSTRING(nextWorkingRadioKey), LLSTRING(nextWorkingRadioKey_description)],
     {
         [1, true] call FUNC(switchWorkingRadioFast)
