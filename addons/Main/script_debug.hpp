@@ -14,7 +14,7 @@ Fast Recompiling via function
             private _end = diag_tickTime;\
             systemChat format ["PzGrenBtl402: Recompile took [%1 ms]", (1000 * (_end - _start)) toFixed 1];\
             true\
-        }, {false}, [0x2F, [false, false, false]], false] call CBA_fnc_addKeybind; // V Key
+        }, "", [0x2F, [false, false, false]]] call CBA_fnc_addKeybind; // V Key
 #else
     #define LINKFUNC(x) FUNC(x)
     #define PREP_RECOMPILE_START /* */
