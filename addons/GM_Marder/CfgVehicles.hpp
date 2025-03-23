@@ -40,7 +40,7 @@ class CfgVehicles
                 allowedPositions[] = {"driver", "gunner", "commander", {"turret", {0,1}}};
                 disabledPositions[] = {};
                 limitedPositions[] = {{"cargo", "all"}, {"ffv", "all"}, {"turret", {1}}};
-                numLimitedPositions = 3;
+                numLimitedPositions = 6;
                 masterPositions[] = {};
                 connectedByDefault = 1;
             };
