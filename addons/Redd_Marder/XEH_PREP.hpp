@@ -4,6 +4,7 @@ PREP(canAssembleMilan);
 PREP(canAttachLadder);
 PREP(canCloseRamp);
 PREP(canDisassembleMilan);
+PREP(canGetInCommander);
 PREP(canGetInMilan);
 PREP(canGetOutHatch);
 PREP(canGetOutMilan);

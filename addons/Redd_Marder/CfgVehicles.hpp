@@ -693,7 +693,12 @@ class CfgVehicles
                 statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getOutMilan));
             };
 
-            delete fixTurretBug;
+            class fixTurretBug
+            {
+                displayName = "Fix get in commander seat";
+                condition = QUOTE((this call FUNC(canGetInCommander)) && {this lockedTurret COMMANDER_TURRET_PATH} && {isNull objectParent ACE_player});
+                statement = QUOTE(this call FUNC(fixGetInBug));
+            };
 
             delete heckluke_auf_2;
             delete heckluke_zu_2;

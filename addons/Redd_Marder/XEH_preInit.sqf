@@ -16,6 +16,10 @@ if (hasInterface) then {
             {
                 params ["_veh", "_unit"];
 
+                [_veh, [COMMANDER_TURRET_PATH, false]] remoteExecCall ["lockTurret"];
+                TRACE_2("Unlocked commander seat",_unit,_veh);
+                _unit setVariable [QGVAR(lockedSeat), nil, true];
+
                 _unit playAction "GetInLow";
 
                 [{(animationState (_this select 1)) isEqualTo "amovpercmstpsnonwnondnon"}, {
@@ -28,7 +32,7 @@ if (hasInterface) then {
             true,
             true,
             getText (_getInCommanderAction >> "shortcut"),
-            "(isNull (commander _target)) && {(locked _target) isEqualTo 2} && {isNull objectParent _this} && {!(_target lockedTurret [0, 0])}", //_target = _veh, _this = player
+            QUOTE(((locked _target) isEqualTo 2) && {isNull objectParent _this} && {_target call FUNC(canGetInCommander)}), //_target = _veh, _this = player
             1.5
         ],
         "str_action_getin_commander",
