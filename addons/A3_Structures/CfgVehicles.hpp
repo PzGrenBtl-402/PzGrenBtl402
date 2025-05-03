@@ -205,6 +205,8 @@ class CfgVehicles {
     SET_ARMOR(House_F,Land_Stadium_p8_F);
     SET_ARMOR(House_F,Land_Stadium_p9_F);
 
+    SET_ARMOR_WITH_WINDOWS_24(House_F,Land_PoliceStation_01_F);
+
     class Infrastructure_base_F;
     SET_ARMOR_WITH_WINDOWS_14(Infrastructure_base_F,Land_Airport_02_controlTower_F);
     SET_ARMOR(Infrastructure_base_F,Land_Airport_02_hangar_left_F);

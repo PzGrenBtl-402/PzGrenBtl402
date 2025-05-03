@@ -88,4 +88,4 @@ if __name__ == '__main__':
 
     main(args)
 
-# python config_armor_macro_generator.py -n 99 -o ../addons/Main/script_armor_macros.hpp
+# python config_armor_macro_generator.py -n 110 -o ../addons/Main/script_armor_macros.hpp

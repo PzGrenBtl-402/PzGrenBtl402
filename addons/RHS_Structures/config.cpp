@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main", "rhs_structures_civilian"};
+        requiredAddons[] = {"PzGrenBtl402_Main", "rhs_structures_civilian", "rhs_structures_public"};
         skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);
         authors[] = {"Timi007"};
