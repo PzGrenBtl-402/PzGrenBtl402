@@ -14,7 +14,7 @@
  *       Nothing
  *
  *  Example:
- *      [vehicle player, [0, 0], player] call PzGrenBtl402_Redd_Marder_fnc_lockSeat
+ *      [vehicle player, [0, 0], player] call PzGrenBtl402_Common_fnc_lockSeat
  *
  */
 

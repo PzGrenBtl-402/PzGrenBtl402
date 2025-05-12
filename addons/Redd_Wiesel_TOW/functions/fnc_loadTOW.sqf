@@ -16,7 +16,7 @@
  *
  */
 
-params ["_veh"];
+params ["_vehicle"];
 
-[_veh, "Redd_Milan_Static_Barrel"] call CBA_fnc_removeBackpackCargo;
-[QGVAR(addMagazineTurret), [_veh, [TOW_MAGAZINE, TOW_TURRET_PATH]], _veh, TOW_TURRET_PATH] call CBA_fnc_turretEvent;
+[_vehicle, "Redd_Milan_Static_Barrel"] call CBA_fnc_removeBackpackCargo;
+[QGVAR(addMagazineTurret), [_vehicle, [TOW_MAGAZINE, TOW_TURRET_PATH]], _vehicle, TOW_TURRET_PATH] call CBA_fnc_turretEvent;

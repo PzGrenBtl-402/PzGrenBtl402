@@ -13,7 +13,7 @@
  *       Nothing
  *
  *  Example:
- *      [vehicle player, player] call PzGrenBtl402_Redd_Marder_fnc_getInCommanderHigher
+ *      [vehicle player, player] call PzGrenBtl402_Redd_Wiesel_TOW_fnc_getInCommanderHigher
  *
  */
 
@@ -22,4 +22,4 @@ TRACE_2("Get in commander higher pos",_vehicle,_player);
 
 _player action ["moveToTurret", _vehicle, COMMANDER_HIGHER_TURRET_PATH];
 [QEGVAR(Common,lockSeat), [_vehicle, COMMANDER_TURRET_PATH, _player]] call CBA_fnc_localEvent;
-_vehicle setVariable ["Redd_Marder_Bino_In", true, true];
+_vehicle setVariable ["Redd_WieselTOW_Bino_In", true, true];

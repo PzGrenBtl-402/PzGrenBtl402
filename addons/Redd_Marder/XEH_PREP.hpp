@@ -31,8 +31,6 @@ PREP(initMilanActions);
 PREP(initRampActions);
 PREP(initRearmActions);
 PREP(loadMilan);
-PREP(lockSeat);
 PREP(openRamp);
 PREP(setCamonet);
 PREP(unloadMilan);
-PREP(unlockSeat);

@@ -147,5 +147,28 @@ class CfgVehicles {
             };
         };
     };
+
+    class Tank: LandVehicle {
+        class ACE_Actions {
+            class ACE_MainActions;
+        };
+    };
+    class Tank_F: Tank {};
+
+    class Redd_Tank_Wiesel_1A4_MK20_base: Tank_F {
+        class ACE_Actions: ACE_Actions {
+            class ACE_MainActions: ACE_MainActions {
+                position = "[0, 0, -1]";
+            };
+        };
+    };
+
+    class Redd_Tank_Wiesel_1A2_TOW_base: Tank_F {
+        class ACE_Actions: ACE_Actions {
+            class ACE_MainActions: ACE_MainActions {
+                position = "[0, 0, -1]";
+            };
+        };
+    };
 };
 

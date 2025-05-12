@@ -15,21 +15,19 @@
  *       Nothing.
  *
  *  Example:
- *      _this call PzGrenBtl402_Redd_Marder_fnc_handleGetOut
+ *      _this call PzGrenBtl402_Redd_Wiesel_MK20_fnc_handleGetOut
  *
  */
 
 params ["_vehicle", "_role", "_unit", "_turret"];
 TRACE_3("handleGetOut",_this,local _vehicle,local _unit);
 
-if (local _vehicle && {_turret isEqualTo COMMANDER_TURRET_PATH} || {_turret isEqualTo MILAN_TURRET_PATH} || {_turret isEqualTo COMMANDER_HIGHER_TURRET_PATH}) then {
+if (local _vehicle && {_turret isEqualTo COMMANDER_TURRET_PATH || {_turret isEqualTo COMMANDER_HIGHER_TURRET_PATH}}) then {
     LOG("Unlock commander seat.");
     [QEGVAR(Common,unlockSeat), [_unit]] call CBA_fnc_localEvent;
 
     // Reset variables
-    _vehicle setVariable ["Redd_Marder_Commander_Up", false, true];
-    _vehicle setVariable ["Redd_Marder_Bino_In", false, true];
-    _vehicle setVariable ['Redd_Marder_Commander_Winkelspiegel', false, true];
+    _vehicle setVariable ["Redd_wieselMk20_Bino_In", false, true];
 };
 
 if (local _unit && {_veh getVariable ["has_camonet_large", false] || {_veh getVariable ["has_camonet", false]}}) then {

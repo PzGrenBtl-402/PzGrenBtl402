@@ -8,6 +8,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "PzGrenBtl402_Main",
+            "PzGrenBtl402_Common",
             "PzGrenBtl402_ACRE",
             "PzGrenBtl402_Redd_Main",
             "redd_tank_wiesel_1a2_tow"

@@ -99,7 +99,9 @@ class CfgVehicles
 
         class EventHandlers: EventHandlers
         {
-            fired = QUOTE(_this call FUNC(handleTOWFired));
+            fired = QUOTE(call FUNC(handleTOWFired));
+            getIn = QUOTE(call FUNC(handleGetIn));
+            getOut = QUOTE(call FUNC(handleGetOut));
         };
 
         class Components: Components
@@ -385,6 +387,78 @@ class CfgVehicles
                     };
                 };
             };
+        };
+
+        class UserActions
+        {
+            class Bino_in
+            {
+                shortcut = "turnOut";
+                condition = QUOTE((alive this) && {this turretUnit COMMANDER_TURRET_PATH isEqualTo ACE_player} && {this animationSourcePhase 'Hatch_L_Rear_Source' > 0});
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getInCommanderHigher));
+            };
+
+            class Bino_out
+            {
+                shortcut = "turnIn";
+                condition = QUOTE((alive this) && {this turretUnit COMMANDER_HIGHER_TURRET_PATH isEqualTo ACE_player});
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getOutCommanderHigher));
+            };
+
+            class Bino2_in
+            {
+                shortcut = "turnOut";
+                condition = QUOTE((alive this) && {this turretUnit LOADER_TURRET_PATH isEqualTo ACE_player} && {this animationSourcePhase 'Hatch_R_Rear_Source' > 0});
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getInLoaderHigher));
+            };
+
+            class Bino2_out
+            {
+                shortcut = "turnIn";
+                condition = QUOTE((alive this) && {this turretUnit LOADER_HIGHER_TURRET_PATH isEqualTo ACE_player});
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getOutLoaderHigher));
+            };
+
+            class TOW_in
+            {
+                condition = QUOTE([ARR_2(this,ACE_player)] call FUNC(canGetInTOW));
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getInTOW));
+            };
+
+            class TOW_aus
+            {
+                condition = QUOTE([ARR_2(this,ACE_player)] call FUNC(canGetOutTOW));
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getOutTOW));
+            };
+
+            class MG3_in
+            {
+                condition = QUOTE([ARR_2(this,ACE_player)] call FUNC(canGetInMG3));
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getInMG3));
+            };
+
+            class MG3_aus
+            {
+                condition = QUOTE([ARR_2(this,ACE_player)] call FUNC(canGetOutMG3));
+                statement = QUOTE([ARR_2(this,ACE_player)] call FUNC(getOutMG3));
+            };
+
+            class fixTurretBug
+            {
+                displayName = "Fix get in commander and loader seat";
+                condition = QUOTE((isNull objectParent ACE_player) && {((this lockedTurret COMMANDER_TURRET_PATH) && {this call FUNC(canGetInCommander)}) || {(this lockedTurret LOADER_TURRET_PATH) && {this call FUNC(canGetInLoader)}}});
+                statement = QUOTE(this call FUNC(fixGetInBug));
+            };
+
+            delete Redd_removeflag;
+            delete Redd_redFlag;
+            delete Redd_greenFlag;
+            delete Redd_blueFlag;
+
+            delete Tarnnetz_Fzg_aufbauen;
+            delete Tarnnetz_Fzg_abbauen;
+            delete Tarnnetz_Boden_aufbauen;
+            delete Tarnnetz_Boden_abbauen;
         };
     };
 };

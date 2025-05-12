@@ -3,7 +3,7 @@
  *  Author: Timi007
  *
  *  Description:
- *      Gets into the higher position commander seat.
+ *      Gets into the TOW.
  *
  *  Parameter(s):
  *      0: OBJECT - Vehicle
@@ -13,13 +13,15 @@
  *       Nothing
  *
  *  Example:
- *      [vehicle player, player] call PzGrenBtl402_Redd_Marder_fnc_getInCommanderHigher
+ *      [vehicle player, player] call PzGrenBtl402_Redd_Wiesel_TOW_fnc_getInTOW
  *
  */
 
 params ["_vehicle", "_player"];
-TRACE_2("Get in commander higher pos",_vehicle,_player);
+TRACE_2("Get in TOW",_vehicle,_player);
 
-_player action ["moveToTurret", _vehicle, COMMANDER_HIGHER_TURRET_PATH];
+_player action ["moveToTurret", _vehicle, TOW_TURRET_PATH];
 [QEGVAR(Common,lockSeat), [_vehicle, COMMANDER_TURRET_PATH, _player]] call CBA_fnc_localEvent;
-_vehicle setVariable ["Redd_Marder_Bino_In", true, true];
+
+_vehicle animate ["Seat_L_Trans", 1];
+_vehicle animate ["TOW_Hide_Rohr", 0];

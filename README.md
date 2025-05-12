@@ -39,6 +39,7 @@ Optional:
 - Replace mouse actions to switch AP and HE with weapon selection
 - Removed HUD compass and range finder of MILAN
 - Ability to switch between passenger 1 and gunner seats
+- QoL improvements of Wiesel (Shortcut for commander/loader to go higher, automatic camo, ...)
 
 ### BWMod
 

@@ -17,8 +17,8 @@
  *
  */
 
-params ["_veh", "_weapon"];
+params ["_vehicle", "_weapon"];
 
 if (_weapon == "Redd_TOW") then {
-    [QGVAR(removeMagazinesTurret), [_veh, [TOW_MAGAZINE, TOW_TURRET_PATH]], _veh, TOW_TURRET_PATH] call CBA_fnc_turretEvent;
+    [QGVAR(removeMagazinesTurret), [_vehicle, [TOW_MAGAZINE, TOW_TURRET_PATH]], _vehicle, TOW_TURRET_PATH] call CBA_fnc_turretEvent;
 };

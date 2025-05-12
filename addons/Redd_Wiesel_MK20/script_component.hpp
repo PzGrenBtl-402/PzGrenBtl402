@@ -15,3 +15,6 @@
 #endif
 
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"
+
+#define COMMANDER_TURRET_PATH [0]
+#define COMMANDER_HIGHER_TURRET_PATH [1]

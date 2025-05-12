@@ -6,7 +6,12 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main", "rnt_ace_compatibility"};
+        requiredAddons[] = {
+            "PzGrenBtl402_Main",
+            "rnt_ace_compatibility",
+            "redd_tank_wiesel_1a4_mk20",
+            "redd_tank_wiesel_1a2_tow"
+        };
         author = ECSTRING(Main,authors);
         authors[] = {"Timi007"};
         url = ECSTRING(Main,URL);

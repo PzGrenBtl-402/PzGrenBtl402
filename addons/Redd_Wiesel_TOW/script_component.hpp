@@ -17,4 +17,10 @@
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"
 
 #define TOW_TURRET_PATH [0]
+#define COMMANDER_TURRET_PATH [0, 0]
+#define LOADER_TURRET_PATH [0, 1]
+#define LOADER_MG3_TURRET_PATH [1]
+#define COMMANDER_HIGHER_TURRET_PATH [2]
+#define LOADER_HIGHER_TURRET_PATH [3]
+
 #define TOW_MAGAZINE "Redd_TOW_Mag"

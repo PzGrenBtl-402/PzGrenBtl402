@@ -12,7 +12,7 @@
  *       Nothing
  *
  *  Example:
- *      [player] call PzGrenBtl402_Redd_Marder_fnc_unlockSeat
+ *      [player] call PzGrenBtl402_Common_fnc_unlockSeat
  *
  */
 

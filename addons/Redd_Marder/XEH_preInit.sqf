@@ -6,8 +6,6 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-ADDON = true;
-
 if (hasInterface) then {
     private _getInCommanderAction = configFile >> "CfgActions" >> "GetInCommander";
     private _getInCommanderParams = [
@@ -18,7 +16,7 @@ if (hasInterface) then {
 
                 [_veh, [COMMANDER_TURRET_PATH, false]] remoteExecCall ["lockTurret"];
                 TRACE_2("Unlocked commander seat",_unit,_veh);
-                _unit setVariable [QGVAR(lockedSeat), nil, true];
+                _unit setVariable [QEGVAR(Common,lockedSeat), nil, true];
 
                 _unit playAction "GetInLow";
 
@@ -67,3 +65,5 @@ if (hasInterface) then {
 
     GVAR(getInParams) = [_getInCommanderParams, _getInDriverParams];
 };
+
+ADDON = true;

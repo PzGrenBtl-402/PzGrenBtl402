@@ -21,4 +21,4 @@ params ["_vehicle", "_player"];
 TRACE_2("Get in milan",_vehicle,_player);
 
 _player action ["moveToTurret", _vehicle, MILAN_TURRET_PATH];
-[_vehicle, COMMANDER_TURRET_PATH, _player] call FUNC(lockSeat);
+[QEGVAR(Common,lockSeat), [_vehicle, COMMANDER_TURRET_PATH, _player]] call CBA_fnc_localEvent;

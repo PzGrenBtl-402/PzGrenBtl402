@@ -18,6 +18,8 @@
 
 params ["_veh"];
 
+if (!hasInterface) exitWith {};
+
 private _icon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa";
 [
     _veh,
