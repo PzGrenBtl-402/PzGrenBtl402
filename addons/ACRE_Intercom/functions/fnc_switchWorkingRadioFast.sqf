@@ -23,6 +23,8 @@ TRACE_1("Switch working radio",_dir);
 private _vehicle = vehicle acre_player;
 private _intercomNetwork = [_vehicle] call FUNC(getFirstConnectedIntercom);
 TRACE_1("Intercom",_intercomNetwork);
+if (_intercomNetwork < 0) exitWith {false};
+
 private _workPos = [_vehicle, acre_player, _intercomNetwork, INTERCOM_STATIONSTATUS_WORKKNOB] call acre_sys_intercom_fnc_getStationConfiguration;
 TRACE_1("WorkPos",_workPos);
 private _success = [_intercomNetwork, _workPos + _dir] call FUNC(vic3ffcsSetWork);
