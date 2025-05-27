@@ -4,19 +4,16 @@ let release_folder = HEMTT_OUT;
 
 if (release_folder.exists()) {
     let releases = HEMTT_RFS.join("releases");
-    // let dst = releases.join("@" + project.name());
-    let dst = releases.join("release");
+    let dst = releases.join("@" + project.name());
 
     if (dst.exists()) {
         print("Removing previous workshop release folder");
         dst.remove_dir_all();
     }
 
-    print("Copying release to " + dst);
-    // TODO: There is currently no way to rename a directory
-    // Fix this later
-    if (!release_folder.copy(dst.parent())) {
-        fatal("Failed to copy " + release_folder + " to " + dst.parent());
+    print("Moving release to " + dst);
+    if (!release_folder.move(dst)) {
+        fatal("Failed to move " + release_folder + " to " + dst);
     }
 
     print("Deleting addon Menu_Spotlight");
