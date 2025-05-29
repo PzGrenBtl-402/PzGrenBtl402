@@ -2,15 +2,18 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Debug",
+            "label": "Build Dev",
             "detail": "Build Arma addon with HEMTT in debug mode.",
             "type": "process",
             "command": "hemtt",
             "args": ["dev"],
-            "group": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "presentation": {
                 "close": true,
-                "reveal": "always",
+                "reveal": "silent",
                 "showReuseMessage": false
             }
         },
