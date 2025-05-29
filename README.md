@@ -53,6 +53,7 @@ Optional:
 - Allow GM wire cutter to cut Arma vanilla NATO wires
 - Modify ACE fragmentation settings of DM51 and DM51A1 grenades
 - Add ACE self-interaction to swap fragmentation sleeve of DM51 and DM51A1 grenades
+- Reduce weight of manpacks
 
 ### RHS
 
