@@ -1,25 +1,24 @@
 class CfgVehicles
 {
-    class gm_wheeled_APC_base;
-    class gm_fuchs_base: gm_wheeled_APC_base
-    {
+    class gm_wheeled_base;
+    class gm_wheeled_APC_base: gm_wheeled_base {
         class CargoTurret;
         class CommanderTurret_base;
         class MachineGunTurret_base;
         class Turrets;
         class UserActions;
     };
-
-    class gm_fuchsa0_base: gm_fuchs_base
+    class gm_fuchs_base: gm_wheeled_APC_base
     {
         maximumLoad = 10000;
+        enableGPS = 0;
+
+        ace_vehicles_engineStartDelay = 5;
+
         disableSoundAttenuation = 0;
         attenuationEffectType = "TankAttenuation";
         driverCompartments = "Compartment1";
         cargoCompartments[] = {"Compartment2"};
-        enableGPS = 0;
-
-        ace_vehicles_engineStartDelay = 5;
 
         class Turrets: Turrets
         {
@@ -43,27 +42,6 @@ class CfgVehicles
                     "gm_120Rnd_762x51mm_b_t_DM21_mg3_grn",
                     "gm_120Rnd_762x51mm_b_t_DM21_mg3_grn"
                 };
-            };
-
-            class SquadLeaderTurret: CargoTurret
-            {
-                disableSoundAttenuation = 0;
-                soundAttenuationTurret = "TankAttenuation";
-                gunnerCompartments = "Compartment2";
-            };
-
-            class CargoTurret_03: CargoTurret
-            {
-                disableSoundAttenuation = 0;
-                soundAttenuationTurret = "TankAttenuation";
-                gunnerCompartments = "Compartment2";
-            };
-
-            class CargoTurret_08: CargoTurret_03
-            {
-                disableSoundAttenuation = 0;
-                soundAttenuationTurret = "TankAttenuation";
-                gunnerCompartments = "Compartment2";
             };
         };
 
@@ -111,6 +89,33 @@ class CfgVehicles
                 showWindow = 0;
                 condition = "(player in this) && (this doorPhase 'door_2_1_source' == 1) && (alive this)";
                 statement = "this animateDoor ['door_2_1_source', 0, false]; this animateDoor ['door_2_2_source', 0, false];";
+            };
+        };
+    };
+
+    class gm_fuchsa0_base: gm_fuchs_base
+    {
+        class Turrets: Turrets
+        {
+            class SquadLeaderTurret: CargoTurret
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment2";
+            };
+
+            class CargoTurret_03: CargoTurret
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment2";
+            };
+
+            class CargoTurret_08: CargoTurret_03
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment2";
             };
         };
     };
@@ -299,6 +304,128 @@ class CfgVehicles
                 shortName = ECSTRING(ACRE,RackCShort);
                 componentName = "ACRE_SEM90";
                 allowedPositions[] = {{"turret", {3}}};
+                disabledPositions[] = {};
+                defaultComponents[] = {};
+                mountedRadio = "ACRE_SEM70";
+                isRadioRemovable = 0;
+                intercom[] = {"all"};
+            };
+        };
+    };
+
+    class gm_fuchsa0_medic_base: gm_fuchsa0_base
+    {
+        class AcreIntercoms
+        {
+            class Intercom_1
+            {
+                displayName = ECSTRING(ACRE,BV);
+                shortName = ECSTRING(ACRE,BVShort);
+                allowedPositions[] = {"crew"};
+                disabledPositions[] = {};
+                limitedPositions[] = {{"cargo", "all"}, {"ffv", "all"}};
+                numLimitedPositions = 2;
+                masterPositions[] = {};
+                connectedByDefault = 1;
+            };
+        };
+
+        acre_hasInfantryPhone = 1;
+        acre_infantryPhoneDisableRinging = 1;
+        acre_infantryPhoneCustomRinging[] = {};
+        acre_infantryPhoneIntercom[] = {"all"};
+        acre_infantryPhoneControlActions[] = {"all"};
+        acre_eventInfantryPhone = QEFUNC(ACRE,noApiFunction);
+        acre_infantryPhonePosition[] = {-1.025, -3.4, -0.75};
+
+        class AcreRacks
+        {
+            class Rack_1
+            {
+                displayName = ECSTRING(ACRE,RackA);
+                shortName = ECSTRING(ACRE,RackAShort);
+                componentName = "ACRE_SEM90";
+                allowedPositions[] = {{"turret", {1}}};
+                disabledPositions[] = {};
+                defaultComponents[] = {};
+                mountedRadio = "ACRE_SEM70";
+                isRadioRemovable = 0;
+                intercom[] = {"all"};
+            };
+
+            class Rack_2
+            {
+                displayName = ECSTRING(ACRE,RackB);
+                shortName = ECSTRING(ACRE,RackBShort);
+                componentName = "ACRE_SEM90";
+                allowedPositions[] = {{"turret", {1}}};
+                disabledPositions[] = {};
+                defaultComponents[] = {};
+                mountedRadio = "ACRE_SEM70";
+                isRadioRemovable = 0;
+                intercom[] = {"all"};
+            };
+        };
+    };
+
+    class gm_fuchsa1_base: gm_fuchs_base
+    {
+        class Turrets: Turrets
+        {
+            class CargoTurret_03: CargoTurret
+            {
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment2";
+            };
+        };
+    };
+    class gm_fuchsa1_jammer_base: gm_fuchsa1_base
+    {
+        class AcreIntercoms
+        {
+            class Intercom_1
+            {
+                displayName = ECSTRING(ACRE,BV);
+                shortName = ECSTRING(ACRE,BVShort);
+                allowedPositions[] = {"driver", "commander", {"turret", {1}}};
+                disabledPositions[] = {};
+                limitedPositions[] = {{"cargo", "all"}, {"turret", {2}}};
+                numLimitedPositions = 2;
+                masterPositions[] = {};
+                connectedByDefault = 1;
+            };
+        };
+
+        acre_hasInfantryPhone = 1;
+        acre_infantryPhoneDisableRinging = 1;
+        acre_infantryPhoneCustomRinging[] = {};
+        acre_infantryPhoneIntercom[] = {"all"};
+        acre_infantryPhoneControlActions[] = {"all"};
+        acre_eventInfantryPhone = QEFUNC(ACRE,noApiFunction);
+        acre_infantryPhonePosition[] = {-1.025, -3.4, -0.75};
+
+        class AcreRacks
+        {
+            class Rack_1
+            {
+                displayName = ECSTRING(ACRE,RackA);
+                shortName = ECSTRING(ACRE,RackAShort);
+                componentName = "ACRE_SEM90";
+                allowedPositions[] = {{"cargo", 0}};
+                disabledPositions[] = {};
+                defaultComponents[] = {};
+                mountedRadio = "ACRE_SEM70";
+                isRadioRemovable = 0;
+                intercom[] = {"all"};
+            };
+
+            class Rack_2
+            {
+                displayName = ECSTRING(ACRE,RackB);
+                shortName = ECSTRING(ACRE,RackBShort);
+                componentName = "ACRE_SEM90";
+                allowedPositions[] = {{"cargo", 0}};
                 disabledPositions[] = {};
                 defaultComponents[] = {};
                 mountedRadio = "ACRE_SEM70";

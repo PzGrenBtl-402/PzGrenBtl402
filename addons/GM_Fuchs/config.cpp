@@ -9,7 +9,7 @@ class CfgPatches {
         requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_ACRE", "gm_vehicles_land_wheeled_fuchs"};
         skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);
-        authors[] = {"Mishkar"};
+        authors[] = {"Mishkar", "Timi007"};
         url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
