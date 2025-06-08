@@ -37,5 +37,5 @@ if (isServer) then {
 
     if (_vehicle getVariable [QGVAR(RampAttribute), false] isEqualTo true) then { // type checking
         [_vehicle, true] call FUNC(openRamp);
-    }
+    };
 };
