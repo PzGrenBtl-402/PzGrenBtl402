@@ -12,6 +12,7 @@ class CfgPatches {
             "PzGrenBtl402_SmokeLauncher",
             "PzGrenBtl402_Rearm",
             "PzGrenBtl402_GM_Milan",
+            "gm_weapons_cannons_20mm_rh202",
             "gm_vehicles_land_tracked_marder1",
             "Redd_Bags",
             "ace_common"
@@ -26,5 +27,6 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 #include "CfgMagazines.hpp"
+#include "CfgMagazineWells.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"
