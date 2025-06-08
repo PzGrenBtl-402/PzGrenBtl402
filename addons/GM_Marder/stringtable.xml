@@ -9,5 +9,9 @@
             <Original>Open rear ramp</Original>
             <German>Heckklappe öffnen</German>
         </Key>
+        <Key ID="STR_PzGrenBtl402_GM_Marder_openRamp3DENTooltip">
+            <Original>Open rear ramp when Marder spawns in.</Original>
+            <German>Heckklappe beim Spawnen des Marders öffnen.</German>
+        </Key>
     </Package>
 </Project>

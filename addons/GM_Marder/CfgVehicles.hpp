@@ -17,6 +17,7 @@ class CfgVehicles
             class MainTurret;
         };
         class AnimationSources;
+        class Attributes;
 
         maximumLoad = 10000;
         fuelCapacity = 100;
@@ -133,7 +134,7 @@ class CfgVehicles
 
             class MainTurret: MainTurret
             {
-                discreteDistanceInitIndex = 7; // Set initial gun zeoring to 800 m
+                discreteDistanceInitIndex = 7; // Set initial gun zeroing to 800 m
                 disableSoundAttenuation = 0;
                 soundAttenuationTurret = "TankAttenuation";
                 gunnerCompartments = "Compartment3";
@@ -144,8 +145,8 @@ class CfgVehicles
                     QGVAR(SmokeLauncher)
                 };
                 magazines[] = {
-                    QGVAR(20x139mm_hei_t_dm81),
-                    QGVAR(20x139mm_apds_t_dm63),
+                    QGVAR(20x139mm_hei_t_dm81), // Modified ammo count
+                    QGVAR(20x139mm_apds_t_dm63), // Modified ammo count
                     "gm_500Rnd_762x51mm_b_t_DM21_mg3",
                     QGVAR(1Rnd_76mm_RP_dm35) // Marder A1/2 have 1 rnd 6 smoke granades
                 };
@@ -191,6 +192,20 @@ class CfgVehicles
             {
                 source = "ammorandom";
                 weapon = QGVAR(mg3_coax);
+            };
+        };
+
+        class Attributes: Attributes
+        {
+            class GVAR(RampAttribute)
+            {
+                displayName = CSTRING(openRamp);
+                tooltip = CSTRING(openRamp3DENTooltip);
+                property = QGVAR(RampAttribute);
+                control = "Checkbox";
+                expression = "_this setVariable ['%s', _value];";
+                defaultValue = 0;
+                typeName = "BOOL";
             };
         };
     };

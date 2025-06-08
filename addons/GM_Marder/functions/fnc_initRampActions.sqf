@@ -31,4 +31,8 @@ if (hasInterface) then {
 
 if (isServer && locked _vehicle isNotEqualTo 2) then {
     [QGVAR(lock), [_vehicle, 2], _vehicle] call CBA_fnc_targetEvent;
+
+    if (_vehicle getVariable [QGVAR(RampAttribute), false] isEqualTo true) then { // type checking
+        [_vehicle, true] call FUNC(openRamp);
+    };
 };
