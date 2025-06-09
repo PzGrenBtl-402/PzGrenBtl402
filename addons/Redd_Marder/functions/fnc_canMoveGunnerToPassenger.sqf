@@ -19,7 +19,6 @@
 
 params ["_vehicle", "_player"];
 
-
 (alive _vehicle) &&
 {_vehicle turretUnit GUNNER_TURRET isEqualTo _player} &&
 {isNull (((fullCrew [_vehicle, "cargo", true]) param [0, []]) param [0, objNull])}
