@@ -35,7 +35,7 @@ class CfgVehicles
                 displayName = ECSTRING(ACRE,RackA);
                 shortName = ECSTRING(ACRE,RackAShort);
                 componentName = "ACRE_SEM90";
-                allowedPositions[] = {"crew"};
+                allowedPositions[] = {{"turret", {1}}};
                 disabledPositions[] = {};
                 defaultComponents[] = {};
                 mountedRadio = "ACRE_SEM70";
@@ -45,10 +45,10 @@ class CfgVehicles
 
             class Rack_2
             {
-                displayName = ECSTRING(ACRE,RackC);
-                shortName = ECSTRING(ACRE,RackCShort);
+                displayName = ECSTRING(ACRE,RackB);
+                shortName = ECSTRING(ACRE,RackBShort);
                 componentName = "ACRE_SEM90";
-                allowedPositions[] = {"crew"};
+                allowedPositions[] = {{"turret", {1}}};
                 disabledPositions[] = {};
                 defaultComponents[] = {};
                 mountedRadio = "ACRE_SEM70";
@@ -60,8 +60,8 @@ class CfgVehicles
             {
                 displayName = ECSTRING(ACRE,RackC);
                 shortName = ECSTRING(ACRE,RackCShort);
-                componentName = "ACRE_SEM90";
-                allowedPositions[] = {"crew"};
+                componentName = "ACRE_SEM90"; // Should actually be a XK405 but we don't have this in ACRE
+                allowedPositions[] = {{"turret", {1}}};
                 disabledPositions[] = {};
                 defaultComponents[] = {};
                 mountedRadio = "ACRE_SEM70";
