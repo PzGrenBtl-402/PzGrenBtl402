@@ -22,8 +22,8 @@ params ["_vehicle"];
 
 if (!hasInterface) exitWith {};
 
-private _rearmHEShowCondition = QUOTE([ARR_3(_target,_this,'gm_425Rnd_20x139mm_hei_t_dm81')] call FUNC(canRearmMK));
-private _rearmAPShowCondition = QUOTE([ARR_3(_target,_this,'gm_75Rnd_20x139mm_apds_t_dm63')] call FUNC(canRearmMK));
+private _rearmHEShowCondition = QUOTE([ARR_3(_target,_this,QQGVAR(20x139mm_hei_t_dm81))] call FUNC(canRearmMK));
+private _rearmAPShowCondition = QUOTE([ARR_3(_target,_this,QQGVAR(20x139mm_apds_t_dm63))] call FUNC(canRearmMK));
 private _rearmMKProgressCondition = QUOTE([ARR_2(_target,_this)] call FUNC(canRearmMKProgress));
 
 // MK HE laden
@@ -40,7 +40,7 @@ private _heMagazineName = [QEGVAR(Rearm,mk20_he_ammo)] call EFUNC(Rearm,getMagaz
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], "gm_425Rnd_20x139mm_hei_t_dm81", [QEGVAR(Rearm,mk20_he_ammo)], EGVAR(Rearm,rearmMK20Duration)] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], QGVAR(20x139mm_hei_t_dm81), [QEGVAR(Rearm,mk20_he_ammo)], EGVAR(Rearm,rearmMK20Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -65,7 +65,7 @@ private _apMagazineName = [QEGVAR(Rearm,mk20_ap_ammo)] call EFUNC(Rearm,getMagaz
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], "gm_75Rnd_20x139mm_apds_t_dm63", [QEGVAR(Rearm,mk20_ap_ammo)], EGVAR(Rearm,rearmMK20Duration)] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], QGVAR(20x139mm_apds_t_dm63), [QEGVAR(Rearm,mk20_ap_ammo)], EGVAR(Rearm,rearmMK20Duration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
