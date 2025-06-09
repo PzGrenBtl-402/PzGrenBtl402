@@ -302,7 +302,7 @@ class CfgVehicles
             {
                 displayName = ECSTRING(ACRE,RackC);
                 shortName = ECSTRING(ACRE,RackCShort);
-                componentName = "ACRE_SEM90";
+                componentName = "ACRE_SEM90"; // Should actually be a XK405 but we don't have this in ACRE
                 allowedPositions[] = {{"turret", {3}}};
                 disabledPositions[] = {};
                 defaultComponents[] = {};
