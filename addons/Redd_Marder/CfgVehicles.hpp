@@ -670,7 +670,7 @@ class CfgVehicles
 
             class MovePassengerToGunnerRearm
             {
-                displayName = "$STR_ACTION_TO_TURRET";
+                displayName = "$STR_ACTION_TO_GUNNER";
                 displayNameDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa' size='1.8' shadow=2 />";
                 position = "actionsPoint";
                 radius = 1.5;
