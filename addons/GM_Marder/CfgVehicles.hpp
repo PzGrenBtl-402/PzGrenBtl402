@@ -109,6 +109,33 @@ class CfgVehicles
                 condition = "(ACE_player in [driver this, gunner this, this turretUnit [1]]) && (this doorPhase 'hatch_1_1_source' isEqualTo 1) && (alive this)";
                 statement = QUOTE(this call FUNC(closeRamp));
             };
+
+            class MoveGunnerToPassengerRearm
+            {
+                displayName = "$STR_UI_PASSENGER_SEAT";
+                displayNameDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa' size='1.8' shadow=2 />";
+                position = "actionsPoint";
+                radius = 1.5;
+                onlyforplayer = 1;
+                showWindow = 0;
+                priority = 1.3;
+                condition = QUOTE((alive this) && {this turretUnit GUNNER_TURRET isEqualTo ACE_player} && {isNull (this turretUnit HATCH_LEFT_FRONT_TURRET_PATH)});
+                statement = QUOTE(ACE_player action [ARR_3('moveToTurret',this,HATCH_LEFT_FRONT_TURRET_PATH)]);
+            };
+
+            class MovePassengerToGunnerRearm
+            {
+                displayName = "$STR_ACTION_TO_GUNNER";
+                displayNameDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa' size='1.8' shadow=2 />";
+                position = "actionsPoint";
+                radius = 1.5;
+                onlyforplayer = 1;
+                showWindow = 0;
+                priority = 1.5;
+                shortcut = "SwapGunner";
+                condition = QUOTE((alive this) && {this turretUnit HATCH_LEFT_FRONT_TURRET_PATH isEqualTo ACE_player} && {isNull (this turretUnit GUNNER_TURRET)});
+                statement = "ACE_player action ['moveToGunner', this]";
+            };
         };
     };
 
@@ -206,6 +233,63 @@ class CfgVehicles
                 expression = "_this setVariable ['%s', _value];";
                 defaultValue = 0;
                 typeName = "BOOL";
+            };
+        };
+    };
+
+    class gm_marder1a1plus_base;
+    class gm_ge_army_marder1a1plus_base: gm_marder1a1plus_base
+    {
+        class TransportMagazines {
+            class _xx_mk20_ap_ammo {
+                magazine = QEGVAR(Rearm,mk20_ap_ammo);
+                count = 9;
+            };
+            class _xx_mk20_he_ammo {
+                magazine = QEGVAR(Rearm,mk20_he_ammo);
+                count = 21;
+            };
+            class _xx_smoke_6grenade_ammo {
+                magazine = QEGVAR(Rearm,smoke_6grenade_ammo);
+                count = 2;
+            };
+        };
+    };
+
+    class gm_marder1a1a_base;
+    class gm_ge_army_marder1a1a_base: gm_marder1a1a_base
+    {
+        class TransportMagazines {
+            class _xx_mk20_ap_ammo {
+                magazine = QEGVAR(Rearm,mk20_ap_ammo);
+                count = 9;
+            };
+            class _xx_mk20_he_ammo {
+                magazine = QEGVAR(Rearm,mk20_he_ammo);
+                count = 21;
+            };
+            class _xx_smoke_6grenade_ammo {
+                magazine = QEGVAR(Rearm,smoke_6grenade_ammo);
+                count = 2;
+            };
+        };
+    };
+
+    class gm_marder1a2_base;
+    class gm_ge_army_marder1a2_base: gm_marder1a2_base
+    {
+        class TransportMagazines {
+            class _xx_mk20_ap_ammo {
+                magazine = QEGVAR(Rearm,mk20_ap_ammo);
+                count = 9;
+            };
+            class _xx_mk20_he_ammo {
+                magazine = QEGVAR(Rearm,mk20_he_ammo);
+                count = 21;
+            };
+            class _xx_smoke_6grenade_ammo {
+                magazine = QEGVAR(Rearm,smoke_6grenade_ammo);
+                count = 2;
             };
         };
     };
