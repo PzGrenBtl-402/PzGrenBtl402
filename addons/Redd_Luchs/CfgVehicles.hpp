@@ -59,6 +59,19 @@ class CfgVehicles
                 isRadioRemovable = 0;
                 intercom[] = {"all"};
             };
+
+            class Rack_3
+            {
+                displayName = ECSTRING(ACRE,RackC);
+                shortName = ECSTRING(ACRE,RackCShort);
+                componentName = "ACRE_SEM90"; // Should actually be a XK405 but we don't have this in ACRE
+                allowedPositions[] = {{"turret", {1}}};
+                disabledPositions[] = {};
+                defaultComponents[] = {};
+                mountedRadio = "ACRE_SEM70";
+                isRadioRemovable = 0;
+                intercom[] = {"all"};
+            };
         };
     };
 };
