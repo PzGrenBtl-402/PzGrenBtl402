@@ -18,10 +18,10 @@ if (release_folder.exists()) {
 
     print("Deleting addon Menu_Spotlight");
     let addons = dst.join("addons");
-    let menu_spotlight_pbo_name = project.name() + "_Menu_Spotlight.pbo";
+    let menu_spotlight_pbo_name = project.prefix() + "_Menu_Spotlight.pbo";
 
     addons.join(menu_spotlight_pbo_name).remove_file();
-    addons.join(menu_spotlight_pbo_name + "." + project.name() + "_" + project.version().to_string() + ".bisign").remove_file();
+    addons.join(menu_spotlight_pbo_name + "." + project.prefix() + "_" + project.version().to_string() + ".bisign").remove_file();
 } else {
     warn("Cannot prepare workshop release. Folder " + release_folder + " does not exist!");
 }
