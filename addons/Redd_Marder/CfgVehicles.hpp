@@ -13,7 +13,6 @@ class CfgVehicles
     {
         class Components;
         class EventHandlers;
-        class ViewOptics;
         class Turrets
         {
             class MainTurret: NewTurret

@@ -5,23 +5,17 @@ class CfgVehicles
     class Tank: LandVehicle
     {
         class NewTurret;
-        class CommanderOptics;
     };
 
     class Tank_F: Tank
     {
         class Components;
         class EventHandlers;
-        class ViewOptics;
         class Turrets
         {
             class MainTurret: NewTurret
             {
                 class ViewOptics;
-                class Turrets
-                {
-                    class CommanderOptics;
-                };
             };
         };
     };

@@ -15,7 +15,6 @@ class CfgVehicles
         {
             class MainTurret: NewTurret
             {
-                class ViewOptics;
                 class Turrets
                 {
                     class CommanderOptics;
