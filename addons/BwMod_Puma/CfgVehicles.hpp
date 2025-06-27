@@ -1,5 +1,26 @@
+class Optics_Armored;
+class BWA3_Optics_Gunner_Puma: Optics_Armored {
+    class Wide;
+    class Medium;
+    class Narrow;
+};
+
 class CfgVehicles {
-    class Tank_F;
+    class Land;
+    class LandVehicle: Land {
+        class NewTurret;
+    };
+    class Tank: LandVehicle {
+        class Turrets {
+            class MainTurret: NewTurret {
+                class Turrets {
+                    class CommanderOptics;
+                };
+            };
+        };
+    };
+    class Tank_F: Tank {};
+
     class BWA3_Puma_base: Tank_F {
         maximumLoad = 10000;
 
@@ -43,6 +64,33 @@ class CfgVehicles {
                 mountedRadio = "ACRE_SEM70";
                 isRadioRemovable = 0;
                 intercom[] = {"all"};
+            };
+        };
+
+        // Change optics to vanilla Warrior
+        class Turrets: Turrets {
+            class MainTurret: MainTurret {
+                class Turrets: Turrets {
+                    class CommanderOptics: CommanderOptics {
+                        gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
+                        turretInfoType = QGVAR(RscOpticsCommander);
+                    };
+                };
+
+                gunnerOpticsModel = "\A3\weapons_f\reticle\optics_empty";
+                turretInfoType = QGVAR(RscOpticsGunner);
+
+                class OpticsIn: BWA3_Optics_Gunner_Puma {
+                    class Wide: Wide {
+                        gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
+                    };
+                    class Medium: Medium {
+                        gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_m_F.p3d";
+                    };
+                    class Narrow: Narrow {
+                        gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_n_F.p3d";
+                    };
+                };
             };
         };
     };
