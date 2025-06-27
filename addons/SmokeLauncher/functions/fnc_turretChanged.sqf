@@ -47,7 +47,7 @@ GVAR(PFH) = [{
     params ["_args", "_handle"];
     _args params ["_player", "_turret", "_veh", "_smokeLauncher"];
 
-    // Restart display if null (not just at start, this will happen periodicly)
+    // Restart display if null (not just at start, this will happen periodically)
     private _display = uiNamespace getVariable [QGVAR(display), displayNull];
     if (isNull _display) then {
         ([QGVAR(RscDisplay)] call BIS_fnc_rscLayer) cutRsc [QGVAR(RscDisplay), "PLAIN", 1, false];
