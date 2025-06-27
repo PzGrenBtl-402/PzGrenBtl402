@@ -24,6 +24,9 @@ class CfgVehicles {
     class BWA3_Puma_base: Tank_F {
         maximumLoad = 10000;
 
+        PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
+        PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
+
         class AcreIntercoms {
             class Intercom_1 {
                 displayName = ECSTRING(ACRE,BV);
@@ -74,11 +77,23 @@ class CfgVehicles {
                     class CommanderOptics: CommanderOptics {
                         gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
                         turretInfoType = QGVAR(RscOpticsCommander);
+
+                        // Move SmokeLauncher to gunner
+                        weapons[] = {};
+                        magazines[] = {};
                     };
                 };
 
                 gunnerOpticsModel = "\A3\weapons_f\reticle\optics_empty";
                 turretInfoType = QGVAR(RscOpticsGunner);
+
+                // Move SmokeLauncher to gunner
+                weapons[] += {
+                    QGVAR(SmokeLauncher)
+                };
+                magazines[] += {
+                    "BWA3_SmokeLauncherMag"
+                };
 
                 class OpticsIn: BWA3_Optics_Gunner_Puma {
                     class Wide: Wide {

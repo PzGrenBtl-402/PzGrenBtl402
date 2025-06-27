@@ -6,7 +6,12 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_ACRE", "bwa3_puma"};
+        requiredAddons[] = {
+            "PzGrenBtl402_Main",
+            "PzGrenBtl402_ACRE",
+            "PzGrenBtl402_SmokeLauncher",
+            "bwa3_puma"
+        };
         skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);
         authors[] = {"Timi007", "Mishkar"};
@@ -16,4 +21,5 @@ class CfgPatches {
 };
 
 #include "CfgVehicles.hpp"
+#include "CfgWeapons.hpp"
 #include "RscInGameUI.hpp"
