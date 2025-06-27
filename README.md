@@ -44,6 +44,8 @@ Optional:
 ### BWMod
 
 - Reduced headgear mass
+- Replace Puma gunner and commander optice to A3 Warrior for more FOV
+- Ability to fire Puma smoke launcher as gunner and commander
 
 ### GM
 
