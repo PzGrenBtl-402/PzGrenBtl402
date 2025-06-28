@@ -34,10 +34,11 @@ class CfgVehicles {
                 allowedPositions[] = {"crew"};
                 disabledPositions[] = {};
                 limitedPositions[] = {{"cargo", "all"}};
-                numLimitedPositions = 1;
+                numLimitedPositions = 6;
                 masterPositions[] = {};
                 connectedByDefault = 1;
             };
+            delete Intercom_2;
         };
 
         acre_hasInfantryPhone = 1;
