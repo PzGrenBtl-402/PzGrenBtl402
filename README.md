@@ -46,6 +46,8 @@ Optional:
 - Reduced headgear mass
 - Replace Puma gunner and commander optice to A3 Warrior for more FOV
 - Ability to fire Puma smoke launcher as gunner and commander
+- Replace mouse actions of Puma to switch AP and HE with weapon selection
+- Set default to HE instead of ABM
 
 ### GM
 
