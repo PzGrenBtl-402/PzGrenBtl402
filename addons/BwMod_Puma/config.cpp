@@ -10,6 +10,7 @@ class CfgPatches {
             "PzGrenBtl402_Main",
             "PzGrenBtl402_ACRE",
             "PzGrenBtl402_SmokeLauncher",
+            "PzGrenBtl402_BwMod_Weapons",
             "bwa3_puma"
         };
         skipWhenMissingDependencies = 1;
@@ -20,6 +21,7 @@ class CfgPatches {
     };
 };
 
+#include "Cfg3DEN.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"
 #include "RscInGameUI.hpp"

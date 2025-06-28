@@ -27,6 +27,14 @@ class CfgVehicles {
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
         PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
 
+        magazines[] = {
+            "BWA3_240Rnd_APFSDS_shells",
+            "BWA3_160Rnd_HE_shells", // Set default to HE instead of ABM
+            "BWA3_1200Rnd_762x51",
+            "BWA3_1200Rnd_762x51",
+            "BWA3_2Rnd_Spike_Lr"
+        };
+
         class AcreIntercoms {
             class Intercom_1 {
                 displayName = ECSTRING(ACRE,BV);
@@ -107,6 +115,17 @@ class CfgVehicles {
                         gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_n_F.p3d";
                     };
                 };
+            };
+        };
+
+        class Attributes {
+            // Set default to HE instead of ABM
+            class BWA3_MK30AP;
+            class BWA3_MK30HE: BWA3_MK30AP {
+                defaultValue = 1;
+            };
+            class BWA3_MK30ABM: BWA3_MK30AP {
+                defaultValue = 0;
             };
         };
     };
