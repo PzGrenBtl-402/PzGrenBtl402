@@ -26,6 +26,7 @@ private _turret = _vehicle unitTurret _player;
 
 private _cfgWeapons = configFile >> "CfgWeapons";
 private _newMuzzle = switch (true) do {
+    case (_weapon isKindOf ["BWA3_MK30", _cfgWeapons]);
     case (_weapon isKindOf ["Redd_MK20", _cfgWeapons]): {
         ["AP", "HE"] select (_muzzle isEqualTo "AP")
     };
@@ -40,3 +41,9 @@ if (_newMuzzle isEqualTo "") exitWith {false};
 _vehicle selectWeaponTurret [_weapon, _turret, _newMuzzle, _firemode];
 
 true
+
+// weaponState [vehicle player, vehicle player unitTurret player]
+// ["BWA3_MK30","BWA3_MK30","player","BWA3_240Rnd_APFSDS_shells",212,0,0]
+
+
+// ["BWA3_MK30","BWA3_MK30","player","BWA3_160Rnd_ABM_shells",160,0,0]
