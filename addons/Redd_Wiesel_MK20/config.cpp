@@ -11,7 +11,7 @@ class CfgPatches {
             "PzGrenBtl402_Common",
             "PzGrenBtl402_ACRE",
             "PzGrenBtl402_Redd_Main",
-            "redd_tank_wiesel_1a4_mk20"
+            "Redd_Tank_Wiesel_1A4_MK20"
         };
         author = ECSTRING(Main,authors);
         authors[] = {"Lemonberries", "Mishkar", "Timi007"};

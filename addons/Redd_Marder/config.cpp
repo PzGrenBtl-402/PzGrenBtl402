@@ -14,7 +14,7 @@ class CfgPatches {
             "PzGrenBtl402_SmokeLauncher",
             "PzGrenBtl402_Rearm",
             "PzGrenBtl402_Ladder",
-            "redd_marder_1a5",
+            "Redd_Marder_1A5",
             "Redd_Bags",
             "ace_common"
         };

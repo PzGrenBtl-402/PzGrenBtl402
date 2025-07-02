@@ -9,8 +9,8 @@ class CfgPatches {
         requiredAddons[] = {
             "PzGrenBtl402_Main",
             "rnt_ace_compatibility",
-            "redd_tank_wiesel_1a4_mk20",
-            "redd_tank_wiesel_1a2_tow"
+            "Redd_Tank_Wiesel_1A4_MK20",
+            "Redd_Tank_Wiesel_1A2_TOW"
         };
         author = ECSTRING(Main,authors);
         authors[] = {"Timi007"};
