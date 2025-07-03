@@ -73,5 +73,14 @@ class CfgVehicles
                 intercom[] = {"all"};
             };
         };
+
+        class UserActions {
+            class Bino_in {
+                shortcut = "turnOut";
+            };
+            class Bino_out {
+                shortcut = "turnIn";
+            };
+        };
     };
 };
