@@ -53,6 +53,9 @@ class CfgVehicles {
         acre_infantryPhoneDisableRinging = 1;
         acre_infantryPhoneIntercom[] = {"all"};
         acre_infantryPhoneControlActions[] = {"all"};
+        // Inf phone position in BWMod is defined via selection
+        // We cannot change the data type of array entries
+        // acre_infantryPhonePosition[] = {-1.35, -3.83, 1.40};
 
         class AcreRacks {
             class Rack_1 {
