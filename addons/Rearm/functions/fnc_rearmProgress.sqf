@@ -11,7 +11,7 @@
  *      2: NUMBER - Total time rearming will take.
  *
  *  Returns:
- *      BOOLEAN - Keep going (on missing item or error return false)
+ *      BOOL - Keep going (on missing item or error return false)
  *
  *  Example:
  *      _this call PzGrenBtl402_Rearm_fnc_rearmProgress

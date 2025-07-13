@@ -13,7 +13,7 @@
  *      4: STRING - Magazine class.
  *
  *  Returns:
- *      BOOLEAN - Can rearm from outside.
+ *      BOOL - Can rearm from outside.
  *
  *  Example:
  *      [cursorObject, player, "machinegun_eject_pos", 2, "Redd_MK20_HE_Mag"] call PzGrenBtl402_Rearm_fnc_canRearmFromOutside

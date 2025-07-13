@@ -7,7 +7,7 @@
  *
  *  Parameter(s):
  *      0: ARRAY - Array of preferred ammo items (STRING) which should be used to rearm.
- *      1: ARRAY - Available magazines in the vehcile which can be used to rearm.
+ *      1: ARRAY - Available magazines in the vehicle which can be used to rearm.
  *      2: NUMBER - Total number of round to rearm.
  *
  *  Returns:

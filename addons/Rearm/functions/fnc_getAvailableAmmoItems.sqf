@@ -3,7 +3,7 @@
  *  Author: Timi007
  *
  *  Description:
- *      Returns all available ammo items in the vehcile inventory which should be used to rearm.
+ *      Returns all available ammo items in the vehicle inventory which should be used to rearm.
  *
  *  Parameter(s):
  *      0: OBJECT - Vehicle where the items are located

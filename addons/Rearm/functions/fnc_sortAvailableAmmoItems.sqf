@@ -3,7 +3,7 @@
  *  Author: Timi007
  *
  *  Description:
- *      Sorts  ammo items according to given classname priority list
+ *      Sorts ammo items according to given classname priority list
  *
  *  Parameter(s):
  *      0: ARRAY - Ammo items and their counts in format [classnames, counts]
@@ -25,12 +25,12 @@ TRACE_1("Called sortAvailableAmmoItems",_this);
 private _sortedItems = [];
 private _sortedCounts = [];
 
-private "_prio";
+private "_priority";
 {
-    _prio = _x;
+    _priority = _x;
 
     {
-        if (_x != _prio) then {
+        if (_x != _priority) then {
             continue;
         };
 
