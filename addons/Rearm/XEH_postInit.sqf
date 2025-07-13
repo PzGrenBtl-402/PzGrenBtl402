@@ -21,4 +21,5 @@ if (isServer) then {
     _vehicle setHitPointDamage ["hitturret", _damage, false];
 }] call CBA_fnc_addEventHandler;
 
-GVAR(magazineMaxAmmoCache) = [] call CBA_fnc_createNamespace;
+GVAR(magazineNameCache) = createHashMap;
+GVAR(magazineMaxAmmoCache) = createHashMap;

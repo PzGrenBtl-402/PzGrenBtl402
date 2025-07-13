@@ -2,6 +2,8 @@ class CfgMagazines {
     class gm_2Rnd_76mm_RP_dm35;
     class GVAR(1Rnd_76mm_RP_dm35): gm_2Rnd_76mm_RP_dm35 {
         count = 1;
+        displayName = ECSTRING(Rearm,smoke6GrenadeAmmoDisplayName);
+        descriptionShort = ECSTRING(Rearm,smoke6GrenadeAmmoDescription);
     };
 
     class gm_75Rnd_20x139mm_apds_t_dm63;

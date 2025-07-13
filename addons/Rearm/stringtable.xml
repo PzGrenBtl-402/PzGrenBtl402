@@ -66,8 +66,8 @@
             <German>Ladezeit für 3 Schnellnebelwurfkörper</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_settingsSmoke3Duration_tooltip">
-            <Original>Time it takes to rearm 3 smoke grenades DM55.</Original>
-            <German>Die Zeit, die es braucht, um 3 Schnellnebelwurfkörper DM55 zu laden.</German>
+            <Original>Time it takes to rearm 3 smoke grenades DM35/DM55.</Original>
+            <German>Die Zeit, die es braucht, um 3 Schnellnebelwurfkörper DM35/DM55 zu laden.</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDescription">
             <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 3&lt;br /&gt;Used in: Smoke Launcher of Marder 1A5</Original>
@@ -82,8 +82,8 @@
             <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 6&lt;br /&gt;Eingesetzt von: Nebelmittelwurfanlage des Marders 1A1 und 1A2</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_smoke6GrenadeAmmoDisplayName">
-            <Original>6 Smoke Grenades DM55</Original>
-            <German>6 Schnellnebelwurfkörper DM55</German>
+            <Original>6 Smoke Grenades DM35</Original>
+            <German>6 Schnellnebelwurfkörper DM35</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_subCategory">
             <Original>Vehicle Rearm</Original>

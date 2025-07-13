@@ -18,10 +18,6 @@
 
 params ["_magazineClass"];
 
-private _maxAmmo = GVAR(magazineMaxAmmoCache) getVariable _magazineClass;
-if (isNil "_maxAmmo") then { // Max ammo count is not in cache
-    _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _magazineClass >> "count");
-    GVAR(magazineMaxAmmoCache) setVariable [_magazineClass, _maxAmmo];
-};
-
-_maxAmmo
+GVAR(magazineMaxAmmoCache) getOrDefaultCall [_magazineClass, {
+    getNumber (configFile >> "CfgMagazines" >> _magazineClass >> "count")
+}, true]

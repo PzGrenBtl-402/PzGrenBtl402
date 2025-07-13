@@ -78,6 +78,7 @@ if (_rearmingMags isEqualTo []) then {
 };
 
 private _magazineName = [_magazineClass] call FUNC(getMagazineName);
+TRACE_2("Magazine name",_magazineName,_magazineClass);
 
 _rearmingMags pushBack _magazineClass;
 _vehicle setVariable [QGVAR(rearming), _rearmingMags, true];

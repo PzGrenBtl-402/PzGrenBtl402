@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="Redd_Main">
+        <Key ID="STR_PzGrenBtl402_Redd_Main_smokeGrenadeAmmoDescription">
+            <Original>Caliber: 76 mm RP&lt;br /&gt;Used in: Smoke Launcher of Vehicles</Original>
+            <German>Kaliber: 76 mm RP&lt;br /&gt;Eingesetzt von: Nebelmittelwurfanlage</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_Main_smokeGrenadeAmmoDisplayName">
+            <Original>Smoke Grenades DM55</Original>
+            <German>Schnellnebelwurfkörper DM55</German>
+        </Key>
+    </Package>
+</Project>

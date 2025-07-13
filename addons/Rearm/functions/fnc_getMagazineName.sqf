@@ -3,7 +3,7 @@
  *  Author: Timi007
  *
  *  Description:
- *      Gets a non-ambigious display name for a magazine.
+ *      Gets a the display name for a magazine.
  *
  *  Parameter(s):
  *      0: STRING - Magazine Classname
@@ -18,5 +18,15 @@
 
 params [["_magazineClass", "", [""]]];
 
-// Just a wrapper
-[_magazineClass] call ace_rearm_fnc_getMagazineName
+GVAR(magazineNameCache) getOrDefaultCall [_magazineClass, {
+    private _displayName = getText (configFile >> "CfgMagazines" >> _magazineClass >> "displayName");
+
+    if (_displayName isEqualTo "") then {
+        _displayName = _magazineClass;
+        WARNING_1("Magazine is missing display name [%1]",_magazineClass);
+    };
+
+    TRACE_2("Adding to cache",_magazineClass,_displayName);
+
+    _displayName // return
+}, true]

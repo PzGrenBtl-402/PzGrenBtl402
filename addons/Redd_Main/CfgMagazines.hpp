@@ -12,4 +12,10 @@ class CfgMagazines {
         displayNameShort = "APDS-T";
         count = 125;
     };
+
+    class SmokeLauncherMag;
+    class Redd_SmokeLauncherMag: SmokeLauncherMag {
+        displayName = CSTRING(smokeGrenadeAmmoDisplayName);
+        descriptionShort = CSTRING(smokeGrenadeAmmoDescription);
+    };
 };
