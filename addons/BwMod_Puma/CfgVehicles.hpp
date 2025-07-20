@@ -24,6 +24,11 @@ class CfgVehicles {
     class BWA3_Puma_base: Tank_F {
         maximumLoad = 10000;
 
+        disableSoundAttenuation = 0;
+        soundAttenuationTurret = "TankAttenuation";
+        driverCompartments = "Compartment1";
+        cargoCompartments[] = {"Compartment2"};
+
         ace_vehicles_engineStartDelay = 5;
 
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
@@ -94,6 +99,10 @@ class CfgVehicles {
                         gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
                         turretInfoType = QGVAR(RscOpticsCommander);
 
+                        disableSoundAttenuation = 0;
+                        soundAttenuationTurret = "TankAttenuation";
+                        gunnerCompartments = "Compartment1";
+
                         // Move SmokeLauncher to gunner
                         weapons[] = {};
                         magazines[] = {};
@@ -102,6 +111,10 @@ class CfgVehicles {
 
                 gunnerOpticsModel = "\A3\weapons_f\reticle\optics_empty";
                 turretInfoType = QGVAR(RscOpticsGunner);
+
+                disableSoundAttenuation = 0;
+                soundAttenuationTurret = "TankAttenuation";
+                gunnerCompartments = "Compartment1";
 
                 // Move SmokeLauncher to gunner
                 weapons[] += {
