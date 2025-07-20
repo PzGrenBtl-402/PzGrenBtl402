@@ -27,6 +27,8 @@ class CfgVehicles {
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
         PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
 
+        driverWeaponsInfoType = QGVAR(RscOptics_Driver);
+
         magazines[] = {
             "BWA3_240Rnd_APFSDS_shells",
             "BWA3_160Rnd_HE_shells", // Set default to HE instead of ABM
