@@ -19,7 +19,9 @@ class CfgVehicles {
             };
         };
     };
-    class Tank_F: Tank {};
+    class Tank_F: Tank {
+        class ViewOptics;
+    };
 
     class BWA3_Puma_base: Tank_F {
         maximumLoad = 10000;
@@ -106,6 +108,11 @@ class CfgVehicles {
                         // Move SmokeLauncher to gunner
                         weapons[] = {};
                         magazines[] = {};
+
+                        class ViewOptics: ViewOptics {
+                            visionMode[] = {"Normal", "TI"}; // Remove NVG
+                        };
+
                     };
                 };
 
@@ -127,12 +134,15 @@ class CfgVehicles {
                 class OpticsIn: BWA3_Optics_Gunner_Puma {
                     class Wide: Wide {
                         gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
+                        visionMode[] = {"Normal", "TI"}; // Remove NVG
                     };
                     class Medium: Medium {
                         gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_m_F.p3d";
+                        visionMode[] = {"Normal", "TI"}; // Remove NVG
                     };
                     class Narrow: Narrow {
                         gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_n_F.p3d";
+                        visionMode[] = {"Normal", "TI"}; // Remove NVG
                     };
                 };
             };
