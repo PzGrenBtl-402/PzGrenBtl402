@@ -11,7 +11,8 @@ class CfgPatches {
             "PzGrenBtl402_ACRE",
             "PzGrenBtl402_SmokeLauncher",
             "PzGrenBtl402_BwMod_Weapons",
-            "bwa3_puma"
+            "bwa3_puma",
+            "ace_hunterkiller"
         };
         skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);

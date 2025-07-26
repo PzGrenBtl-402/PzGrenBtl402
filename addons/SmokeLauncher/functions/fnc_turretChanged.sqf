@@ -21,7 +21,7 @@
 
 params ["_player", "_turret"];
 
-private _veh = vehicle _player;
+private _vehicle = vehicle _player;
 
 if (GVAR(PFH) >= 0) then {
     [GVAR(PFH)] call CBA_fnc_removePerFrameHandler;
@@ -34,18 +34,20 @@ if (GVAR(PFH) >= 0) then {
     };
 };
 
-private _vehCfg = configOf _veh;
-private _gunnerAndCommanderCanSmoke = [_vehCfg >> "PzGrenBtl402_gunnerAndCommanderCanSmoke"] call BIS_fnc_getCfgDataBool;
+private _gunnerAndCommanderCanSmoke = GVAR(gunnerAndCommanderCanSmokeCache) getOrDefaultCall [typeOf _vehicle, {
+    [configOf _vehicle >> "PzGrenBtl402_gunnerAndCommanderCanSmoke"] call BIS_fnc_getCfgDataBool
+}, true];
+
 if (!_gunnerAndCommanderCanSmoke) exitWith {};
 
-private _isGunnerOrCommander = _player isEqualTo (gunner _veh) || _player isEqualTo (commander _veh) || _turret isEqualTo [2]; // Commander in highest seat
+private _isGunnerOrCommander = _player isEqualTo (gunner _vehicle) || _player isEqualTo (commander _vehicle) || _turret isEqualTo [2]; // Commander in highest seat
 if (!_isGunnerOrCommander || !alive _player) exitWith {};
 
-private _smokeLauncher = getText (_vehCfg >> "PzGrenBtl402_smokeLauncherMuzzle");
+private _smokeLauncher = [typeOf _vehicle] call FUNC(getSmokeLauncher);
 
 GVAR(PFH) = [{
     params ["_args", "_handle"];
-    _args params ["_player", "_turret", "_veh", "_smokeLauncher"];
+    _args params ["_player", "_turret", "_vehicle", "_smokeLauncher"];
 
     // Restart display if null (not just at start, this will happen periodically)
     private _display = uiNamespace getVariable [QGVAR(display), displayNull];
@@ -62,13 +64,14 @@ GVAR(PFH) = [{
         _display setVariable [QGVAR(textColor), ctrlTextColor (_display displayCtrl IDC_AMMO)]; // save original text color
     };
 
-    private _gunner = gunner _veh;
+    private _gunner = gunner _vehicle;
     private _gunnerCanSmoke = !isNull _gunner && {alive _gunner} && {!(_gunner getVariable ["ace_isunconscious", false])};
-    private _smokeReloading = _veh getVariable [QGVAR(reloading), false];
+    private _smokeReloading = _vehicle getVariable [QGVAR(reloading), false];
 
     // Launch SmokeLauncher if shortcut is pressed
+    private _success = true;
     if (_gunnerCanSmoke && inputAction "launchCM" > 0 && !_smokeReloading) then {
-        [_veh, _smokeLauncher] call FUNC(fireSmoke);
+        _success = [_vehicle, _smokeLauncher] call FUNC(fireSmoke);
     };
 
     private _isTurnedOut = isTurnedOut _player || _turret isEqualTo [2];
@@ -81,7 +84,7 @@ GVAR(PFH) = [{
     _ctrlAmmo ctrlShow true;
 
     // Set text color
-    if (!_gunnerCanSmoke || _smokeReloading) then {
+    if (!_gunnerCanSmoke || _smokeReloading || !_success) then {
         private _ctrlAmmoRedTextColor = [0.9, 0, 0, 1];
         if ((ctrlTextColor _ctrlAmmo) isNotEqualTo _ctrlAmmoRedTextColor) then {
             _ctrlAmmo ctrlSetTextColor _ctrlAmmoRedTextColor;
@@ -94,9 +97,9 @@ GVAR(PFH) = [{
     };
 
     // Update ammo count
-    private _ammo = _veh ammo _smokeLauncher;
+    private _ammo = _vehicle ammo _smokeLauncher;
     if (_ammo isNotEqualTo GVAR(lastAmmoCount)) then {
         _ctrlAmmo ctrlSetText format [LLSTRING(ammoCount), _ammo];
     };
     GVAR(lastAmmoCount) = _ammo;
-}, 0, [_player, _turret, _veh, _smokeLauncher]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_player, _turret, _vehicle, _smokeLauncher]] call CBA_fnc_addPerFrameHandler;
