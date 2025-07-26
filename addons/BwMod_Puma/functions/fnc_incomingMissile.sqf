@@ -19,7 +19,6 @@
 #define GUNNER_TURRET [0]
 #define AZIMUTH_TOLERANCE 1
 #define TURRET_OVERRIDE_MAX_TIME 4
-#define MUSS_COOLDOWN 2
 
 params ["_vehicle", "_ammo", "_whoFired", "_instigator", "_missile"];
 TRACE_1("Incoming Missile",_this);
