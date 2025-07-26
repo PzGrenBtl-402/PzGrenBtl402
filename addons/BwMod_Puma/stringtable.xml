@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="BwMod_Puma">
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_rearViewCamera_next">
+            <Original>Toggle rear view camera / Next camera</Original>
+            <German>Rückfahrkamera umschalten / Nächste Kamera</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_rearViewCamera_previous">
+            <Original>Toggle rear view camera / Previous camera</Original>
+            <German>Rückfahrkamera umschalten / Vorherige Kamera</German>
+        </Key>
+    </Package>
+</Project>
