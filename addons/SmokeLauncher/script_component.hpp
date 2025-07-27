@@ -16,9 +16,5 @@
 
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"
 
-#define NO_MARDER 0
-#define REDD_MARDER 1
-#define GM_MARDER 2
-
 #define IDC_MODECONTROLGROUP 1000
 #define IDC_AMMO 1001
