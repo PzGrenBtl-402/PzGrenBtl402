@@ -5,7 +5,7 @@ class CfgSounds {
     };
 
     class GVAR(IncomingMissileWarning) {
-        sound[] = {"\bwa3_common\sounds\warning_incomingMissile.wss", 4, 1};
+        sound[] = {"\bwa3_common\sounds\warning_incomingMissile.wss", 5, 1};
         titles[] = {};
     };
 };

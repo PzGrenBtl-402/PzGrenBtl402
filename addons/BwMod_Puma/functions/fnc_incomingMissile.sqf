@@ -41,6 +41,7 @@ if (crew _vehicle isEqualTo []) exitWith {};
     if (time < _time) exitWith {};
 
     if (!alive _missile) exitWith {
+        _vehicle setVariable [QGVAR(mussMissileLock), objNull];
         [_this select 1] call CBA_fnc_removePerFrameHandler;
     };
 
@@ -48,11 +49,12 @@ if (crew _vehicle isEqualTo []) exitWith {};
 
     // Handle every missile only once
     if ((_vehicle getVariable [QGVAR(mussMissileLock), objNull]) isEqualTo _missile) exitWith {};
+    _vehicle setVariable [QGVAR(mussMissileLock), _missile];
 
     if (cameraOn isEqualTo _vehicle && !_soundPlayed) then {
         if (!isTurnedOut (call CBA_fnc_currentUnit)) then {
             TRACE_1("Play missile warning sound",_vehicle);
-            playSound [QEGVAR(BwMod_Common,IncomingMissileWarning), 2, 0];
+            playSound [QGVAR(IncomingMissileWarning), 2, 0];
         };
 
         (_this select 0) set [6, true];
@@ -64,7 +66,6 @@ if (crew _vehicle isEqualTo []) exitWith {};
     if (_vehicle turretLocal GUNNER_TURRET && {_vehicle ammo _smokeLauncher > 0}) then {
         TRACE_3("MUSS rotate turret and smoke",_vehicle,_whoFired,_missile);
         _vehicle setVariable [QGVAR(mussTurretOverwrite), true];
-        _vehicle setVariable [QGVAR(mussMissileLock), _missile];
         [_vehicle, GUNNER_TURRET, getPosASLVisual _missile, true] call ace_hunterkiller_fnc_slew;
 
         [{
