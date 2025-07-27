@@ -38,14 +38,6 @@ class CfgVehicles {
 
         driverWeaponsInfoType = QGVAR(RscOptics_Driver);
 
-        magazines[] = {
-            "BWA3_240Rnd_APFSDS_shells",
-            "BWA3_160Rnd_HE_shells", // Set default to HE instead of ABM
-            "BWA3_1200Rnd_762x51",
-            "BWA3_1200Rnd_762x51",
-            "BWA3_2Rnd_Spike_Lr"
-        };
-
         class AcreIntercoms {
             class Intercom_1 {
                 displayName = ECSTRING(ACRE,BV);
@@ -127,7 +119,13 @@ class CfgVehicles {
                 weapons[] += {
                     QGVAR(SmokeLauncher)
                 };
-                magazines[] += {
+
+                magazines[] = {
+                    "BWA3_240Rnd_APFSDS_shells",
+                    "BWA3_160Rnd_HE_shells", // Set default to HE instead of ABM
+                    "BWA3_1200Rnd_762x51",
+                    "BWA3_1200Rnd_762x51",
+                    "BWA3_2Rnd_Spike_Lr",
                     "BWA3_SmokeLauncherMag"
                 };
 
