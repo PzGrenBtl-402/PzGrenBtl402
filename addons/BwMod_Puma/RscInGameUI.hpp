@@ -7,6 +7,7 @@ class RscControlsGroup {
 
 class RscPicture;
 class RscText;
+class RscMapControl;
 
 class RscInGameUI {
     class RscUnitInfo;
@@ -223,6 +224,15 @@ class RscInGameUI {
                     h="1.2 * 		(0.025 * SafezoneH)";
                 };
             };
+        };
+    };
+
+    class RscUnitInfoTank;
+    class BWA3_RscUnitInfoTank: RscUnitInfoTank {
+        class Script: RscMapControl {
+            onDraw = QUOTE(call FUNC(onDrawRadar)); // Add missile warning
+            w = 0;
+            h = 0;
         };
     };
 };
