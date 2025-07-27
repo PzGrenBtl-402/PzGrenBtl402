@@ -11,6 +11,7 @@ class CfgPatches {
             "PzGrenBtl402_ACRE",
             "PzGrenBtl402_SmokeLauncher",
             "PzGrenBtl402_BwMod_Weapons",
+            "bwa3_common",
             "bwa3_puma",
             "ace_hunterkiller"
         };
