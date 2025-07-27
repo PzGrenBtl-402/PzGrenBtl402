@@ -7,6 +7,7 @@ class CfgWeapons
     {
         magazines[] += {QGVAR(1Rnd_76mm_RP_dm35)};
         showToPlayer = 0;
+        magazineReloadTime = 0.1;
     };
 
     class gm_20mm_rh202_base;

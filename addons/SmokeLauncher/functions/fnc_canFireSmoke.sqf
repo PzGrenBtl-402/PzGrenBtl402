@@ -17,14 +17,16 @@
  *
  */
 
-params [["_vehicle", objNull, [objNull]], ["_ignoreReloadTime", false, [false]]];
+params [["_vehicle", objNull, [objNull]], ["_ignoreReloadTimes", false, [false]]];
 
 if (isNull _vehicle) exitWith {false};
 
-if (!_ignoreReloadTime && _vehicle getVariable [QGVAR(reloading), false]) exitWith {false};
-
 private _smokeLauncher = [typeOf _vehicle] call FUNC(getSmokeLauncher);
-if (_smokeLauncher isEqualTo "" || {_vehicle ammo _smokeLauncher <= 0}) exitWith {false};
+if (_smokeLauncher isEqualTo "") exitWith {false};
+
+(weaponState [_vehicle, [0], _smokeLauncher]) params ["", "", "", "", "_ammoCount", "", "_magazineReloadPhase"];
+
+if (_ammoCount <= 0 || {!_ignoreReloadTimes && {_vehicle getVariable [QGVAR(reloading), false] || _magazineReloadPhase > 0}}) exitWith {false};
 
 private _gunner = gunner _vehicle;
 // Cannot smoke without gunner or when gunner is unconscious
