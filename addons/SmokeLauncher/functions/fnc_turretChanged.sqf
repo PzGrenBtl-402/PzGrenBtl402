@@ -40,7 +40,7 @@ private _gunnerAndCommanderCanSmoke = GVAR(gunnerAndCommanderCanSmokeCache) getO
 
 if (!_gunnerAndCommanderCanSmoke) exitWith {};
 
-private _isGunnerOrCommander = _player isEqualTo (gunner _vehicle) || _player isEqualTo (commander _vehicle) || _turret isEqualTo [2]; // Commander in highest seat
+private _isGunnerOrCommander = (_player isEqualTo (gunner _vehicle) || {_player isEqualTo (commander _vehicle)} || {_turret isEqualTo [2]}); // Commander in highest seat
 if (!_isGunnerOrCommander || !alive _player) exitWith {};
 
 private _smokeLauncher = [typeOf _vehicle] call FUNC(getSmokeLauncher);
@@ -64,13 +64,11 @@ GVAR(PFH) = [{
         _display setVariable [QGVAR(textColor), ctrlTextColor (_display displayCtrl IDC_AMMO)]; // save original text color
     };
 
-    private _gunner = gunner _vehicle;
-    private _gunnerCanSmoke = !isNull _gunner && {alive _gunner} && {!(_gunner getVariable ["ace_isunconscious", false])};
-    private _smokeReloading = _vehicle getVariable [QGVAR(reloading), false];
+    private _canFireSmoke = [_vehicle] call FUNC(canFireSmoke);
 
     // Launch SmokeLauncher if shortcut is pressed
     private _success = true;
-    if (_gunnerCanSmoke && inputAction "launchCM" > 0 && !_smokeReloading) then {
+    if (_canFireSmoke && {inputAction "launchCM" > 0}) then {
         _success = [_vehicle, _smokeLauncher] call FUNC(fireSmoke);
     };
 
@@ -84,7 +82,7 @@ GVAR(PFH) = [{
     _ctrlAmmo ctrlShow true;
 
     // Set text color
-    if (!_gunnerCanSmoke || _smokeReloading || !_success) then {
+    if (!_canFireSmoke || !_success) then {
         private _ctrlAmmoRedTextColor = [0.9, 0, 0, 1];
         if ((ctrlTextColor _ctrlAmmo) isNotEqualTo _ctrlAmmoRedTextColor) then {
             _ctrlAmmo ctrlSetTextColor _ctrlAmmoRedTextColor;

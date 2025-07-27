@@ -22,7 +22,8 @@
 
 #define GUNNER_TURRET [0]
 #define AZIMUTH_TOLERANCE 1
-#define TURRET_OVERRIDE_MAX_TIME 4
+#define TURRET_OVERRIDE_TIMEOUT 4
+#define FIRE_SMOKE_TIMEOUT 5
 
 params ["_vehicle", "_ammo", "_whoFired", "_instigator", "_missile"];
 TRACE_1("Incoming Missile",_this);
@@ -40,15 +41,18 @@ if (crew _vehicle isEqualTo []) exitWith {};
 
     if (time < _time) exitWith {};
 
-    if (!alive _missile) exitWith {
+    private _distance = _vehicle distance _missile;
+    if (!alive _missile || _distance < 10) exitWith {
         _vehicle setVariable [QGVAR(mussMissileLock), objNull];
         [_this select 1] call CBA_fnc_removePerFrameHandler;
     };
 
-    if ((_vehicle distance _missile >= 2000) || {_vehicle getVariable [QGVAR(mussTurretOverwrite), false]}) exitWith {};
+    if (_distance >= 2000) exitWith {};
 
     // Handle every missile only once
-    if ((_vehicle getVariable [QGVAR(mussMissileLock), objNull]) isEqualTo _missile) exitWith {};
+    private _lockedMissile = _vehicle getVariable [QGVAR(mussMissileLock), objNull];
+
+    if (!isNull _lockedMissile || _lockedMissile isEqualTo _missile) exitWith {};
     _vehicle setVariable [QGVAR(mussMissileLock), _missile];
 
     if (cameraOn isEqualTo _vehicle && !_soundPlayed) then {
@@ -60,18 +64,20 @@ if (crew _vehicle isEqualTo []) exitWith {};
         (_this select 0) set [6, true];
     };
 
-    // we need to have smoke
-    private _smokeLauncher = [typeOf _vehicle] call EFUNC(SmokeLauncher,getSmokeLauncher);
+    if (_vehicle getVariable [QGVAR(mussTurretOverwrite), false]) exitWith {};
 
-    if (_vehicle turretLocal GUNNER_TURRET && {_vehicle ammo _smokeLauncher > 0}) then {
+    // we need to be able to fire smoke
+    if (_vehicle turretLocal GUNNER_TURRET && {[_vehicle, true] call EFUNC(SmokeLauncher,canFireSmoke)}) then {
         TRACE_3("MUSS rotate turret and smoke",_vehicle,_whoFired,_missile);
         _vehicle setVariable [QGVAR(mussTurretOverwrite), true];
-        [_vehicle, GUNNER_TURRET, getPosASLVisual _missile, true] call ace_hunterkiller_fnc_slew;
+        [_vehicle, GUNNER_TURRET, getPosASL _missile, true] call ace_hunterkiller_fnc_slew;
 
         [{
             params ["_vehicle", "_missile"];
 
-            abs ((([_vehicle, GUNNER_TURRET] call CBA_fnc_turretDir) select 0) - (_vehicle getDir _missile)) < AZIMUTH_TOLERANCE
+            ([_vehicle, GUNNER_TURRET] call CBA_fnc_turretDir) params ["_azimuth"];
+
+            abs (_azimuth - (_vehicle getDir _missile)) < AZIMUTH_TOLERANCE
         }, {
             params ["_vehicle"];
 
@@ -81,9 +87,7 @@ if (crew _vehicle isEqualTo []) exitWith {};
             _vehicle setVariable [QGVAR(mussTurretOverwrite), false];
 
             [{
-                params ["_vehicle", "_missile"];
-
-                !(_vehicle getVariable [QEGVAR(SmokeLauncher,reloading), false])
+                [_this select 0] call EFUNC(SmokeLauncher,canFireSmoke)
             }, {
                 params ["_vehicle", "_missile"];
 
@@ -91,10 +95,10 @@ if (crew _vehicle isEqualTo []) exitWith {};
 
                 TRACE_1("Firing smoke",_vehicle);
                 [_vehicle] call EFUNC(SmokeLauncher,fireSmoke);
-            }, _this, 10] call CBA_fnc_waitUntilAndExecute;
+            }, _this, FIRE_SMOKE_TIMEOUT] call CBA_fnc_waitUntilAndExecute;
         },
         [_vehicle, _missile],
-        TURRET_OVERRIDE_MAX_TIME,
+        TURRET_OVERRIDE_TIMEOUT,
         {
             params ["_vehicle"];
 
@@ -104,6 +108,4 @@ if (crew _vehicle isEqualTo []) exitWith {};
             _vehicle setVariable [QGVAR(mussTurretOverwrite), false];
         }] call CBA_fnc_waitUntilAndExecute;
     };
-
-    [_this select 1] call CBA_fnc_removePerFrameHandler;
 }, 0, [_vehicle, _ammo, _whoFired, _instigator, _missile, time + 0.5, false]] call CBA_fnc_addPerFrameHandler;

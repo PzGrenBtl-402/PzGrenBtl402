@@ -20,7 +20,7 @@ private _unit = player;
 private _vehicle = cameraOn;
 
 // fix loader in optics mode
-if (isNil { _vehicle turretLocal [0, 1] } && {_unit isEqualTo (_vehicle turretUnit [0, 1])} && {_vehicle animationPhase "loaderhatch" > 0}) exitWith {};
+if ((_vehicle animationPhase "loaderhatch" > 0) && {isNil {_vehicle turretLocal [0, 1]}} && {_unit isEqualTo (_vehicle turretUnit [0, 1])}) exitWith {};
 
 params ["_script"];
 private _display = ctrlParent _script;
@@ -87,10 +87,10 @@ _observerDir = (_observerDir#0 atan2 _observerDir#1) + _vehicleDir;
 
 // rotate controls
 _compass ctrlSetAngle [_vehicleDir, 0.5, 0.5];
-//_chassis ctrlSetAngle [0, 0.5, 0.5];
 _turret ctrlSetAngle [_turretDir, 0.5, 0.5];
 _observer ctrlSetAngle [_observerDir, 0.5, 0.5];
 
+// Show direction of incoming missile as warning
 if (missionNamespace getVariable ["BWA3_showIncomingMissileWarning", false]) then {
     private _missile = _vehicle getVariable [QGVAR(mussMissileLock), objNull];
     if (!isNull _missile && alive _missile) then {
