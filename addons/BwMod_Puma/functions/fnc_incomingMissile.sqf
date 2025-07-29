@@ -67,8 +67,8 @@ if (crew _vehicle isEqualTo []) exitWith {};
     if (_vehicle getVariable [QGVAR(mussTurretOverwrite), false]) exitWith {};
 
     // we need to be able to fire smoke
-    if (_vehicle turretLocal GUNNER_TURRET && {[_vehicle, true] call EFUNC(SmokeLauncher,canFireSmoke)}) then {
-        TRACE_3("MUSS rotate turret and smoke",_vehicle,_whoFired,_missile);
+    if (_vehicle turretLocal GUNNER_TURRET) then {
+        TRACE_3("Rotate Turret",_vehicle,_whoFired,_missile);
         _vehicle setVariable [QGVAR(mussTurretOverwrite), true];
         [_vehicle, GUNNER_TURRET, getPosASL _missile, true] call ace_hunterkiller_fnc_slew;
 
@@ -85,6 +85,8 @@ if (crew _vehicle isEqualTo []) exitWith {};
             TRACE_1("Turret aligned - Breaking lock",_vehicle);
             _vehicle lockCameraTo [objNull, GUNNER_TURRET, true];
             _vehicle setVariable [QGVAR(mussTurretOverwrite), false];
+
+            if !([_vehicle, true] call EFUNC(SmokeLauncher,canFireSmoke)) exitWith {};
 
             [{
                 [_this select 0] call EFUNC(SmokeLauncher,canFireSmoke)
