@@ -9,7 +9,7 @@
  *      0: STRING - Memory selection.
  *      1: ARRAY - Viewing direction as relative offset.
  *      2: NUMBER - Field of view.
- *      3: STRING - Path to monitor texture.
+ *      3: STRING - Path to overlay texture for camera indicator.
  *
  *  Returns:
  *       Nothing.
@@ -19,7 +19,7 @@
  *
  */
 
-params ["_camPosName", "_camDirHelperPos", "_camOffset", "_fov", "_monitorTexture"];
+params ["_camPosName", "_camDirHelperPos", "_camOffset", "_fov", "_indicatorOverlay"];
 
 BWA3_cam attachTo [_vehicle, _camOffset, _camPosName, true];
 BWA3_camNVG attachTo [_vehicle, _camOffset, _camPosName, true];
@@ -37,4 +37,5 @@ BWA3_camNVG camCommit 0;
 BWA3_camNVG camPrepareFov _fov;
 BWA3_camNVG camCommitPrepared 0;
 
-_ctrlRearViewCam ctrlSetText _monitorTexture;
+private _ctrlRearViewCamIndicator = (uiNamespace getVariable "BWA3_dlgRearViewCam") displayCtrl 5;
+_ctrlRearViewCamIndicator ctrlSetText _indicatorOverlay;
