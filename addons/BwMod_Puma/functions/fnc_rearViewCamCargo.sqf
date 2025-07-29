@@ -42,19 +42,19 @@ switch (_selectedCamera) do {
         BWA3_isRearViewCamera = false;
     };
     case 0: {
-        ["cameraL", [-2500, 1500, -0.08], [0, -0.1, 0], 0.5, QPATHTOF(data\rsc\Radar_9.paa)] call FUNC(setCamera);
+        ["cameraL", [-250, 150, -0.08], [0, -0.1, 0], 0.5, QPATHTOF(data\rsc\Radar_9.paa)] call FUNC(setCamera);
     };
     case 1: {
-        ["cameraL", [0, -2500, -0.1], [0, 0, 0], 0.5, QPATHTOF(data\rsc\Radar_7.paa)] call FUNC(setCamera);
+        ["cameraL", [100, -150, -0.1], [0, 0, 0], 0.5, QPATHTOF(data\rsc\Radar_7.paa)] call FUNC(setCamera);
     };
     case 2: {
-        ["cameraR", [0, -2500, -0.1], [0, 0, 0], 0.5, QPATHTOF(data\rsc\Radar_5.paa)] call FUNC(setCamera);
+        ["cameraR", [-100, -150, -0.1], [0, 0, 0], 0.5, QPATHTOF(data\rsc\Radar_5.paa)] call FUNC(setCamera);
     };
     case 3: {
-        ["cameraR", [2500, 1500, -0.08], [0, -0.1, 0], 0.5, QPATHTOF(data\rsc\Radar_3.paa)] call FUNC(setCamera);
+        ["cameraR", [250, 150, -0.08], [0, -0.1, 0], 0.5, QPATHTOF(data\rsc\Radar_3.paa)] call FUNC(setCamera);
     };
     case 4: {
-        ["commanderview", [0, 2500, 0], [0, 0, 0], 0.25, QPATHTOF(data\rsc\Radar_Kdt.paa)] call FUNC(setCamera);
+        ["commanderview", [0, 250, 0], [0, 0, 0], 0.25, QPATHTOF(data\rsc\Radar_Kdt.paa)] call FUNC(setCamera);
     };
 };
 
