@@ -45,10 +45,10 @@ switch (_selectedCamera) do {
         ["cameraL", [-250, 150, -0.08], [0, -0.1, 0], 0.5, QPATHTOF(data\rsc\Radar_9.paa)] call FUNC(setCamera);
     };
     case 1: {
-        ["cameraL", [100, -150, -0.1], [0, 0, 0], 0.5, QPATHTOF(data\rsc\Radar_7.paa)] call FUNC(setCamera);
+        ["cameraL", [-100, -150, -0.1], [0, 0, 0], 0.5, QPATHTOF(data\rsc\Radar_7.paa)] call FUNC(setCamera);
     };
     case 2: {
-        ["cameraR", [-100, -150, -0.1], [0, 0, 0], 0.5, QPATHTOF(data\rsc\Radar_5.paa)] call FUNC(setCamera);
+        ["cameraR", [100, -150, -0.1], [0, 0, 0], 0.5, QPATHTOF(data\rsc\Radar_5.paa)] call FUNC(setCamera);
     };
     case 3: {
         ["cameraR", [250, 150, -0.08], [0, -0.1, 0], 0.5, QPATHTOF(data\rsc\Radar_3.paa)] call FUNC(setCamera);
