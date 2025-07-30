@@ -45,10 +45,14 @@ Optional:
 ### BWMod
 
 - Reduced headgear mass
-- Replace Puma gunner and commander optice to A3 Warrior for more FOV
-- Ability to fire Puma smoke launcher as gunner and commander
-- Replace mouse actions of Puma to switch AP and HE with weapon selection
-- Set default to HE instead of ABM
+- [Puma] Replace gunner and commander optice to A3 Warrior for more FOV
+- [Puma] Ability to fire smoke launcher as gunner and commander
+- [Puma] Replace mouse actions to switch AP and HE with weapon selection (add keybind)
+- [Puma] Set default to HE instead of ABM; change ammo count
+- [Puma] More cameras for Puma passengers
+- [Puma] Automatically rotate turret to incoming missiles and fire smoke if available
+- [Puma] Draw incoming missile direction on Puma top left radar
+- [Puma] Additional QoL changes (horizontal compass for driver, louder warnings, ...)
 
 ### GM
 
