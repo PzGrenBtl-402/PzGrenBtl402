@@ -3,7 +3,7 @@
  *  Author: Timi007
  *
  *  Description:
- *      Confim ladder adjustments.
+ *      Confirm ladder adjustments.
  *
  *  Parameter(s):
  *      0: OBJECT - Player.
@@ -21,7 +21,7 @@ params ["_player", "_key"];
 
 TRACE_1("Cancel ladder adjustment",_key);
 
-if (isNull _ladder || isNull _player || _key isNotEqualTo 1) exitWith {};
+if (isNull GVAR(ladder) || isNull _player || _key isNotEqualTo 1) exitWith {};
 
 // remove mouse buttons and hint
 call ace_interaction_fnc_hideMouseHint;

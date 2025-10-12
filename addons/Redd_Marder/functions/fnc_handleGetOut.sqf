@@ -32,7 +32,7 @@ if (local _vehicle && {_turret isEqualTo COMMANDER_TURRET_PATH} || {_turret isEq
     _vehicle setVariable ['Redd_Marder_Commander_Winkelspiegel', false, true];
 };
 
-if (local _unit && {_veh getVariable ["has_camonet_large", false] || {_veh getVariable ["has_camonet", false]}}) then {
+if (local _unit && {_vehicle getVariable ["has_camonet_large", false] || {_vehicle getVariable ["has_camonet", false]}}) then {
     private _camoCoef = _unit getVariable [QGVAR(camouflageCoef), getNumber (configOf _unit >> "camouflage")];
     _unit setUnitTrait ["camouflageCoef", _camoCoef];
 };

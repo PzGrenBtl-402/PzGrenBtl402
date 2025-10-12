@@ -6,20 +6,21 @@
  *      Sets the view of the camera.
  *
  *  Parameter(s):
- *      0: STRING - Memory selection.
- *      1: ARRAY - Viewing direction as relative offset.
- *      2: NUMBER - Field of view.
- *      3: STRING - Path to overlay texture for camera indicator.
+ *      0: OBJECT - The vehicle to attach to the camera.
+ *      1: STRING - Memory selection.
+ *      2: ARRAY - Viewing direction as relative offset.
+ *      3: NUMBER - Field of view.
+ *      4: STRING - Path to overlay texture for camera indicator.
  *
  *  Returns:
  *       Nothing.
  *
  *  Example:
- *      ["cameraL", [-2500, 1500, -0.08], 0.5, "z\PzGrenBtl402\addons\BwMod_Puma\data\rsc\Puma_Monitor_9.paa"] call PzGrenBtl402_BwMod_Puma_fnc_setCamera
+ *      [cursorTarget, "cameraL", [-2500, 1500, -0.08], 0.5, "z\PzGrenBtl402\addons\BwMod_Puma\data\rsc\Puma_Monitor_9.paa"] call PzGrenBtl402_BwMod_Puma_fnc_setCamera
  *
  */
 
-params ["_camPosName", "_camDirHelperPos", "_camOffset", "_fov", "_indicatorOverlay"];
+params ["_vehicle", "_camPosName", "_camDirHelperPos", "_camOffset", "_fov", "_indicatorOverlay"];
 
 BWA3_cam attachTo [_vehicle, _camOffset, _camPosName, true];
 BWA3_camNVG attachTo [_vehicle, _camOffset, _camPosName, true];

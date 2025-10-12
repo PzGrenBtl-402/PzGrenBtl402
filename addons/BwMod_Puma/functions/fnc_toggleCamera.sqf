@@ -22,7 +22,7 @@ if (_direction != 1 && _direction != -1) exitWith {false};
 
 private _unit = call CBA_fnc_currentUnit;
 
-private _config = configFile >> "CfgVehicles" >> typeOf cameraOn;
+private _config = configOf cameraOn;
 if (getNumber (_config >> "BWA3_hasRearViewCamera") == 0 && !isClass (_config >> "BWA3_RearViewCamera")) exitWith {false};
 
 // toggle camera Puma cargo
