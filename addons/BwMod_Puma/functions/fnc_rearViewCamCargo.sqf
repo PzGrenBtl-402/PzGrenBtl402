@@ -59,8 +59,9 @@ switch (_selectedCamera) do {
 };
 
 waitUntil {
-    if (currentVisionMode player != _visionMode) then {
-        _visionMode = currentVisionMode player;
+    private _player = call CBA_fnc_currentUnit;
+    if (currentVisionMode _player != _visionMode) then {
+        _visionMode = currentVisionMode _player;
         if (_visionMode == 1) then {
             _ctrlRearViewCamProxy ctrlSetPosition SLEEP_POS;
             _ctrlRearViewCamProxy ctrlCommit 0;
@@ -74,7 +75,7 @@ waitUntil {
         };
     };
 
-    !BWA3_isRearViewCamera || {!(player in (crew _vehicle - [driver _vehicle, gunner _vehicle, commander _vehicle]))} || {cameraView != "INTERNAL"} || {!isPiPEnabled}
+    !BWA3_isRearViewCamera || {!(_player in (crew _vehicle - [driver _vehicle, gunner _vehicle]))} || {!isPiPEnabled}
 };
 
 _ctrlRearViewCam ctrlShow false;

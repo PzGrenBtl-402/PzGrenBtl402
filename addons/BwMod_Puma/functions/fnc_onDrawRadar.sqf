@@ -53,8 +53,8 @@ if (isNull _compass) then {
     private _position = [
         safeZoneX + 0.1 * safeZoneW,
         safeZoneY + 0.1 * safeZoneH,
-        safeZoneW/8,
-        safeZoneH/8 * getResolution#4
+        safeZoneW / 8,
+        safeZoneH / 8 * getResolution # 4
     ];
 
     _compass ctrlSetPosition _position;

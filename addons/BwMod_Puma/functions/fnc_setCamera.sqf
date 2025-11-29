@@ -29,14 +29,12 @@ private _camPos = _vehicle selectionPosition _camPosName;
 private _camDir = ((_camDirHelperPos select 0) - (_camPos select 0)) atan2 ((_camDirHelperPos select 1) - (_camPos select 1));
 
 BWA3_cam setDir _camDir;
+BWA3_cam camSetFov _fov;
 BWA3_cam camCommit 0;
-BWA3_cam camPrepareFov _fov;
-BWA3_cam camCommitPrepared 0;
 
 BWA3_camNVG setDir _camDir;
+BWA3_camNVG camSetFov _fov;
 BWA3_camNVG camCommit 0;
-BWA3_camNVG camPrepareFov _fov;
-BWA3_camNVG camCommitPrepared 0;
 
 private _ctrlRearViewCamIndicator = (uiNamespace getVariable "BWA3_dlgRearViewCam") displayCtrl 5;
 _ctrlRearViewCamIndicator ctrlSetText _indicatorOverlay;

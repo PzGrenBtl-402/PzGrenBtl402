@@ -43,7 +43,8 @@ if (_unit isNotEqualTo driver vehicle _unit && {vehicle _unit isKindOf "BWA3_Pum
         BWA3_isRearViewCamera = false;
     } else {
         BWA3_isRearViewCamera = true;
-        [cameraOn] spawn compile preprocessFileLineNumbers "\bwa3_common\scripts\rearViewCam.sqf";
+        [cameraOn] call FUNC(setRearViewCamera);
+        [cameraOn] spawn compileScript ["\bwa3_common\scripts\rearViewCam.sqf"];
     };
 };
 
