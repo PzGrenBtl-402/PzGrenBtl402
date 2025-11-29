@@ -12,7 +12,7 @@ class CfgPatches {
             "rnt_ace_compatibility"
         };
         author = ECSTRING(Main,authors);
-        authors[] = {""};
+        authors[] = {"Timi007"};
         url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
@@ -20,3 +20,5 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgWeapons.hpp"
+#include "CfgMagazineGroups.hpp"

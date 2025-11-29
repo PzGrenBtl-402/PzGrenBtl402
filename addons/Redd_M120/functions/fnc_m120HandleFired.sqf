@@ -3,7 +3,7 @@
  *  Author: Timi007
  *
  *  Description:
- *      Emtpy M120 Mortar magazine after one shot was fired.
+ *      Empty M120 Mortar magazine after one shot was fired.
  *
  *  Parameter(s):
  *      0: OBJECT - M120 Mortar.

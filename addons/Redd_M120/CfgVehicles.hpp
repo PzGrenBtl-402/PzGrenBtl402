@@ -3,9 +3,14 @@ class XEH_CLASS_BASE;
 class CfgVehicles {
     class StaticMortar;
     class Redd_Tank_M120_Tampella_Base: StaticMortar {
-        class assembleInfo
-        {
-            dissasembleTo[] = {};
+        class ACE_CSW {
+            enabled = 1;
+            magazineLocation = "_target selectionPosition 'muendung'";
+            ammoLoadTime = 1;
+            ammoUnloadTime = 2;
+            desiredAmmo = 1;
+            proxyWeapon = QGVAR(M120_Tampella_Proxy);
+            allowFireOnLoad = 1;
         };
 
         class UserActions
