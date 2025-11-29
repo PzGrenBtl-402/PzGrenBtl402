@@ -14,7 +14,7 @@ class CfgVehicles {
         class ACE_Actions: ACE_Actions {
             class ACE_MainActions: ACE_MainActions {
                 condition = "alive _target";
-                position = "";
+                position = "(_target selectionPosition 'konec hlavne3') vectorAdd [0,-0.7,0]";
 
                 class MG_hoehe_justieren {
                     condition = "true";
@@ -85,7 +85,7 @@ class CfgVehicles {
         class ACE_Actions: ACE_Actions {
             class ACE_MainActions: ACE_MainActions {
                 condition = "alive _target";
-                position = "";
+                position = "(_target selectionPosition 'konec hlavne3') vectorAdd [0,-0.5,0]";
 
                 class MG_hoehe_justieren {
                     condition = "true";
