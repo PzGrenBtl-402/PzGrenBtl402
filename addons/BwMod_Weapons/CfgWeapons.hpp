@@ -85,4 +85,12 @@ class CfgWeapons {
             magazines[] = {"BWA3_160Rnd_HE_shells","BWA3_160Rnd_ABM_shells"};
         };
     };
+
+    class LMG_RCWS;
+    class BWA3_MG5_vehicle: LMG_RCWS {
+        magazines[] += {QGVAR(1000Rnd_762x51)};
+
+        autoReload = 1;
+        magazineReloadTime = 0.1;
+    };
 };

@@ -45,13 +45,13 @@
             <Original>Rearming failed!</Original>
             <German>Laden nicht möglich!</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_Rearm_settingsMG3Duration">
-            <Original>Rearm duration for MG3</Original>
-            <German>Ladezeit für MG3</German>
+        <Key ID="STR_PzGrenBtl402_Rearm_settingsMGDuration">
+            <Original>Rearm duration for coax MG</Original>
+            <German>Ladezeit für Turm-MG</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_Rearm_settingsMG3Duration_tooltip">
-            <Original>Time it takes to rearm one 7.62 x 51 mm MG3 Belt.</Original>
-            <German>Die Zeit, die es braucht, um einen 7,62 x 51 mm MG3 Gurt zu laden.</German>
+        <Key ID="STR_PzGrenBtl402_Rearm_settingsMGDuration_tooltip">
+            <Original>Time it takes to rearm one 7.62 x 51 mm MG Belt.</Original>
+            <German>Die Zeit, die es braucht, um einen 7,62 x 51 mm MG Gurt zu laden.</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_settingsMk20Duration">
             <Original>Rearm duration for 25rnd MK20</Original>
@@ -61,13 +61,13 @@
             <Original>Time it takes to rearm one 20 x 139 mm 25rnd Belt.</Original>
             <German>Die Zeit, die es braucht, um einen 20 x 139 mm 25 Patronen Gurt zu laden.</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_Rearm_settingsSmoke3Duration">
-            <Original>Rearm duration for 3 smoke grenades</Original>
-            <German>Ladezeit für 3 Schnellnebelwurfkörper</German>
+        <Key ID="STR_PzGrenBtl402_Rearm_settingsSmokeDuration">
+            <Original>Rearm duration for one smoke grenade</Original>
+            <German>Ladezeit für einen Schnellnebelwurfkörper</German>
         </Key>
-        <Key ID="STR_PzGrenBtl402_Rearm_settingsSmoke3Duration_tooltip">
-            <Original>Time it takes to rearm 3 smoke grenades DM35/DM55.</Original>
-            <German>Die Zeit, die es braucht, um 3 Schnellnebelwurfkörper DM35/DM55 zu laden.</German>
+        <Key ID="STR_PzGrenBtl402_Rearm_settingsSmokeDuration_tooltip">
+            <Original>Time it takes to rearm one smoke grenades DM35/DM55.</Original>
+            <German>Die Zeit, die es braucht, um einen Schnellnebelwurfkörper DM35/DM55 zu laden.</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDescription">
             <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 3&lt;br /&gt;Used in: Smoke Launcher of Marder 1A5</Original>
@@ -76,6 +76,14 @@
         <Key ID="STR_PzGrenBtl402_Rearm_smoke3GrenadeAmmoDisplayName">
             <Original>3 Smoke Grenades DM55</Original>
             <German>3 Schnellnebelwurfkörper DM55</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_smoke4GrenadeAmmoDescription">
+            <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 4&lt;br /&gt;Used in: Smoke Launcher of IFV Puma</Original>
+            <German>Kaliber: 76 mm RP&lt;br /&gt;Granaten: 4&lt;br /&gt;Eingesetzt von: Nebelmittelwurfanlage des SPz Puma</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Rearm_smoke4GrenadeAmmoDisplayName">
+            <Original>4 Smoke Grenades DM55</Original>
+            <German>4 Schnellnebelwurfkörper DM55</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_Rearm_smoke6GrenadeAmmoDescription">
             <Original>Caliber: 76 mm RP&lt;br /&gt;Grenades: 6&lt;br /&gt;Used in: Smoke Launcher of Marder 1A1 and 1A2</Original>

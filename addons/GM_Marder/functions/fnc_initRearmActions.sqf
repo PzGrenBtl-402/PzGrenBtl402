@@ -90,7 +90,7 @@ private _smokeMagazineName = [QEGVAR(Rearm,smoke_6grenade_ammo)] call EFUNC(Rear
     {},
     {
         params ["_vehicle"];
-        [_vehicle, [0], QGVAR(1Rnd_76mm_RP_dm35), [QEGVAR(Rearm,smoke_6grenade_ammo)], 2 * EGVAR(Rearm,rearmSmoke3Duration)] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], QGVAR(1Rnd_76mm_RP_dm35), [QEGVAR(Rearm,smoke_6grenade_ammo)], 6 * EGVAR(Rearm,rearmSmokeDuration)] call EFUNC(Rearm,rearm);
     },
     {},
     [],
@@ -112,6 +112,9 @@ private _mg3CompatibleMags = [
     "hlc_250Rnd_762x51_mdim_MG3",
     "hlc_250Rnd_762x51_Barrier_MG3",
     "hlc_250Rnd_762x51_T_MG3",
+
+    "150Rnd_762x51_Box",
+    "150Rnd_762x51_Box_Tracer",
 
     "gm_120Rnd_762x51mm_B_T_DM21_mg3_grn",
     "gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn",
@@ -147,7 +150,7 @@ private _mg3CompatibleMags = [
         params ["_vehicle", "", "", "_args"];
         _args params ["_mg3CompatibleMags"];
 
-        [_vehicle, [0], "gm_500Rnd_762x51mm_b_t_DM21_mg3", _mg3CompatibleMags, EGVAR(Rearm,rearmMG3Duration)] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], "gm_500Rnd_762x51mm_b_t_DM21_mg3", _mg3CompatibleMags, EGVAR(Rearm,rearmMGDuration)] call EFUNC(Rearm,rearm);
     },
     {},
     [_mg3CompatibleMags],

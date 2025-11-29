@@ -10,9 +10,11 @@ class CfgPatches {
             "PzGrenBtl402_Main",
             "PzGrenBtl402_ACRE",
             "PzGrenBtl402_SmokeLauncher",
+            "PzGrenBtl402_Rearm",
             "PzGrenBtl402_BwMod_Weapons",
             "bwa3_common",
             "bwa3_puma",
+            "bwa3_mells",
             "ace_hunterkiller"
         };
         skipWhenMissingDependencies = 1;

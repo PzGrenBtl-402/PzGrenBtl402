@@ -16,6 +16,15 @@ class Extended_PostInit_EventHandlers {
     };
 };
 
+class Extended_InitPost_EventHandlers {
+    class BWA3_Puma_base {
+        class GVAR(rearm) {
+            init = QUOTE(call FUNC(initRearmActions));
+        };
+    };
+};
+
+
 class Extended_IncomingMissile_EventHandlers {
     class BWA3_Puma_base {
         class GVAR(muss) {

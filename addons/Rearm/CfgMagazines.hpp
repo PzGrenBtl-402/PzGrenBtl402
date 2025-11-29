@@ -33,6 +33,15 @@ class CfgMagazines {
         mass = 15;
         count = 1;
     };
+    class GVAR(smoke_4grenade_ammo): GVAR(ammo_base) {
+        scope = 2;
+        displayName = CSTRING(smoke4GrenadeAmmoDisplayName);
+        descriptionShort = CSTRING(smoke4GrenadeAmmoDescription);
+        descriptionUse = CSTRING(smoke4GrenadeAmmoDescription);
+        picture = QPATHTOF(data\ui\smoke_4_ammo_item_icon.paa);
+        mass = 20;
+        count = 1;
+    };
     class GVAR(smoke_6grenade_ammo): GVAR(ammo_base) {
         scope = 2;
         displayName = CSTRING(smoke6GrenadeAmmoDisplayName);

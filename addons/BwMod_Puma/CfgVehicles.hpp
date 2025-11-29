@@ -85,11 +85,11 @@ class CfgVehicles {
             };
         };
 
-        // Change optics to vanilla Warrior
         class Turrets: Turrets {
             class MainTurret: MainTurret {
                 class Turrets: Turrets {
                     class CommanderOptics: CommanderOptics {
+                        // Change optics to vanilla Warrior
                         gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
                         turretInfoType = QGVAR(RscOpticsCommander);
 
@@ -116,14 +116,22 @@ class CfgVehicles {
                 gunnerCompartments = "Compartment1";
 
                 // Move SmokeLauncher to gunner
-                weapons[] += {
+                weapons[] = {
+                    "BWA3_MK30",
+                    "BWA3_MG5_vehicle",
+                    "bwa3_land_spikeLR_atgm",
                     QGVAR(SmokeLauncher)
                 };
 
-                magazines[] += {
+                magazines[] = {
+                    "BWA3_240Rnd_APFSDS_shells",
+                    "BWA3_160Rnd_ABM_shells",
+                    QEGVAR(BwMod_Weapons,1000Rnd_762x51),
+                    "bwa3_mells_spikeLR_2rnd_puma",
                     "BWA3_SmokeLauncherMag"
                 };
 
+                // Change optics to vanilla Warrior and remove NVG
                 class OpticsIn: BWA3_Optics_Gunner_Puma {
                     class Wide: Wide {
                         gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
