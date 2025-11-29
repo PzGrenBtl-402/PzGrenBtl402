@@ -13,6 +13,15 @@ class CfgVehicles {
     class rnt_gmw_static: GMG_01_base_F {
         armor = 500000; // Make invincible
 
+        class ACE_CSW {
+            enabled = 1;
+            magazineLocation = "(_target selectionPosition 'konec hlavne3') vectorAdd [-0.3,-0.07,-0.14]";
+            ammoLoadTime = 10;
+            ammoUnloadTime = 8;
+            desiredAmmo = 32;
+            proxyWeapon = QGVAR(Redd_gmw_Static_Proxy);
+        };
+
         class Turrets: Turrets {
             class MainTurret: MainTurret {
                 turretInfoType = QEGVAR(Redd_Main,RSC_MG3);

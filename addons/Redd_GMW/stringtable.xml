@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="Redd_GMW">
+        <Key ID="STR_PzGrenBtl402_Redd_GMW_DescriptionShort">
+            <Original>Caliber: 40 mm&lt;br/&gt;Rounds: 32&lt;br /&gt;Used in: Grenade Launcher</Original>
+            <German>Kaliber: 40 mm&lt;br/&gt;Patronen: 32&lt;br /&gt;Eingesetzt von: Granatmaschinenwaffe</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Redd_GMW_DisplayName">
+            <Original>[CSW] 40mm GMG Belt</Original>
+            <German>[CSW] 40mm GMW-Gurt</German>
+        </Key>
+    </Package>
+</Project>
