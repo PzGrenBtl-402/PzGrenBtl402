@@ -41,6 +41,7 @@ Optional:
 - Ability to switch between passenger 1 and gunner seats
 - QoL improvements for Wiesel (Shortcut for commander/loader to go higher, automatic camo, ...)
 - QoL improvements for Luchs (Shortcut for commander/loader to go higher)
+- ACE CSW for GMW and Mrs120
 
 ### BWMod
 
@@ -53,6 +54,8 @@ Optional:
 - [Puma] Automatically rotate turret to incoming missiles and fire smoke if available
 - [Puma] Draw incoming missile direction on Puma top left radar
 - [Puma] Additional QoL changes (horizontal compass for driver, louder warnings, ...)
+- [Puma] Add vehicle numbers
+- [Puma] Rearm smoke launcher and coax MG
 
 ### GM
 
