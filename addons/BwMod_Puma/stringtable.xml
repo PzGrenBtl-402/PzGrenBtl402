@@ -9,5 +9,69 @@
             <Original>Toggle rear view camera / Previous camera</Original>
             <German>Rückfahrkamera umschalten / Vorherige Kamera</German>
         </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_displayName">
+            <Original>Symbol: Vehicle number</Original>
+            <German>Symbol: Fahrzeugnummer</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_none">
+            <Original>None</Original>
+            <German>Keine</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_20">
+            <Original>2.0 (Red)</Original>
+            <German>2.0 (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_A">
+            <Original>A (Red)</Original>
+            <German>A (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_A1">
+            <Original>A1 (Red)</Original>
+            <German>A1 (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_A2">
+            <Original>A2 (Red)</Original>
+            <German>A2 (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_A3">
+            <Original>A3 (Red)</Original>
+            <German>A3 (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_B">
+            <Original>B (Red)</Original>
+            <German>B (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_B1">
+            <Original>B1 (Red)</Original>
+            <German>B1 (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_B2">
+            <Original>B2 (Red)</Original>
+            <German>B2 (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_B3">
+            <Original>B3 (Red)</Original>
+            <German>B3 (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_C">
+            <Original>C (Red)</Original>
+            <German>C (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_C1">
+            <Original>C1 (Red)</Original>
+            <German>C1 (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_C2">
+            <Original>C2 (Red)</Original>
+            <German>C2 (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_red_C3">
+            <Original>C3 (Red)</Original>
+            <German>C3 (Rot)</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_BwMod_Puma_vehicleNumber_tooltip">
+            <Original>Set the callsign or number of the vehicle.</Original>
+            <German>Setzt das Rufzeichen oder die Nummer des Fahrzeugs.</German>
+        </Key>
     </Package>
 </Project>

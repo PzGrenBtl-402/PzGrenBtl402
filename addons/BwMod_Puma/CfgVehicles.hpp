@@ -158,6 +158,46 @@ class CfgVehicles {
             class BWA3_MK30ABM: BWA3_MK30AP {
                 defaultValue = 0;
             };
+
+            class GVAR(vehicleNumber) {
+                displayName = CSTRING(vehicleNumber_displayName);
+                tooltip = CSTRING(vehicleNumber_tooltip);
+                property = QGVAR(vehicleNumber);
+                control = "Combo";
+                expression = QUOTE([ARR_2(_this,_value)] call FUNC(setVehicleNumber););
+                defaultValue = "";
+                typeName = "STRING";
+
+                class values {
+                    class none {
+                        default = 1;
+                        name = CSTRING(vehicleNumber_none);
+                        picture = "#(argb,8,8,3)color(0,0,0,0)";
+                        value = "";
+                    };
+
+                    #define VEH_NUMBER(COLOR,NUMBER) \
+                    class COLOR##_##NUMBER { \
+                        name = CSTRING(vehicleNumber_##COLOR##_##NUMBER); \
+                        picture = QPATHTOF(data\numbers\##COLOR##_##NUMBER##.paa); \
+                        value = QUOTE(COLOR##_##NUMBER); \
+                    }
+
+                    VEH_NUMBER(red,20);
+                    VEH_NUMBER(red,A);
+                    VEH_NUMBER(red,A1);
+                    VEH_NUMBER(red,A2);
+                    VEH_NUMBER(red,A3);
+                    VEH_NUMBER(red,B);
+                    VEH_NUMBER(red,B1);
+                    VEH_NUMBER(red,B2);
+                    VEH_NUMBER(red,B3);
+                    VEH_NUMBER(red,C);
+                    VEH_NUMBER(red,C1);
+                    VEH_NUMBER(red,C2);
+                    VEH_NUMBER(red,C3);
+                };
+            };
         };
     };
 };
