@@ -11,17 +11,20 @@ if (release_folder.exists()) {
         dst.remove_dir_all();
     }
 
-    print("Moving release to " + dst);
-    if (!release_folder.move(dst)) {
-        fatal("Failed to move " + release_folder + " to " + dst);
+    print("Copying release to " + dst);
+    if (!release_folder.copy(dst)) {
+        fatal("Failed to copy " + release_folder + " to " + dst);
     }
 
     print("Deleting addon Menu_Spotlight");
     let addons = dst.join("addons");
-    let menu_spotlight_pbo_name = project.prefix() + "_Menu_Spotlight.pbo";
-
-    addons.join(menu_spotlight_pbo_name).remove_file();
-    addons.join(menu_spotlight_pbo_name + "." + project.prefix() + "_" + project.version().to_string() + ".bisign").remove_file();
+    for addon in addons.list() {
+        let component = addon.file_name().sub_string(len(project.prefix()) + 1);
+        if (component.starts_with("Menu_Spotlight")) {
+            debug(component);
+            addon.remove_file();
+        }
+    }
 } else {
     warn("Cannot prepare workshop release. Folder " + release_folder + " does not exist!");
 }
