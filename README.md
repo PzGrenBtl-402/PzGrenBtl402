@@ -46,6 +46,7 @@ Optional:
 ### BWMod
 
 - Reduced headgear mass
+- Make flare's colors more visible and change life time and trigger height
 - [Puma] Replace gunner and commander optice to A3 Warrior for more FOV
 - [Puma] Ability to fire smoke launcher as gunner and commander
 - [Puma] Replace mouse actions to switch AP and HE with weapon selection (add keybind)
@@ -66,6 +67,7 @@ Optional:
 - Modify ACE fragmentation settings of DM51 and DM51A1 grenades
 - Add ACE self-interaction to swap fragmentation sleeve of DM51 and DM51A1 grenades
 - Reduce weight of manpacks
+- Make flare's colors more visible and change life time and trigger height
 
 ### RHS
 
