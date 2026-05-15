@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="PzGrenBtl402">
+    <Package name="Antiloot">
+        <Key ID="STR_PzGrenBtl402_Antiloot_activate">
+            <Original>Activate Anti-Loot</Original>
+            <German>Aktiviere Anti-Loot</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Antiloot_activate_tooltip">
+            <Original>Activate a system for preventing players to pickup and use enemy loot.</Original>
+            <German>Aktiviert ein System, das verhindert, dass Spieler Loot des Feindes aufheben und verwenden können.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Antiloot_excludeRemoteControlled">
+            <Original>Exclude Remote Controlled Units</Original>
+            <German>Ferngesteuerte Einheiten ausschließen</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Antiloot_excludeRemoteControlled_tooltip">
+            <Original>Deactivate Anti-Loot for remote controlled units by Zeus.</Original>
+            <German>Deaktiviere Anti-Loot für von Zeus ferngesteuerte Einheiten.</German>
+        </Key>
+        <Key ID="STR_PzGrenBtl402_Antiloot_subCategory">
+            <Original>Anti-Loot</Original>
+            <German>Anti-Loot</German>
+        </Key>
+    </Package>
+</Project>

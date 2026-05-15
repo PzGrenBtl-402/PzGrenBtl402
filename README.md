@@ -107,3 +107,4 @@ Optional:
 - [Redd'n'Tank/GM] Custom Milan reloading system (One Milan tube bag is one shot)
 - [Redd'n'Tank/GM] Custom weapon reloading system for Marder (ammo as inventory items, reload on top of vehicle)
 - [Redd'n'Tank/GM] Add keybind to switch between AP and HE.
+- Anti-Loot framework: Trigger traps (detonations) when using blacklisted weapons or items or when opening containers

@@ -1,0 +1,9 @@
+PREP(addToBlacklist);
+PREP(addTrapToContainer);
+PREP(addTrapToContainerLocal);
+PREP(handleFired);
+PREP(handleTake);
+PREP(detonate);
+PREP(removeFromBlacklist);
+PREP(removeTrapFromContainer);
+PREP(removeTrapFromContainerLocal);
