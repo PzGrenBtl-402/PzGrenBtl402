@@ -6,7 +6,7 @@
  *      Handles the keybind to toggle the Multifunctional Self Protection System (MUSS) mode of the SPz Puma.
  *
  *  Parameter(s):
- *      0: OBJECT - Player pressing the keybind.
+ *      None.
  *
  *  Returns:
  *       BOOL - Handled.
