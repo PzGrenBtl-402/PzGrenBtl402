@@ -6,3 +6,4 @@ PREP(setCamera);
 PREP(setRearViewCamera);
 PREP(setVehicleNumber);
 PREP(toggleCamera);
+PREP(toggleMussMode);

@@ -64,7 +64,10 @@ if (crew _vehicle isEqualTo []) exitWith {};
         (_this select 0) set [6, true];
     };
 
-    if (_vehicle getVariable [QGVAR(mussTurretOverwrite), false]) exitWith {};
+    if (
+        (_vehicle getVariable [QGVAR(mussTurretOverwrite), false]) ||
+        {(_vehicle getVariable [QGVAR(MussMode), DEFAULT_MUSS_MODE]) < MUSS_MODE_TURRET_ROTATION}
+    ) exitWith {};
 
     // we need to be able to fire smoke
     if (_vehicle turretLocal GUNNER_TURRET) then {
@@ -86,7 +89,10 @@ if (crew _vehicle isEqualTo []) exitWith {};
             _vehicle lockCameraTo [objNull, GUNNER_TURRET, true];
             _vehicle setVariable [QGVAR(mussTurretOverwrite), false];
 
-            if !([_vehicle, true] call EFUNC(SmokeLauncher,canFireSmoke)) exitWith {};
+            if (
+                !([_vehicle, true] call EFUNC(SmokeLauncher,canFireSmoke)) ||
+                {(_vehicle getVariable [QGVAR(MussMode), DEFAULT_MUSS_MODE]) < MUSS_MODE_SMOKE}
+            ) exitWith {};
 
             [{
                 [_this select 0] call EFUNC(SmokeLauncher,canFireSmoke)

@@ -10,4 +10,8 @@ missionNamespace setVariable ["BWA3_MK30AP", true];
 missionNamespace setVariable ["BWA3_MK30HE", true];
 missionNamespace setVariable ["BWA3_MK30ABM", false];
 
+if (hasInterface) then {
+    [QGVAR(notify), {_this call CBA_fnc_notify}] call CBA_fnc_addEventHandler;
+};
+
 ADDON = true;

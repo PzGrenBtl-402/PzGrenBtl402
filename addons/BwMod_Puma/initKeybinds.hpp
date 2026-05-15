@@ -20,3 +20,13 @@
         [0xCF, [true, false, false]] // Shift + End
     ] call CBA_fnc_addKeybind;
 }] call CBA_fnc_waitUntilAndExecute;
+
+private _category = [LELSTRING(Main,category), LLSTRING(catergory)];
+[
+    _category,
+    QGVAR(toggleMuss),
+    [LLSTRING(toggleMuss), LLSTRING(toggleMuss_description)],
+    {[] call FUNC(toggleMussMode)},
+    "",
+    [DIK_INSERT, [false, false, false]] // Insert
+] call CBA_fnc_addKeybind;
