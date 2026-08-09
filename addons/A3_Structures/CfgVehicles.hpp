@@ -234,6 +234,8 @@ class CfgVehicles {
     SET_ARMOR(House_Small_F,Land_i_Addon_03_V1_F);
     SET_ARMOR(House_Small_F,Land_i_Addon_03mid_V1_F);
     SET_ARMOR(House_Small_F,Land_i_Addon_04_V1_F);
+    SET_ARMOR(House_Small_F,Land_d_Addon_02_V1_F);
+    SET_ARMOR(House_Small_F,Land_d_House_Small_02_V1_F);
     SET_ARMOR_WITH_WINDOWS_03(House_Small_F,Land_i_Addon_02_b_white_F);
 
     SET_ARMOR(House_Small_F,Land_TBox_F);
@@ -249,6 +251,7 @@ class CfgVehicles {
 
     SET_ARMOR_WITH_WINDOWS_04(House_Small_F,Land_i_House_Small_02_V1_F);
     SET_ARMOR(House_Small_F,Land_i_Stone_Shed_V1_F);
+    SET_ARMOR(House_Small_F,Land_d_Stone_Shed_V1_F);
     SET_ARMOR_WITH_WINDOWS_04(House_Small_F,Land_Chapel_Small_V1_F);
     SET_ARMOR(House_Small_F,Land_Chapel_Small_V2_F);
 
@@ -264,4 +267,98 @@ class CfgVehicles {
     SET_ARMOR(House_Small_F,Land_d_Windmill01_F);
     SET_ARMOR(House_Small_F,Land_spp_Transformer_F);
     SET_ARMOR(House_Small_F,Cargo_House_base_F);
+
+    SET_ARMOR(House_Small_F,Land_Substation_01_F);
+
+    class Ruins_F;
+    SET_ARMOR(Ruins_F,Land_Stone_Shed_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Stone_HouseBig_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Stone_HouseSmall_V1_ruins_F);
+
+    SET_ARMOR(Ruins_F,Land_House_Native_01_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Native_02_ruins_F);
+
+    SET_ARMOR(Ruins_F,Land_House_1B01_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W01_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W02_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W03_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W04_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W05_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W06_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W07_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W08_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W09_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W10_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W11_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W12_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_1W13_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_2B01_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_2B02_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_2B03_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_2B04_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_2W01_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_2W02_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_2W03_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_2W04_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_2W05_ruins_F);
+
+    SET_ARMOR(Ruins_F,Land_House_Big_01_b_blue_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Big_01_b_brown_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Big_01_b_pink_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Big_01_b_yellow_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Big_01_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Big_01_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Big_02_b_blue_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Big_02_b_brown_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Big_02_b_pink_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Big_02_b_yellow_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Big_02_V1_ruins_F);
+
+    SET_ARMOR(Ruins_F,Land_House_Small_01_b_blue_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_01_b_brown_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_01_b_pink_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_01_b_yellow_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_01_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_01_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_02_b_blue_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_02_b_brown_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_02_b_pink_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_02_b_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_02_b_yellow_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_02_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_02_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_03_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_03_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_04_ruins_F);
+    SET_ARMOR(Ruins_F,Land_House_Small_05_ruins_F);
+
+    SET_ARMOR(Ruins_F,Land_Addon_01_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Addon_01_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Addon_02_b_white_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Addon_02_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Addon_02_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Addon_03_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Addon_03_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Addon_03mid_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Addon_04_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Addon_04_V1_ruins_F);
+    SET_ARMOR(Ruins_F,Land_Addon_05_ruins_F);
+
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Big_01_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Big_01_half_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Big_02_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Big_02_half_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Big_03_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Big_03_half_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Big_04_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Big_05_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Small_01_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Small_01_half_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Small_02_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Small_03_F);
+    SET_ARMOR(Ruins_F,Land_HouseRuin_Small_04_F);
+    SET_ARMOR(Ruins_F,Land_HouseWallRuin_Corner_01_F);
+    SET_ARMOR(Ruins_F,Land_HouseWallRuin_Corner_02_F);
+    SET_ARMOR(Ruins_F,Land_HouseWallRuin_Door_01_F);
+    SET_ARMOR(Ruins_F,Land_HouseChimney_Ruin_01_F);
 };
