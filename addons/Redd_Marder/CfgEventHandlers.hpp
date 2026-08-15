@@ -30,6 +30,9 @@ class Extended_InitPost_EventHandlers {
         class GVAR(rearm) {
             init = QUOTE(call FUNC(initRearmActions));
         };
+        class GVAR(map) {
+            init = QUOTE(call FUNC(initMapActions));
+        };
         class GVAR(camonet) {
             serverInit = QUOTE([ARR_2(FUNC(setCamonet),_this)] call CBA_fnc_execNextFrame);
         };

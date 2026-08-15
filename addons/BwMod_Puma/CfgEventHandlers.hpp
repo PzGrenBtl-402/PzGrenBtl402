@@ -21,6 +21,9 @@ class Extended_InitPost_EventHandlers {
         class GVAR(rearm) {
             init = QUOTE(call FUNC(initRearmActions));
         };
+        class GVAR(map) {
+            init = QUOTE(call FUNC(initMapActions));
+        };
     };
 };
 

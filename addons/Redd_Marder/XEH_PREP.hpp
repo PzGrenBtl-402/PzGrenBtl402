@@ -27,6 +27,7 @@ PREP(handleFired);
 PREP(handleGetIn);
 PREP(handleGetOut);
 PREP(initLadderActions);
+PREP(initMapActions);
 PREP(initMilanActions);
 PREP(initRampActions);
 PREP(initRearmActions);

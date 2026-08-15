@@ -3,6 +3,7 @@ PREP(canRearmMK);
 PREP(canRearmMKProgress);
 PREP(canUnloadMilan);
 PREP(closeRamp);
+PREP(initMapActions);
 PREP(initMilanActions);
 PREP(initRampActions);
 PREP(initRearmActions);

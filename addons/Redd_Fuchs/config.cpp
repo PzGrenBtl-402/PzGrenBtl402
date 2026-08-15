@@ -8,10 +8,11 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_ACRE", "Redd_Tank_Fuchs_1A4"};
         author = ECSTRING(Main,authors);
-        authors[] = {"Mishkar"};
+        authors[] = {"Mishkar", "Timi007"};
         url = ECSTRING(Main,URL);
         VERSION_CONFIG;
     };
 };
 
+#include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"

@@ -1,4 +1,5 @@
 PREP(incomingMissile);
+PREP(initMapActions);
 PREP(initRearmActions);
 PREP(onDrawRadar);
 PREP(rearViewCamCargo);
