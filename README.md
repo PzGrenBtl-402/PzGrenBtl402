@@ -57,6 +57,7 @@ Optional:
 - [Puma] Additional QoL changes (horizontal compass for driver, louder warnings, ...)
 - [Puma] Add vehicle numbers
 - [Puma] Rearm smoke launcher and coax MG
+- [Puma] Increase HE damage
 
 ### GM
 
@@ -91,6 +92,11 @@ Optional:
 ### ACE
 
 - Make flags lighter
+- Make tactical ladder invincible
+
+### Extended Fortification Mod
+
+- Make EFM camo nets cuttable with ACE wirecutter
 
 ### A3
 
@@ -108,3 +114,5 @@ Optional:
 - [Redd'n'Tank/GM] Custom weapon reloading system for Marder (ammo as inventory items, reload on top of vehicle)
 - [Redd'n'Tank/GM] Add keybind to switch between AP and HE.
 - Anti-Loot framework: Trigger traps (detonations) when using blacklisted weapons or items or when opening containers
+- Add default place map on vehicle actions (Requires Metis Enhanced v1.10.2)
+
