@@ -18,7 +18,7 @@
 
 params ["_veh"];
 
-if (!("mts_map" call ace_common_fnc_isModLoaded) || !hasInterface) exitWith {};
+if (isNil "mts_map_fnc_getPlaceMapOnVehicleAction" || !hasInterface) exitWith {};
 
 // On the hood
 private _action = [

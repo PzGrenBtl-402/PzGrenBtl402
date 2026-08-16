@@ -15,7 +15,8 @@ class CfgPatches {
             "gm_weapons_cannons_20mm_rh202",
             "gm_vehicles_land_tracked_marder1",
             "Redd_Bags",
-            "ace_common"
+            "ace_common",
+            "ace_interact_menu"
         };
         skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);

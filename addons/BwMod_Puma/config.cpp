@@ -15,7 +15,8 @@ class CfgPatches {
             "bwa3_common",
             "bwa3_puma",
             "bwa3_mells",
-            "ace_hunterkiller"
+            "ace_hunterkiller",
+            "ace_interact_menu"
         };
         skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);

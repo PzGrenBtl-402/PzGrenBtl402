@@ -6,7 +6,12 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main", "PzGrenBtl402_ACRE", "gm_vehicles_land_wheeled_fuchs"};
+        requiredAddons[] = {
+            "PzGrenBtl402_Main",
+            "PzGrenBtl402_ACRE",
+            "gm_vehicles_land_wheeled_fuchs",
+            "ace_interact_menu"
+        };
         skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);
         authors[] = {"Mishkar", "Timi007"};
