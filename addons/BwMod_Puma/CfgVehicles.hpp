@@ -115,18 +115,18 @@ class CfgVehicles {
                 soundAttenuationTurret = "TankAttenuation";
                 gunnerCompartments = "Compartment1";
 
-                // Move SmokeLauncher to gunner
+
                 weapons[] = {
                     "BWA3_MK30",
-                    "BWA3_MG5_vehicle",
+                    "BWA3_MG4_vehicle",         // Replace MG5 with coax MG4
                     "bwa3_land_spikeLR_atgm",
-                    QGVAR(SmokeLauncher)
+                    QGVAR(SmokeLauncher)        // Move SmokeLauncher to gunner
                 };
 
                 magazines[] = {
-                    "BWA3_240Rnd_APFSDS_shells",
-                    "BWA3_160Rnd_ABM_shells",
-                    QEGVAR(BwMod_Weapons,1000Rnd_762x51),
+                    "BWA3_240Rnd_APFSDS_shells",            // Changed in BwMod_Weapons to 160Rnd
+                    "BWA3_160Rnd_ABM_shells",               // Changed in BwMod_Weapons to 240Rnd
+                    QEGVAR(BwMod_Weapons,1000Rnd_556x45),   // Change to 1000Rnd MG4
                     "bwa3_mells_spikeLR_2rnd_puma",
                     "BWA3_SmokeLauncherMag"
                 };
