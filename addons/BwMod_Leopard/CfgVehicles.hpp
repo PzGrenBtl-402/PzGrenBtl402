@@ -1,7 +1,35 @@
+class Optics_Armored;
+class BWA3_Optics_Commander_Leopard: Optics_Armored {
+    class Wide;
+    class Medium;
+    class Narrow;
+};
+
 class CfgVehicles {
-    class Tank_F;
+    class Land;
+    class LandVehicle: Land {
+        class NewTurret;
+    };
+    class Tank: LandVehicle {
+        class Turrets {
+            class MainTurret: NewTurret {
+                class Turrets {
+                    class CommanderOptics;
+                };
+            };
+        };
+    };
+    class Tank_F: Tank {};
+
     class BWA3_Leopard_base: Tank_F {
         maximumLoad = 10000;
+
+        ace_vehicles_engineStartDelay = 5;
+
+        PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
+        PzGrenBtl402_smokeLauncherMuzzle = QEGVAR(BwMod_Weapons,SmokeLauncher);
+
+        driverWeaponsInfoType = QGVAR(RscOptics_Driver);
 
         class AcreIntercoms {
             class Intercom_1 {
@@ -46,6 +74,41 @@ class CfgVehicles {
                 mountedRadio = "ACRE_SEM70";
                 isRadioRemovable = 0;
                 intercom[] = {"all"};
+            };
+        };
+
+        class Turrets: Turrets {
+            class MainTurret: MainTurret {
+                class Turrets: Turrets {
+                    class CommanderOptics: CommanderOptics {
+                        // Change optics to vanilla Warrior
+                        gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
+                        turretInfoType = QGVAR(RscOpticsCommander);
+
+                        // Move SmokeLauncher to gunner
+                        weapons[] = {};
+                        magazines[] = {};
+
+                        class OpticsIn: BWA3_Optics_Commander_Leopard {
+                            class Wide: Wide {
+                                gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
+                                visionMode[] = {"Normal", "TI"}; // Remove NVG
+                            };
+                            class Medium: Medium {
+                                gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
+                                visionMode[] = {"Normal", "TI"}; // Remove NVG
+                            };
+                            class Narrow: Narrow {
+                                gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
+                                visionMode[] = {"Normal", "TI"}; // Remove NVG
+                            };
+                        };
+                    };
+                };
+
+                // Move SmokeLauncher to gunner
+                weapons[] += {QEGVAR(BwMod_Weapons,SmokeLauncher)};
+                magazines[] += {"BWA3_SmokeLauncherMag"};
             };
         };
     };
