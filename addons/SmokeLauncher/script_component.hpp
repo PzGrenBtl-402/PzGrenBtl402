@@ -16,5 +16,8 @@
 
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"
 
+#define IDD_RSCDISPLAYCURATOR 312
+#define IDD_INTERRUPT 49
+
 #define IDC_MODECONTROLGROUP 1000
 #define IDC_AMMO 1001

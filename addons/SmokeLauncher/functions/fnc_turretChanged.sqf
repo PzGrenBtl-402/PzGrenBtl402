@@ -41,7 +41,7 @@ private _gunnerAndCommanderCanSmoke = GVAR(gunnerAndCommanderCanSmokeCache) getO
 if (!_gunnerAndCommanderCanSmoke) exitWith {};
 
 private _isGunnerOrCommander = (_player isEqualTo (gunner _vehicle) || {_player isEqualTo (commander _vehicle)} || {_turret isEqualTo [2]}); // Commander in highest seat
-if (!_isGunnerOrCommander || !alive _player) exitWith {};
+if (!_isGunnerOrCommander || {!alive _player}) exitWith {};
 
 private _smokeLauncher = [typeOf _vehicle] call FUNC(getSmokeLauncher);
 
@@ -75,8 +75,14 @@ GVAR(PFH) = [{
     private _isTurnedOut = isTurnedOut _player || _turret isEqualTo [2];
     private _ctrlAmmo = _display displayCtrl IDC_AMMO;
 
-    // Hide Ammo count when turned out
-    if (_isTurnedOut) exitWith {
+    // Hide Ammo count when turned out, paused or in Zeus
+    if (
+        _isTurnedOut ||                                                         // We are turned out
+        {!isNull (findDisplay IDD_INTERRUPT)} ||                                // We are in Zeus
+        {!isNull (findDisplay IDD_RSCDISPLAYCURATOR)} ||                        // Pause menu is opened
+        {dialog} ||                                                             // We have a dialog open
+        {uiNamespace getVariable ["RscDisplayCurator_screenshotMode", false]}   // HUD is hidden
+    ) exitWith {
         _ctrlAmmo ctrlShow false;
     };
     _ctrlAmmo ctrlShow true;
