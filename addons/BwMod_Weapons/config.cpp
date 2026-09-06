@@ -6,7 +6,10 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"PzGrenBtl402_Main", "bwa3_weapons"};
+        requiredAddons[] = {
+            "PzGrenBtl402_Main",
+            "bwa3_weapons"
+        };
         author = ECSTRING(Main,authors);
         authors[] = {"Timi007"};
         url = ECSTRING(Main,URL);
@@ -14,5 +17,6 @@ class CfgPatches {
     };
 };
 
-#include "CfgWeapons.hpp"
+#include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
+#include "CfgWeapons.hpp"
