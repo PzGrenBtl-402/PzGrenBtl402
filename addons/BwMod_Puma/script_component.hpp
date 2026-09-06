@@ -17,6 +17,8 @@
 #include "\z\PzGrenBtl402\addons\Main\script_macros.hpp"
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
 
+#define MAX_NUM_CAMERAS 5
+
 #define MUSS_MODE_JAMMING 0
 #define MUSS_MODE_TURRET_ROTATION 1
 #define MUSS_MODE_SMOKE 2

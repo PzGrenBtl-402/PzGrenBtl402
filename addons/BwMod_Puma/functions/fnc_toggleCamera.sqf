@@ -26,13 +26,13 @@ private _config = configOf cameraOn;
 if (getNumber (_config >> "BWA3_hasRearViewCamera") == 0 && !isClass (_config >> "BWA3_RearViewCamera")) exitWith {false};
 
 // toggle camera Puma cargo
-if (_unit isNotEqualTo driver vehicle _unit && {vehicle _unit isKindOf "BWA3_Puma_Base"}) then {
+if (_unit isNotEqualTo driver objectParent _unit && {objectParent _unit isKindOf "BWA3_Puma_Base"}) then {
     private _selectedCamera = missionNamespace getVariable [QGVAR(selectedCamera), -1];
 
     GVAR(selectedCamera) = if (_direction == 1) then {
-        if (_selectedCamera < 4) then {(_selectedCamera + 1) max -1} else {-1}
+        if (_selectedCamera < MAX_NUM_CAMERAS) then {(_selectedCamera + 1) max -1} else {-1}
     } else {
-        if (_selectedCamera >= 0) then {(_selectedCamera - 1) min 4} else {4}
+        if (_selectedCamera >= 0) then {(_selectedCamera - 1) min MAX_NUM_CAMERAS} else {MAX_NUM_CAMERAS}
     };
 
     BWA3_isRearViewCamera = true;

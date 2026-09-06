@@ -56,6 +56,9 @@ switch (_selectedCamera) do {
     case 4: {
         [_vehicle, "commanderview", [0, 250, 0], [0, 0, 0], 0.25, QPATHTOF(data\rsc\Radar_Kdt.paa)] call FUNC(setCamera);
     };
+    case 5: {
+        [_vehicle, "commanderview", [0, 250, 0], [0, 0, 0], 0.01, QPATHTOF(data\rsc\Radar_Kdt.paa)] call FUNC(setCamera);
+    };
 };
 
 waitUntil {
