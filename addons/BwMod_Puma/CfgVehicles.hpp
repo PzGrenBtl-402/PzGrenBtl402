@@ -34,7 +34,7 @@ class CfgVehicles {
         ace_vehicles_engineStartDelay = 5;
 
         PzGrenBtl402_gunnerAndCommanderCanSmoke = 1; // Requires that gunner has smoke launcher as weapon
-        PzGrenBtl402_smokeLauncherMuzzle = QGVAR(SmokeLauncher);
+        PzGrenBtl402_smokeLauncherMuzzle = QEGVAR(BwMod_Weapons,SmokeLauncher);
 
         driverWeaponsInfoType = QGVAR(RscOptics_Driver);
 
@@ -104,7 +104,6 @@ class CfgVehicles {
                         class ViewOptics: ViewOptics {
                             visionMode[] = {"Normal", "TI"}; // Remove NVG
                         };
-
                     };
                 };
 
@@ -115,12 +114,11 @@ class CfgVehicles {
                 soundAttenuationTurret = "TankAttenuation";
                 gunnerCompartments = "Compartment1";
 
-
                 weapons[] = {
                     "BWA3_MK30",
-                    "BWA3_MG4_vehicle",         // Replace MG5 with coax MG4
+                    "BWA3_MG4_vehicle",                     // Replace MG5 with coax MG4
                     "bwa3_land_spikeLR_atgm",
-                    QGVAR(SmokeLauncher)        // Move SmokeLauncher to gunner
+                    QEGVAR(BwMod_Weapons,SmokeLauncher)     // Move SmokeLauncher to gunner
                 };
 
                 magazines[] = {

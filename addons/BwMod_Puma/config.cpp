@@ -30,7 +30,6 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 #include "Cfg3DEN.hpp"
 #include "CfgVehicles.hpp"
-#include "CfgWeapons.hpp"
 #include "RscInGameUI.hpp"
 #include "RscTitles.hpp"
 #include "CfgSounds.hpp"
