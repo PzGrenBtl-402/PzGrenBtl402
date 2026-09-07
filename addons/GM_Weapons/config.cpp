@@ -8,8 +8,8 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "PzGrenBtl402_Main",
-            "gm_weapons_items",
-            "gm_weapons_throw"
+            "gm_weapons_throw",
+            "gm_core_weapons"
         };
         skipWhenMissingDependencies = 1;
         author = ECSTRING(Main,authors);
@@ -23,3 +23,4 @@ class CfgPatches {
 #include "CfgVehicles.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
+#include "CfgWeapons.hpp"

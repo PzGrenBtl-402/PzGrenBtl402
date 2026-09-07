@@ -5,7 +5,7 @@ class CfgVehicles {
             class GM_UseBoltCutters {
                 condition = "(alive this) && {!(this getVariable ['gm_noBoltCutting', false])} && {'gm_boltcutter' in ([call CBA_fnc_currentUnit] call CBA_fnc_uniqueUnitItems)}";
                 displayName = "$STR_DN_GM_BOLTCUTTER_PREPARE";
-                displayNameDefault = "<img image='\gm\gm_weapons\gm_items\data\ui\holdaction_boltcutter_ca.paa' size='2.5' />";
+                displayNameDefault = "<img image='\gm\gm_core\gm_core_weapons\data\ui\holdaction_boltcutter_ca.paa' size='2.5' />";
                 hideOnUse = 1;
                 onlyForPlayer = 1;
                 priority = 10;
