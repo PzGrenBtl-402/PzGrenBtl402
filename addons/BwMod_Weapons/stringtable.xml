@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="PzGrenBtl402">
     <Package name="BwMod_Weapons">
-        <Key ID="STR_PzGrenBtl402_BwMod_Weapons_MG4_BeltDisplayName">
-            <English>MG4 5.56x45 mm 1000Rnd Belt Case</English>
-            <German>MG4 5,56x45mm 1000-Schuss-Gurtkasten</German>
+        <Key ID="STR_PzGrenBtl402_BwMod_Weapons_MG5_BeltDisplayName">
+            <English>MG5 7.62x51 mm 1000Rnd Belt Case</English>
+            <German>MG5 7,62x51mm 1000-Schuss-Gurtkasten</German>
         </Key>
         <Key ID="STR_PzGrenBtl402_BwMod_Weapons_smokeGrenadeAmmoDescription">
             <Original>Caliber: 76 mm RP&lt;br /&gt;Used in: Smoke Launcher of Vehicles</Original>

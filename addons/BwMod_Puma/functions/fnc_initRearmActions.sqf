@@ -49,69 +49,54 @@ private _smokeMagazineName = [QEGVAR(Rearm,smoke_4grenade_ammo)] call EFUNC(Rear
 
 // MG laden
 private _rearmMGIcon = QPATHTOEF(Rearm,data\ui\holdaction_rearm_mg.paa);
-private _mgMagazineName = [QEGVAR(BwMod_Weapons,1000Rnd_556x45)] call EFUNC(Rearm,getMagazineName);
-// List of all mags which can be used to rearm the turret MG4
+private _mgMagazineName = [QEGVAR(BwMod_Weapons,1000Rnd_762x51)] call EFUNC(Rearm,getMagazineName);
+// List of all mags which can be used to rearm the turret MG5
 // Sorted decending to rearm with the bigger mags first
 private _mgCompatibleMags = [
-    "BWA3_200Rnd_556x45",
-    "BWA3_200Rnd_556x45_Tracer",
+    "hlc_250Rnd_762x51_B_MG3",
+    "hlc_250Rnd_762x51_M_MG3",
+    "hlc_250Rnd_762x51_mdim_MG3",
+    "hlc_250Rnd_762x51_Barrier_MG3",
+    "hlc_250Rnd_762x51_T_MG3",
 
-    "200Rnd_556x45_Box_F",
-    "200Rnd_556x45_Box_Tracer_F",
-    "200Rnd_556x45_Box_Red_F",
-    "200Rnd_556x45_Box_Tracer_Red_F",
+    "150Rnd_762x51_Box",
+    "150Rnd_762x51_Box_Tracer",
 
-    "rhsusf_200rnd_556x45_M855_box",
-    "rhsusf_200rnd_556x45_M855_mixed_box",
-    "rhsusf_200Rnd_556x45_box",
-    "rhsusf_200rnd_556x45_mixed_box",
+    "gm_120Rnd_762x51mm_B_T_DM21_mg3_grn",
+    "gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn",
+    "gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn",
 
-    "rhsusf_200Rnd_556x45_M855_soft_pouch",
-    "rhsusf_200Rnd_556x45_M855_soft_pouch_coyote",
-    "rhsusf_200Rnd_556x45_M855_soft_pouch_ucp",
-    "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch",
-    "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote",
-    "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_ucp",
-    "rhsusf_200Rnd_556x45_soft_pouch",
-    "rhsusf_200Rnd_556x45_soft_pouch_coyote",
-    "rhsusf_200Rnd_556x45_soft_pouch_ucp",
-    "rhsusf_200Rnd_556x45_mixed_soft_pouch",
-    "rhsusf_200Rnd_556x45_mixed_soft_pouch_coyote",
-    "rhsusf_200Rnd_556x45_mixed_soft_pouch_ucp",
+    "BWA3_120Rnd_762x51_soft",
+    "BWA3_120Rnd_762x51_Tracer_soft",
+    "BWA3_120Rnd_762x51",
+    "BWA3_120Rnd_762x51_Tracer",
 
-    "rhsusf_200Rnd_556x45_M855_soft_pouch",
-    "rhsusf_200Rnd_556x45_M855_soft_pouch_coyote",
-    "rhsusf_100Rnd_556x45_M200_soft_pouch_ucp",
-    "rhsusf_100Rnd_556x45_M855_soft_pouch",
-    "rhsusf_100Rnd_556x45_M855_soft_pouch_coyote",
-    "rhsusf_100Rnd_556x45_M855_soft_pouch_ucp",
-    "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch",
-    "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_coyote",
-    "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_ucp",
-    "rhsusf_100Rnd_556x45_soft_pouch",
-    "rhsusf_100Rnd_556x45_soft_pouch_coyote",
-    "rhsusf_100Rnd_556x45_soft_pouch_ucp",
-    "rhsusf_100Rnd_556x45_mixed_soft_pouch",
-    "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote",
-    "rhsusf_100Rnd_556x45_mixed_soft_pouch_ucp",
-    "rhsusf_100Rnd_556x45_M995_soft_pouch",
-    "rhsusf_100Rnd_556x45_M995_soft_pouch_coyote",
-    "rhsusf_100Rnd_556x45_M995_soft_pouch_ucp"
+    "hlc_100Rnd_762x51_B_MG3",
+    "hlc_100Rnd_762x51_M_MG3",
+    "hlc_100Rnd_762x51_mdim_MG3",
+    "hlc_100Rnd_762x51_Barrier_MG3",
+    "hlc_100Rnd_762x51_T_MG3",
+
+    "hlc_50Rnd_762x51_B_MG3",
+    "hlc_50Rnd_762x51_M_MG3",
+    "hlc_50Rnd_762x51_mdim_MG3",
+    "hlc_50Rnd_762x51_Barrier_MG3",
+    "hlc_50Rnd_762x51_T_MG3"
 ];
 [
     _vehicle,
     format [LELSTRING(Rearm,rearm), _mgMagazineName],
     _rearmMGIcon,
     _rearmMGIcon,
-    QUOTE([ARR_5(_target,_this,'shell_eject_pos',2,QQEGVAR(BwMod_Weapons,1000Rnd_556x45))] call EFUNC(Rearm,canRearmFromOutside)),
-    QUOTE([ARR_5(_target,_caller,'shell_eject_pos',2,QQEGVAR(BwMod_Weapons,1000Rnd_556x45))] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target,_this,'shell_eject_pos',2,QQEGVAR(BwMod_Weapons,1000Rnd_762x51))] call EFUNC(Rearm,canRearmFromOutside)),
+    QUOTE([ARR_5(_target,_caller,'shell_eject_pos',2,QQEGVAR(BwMod_Weapons,1000Rnd_762x51))] call EFUNC(Rearm,canRearmFromOutside)),
     {},
     {},
     {
         params ["_vehicle", "", "", "_args"];
         _args params ["_mgCompatibleMags"];
 
-        [_vehicle, [0], QEGVAR(BwMod_Weapons,1000Rnd_556x45), _mgCompatibleMags, EGVAR(Rearm,rearmMGDuration)] call EFUNC(Rearm,rearm);
+        [_vehicle, [0], QEGVAR(BwMod_Weapons,1000Rnd_762x51), _mgCompatibleMags, EGVAR(Rearm,rearmMGDuration)] call EFUNC(Rearm,rearm);
     },
     {},
     [_mgCompatibleMags],

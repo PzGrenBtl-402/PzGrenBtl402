@@ -87,8 +87,8 @@ class CfgWeapons {
     };
 
     class LMG_RCWS;
-    class BWA3_MG4_vehicle: LMG_RCWS {
-        magazines[] += {QGVAR(1000Rnd_556x45)};
+    class BWA3_MG5_vehicle: LMG_RCWS {
+        magazines[] += {QGVAR(1000Rnd_762x51)};
 
         autoReload = 1;
         magazineReloadTime = 0.1;

@@ -13,9 +13,9 @@ class CfgMagazines {
         count = 160;
     };
 
-    class BWA3_2000Rnd_556x45;
-    class GVAR(1000Rnd_556x45): BWA3_2000Rnd_556x45 {
-        displayName = CSTRING(MG4_BeltDisplayName);
+    class BWA3_1200Rnd_762x51;
+    class GVAR(1000Rnd_762x51): BWA3_1200Rnd_762x51 {
+        displayName = CSTRING(MG5_BeltDisplayName);
         count = 1000;
         mass = 167;
     };

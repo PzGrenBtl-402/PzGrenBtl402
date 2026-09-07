@@ -116,7 +116,7 @@ class CfgVehicles {
 
                 weapons[] = {
                     "BWA3_MK30",
-                    "BWA3_MG4_vehicle",                     // Replace MG5 with coax MG4
+                    "BWA3_MG5_vehicle",
                     "bwa3_land_spikeLR_atgm",
                     QEGVAR(BwMod_Weapons,SmokeLauncher)     // Move SmokeLauncher to gunner
                 };
@@ -124,7 +124,7 @@ class CfgVehicles {
                 magazines[] = {
                     "BWA3_240Rnd_APFSDS_shells",            // Changed in BwMod_Weapons to 160Rnd
                     "BWA3_160Rnd_ABM_shells",               // Changed in BwMod_Weapons to 240Rnd
-                    QEGVAR(BwMod_Weapons,1000Rnd_556x45),   // Change to 1000Rnd MG4
+                    QEGVAR(BwMod_Weapons,1000Rnd_762x51),   // Change to 1000Rnd MG5
                     "bwa3_mells_spikeLR_2rnd_puma",
                     "BWA3_SmokeLauncherMag"
                 };
