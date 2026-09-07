@@ -58,13 +58,19 @@ Optional:
 - [Puma] Add vehicle numbers
 - [Puma] Rearm smoke launcher and coax MG
 - [Puma] Increase HE damage
+- [Puma] Change coax from MG5 to MG4
+- [Leopard] Replace commander optice to A3 Warrior for more FOV
+- [Leopard] Allow gunner and commander to fire smoke launchers
+- [Leopard] Additional QoL changes (horizontal compass for driver)
 
 ### GM
 
 - Add Fuchs door actions
 - Single fire mode for Marder
 - More durable buildings (can take more damage)
-- Allow GM wire cutter to cut Arma vanilla NATO wires
+- Allow GM wirecutter to cut Arma vanilla NATO wires
+- Reduce weight of GM wirecutter
+- Make GM wirecutter support ACE wirecutting
 - Modify ACE fragmentation settings of DM51 and DM51A1 grenades
 - Add ACE self-interaction to swap fragmentation sleeve of DM51 and DM51A1 grenades
 - Reduce weight of manpacks
