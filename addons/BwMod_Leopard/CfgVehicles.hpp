@@ -93,14 +93,17 @@ class CfgVehicles {
                             class Wide: Wide {
                                 gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
                                 visionMode[] = {"Normal", "TI"}; // Remove NVG
+                                thermalMode[] = {2, 3};
                             };
                             class Medium: Medium {
                                 gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
                                 visionMode[] = {"Normal", "TI"}; // Remove NVG
+                                thermalMode[] = {2, 3};
                             };
                             class Narrow: Narrow {
                                 gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_w_F.p3d";
                                 visionMode[] = {"Normal", "TI"}; // Remove NVG
+                                thermalMode[] = {2, 3};
                             };
                         };
                     };
